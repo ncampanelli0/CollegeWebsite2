@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LLuyNW9BnpcAIc2rFcAcyn46WDs1w51VINuqr42/MvnsQIg+cwcDv2DNEG10QeTdowFbrZJ93EDtIgzlbnlV7Q==",
+  "success": true,
+  "projectFilePath": "D:\\programming files\\asp.net core\\CollegeWebsite2\\CollegeWebsite2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\baddestwheel\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512"
+  ],
+  "logs": []
+}
