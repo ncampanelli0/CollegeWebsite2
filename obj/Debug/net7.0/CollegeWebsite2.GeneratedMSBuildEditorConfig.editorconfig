@@ -148,10 +148,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld3VzZXJzY2hlZHVsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/example/Macroimportsexample.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXhhbXBsZVxNYWNyb2ltcG9ydHNleGFtcGxlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Adjustlogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBZGp1c3Rsb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -290,10 +286,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Casiepanons.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXENhc2llcGFub25zLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Checklist.txt.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXENoZWNrbGlzdC50eHQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Elliotstrickland.razor]
