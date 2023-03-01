@@ -1,35 +1,24 @@
 @page "/people/abbykinleyside"
-<!doctype html>
-<html lang="en">
   <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>visual arts</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
   </head>
 
 <body>
 
-{{ macro.header() }}
-
-<h1> Visual Arts <h1>
+<h1> Visual Arts </h1>
 
 
         <p> The aim of the department is to develop students awareness of creative processes as well as their
             understanding of the relationships between art and society. </p>
 
-        <P> The Visual Arts program at <strong> Clearwater College </strong> focuses on a problem and project oriented course of study.
+        <p> The Visual Arts program at <strong> Clearwater College </strong> focuses on a problem and project oriented course of study.
             Skills are developed as students need them; thus students feel free to use and even invent media related to
             expressive needs. Students do not have to postpone creation until they have mastered a whole set of
             techniques. Students are urged to blend technical education with creative projects. 
             The program of study for majors includes the study of art history and an introduction to the practical
             problems associated with the pursuit of careers in art. Faculty emphasize the appropriate selection of
             elective courses in non-art areas. Specific courses in economics, anthropology, sociology, basic sciences,
-            psychology and business are recommended.</P>
+            psychology and business are recommended.</p>
 
         <h4>Abby Kinleyside</h4>
         <img src = "{{ url_for('static', filename='image/departmenthead/Abby Kinleyside.png') }}" alt = "An Image Of Abby Kinleyside"> 
@@ -39,5 +28,3 @@
         <h5>Phone: (631)-781-3542 </h5>
         <h5>E-mail: abbykinleyside@clearwater.edu </h5>
         </body>
-
-        {{ macro.footer() }}
