@@ -1,0 +1,45 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>psyschology</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+  
+  <body>
+
+  {{ macro.header() }}
+
+  <h1>Physchology<h1>
+
+
+        <p>The Psychology Department provides students with a background in the major areas of expertise within the
+            modern discipline of psychology.
+
+            Completion of requirements for either Bachelor’s degree in Psychology offered by Clearwater College ensures
+            that students have been given an extensive background in research methods and have been introduced to the
+            basic areas of specialization within psychology.
+
+            The B.A. program provides majors with a strong background for entering graduate studies in many related
+            fields of human service.
+            The B.S. program provides majors with a strong background for entering forensic/criminal sciences, nursing,
+            developmental disabilities, special education, gerontology/rehabilitative science, pharmacology, psychiatry,
+            neurology, neurobiology, in addition to basic and clinical research. </p>
+
+        <h4>Kala Leban</h4>
+        <img src="{{ url_for('static', filename='image/departmenthead/Kala Leban.png') }}" alt="An Image Of Kala Leban">
+        <h5>Department Head: Physchology </h5>
+        <h5>Building: Schooling Academic Building</h5>
+        <h5>Room: SPA 225</h5>
+        <h5>Phone: (631)-664-2487</h5>
+        <h5>E-mail: kalaleban@clearwater.edu </h5>
+
+        {{ macro.footer() }}
+</body>

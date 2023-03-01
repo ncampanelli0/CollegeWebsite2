@@ -1,0 +1,54 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view courses</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewcourses.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/viewcourses.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+<div>
+        <table class = "userTable">
+            <thead>
+            <th>
+              <th>Course Name</th>
+              <th>Type</th>
+              <th>Prequisite</th>
+              <th>Course Name</th>
+              <th>Department</th>
+              <th>Description</th>
+              
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for klasses in klass %}
+                <th class = "list item"></<i class="fa fa-th" aria-hidden="true"></i>>
+                <td>{{ klasses.CourseName }}</td>
+                <td>{{ klasses.Type }}</td>
+                <td>{{ klasses.Prerequiste }}</td>
+                <td>{{ klasses.MinimumRequirements }}</td>
+                <td>{{ klasses.Department }}</td>
+                <td>{{ klasses.Description }}</td>
+               
+                
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+  {{macro.footer()}}
+
+</body>  
+</html>

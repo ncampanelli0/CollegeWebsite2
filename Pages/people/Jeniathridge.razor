@@ -1,0 +1,41 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sociology and criminology</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+{{ macro.header() }}
+
+<h1>Sociology and Criminology <h1>
+
+
+        <p> Clearwatrer College's Sociology Department serves all students interested in acquiring sociological knowledge.
+            Most courses are open to both majors and nonmajors. The sociological perspective offers students an
+            understanding of the dynamics, principles and patterns that govern human interaction and social structure.
+            At Old Westbury, students will learn the substantive knowledge, theories and methods of the discipline.
+
+            Alumni of the Clearwater's Sociology Department have gone on to successful graduate study and to
+            careers in: teaching, social work, law, law enforcement, research-oriented positions, and more. </p>
+
+        <h4>Jenni Athridge</h4>
+        <img src="{{ url_for('static', filename='image/departmenthead/Jenni Athridge.png') }}"
+            alt="An Image Of Jenni Athridge">
+        <h5>Department Head: Sociology and Criminology </h5>
+        <h5>Building: Schooling Academic Building</h5>
+        <h5>Room: SPA 501</h5>
+        <h5>Phone: (631)-944-5743</h5>
+        <h5>E-mail: jenniathridge@clearwater.edu </h5>
+
+        {{ macro.footer() }}
+</body>

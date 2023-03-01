@@ -1,0 +1,49 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>english and education</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+{{ macro.header() }}
+<h1>English and Education<h1>
+
+
+        <p> The English Department at Clearwater College is dedicated to offering courses and activities that challenge
+            our students to become better readers, writers, thinkers, and educators. Majors in the department study
+            great works of literature, learn how to analyze literary texts and their contexts, improve their writing and
+            thinking skills, and explore the nature and beauty of language.
+
+            The English Department offers co-curricular, community-building activities and systems of support for our
+            majors through individual academic advising sessions; student publications, round tables and conferences;
+            and workshops, poetry readings, and career networking sessions. The Department publishes Harmonia, a
+            creative writing journal, and Discordia, a literary scholarship journal open to all Clearwater students.
+            Majors have opportunities to earn course credit as peer mentors and as peer tutors. Internships place
+            students in legal, cultural and publishing venues under the supervision of professionals.
+
+            The English Department is equally dedicated to developing the language arts skills of Clearwater students
+             through our offerings of English Composition I and II. Faculty value involvement in campus life
+            and reflect the College’s mission to promote “intercultural understanding” and to “build a more just world”
+            in our approaches to teaching, service work, and professional development projects. </p>
+
+        <h4>Benson Curneen</h4>
+        <img src="{{ url_for('static', filename='image/departmenthead/Benson Curneen.png') }}"
+            alt="An Image Of Benson Curneen">
+        <h5>Department Head: English and Education </h5>
+        <h5>Building: Schooling Academic Building</h5>
+        <h5>Room: SPA150</h5>
+        <h5>Phone: (631)-305-5542</h5>
+        <h5>E-mail: bensoncurneen@clearwater.edu </h5>
+
+        {{ macro.footer() }}
+
+</body>

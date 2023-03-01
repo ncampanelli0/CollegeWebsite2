@@ -1,0 +1,65 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>add user</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/adduser.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/adduser.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <h2>create new user</h2>
+    <form method = "Post" action = "{{ url_for('adminadduser') }}">
+    {{ form.csrf_token }}
+    {{ form.AccountType.label }}
+    {{ form.AccountType }}
+    <br>
+    {{ form.PartorFullTime.label }}
+    {{ form.PartorFullTime }}
+    <br>
+    {{ form.department.label}} (faculty only)
+    {{ form.department }}
+    <br>
+    {{ form.FirstName.label }}
+    {{ form.FirstName }}
+    <br>
+    {{ form.LastName.label }}
+    {{ form.LastName }}
+    <br>
+    {{ form.Birthyear.label }}
+    {{ form.Birthyear }}
+    {{ form.Birthmonth.label }}
+    {{ form.Birthmonth }}
+    {{ form.Birthday.label }}
+    {{ form.Birthday }}
+    <br>
+    {{ form.Email.label }} 
+    {{ form.Email }}
+    @clearwater.edu
+    <br>
+    {{ form.Address.label }}
+    {{ form.Address }}
+    <br>
+    {{ form.AreaCode.label }}
+    {{ form.AreaCode }}
+    {{ form.PhoneFirst.label }}
+    {{ form.PhoneFirst }}
+    {{ form.PhoneSecond }}
+    <input type = "submit" id = "form" name = "form" value = "submit">
+    </form>
+
+
+
+  {{macro.footer()}}
+
+  
+</html>

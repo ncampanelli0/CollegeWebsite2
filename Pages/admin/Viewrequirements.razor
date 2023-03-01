@@ -1,0 +1,70 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view requirements</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewrequirements.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/viewrequirements.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+    <div>
+        <table class = "userTable">
+            <thead>
+              <th>Major</th>
+              <th>Major Requirements</th>
+            </thead>
+            <tbody>
+
+            {% for majors in majorreqs %}
+                <tr class = "list item">
+                <td>{{ majors.Major }}</td>
+                <td>{{ majors.MajorRequirements }}</td>
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+
+      <div>
+        <table class = "userTable">
+            <thead>
+            <tr>
+              <th>Minor</th>
+              <th>Minor Requirements</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for minors in minorreqs %}
+                <tr class = "list item">
+                <td>{{ minors.Minor }}</td>
+                <td>{{ minors.MinorRequirements }}</td>
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  {{macro.footer()}}
+
+</body>
+</html>

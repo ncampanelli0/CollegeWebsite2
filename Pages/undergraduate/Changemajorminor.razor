@@ -1,0 +1,41 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>change major and minor</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <form method = "Post" action = "{{ url_for('undergraduatechangeMajorMinor') }}">
+    <h2>Change Major</h2>
+    {{form1.csrf_token }}
+    {{form1.major.label}}
+    {{form1.major}}
+    <input type = "submit" id = "form1" name = "form1" value = "submit">
+    </form>
+
+
+    <form method = "Post" action = "{{ url_for('undergraduatechangeMajorMinor') }}">
+    <h2>Change Minor</h2>
+    {{form2.csrf_token}}
+    {{form2.minor.label}}
+    {{form2.minor}}
+
+    <input type = "submit" id = "form2" name = "form2" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

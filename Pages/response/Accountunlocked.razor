@@ -1,0 +1,27 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>account unlocked</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/accountunlocked.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/accountunlocked.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <h2>account unlocked</h2>
+    <h2></h2>
+
+
+  {{macro.footer()}}
+
+</body> 
+</html>

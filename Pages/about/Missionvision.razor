@@ -1,0 +1,48 @@
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mission and vision</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/missionvision.js')}}"></script>
+  </head>
+
+<div>
+
+<body>
+    {{ macro.header() }}
+    <div>
+        <div>
+            <h1>Mission &amp; Vision</h1>
+        </div>
+        <div>
+            <article>
+                <div>
+                    <div>
+                        <div>
+                            <article>
+                                <div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Mission Statement</h2>
+                        <p>
+                            SUID ClearWater College is a dynamic and diverse public liberal arts college that fosters academic excellence through close interaction among students, faculty and staff. ClearWater College weaves the values of integrity,
+                            community engagement, and global citizenship into the fabric of its academic programs and campus life. In an environment that cultivates critical thinking, empathy, creativity and intercultural understanding, we
+                            endeavor to stimulate a passion for learning and a commitment to building a more just and sustainable world. The College is a community of students, teachers, staff, and alumni bound together in mutual support,
+                            respect, and dedication to the goal.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+</body>

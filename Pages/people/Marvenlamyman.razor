@@ -1,0 +1,45 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>public health</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+  
+  <h1>Public Health</h1>
+
+<body>
+
+{{ macro.header() }}
+
+<p> The Public Health department seeks to educate students with a social determinants of health perspective; identify
+    the economic and social context within which individuals make health choices; examine social forces (e.g. social
+    class, gender, racism) that shape individuals' destinies; and plan, implement, evaluate and advocate health programs
+    and policies throughout the world. </p>
+
+<p> The Public Health department at Clearwater has offered a B.S. degree in Health and Society in since 1975,
+    with a focus on social determinants of health. The major offering in the Department of Public Health is a 120-credit
+    academic program that results in a B.S. degree. This program will prepare students for entry into a broad range of
+    professions in public health at the local, state, and national levels. Students from this program go on to graduate
+    school in public health and other health-related disciplines, enter professions such as those in hospitals and local
+    non-profit health agencies, and many go on to obtain training in health professions such as nursing, physical and
+    occupational therapy and physician assistant. </p>
+
+<h4>Marven Lamyman</h4>
+<img src="{{ url_for('static', filename='image/departmenthead/Marven Lamyman.png') }}" alt="An Image Of Marven Lamyman">
+<h5>Department Head: Public Health</h5>
+<h5>Building: Schooling Academic Building</h5>
+<h5>Room: SPA 300</h5>
+<h5>Phone: (631)-669-4982</h5>
+<h5>E-mail: marvenlamyman@clearwater.edu </h5>
+
+{{ macro.footer() }}
+
+</body>

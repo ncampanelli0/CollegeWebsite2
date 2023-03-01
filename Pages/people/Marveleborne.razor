@@ -1,0 +1,44 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mathematics, computer and information sciences</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+{{ macro.header() }}
+
+<h1>Mathematics, Computer and information Sciences</h1>
+
+
+<p>The Department’s main curriculum goal is to train our students to be problem solvers, critical thinkers, and life
+    long learners. To achieve this goal, we offer a broad variety of courses serving the needs of all majors at SUNY Old
+    Westbury.
+
+    For Liberal Art students we offer mathematics proficiency and computer literacy courses in which mathematics and
+    information technology ideas, many of them quite applicable and intuitive, are studied to enable students to become
+    educated citizens.
+
+    Many students in more quantitative majors, from Business to Physics, take a series of mathematics and computer
+    science courses required by their respective departments. These courses are offered by the Mathematics & CIS
+    department, and course content is tailored to fit these students’ specialties and backgrounds. </p>
+
+<h4>Marvel Leborne</h4>
+<img src="{{ url_for('static', filename='image/departmenthead/Marve Leborne.png') }}" alt="An Image Of Marve Leborne">
+<h5>Department Head: Mathematics, Computer and information Sciences</h5>
+<h5>Building: Schooling Academic Building</h5>
+<h5>Room: SPA 275</h5>
+<h5>Phone: (631)-217-6500</h5>
+<h5>E-mail: marveleborne@clearwater.edu </h5>
+
+{{ macro.footer() }}
+</body>

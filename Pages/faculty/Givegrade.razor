@@ -1,0 +1,35 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>give grade</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+  
+<h2>grade form</h2>
+        <form method = "Post" action = "{{ url_for('facultygivegrade') }}">
+          {{ form2.csrf_token }}
+          {{ form2.slotid.label }}
+          {{ form2.slotid}}
+          {{ form2.classid.label }}
+          {{ form2.classid }}
+          {{ form2.grade.label }}
+          {{ form2.grade }}
+      <input type = "submit" id = "form2" name = "form2" value = "submit" >
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

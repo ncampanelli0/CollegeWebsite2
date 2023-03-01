@@ -1,0 +1,33 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>remove professor from class</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <h2>remove professor (by course id)</h2>
+
+    <form method = "Post" action = "{{ url_for('adminremoveprofessorclass') }}">
+        {{ form6.csrf_token }}
+        {{ form6.courseid.label }}
+        {{ form6.courseid }}
+        
+        <input type = "submit" id = "form6" name = "form6" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

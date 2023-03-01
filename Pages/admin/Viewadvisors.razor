@@ -1,0 +1,69 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view advisors</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewadvisor.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/viewadvisor.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <div>
+        <table class = "userTable">
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Account Type</th>
+                <th>Time</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Credits Earned</th>
+                <th>Holds</th>
+                <th>Advisor</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for users in user %}
+                <th class = "list item">
+                    <td>{{ users["id"] }}</td>
+                    <td>{{ users["FirstName"] }}</td>
+                    <td>{{ users["LastName"] }}</td>
+                    <td>{{ users["Email"] }}</td>
+                    <td>{{ users["AccountType"] }}</td>
+                    <td>{{ users["PartorFullTime"] }}</td>
+                    <td>{{ users["Address"] }}</td>
+                    <td>{{ users["PhoneNumber"] }}</td>
+                    <td>{{ users["CreditsEarned"] }}</td>
+                    <td>{{ users["Holds"] }}</td>
+                <td>{{ users["Advisor"] }}</td>
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+    <form method = "Post" action = "{{ url_for('adminviewadvisor') }}">
+      {{ form.csrf_token }}
+      {{ form.username.label }}
+      {{ form.username }}
+
+      <input type = "submit" id = "form" name = "form" value = "submit" >
+    </form>
+
+  {{macro.footer()}}
+
+</body> 
+</html>

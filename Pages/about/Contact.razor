@@ -1,0 +1,139 @@
+{% import 'partials/macros.html' as macro %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>contact</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/contact.js')}}"></script>
+  </head>
+<div>
+
+<body>
+    {{ macro.header() }}
+    <div>
+        <div>
+            <h1>Contact Us</h1>
+        </div>
+        <div>
+            <article>
+                <div>
+                    <div>
+                        <div>
+                            <article>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <article>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <h2>General Information</h2>
+                                                            <p>
+                                                                State University of Idaho (SUID) at Salmon Region<br />
+                                                                P.O. Box 236<br />
+                                                                Salmon Region, ID 14742
+                                                            </p>
+                                                            <p>
+                                                                Telephone: 1-800-725-6667 (1-800-salmons)<br />
+                                                                Email: <a
+                                                                    href="mailto:enroll@clearwater.edu">enroll@clearwater.edu</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div>
+                                            <article>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <h2>Key Offices</h2>
+                                                            <ul>
+                                                                <li>Academic Affairs: 1-800-876-3135</li>
+                                                                <li>Admissions: 1-800-876-3200</li>
+                                                                <li>Bursar/Student Accounts: 1-800-876-3168</li>
+                                                                <li>Financial Aid: 1-800-876-3224</li>
+                                                                <li>Registrar:&nbsp;1-800-876-3000 Option #5</li>
+                                                                <li>Student Affairs: 1-800-876-3175</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <div>
+                                    <div>
+                                        <form accept-charset="UTF-8" action="/about-us/contact-us" method="post"
+                                            data-drupal-selector="webform-submission-contact-node-6840-add-form"
+                                            data-action="/about-us/contact-us" data-once="form-updated"
+                                            data-drupal-form-fields="edit-name,edit-email,edit-topic,edit-subject,edit-message,edit-actions-submit,edit-url">
+                                            <noscript>
+                                                <div>You must have JavaScript enabled to use this form.</div>
+                                            </noscript>
+                                            <div><label for="edit-name">Your Name</label> <input autocomplete="off"
+                                                    maxlength="255" name="name" required="required" type="text" value=""
+                                                    data-drupal-selector="edit-name" /></div>
+                                            <div><label for="edit-email">Your Email</label> <input maxlength="254"
+                                                    name="email" required="required" size="60" type="email" value=""
+                                                    data-drupal-selector="edit-email" /></div>
+                                            <div>
+                                                <label for="edit-topic">Topic</label>
+                                                <select name="topic" required="required"
+                                                    data-drupal-selector="edit-topic">
+                                                    <option selected="selected" value="">- Select -</option>
+                                                    <option value="admissions">Admissions</option>
+                                                    <option value="financial_aid">Financial Aid</option>
+                                                    <option value="it_portal">Information Technology/Portal</option>
+                                                    <option value="bursar">Bursar/Student Accounts</option>
+                                                    <option value="registrar">Registrar</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div><label for="edit-subject">Subject</label> <input autocomplete="off"
+                                                    maxlength="255" name="subject" required="required" type="text"
+                                                    value="" data-drupal-selector="edit-subject" /></div>
+                                            <div>
+                                                <label for="edit-message">Message</label>
+                                                <div><textarea cols="60" name="message" required="required" rows="5"
+                                                        data-drupal-selector="edit-message"></textarea></div>
+                                            </div>
+                                            <div data-drupal-selector="edit-actions"><input name="op" type="submit"
+                                                    value="Send message" data-drupal-selector="edit-actions-submit" />
+                                            </div>
+                                            <input name="antibot_key" type="hidden"
+                                                value="QWdg1x2K1bPMHNm5OQV2gKaTR7Vtm8uGA-oDjD_oJig"
+                                                data-drupal-selector="edit-antibot-key" />
+                                            <input autocomplete="off" name="form_build_id" type="hidden"
+                                                value="form-nXf3LZcpRqx-yEqwx8kgh8m6DIvHGB_1a-oGviwhf3k"
+                                                data-drupal-selector="form-nxf3lzcprqx-yeqwx8kgh8m6divhgb-1a-ogviwhf3k" />
+                                            <input name="form_id" type="hidden"
+                                                value="webform_submission_contact_node_6840_add_form"
+                                                data-drupal-selector="edit-webform-submission-contact-node-6840-add-form" />
+                                            <input name="honeypot_time" type="hidden"
+                                                value="Z9Citf6TZnhOnlj6wEOSVmvtueFqnWlbKP2VO_ps5eA"
+                                                data-drupal-selector="edit-honeypot-time" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+</body>

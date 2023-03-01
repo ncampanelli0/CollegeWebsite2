@@ -1,0 +1,199 @@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+        <ul class="navbar-nav"></ul>
+
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/">homepage</a>
+          </li>
+
+          {% if session["loggedIn"] == False or session["loggedIn"] is not defined %}
+          <li class="nav-item">
+          <button type="button" class="btncolor" aria-expanded="false">
+          <a class="nav-link" href="/login">login</a>
+          </li>
+
+          {% endif %}
+
+          {% if session["loggedIn"] == True %}
+          <li class="nav-item">
+           <button type="button" class="btncolor" aria-expanded="false">
+            <a class="nav-link" href="/logout">logout</a>
+            </button>
+          </li>
+          {% endif %}
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/about">About</a></li>
+              <li><a class="dropdown-item" href="/about/accreditationcertification">Accreditations and Certifications</a></li>
+              <li><a class="dropdown-item" href="/about/collegeleadership">College Leadership</a></li>
+              <li><a class="dropdown-item" href="/about/contact">Contact</a></li>
+              <li><a class="dropdown-item" href="/about/missionvision">Mission and Vision</a></li>
+              <li><a class="dropdown-item" href="/about/rankingdistinctions">Ranking Distinctions</a></li>
+            </ul>
+          </li>
+          
+          {% if session["loggedIn"] == False or session["loggedIn"] is not defined %}
+        
+            <button type="button" class="btncolor" aria-expanded="false">
+            <li class="nav-item">
+              <a class="nav-link" href="/visitor/masterschedule">master schedule</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/visitor/viewcourses">view courses</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/visitor/viewrequirements">view requirements</a>
+            </li> 
+            </button>
+          {% endif %}
+
+
+          {% if session["accountType"] == "Undergraduate" %}
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/undergraduate/viewclasses">view courses</a>
+            </li>
+
+             <li class = "nav-item">
+              <a class = "nav-link" href = "/undergraduate/viewcourses">view classes</a>
+            </li>
+
+             <li class = "nav-item">
+              <a class = "nav-link" href = "/undergraduate/viewcurrentclasses">view current courses</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/undergraduate/viewschedule">view schedule</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/undergraduate/signup">add/drop classes</a>
+            </li>
+
+            <li class = "nav-item"> 
+              <a class = "nav-link" href = "/undergraduate/viewdegreeaudit">view degree audit</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/undergraduate/viewrequirements">view requirements</a>
+            </li> 
+
+          {% endif %}
+
+          {% if session["accountType"] == "Graduate" %}
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/graduate/viewclasses">view courses</a>
+            </li>
+
+             <li class = "nav-item">
+              <a class = "nav-link" href = "/graduate/viewcourses">view classes</a>
+            </li>
+
+             <li class = "nav-item">
+              <a class = "nav-link" href = "/graduate/viewcurrentclasses">view current courses</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/graduate/viewschedule">view schedule</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/graduate/viewrequirements">view requirements</a>
+            </li> 
+
+
+          {% endif %}
+
+          {% if session["accountType"] == "Faculty" %}
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/faculty/viewstudents">view students</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/faculty/viewcourses">view courses</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/faculty/adjustlogin">change password</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/faculty/taughtcourses">attendance</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/faculty/viewcourses">view courses</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/faculty/viewrequirements">view requirements</a>
+            </li> 
+
+
+          {% endif %}
+
+          {% if session["accountType"] == "Researcher" %}
+            <li class = "nav-item">
+              <a class = "nav-link" href = ""></a>
+            </li>
+          {% endif %}
+
+          {% if session["accountType"] == "Admin" %}
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btncolor" aria-expanded="false">
+              Classes
+            </a>
+            <li>
+            <ul class="dropdown-menu dropdown-menu-dark"></ul>
+              <li><a class="dropdown-item" href="/admin/addclasssection">add class section</a></li>
+              <li><a class="dropdown-item" href="/admin/addnewcourse">add class</a></li>
+              <li><a class="dropdown-item" href="/admin/addprofessor">add professor</a></li>
+              <li><a class="dropdown-item" href="/admin/adduserclass">add user to class</a></li>
+              <li><a class="dropdown-item" href="/admin/removeprofessorclass">remove professor from class</a></li>
+              <li><a class="dropdown-item" href="/admin/removeuserclass">remove user from class</a></li>
+            </ul>
+          </li>
+
+          
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/admin/unlockaccount">unlock account</a>
+              <ul>
+                 <li class = "nav-item"><a class = "nav-link" href = "/admin/adduser">add user</a></li>
+
+            <li class = "nav-item">
+            <button type="button" class="btncolor" aria-expanded="false">
+              <a class = "nav-link" href = "/admin/viewallusers">view all users</a>
+            </li> 
+
+              </ul>
+            </li>
+            
+           
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/admin/viewallcourses">view all courses</a>
+            </li>
+
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/admin/adjustlogin">adjust user password</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/viewrequirements">view requirements</a>
+            </li> 
+
+
+          {% endif %}
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>

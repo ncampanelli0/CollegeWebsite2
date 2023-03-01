@@ -1,0 +1,39 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>history and philosophy</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+{{ macro.header() }}
+
+<h1>History and Philosophy<h1>
+
+
+        <p> The History & Philosophy Department prepares students for a lifetime of critical thinking, cooperation, and
+            leadership in today's interconnected world through courses that emphasize multicultural and international
+            perspectives in disciplines such as history, philosophy, geography, and religious studies. The degrees
+            offered by the department encourage students to engage with the breadth of human experience while instilling
+            a commitment to build a more just and sustainable future. </p>
+
+        <h4>Elliot Strickland</h4>
+        <img src="{{ url_for('static', filename='image/departmenthead/Elliot Strickland.png') }}"
+            alt="An Image Of Elliot Strickland">
+        <h5>Department Head: History and Philosophy </h5>
+        <h5>Building: Schooling Academic Building</h5>
+        <h5>Room: SPA 200</h5>
+        <h5>Phone: (631)-164-5242</h5>
+        <h5>E-mail: elliotstrickland@clearwater.edu </h5>
+
+        {{ macro.footer() }}
+</body>

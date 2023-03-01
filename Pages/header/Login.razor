@@ -1,0 +1,33 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>login</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/login.js')}}"></script>
+</head>
+  <body>
+    {{ macro.header() }}
+
+
+
+  <form method = "Post" action = "{{ url_for('login') }}" class="flex flex-col pt-3 md:pt-8">
+      {{ form.csrf_token }}
+      {{ form.username.label }}
+      {{ form.username }}
+      {{ form.password.label }}
+      {{ form.password }}
+  
+      <input type = "submit" value = "submit" class>
+    </form>
+    
+    
+    {{ macro.footer() }}
+
+  </body>
+</html>

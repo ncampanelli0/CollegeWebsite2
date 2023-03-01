@@ -1,0 +1,70 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sign up</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/signup.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/signup.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <div>
+        <table class = "userTable">
+            <thead>
+                <th>Class ID</th>
+                <th>Class Name</th>
+                <th>Time Slot / Days</th>
+                <th>Prerequiste</th>
+                <th>Minimum Requirements</th>
+                <th>Description</th>
+                <th>Building ID - Room ID</th>
+                <th>Type / Credits</th>
+                <th>Seats Taken / Max Capacity</th>
+                <th>Year / Season</th>
+                <th>Professor</th>
+            </thead>
+            <tbody>
+
+                {% for klasses in klass %}
+                <tr class = "list item">
+                <td>{{ klasses["id"] }}</td>
+                <td>{{ klasses["CourseName"] }}</td>
+                <td>{{ klasses["TimeSlot"] }} / {{ klasses["Day"] }}</td>
+                <td>{{ klasses["Prerequiste"] }}</td>
+                <td>{{ klasses["MinimumRequirement"] }}</td>
+                <td>{{ klasses["Description"] }}</td>
+                <td>{{ klasses["BuildingID"] }} - {{ klasses["RoomID"] }}</td>
+                <td>{{ klasses["Type"] }} / {{ klasses["Credits"] }}</td>
+                <td>{{ klasses["Enrolled"]|length }} / {{ klasses["MaxCapacity"] }}</td>
+                <td>{{ klasses["Year"] }} / {{ klasses["Season"] }}</td>
+                <td>{{ klasses["Professor"]["FirstName"] }} {{ klasses["Professor"]["LastName"] }}</td>
+                
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+    <h2>add class</h2>
+    <form method = "Post" action = "{{ url_for('undergraduatesignup') }}">
+    {{ form.csrf_token }}
+    {{ form.courseid.label }}
+    {{ form.courseid }}
+    
+    <input type = "submit" id = "form" name = "form" value = "submit">
+    </form>
+
+    
+
+  {{macro.footer()}}
+
+</body> 
+</html>

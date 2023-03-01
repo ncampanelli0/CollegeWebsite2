@@ -1,0 +1,57 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>politics, economics and law</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+<h1>Politics, Economics and Law</h1>
+
+
+<p> Politics, Economics and Law (PEL) is an interdisciplinary department in the social sciences with a national and
+    international focus. Students majoring in PEL earn a Bachelor of Arts (B.A.) degree. Bachelor of Arts (B.A.) and
+    Bachelor of Science (B.S.) degrees in Industrial and Labor Relations are also offered by the PEL department. PEL has
+    upper division concentrations in politics and law, economics, political economy, public policy and global studies.
+
+    The PEL department provides a rigorous and integrated preparation in the social sciences for students who intend to
+    enter graduate or law school, or to seek employment in government, business, social services, human rights or
+    political organizations.
+
+    The PEL curriculum has various objectives: to introduce students to the disciplines of political science, political
+    economy and economics and to examine how these different areas intersect to shape U.S. and international law,
+    institutions, and policies. Such a course of study provides the student with a strong background in the historical
+    development of corporations, social welfare policies, labor organizations, and civil liberties and civil rights
+    movements.
+
+    PEL also provides students with an opportunity to develop an international perspective in the study of politics and
+    economics - a vantage point vital in the new global marketplace. The department takes a comparative approach to the
+    study of different societies and to the relations among them, with particular emphasis on the developing nations and
+    globalization. The global component focuses on issues such as international trade, foreign debt, economic
+    inequality, transnational political and social movements, environmental concerns and international institutions.
+</p>
+
+
+
+<h4>Sadie Aspinal</h4>
+<img src="{{ url_for('static', filename='image/departmenthead/Sadie Aspinal.png') }}" alt="An Image Of Sadie Aspinal">
+<h5>Department Head: Politics, Economics and Law</h5>
+<h5>Building: Schooling Academic Building</h5>
+<h5>Room: SPA 375</h5>
+<h5>Phone: (631)-479-8710</h5>
+<h5>E-mail: sadieaspinal@clearwater.edu </h5>
+
+{{ macro.footer() }}
+
+</body>

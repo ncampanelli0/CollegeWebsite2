@@ -1,0 +1,55 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view user grades</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewusergrades.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/viewusergrades.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+
+        <!-- flip the headers and the rows if there is extra time -->
+        <!-- -Nick -->
+        <div>
+        <table class = "userTable"> 
+            <thead>
+            <th>
+                {% for x in range(0, specificUser["Schedule"]|length) %}
+                <th>{{ specificUser["Schedule"][x] }}</th>
+                {% endfor %}
+                <th>|</th>
+                {% for x in range(0, specificUser["Transcript"]|length) %}
+                <th>{{ specificUser["Transcript"][x] }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+                <tr class = "list item">
+
+
+                {% for x in range(0, specificUser["Schedule"]|length) %}
+                <td>{{ specificUser["ScheduleGrades"][x] }}</td>
+                {% endfor %}
+                <td>|</td>
+                {% for x in range(0, specificUser["Transcript"]|length) %}
+                <td>{{ specificUser["TranscriptGrades"][x] }}</td>
+                {% endfor %}
+        </tbody>
+        </table>
+
+
+
+  {{macro.footer()}}
+
+</body> 
+</html>

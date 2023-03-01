@@ -1,0 +1,36 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>attendance</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+  
+<h2>attendance</h2>
+    <form method = "Post" action = "{{ url_for('facultyattendance') }}">
+    {{ form4.csrf_token }}
+    {{ form4.email.label }}
+    {{ form4.email }}
+    {{ form4.grade.label }}
+    {{ form4.grade }}
+    {{ form4.position.label }}
+    {{ form4.position }}
+    
+    <input type = "submit" id = "form4" name = "form4" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

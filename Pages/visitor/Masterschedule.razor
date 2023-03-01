@@ -1,0 +1,63 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>master schedule</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/masterschedule.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/masterschedule.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+        <div>
+        <table class = "userTable">
+            <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Time Slot / Days</th>
+                <th>Prerequiste</th>
+                <th>Minimum Requirements</th>
+                <th>Description</th>
+                <th>Building ID - Room ID</th>
+                <th>Type / Credits</th>
+                <th>Seats Taken / Max Capacity</th>
+                <th>Year / Season</th>
+                <th>Professor</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for course in masterSchedule %}
+                <tr class = "list item">
+                <td>{{ course["id"] }}</td>
+                <td>{{ course["CourseName"] }}</td>
+                <td>{{ course["TimeSlot"] }} / {{ course["Day"] }}</td>
+                <td>{{ course["Prerequiste"] }}</td>
+                <td>{{ course["MinimumRequirement"] }}</td>
+                <td><button id = "desc{{loop.index}}" class = "btncolor" onclick="getDescription('#desc{{loop.index}}')" data-description = "{{course['Description']}}">Description</button></td>
+                <td>{{ course["BuildingID"] }} - {{ course["RoomID"] }}</td>
+                <td>{{ course["Type"] }} / {{ course["Credits"] }}</td>
+                <td>{{ course["Enrolled"]|length }} / {{ course["MaxCapacity"] }}</td>
+                <td>{{ course["Year"] }} / {{ course["Season"] }}</td>
+                <td>{{ course["Professor"]["FirstName"] }} {{ course["Professor"]["LastName"] }}</td>
+                
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+
+  {{macro.footer()}}
+
+  
+</html>

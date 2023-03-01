@@ -1,0 +1,65 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>edit user</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/edituser.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/edituser.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+ <h2>edit user</h2>
+
+ <p><kbd>required *</kbd></p>
+    <form method = "Post" action = "{{ url_for('adminedituser') }}">
+    {{ form2.csrf_token }}
+    {{ form2.email.label }} <kbd>*</kbd>
+    {{ form2.email }}@clearwater.edu
+    <br>
+    <br>
+    
+    {{ form2.accounttype.label }} <kbd>*</kbd>
+    {{ form2.accounttype}}
+    {{ form2.partorfulltime.label }} <kbd>*</kbd>
+    {{ form2.partorfulltime }}
+    {{ form2.holds.label }} <kbd>*</kbd>
+    {{ form2.holds }}
+    <br>
+    <br>
+    {{ form2.firstname.label }}
+    {{ form2.firstname }}
+    <br>
+    {{ form2.lastname.label }}
+    {{ form2.lastname }}
+    <br>
+    {{ form2.birthyear.label }}
+    {{ form2.birthyear }}
+    {{ form2.birthmonth.label }}
+    {{ form2.birthmonth }}
+    {{ form2.birthday.label }}
+    {{ form2.birthday }}
+    <br>
+    {{ form2.address.label }}
+    {{ form2.address }}
+    <br>
+    {{ form2.areacode.label }}
+    {{ form2.areacode }}
+    {{ form2.phonefirst.label }}
+    {{ form2.phonefirst }}
+    {{ form2.phonesecond }}
+    <input type = "submit" id = "form2" name = "form2" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

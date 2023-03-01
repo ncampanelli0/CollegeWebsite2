@@ -1,0 +1,72 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>add new course</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+<h2>add new course</h2>
+    <form method = "Post" action = "{{ url_for('adminaddnewcourse') }}">
+        {{ form3.csrf_token }}
+        <br>
+        {{ form3.coursename.label }}
+        {{ form3.coursename }}
+        <br>
+        {{ form3.tpe.label }}
+        {{ form3.tpe }}
+        <br>
+        {{ form3.prerequiste.label }}
+        <br>
+        {{ form3.prerequiste }} {{ form3.minimumrequirement }}
+        {{ form3.prerequiste2 }} {{ form3.minimumrequirement2 }}
+        {{ form3.prerequiste3 }} {{ form3.minimumrequirement3 }}
+        {{ form3.prerequiste4 }} {{ form3.minimumrequirement4 }}
+        <br>
+        {{ form3.prerequiste5 }} {{ form3.minimumrequirement5 }}
+        {{ form3.prerequiste6 }} {{ form3.minimumrequirement6 }}
+        {{ form3.prerequiste7 }} {{ form3.minimumrequirement7 }}
+        {{ form3.prerequiste8 }} {{ form3.minimumrequirement8 }}
+        <br>
+        {{ form3.department.label }}
+        {{ form3.department }}
+        <br>
+        {{ form3.description.label }}
+        {{ form3.description }}
+        <br>
+        {{ form3.crn.label }}
+        {{ form3.crnprefix }}
+        {{ form3.crn }}
+        <br>
+        {{ form3.credits.label }}
+        {{ form3.credits }}
+        
+        <input type = "submit" id = "form3" name = "form3" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>
+
+
+
+
+
+
+
+
+
+
+

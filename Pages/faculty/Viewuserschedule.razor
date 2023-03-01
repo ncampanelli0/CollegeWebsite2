@@ -1,0 +1,78 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view user schedule</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewuserschedule.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/viewuserschedule.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+        <!-- flip the headers and the rows if there is extra time -->
+        <!-- -Nick -->
+Credits Earned: {{userSchedule.CreditsEarned}}
+Credits Earned: {{userSchedule.CreditsEarned}}
+    <div>
+
+        <h2>most recent semester</h2>
+        <table class = "userTable">
+                <thead>
+                <tr>
+                <th>slot id</th>
+                <th>id</th>
+                <th>course</th>
+                <th>grade</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for x in range(0, userSchedule["Schedule"]|length) %}
+                <tr>
+                <td>{{ loop.index0 }}</td>
+                <td>{{ userSchedule["Schedule"][x] }}</td>
+                <td>{{ userSchedule["SchedulePlainText"][x] }}</td>
+                <td>{{ userSchedule["ScheduleGrades"][x] }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+        </table>
+
+            <h2>transcript</h2>
+            <table class = "userTable">
+
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>course name</th>
+                <th>grade</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                  {% for x in range(0, userSchedule["Transcript"]|length) %}
+                    <tr>
+                    <td>{{ userSchedule["Transcript"][x] }}</td>
+                    <td>{{ userSchedule["TranscriptPlainText"][x] }}</td>
+                    <td>{{ userSchedule["TranscriptGrades"][x] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+    </table>
+
+
+
+  {{macro.footer()}}
+
+</body> 
+</html>

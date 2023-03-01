@@ -1,0 +1,59 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>add class section</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+
+     <h2>add class section</h2>
+    <form method = "Post" action = "{{ url_for('adminaddclasssection') }}">
+        {{ form.csrf_token }}
+        <br>
+        {{ form.crn.label }}
+        {{ form.crnprefix }}
+        {{ form.crn }}
+        <br>
+        {{ form.day.label }}
+        {{ form.day }}
+        <br>
+        {{ form.roomid.label }}
+        {{ form.roomid }}
+        <br>
+        {{ form.buildingid.label }}
+        {{ form.buildingid }}
+        <br>
+        {{ form.timeslot.label }}
+        {{ form.timeslot }}
+        <br>
+        {{ form.credits.label }}
+        {{ form.credits }}
+        <br>
+        {{ form.maxcapacity.label }}
+        {{ form.maxcapacity }}
+        <br>
+        {{ form.year.label }}
+        {{ form.year }}
+        <br>
+        {{ form.season.label }}
+        {{ form.season }}
+        
+        <input type = "submit" id = "form" name = "form" value = "submit">
+    </form>
+
+  {{macro.footer()}}
+
+  
+</html>

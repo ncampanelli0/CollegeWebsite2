@@ -1,0 +1,63 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>view classes</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+<body>
+
+  {{ macro.header() }}
+
+    <div>
+        <table class = "userTable">
+            <thead>
+            
+                <th>Course ID</th>
+                <th>CRN</th>
+                <th>Course Name</th>
+                <th>Time Slot / Days</th>
+                <th>Prerequiste</th>
+                <th>Minimum Requirements</th>
+                <th>Description</th>
+                <th>Building ID - Room ID</th>
+                <th>Type / Credits</th>
+                <th>Seats Taken / Max Capacity</th>
+                <th>Professor</th>
+            
+            </thead>
+            <tbody>
+
+              
+            {% for klass in courses %}
+                <tr class = "list item">
+                <td>{{ klass["id"] }}</td>
+                <td>{{ klass["Crn"] }}</td>
+                <td>{{ klass["CourseName"] }}</td>
+                <td>{{ klass["TimeSlot"] }} / {{ klass["Day"] }}</td>
+                <td>{{ klass["Prerequiste"] }}</td>
+                <td>{{ klass["MinimumRequirement"] }}</td>
+                <td>{{ klass["Description"] }}</td>
+                <td>{{ klass["BuildingID"] }} - {{ klass["RoomID"] }}</td>
+                <td>{{ klass["Type"] }} / {{ klass["Credits"] }}</td>
+                <td>{{ klass["SeatsTaken"] }} / {{ klass["MaxCapacity"] }}</td>
+                <td>{{klass["Professor"].FirstName}} {{klass["Professor"].LastName}}</td>
+                
+            {% endfor %}
+        </tbody>
+        </table>
+        <div id = "tablePagination"></div>
+    </div>
+
+  {{macro.footer()}}
+
+  
+</html>

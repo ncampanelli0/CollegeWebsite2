@@ -1,0 +1,48 @@
+<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
+{% import 'partials/macros.html' as macro %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>biological sciences</title>
+    {{macro.imports()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
+    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
+  </head>
+
+
+<body>
+
+{{ macro.header() }}
+
+<h1>Biological Science</h1>
+
+
+<p> The Biology department supports a variety of other academic majors by providing courses that qualify as Liberal Arts
+    electives, many of which also fulfill the General Education Natural Science Core curriculum.
+
+    The department significantly supports a bachelor of science degree in Bioscience which is quite popular.
+
+    Students who previously earned a bachelor's degree in a non-science field, have a unique opportunity to enroll in
+    the department's Science for the Health Professions Certificate. This certificate is designed for the individual who
+    seeks a career change into the health professions, but lacks some or all of the necessary science and mathematics
+    background. Completion of the certificate provides academically qualified students to seek entry into a health
+    professional school of medicine, dentistry, physician assistant, veterinary, chiropractic, pharmacy, optometry,
+    podiatry, and physical therapy. </p>
+
+
+
+<h4>Mich Whitfield</h4>
+<img src="{{ url_for('static', filename='image/departmenthead/Mich Whitfield.png') }}" alt="An Image Of Mich Whitfield">
+<h5>Department Head: Biological Science</h5>
+<h5>Building: Schooling Academic Building</h5>
+<h5>Room: SPA 325</h5>
+<h5>Phone: (631)-554-8321</h5>
+<h5>E-mail: michwhitfield@clearwater.edu </h5>
+
+{{ macro.footer() }}
+
+</body>
