@@ -6,8 +6,7 @@ namespace CollegeWebsite2.Models
     public class AllUser
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id {get; set;} = String.Empty;
+        public ObjectId Id {get; set;}
         [BsonElement("Schedule")]
         public string[]? Schedule {get; set;}
         [BsonElement("SchedulePlainText")]

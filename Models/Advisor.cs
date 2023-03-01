@@ -6,8 +6,7 @@ namespace CollegeWebsite2.Models
     public class Advisor
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id {get; set;} = String.Empty;
+        public ObjectId Id {get; set;}
         [BsonElement("FirstName")]
         public string FirstName {get; set;} = String.Empty;
         [BsonElement("LastName")]
@@ -24,8 +23,9 @@ namespace CollegeWebsite2.Models
         public string Address {get; set;} = String.Empty;
         [BsonElement("LoginCounter")]
         public int LoginCounter {get; set;}
-        [BsonElement("PartOrFullTime")]
+        [BsonElement("PartorFullTime")]
         public string PartOrFullTime {get; set;} = String.Empty;
+        
         [BsonElement("PhoneNumber")]
         public string PhoneNumber {get; set;} = String.Empty;
 

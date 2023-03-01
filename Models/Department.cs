@@ -6,8 +6,7 @@ namespace CollegeWebsite2
     public class Department
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id {get; set;} = String.Empty;
+        public ObjectId Id {get; set;}
 
         [BsonElement("Departments")]
         public string Departments {get; set;} = String.Empty;
