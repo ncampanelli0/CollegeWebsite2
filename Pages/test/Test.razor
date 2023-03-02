@@ -1,0 +1,19 @@
+﻿@page "/test"
+@using MongoDB.Bson;
+@using MongoDB.Driver;
+
+<h2>test page</h2>
+
+<button @onclick = "click">database connection</button>
+
+@code
+{
+
+    public void click()
+    {
+        Mongo db = new Mongo("college-site-2");
+        db.InsertRecord("Users", new AllUser { FirstName = "wetgrweg", LastName = "wrhygrrsgdsweag" });
+
+    }
+
+}
