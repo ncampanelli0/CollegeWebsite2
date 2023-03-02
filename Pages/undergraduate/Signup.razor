@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>sign up</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/signup.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/signup.js')}}"></script>
   </head>
 
-<body>
-
-  {{ macro.header() }}
+<body> 
 
     <div>
         <table class = "userTable">
@@ -45,6 +39,7 @@
                 <td>{{ klasses["Enrolled"]|length }} / {{ klasses["MaxCapacity"] }}</td>
                 <td>{{ klasses["Year"] }} / {{ klasses["Season"] }}</td>
                 <td>{{ klasses["Professor"]["FirstName"] }} {{ klasses["Professor"]["LastName"] }}</td>
+                </tr>
                 
             {% endfor %}
         </tbody>
@@ -64,5 +59,4 @@
 
   {{macro.footer()}}
 
-</body> 
-</html>
+</body>

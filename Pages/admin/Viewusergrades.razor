@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view user grades</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewusergrades.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewusergrades.js')}}"></script>
   </head>
 
 <body>
@@ -21,7 +17,7 @@
         <div>
         <table class = "userTable"> 
             <thead>
-            <th>
+            <tr>
                 {% for x in range(0, specificUser["Schedule"]|length) %}
                 <th>{{ specificUser["Schedule"][x] }}</th>
                 {% endfor %}
@@ -42,12 +38,9 @@
                 {% for x in range(0, specificUser["Transcript"]|length) %}
                 <td>{{ specificUser["TranscriptGrades"][x] }}</td>
                 {% endfor %}
+
+                </tr>
         </tbody>
         </table>
-
-
-
-  {{macro.footer()}}
-
-</body> 
-</html>
+        </div>
+</body>

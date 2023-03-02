@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view courses</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewcourses.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewcourses.js')}}"></script>
   </head>
 
 <body>
@@ -18,7 +14,7 @@
 <div>
         <table class = "userTable">
             <thead>
-            <th>
+            <tr>
               <th>Course Name</th>
               <th>Type</th>
               <th>Prequisite</th>
@@ -31,14 +27,14 @@
             <tbody>
 
             {% for klasses in klass %}
-                <th class = "list item"></<i class="fa fa-th" aria-hidden="true"></i>>
+                <th class = "list item">
                 <td>{{ klasses.CourseName }}</td>
                 <td>{{ klasses.Type }}</td>
                 <td>{{ klasses.Prerequiste }}</td>
                 <td>{{ klasses.MinimumRequirements }}</td>
                 <td>{{ klasses.Department }}</td>
                 <td>{{ klasses.Description }}</td>
-               
+               </th>
                 
             {% endfor %}
         </tbody>
@@ -46,7 +42,4 @@
         <div id = "tablePagination"></div>
     </div>
 
-  {{macro.footer()}}
-
 </body>  
-</html>

@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view classes</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
 
     <div>
         <table class = "userTable">
@@ -54,8 +48,6 @@
         </table>
         <div id = "tablePagination"></div>
     </div>
-
-  {{macro.footer()}}
 
   
 </html>

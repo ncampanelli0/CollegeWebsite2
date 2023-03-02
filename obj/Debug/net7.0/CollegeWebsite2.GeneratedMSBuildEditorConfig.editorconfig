@@ -260,18 +260,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXFBhc3N3b3JkcmVzZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/partials/Boilerplate.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGFydGlhbHNcQm9pbGVycGxhdGUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/partials/Macros.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGFydGlhbHNcTWFjcm9zLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/partials/Oldnavbar.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGFydGlhbHNcT2xkbmF2YmFyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Abbykinleyside.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEFiYnlraW5sZXlzaWRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

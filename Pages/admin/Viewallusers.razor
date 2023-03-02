@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view all users</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewallusers.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewallusers.js')}}"></script>
   </head>
 
 <body>
@@ -45,6 +41,7 @@
                 <td>{{ users["PhoneNumber"] }}</td>
                 <td>{{ users["CreditsEarned"] }}</td>
                 <td>{{ users["Holds"] }}</td>
+                </tr>
             {% endfor %}
         </tbody>
         </table>
@@ -53,5 +50,4 @@
 
   {{macro.footer()}}
 
-</body> 
-</html>
+</body>

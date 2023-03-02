@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>edit user</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/edituser.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/edituser.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
 
  <h2>edit user</h2>
 
@@ -21,7 +15,7 @@
     <form method = "Post" action = "{{ url_for('adminedituser') }}">
     {{ form2.csrf_token }}
     {{ form2.email.label }} <kbd>*</kbd>
-    {{ form2.email }}@clearwater.edu
+    {{ form2.email }}@@clearwater.edu
     <br>
     <br>
     
@@ -57,7 +51,6 @@
     <input type = "submit" id = "form2" name = "form2" value = "submit">
     </form>
 
-  {{macro.footer()}}
 
   
-</html>
+</body>

@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view user schedule</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewuserschedule.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewuserschedule.js')}}"></script>
   </head>
 
 <body>
@@ -20,7 +16,6 @@
 
 
     Credits Earned: {{userSchedule.CreditsEarned}}
-    <div>
         <table>
             <thead>
                 {% for x in range(0, userSchedule["Schedule"]|length) %}
@@ -46,4 +41,3 @@
   {{macro.footer()}}
 
 </body> 
-</html>

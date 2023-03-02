@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view degree audit</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewdegreeaudit.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewdegreeaudit.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
 
     <div>
         <table class = "userTable">
@@ -31,6 +25,7 @@
                 {% elif majorCompletion != [] %}
                 <td>{{majorCompletion[loop.index0]}}</td>
                 {% endif %}
+                </tr>
             {% endfor %}
         </tbody>
         </table>
@@ -53,6 +48,7 @@
                 {% elif minorCompletion != [] %}
                 <td>{{minorCompletion[loop.index0]}}</td>
                 {% endif %}
+                </tr>
                 
             {% endfor %}
         </tbody>
@@ -66,5 +62,4 @@
 
 
 
-</body>  
-</html>
+</body>

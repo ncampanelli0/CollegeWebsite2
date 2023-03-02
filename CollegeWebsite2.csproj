@@ -10,10 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\partials\Boilerplate.html" />
+    <None Remove="Pages\partials\Macros.html" />
+    <None Remove="Pages\partials\Oldnavbar.html" />
     <None Remove="Pages\people\Checklist.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Pages\partials\Boilerplate.html" />
+    <Content Include="Pages\partials\Macros.html" />
+    <Content Include="Pages\partials\Oldnavbar.html" />
     <Content Include="Pages\people\Checklist.txt" />
   </ItemGroup>
 

@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>master schedule</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/masterschedule.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/masterschedule.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
 
         <div>
         <table class = "userTable">
@@ -47,6 +41,7 @@
                 <td>{{ course["Enrolled"]|length }} / {{ course["MaxCapacity"] }}</td>
                 <td>{{ course["Year"] }} / {{ course["Season"] }}</td>
                 <td>{{ course["Professor"]["FirstName"] }} {{ course["Professor"]["LastName"] }}</td>
+                </tr>
                 
             {% endfor %}
         </tbody>
@@ -54,8 +49,4 @@
         <div id = "tablePagination"></div>
     </div>
 
-
-  {{macro.footer()}}
-
-  
-</html>
+</body>

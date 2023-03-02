@@ -5,21 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>hold</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/userdeleted.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/userdeleted.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
-
-
     <h2>your account has a hold, you cannot register</h2>
     <h2>hold type: {{session["hold"]}}</h2>
 
-  {{macro.footer()}}
-
 </body>
-</html>

@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>add user</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/adduser.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/adduser.js')}}"></script>
   </head>
 
 <body>
@@ -42,7 +38,7 @@
     <br>
     {{ form.Email.label }} 
     {{ form.Email }}
-    @clearwater.edu
+    @@clearwater.edu
     <br>
     {{ form.Address.label }}
     {{ form.Address }}
@@ -55,9 +51,5 @@
     <input type = "submit" id = "form" name = "form" value = "submit">
     </form>
 
-
-
-  {{macro.footer()}}
-
   
-</html>
+</body>

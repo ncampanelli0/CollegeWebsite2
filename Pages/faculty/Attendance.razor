@@ -5,15 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>attendance</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/boilerplate.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/boilerplate.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
   
 <h2>attendance</h2>
     <form method = "Post" action = "{{ url_for('facultyattendance') }}">
@@ -31,4 +25,4 @@
   {{macro.footer()}}
 
   
-</html>
+</body>

@@ -5,21 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view user schedule</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewuserschedule.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewuserschedule.js')}}"></script>
   </head>
 
 <body>
-
-  {{ macro.header() }}
 
         <!-- flip the headers and the rows if there is extra time -->
         <!-- -Nick -->
 
     Credits Earned: {{calculatedCredits}}
-    <div>
 
         <h2>most recent semester</h2>
         <table class = "userTable">
@@ -70,5 +63,4 @@
 
   {{macro.footer()}}
 
-</body> 
-</html>
+</body>

@@ -5,32 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>adjust login</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/adjustlogin.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/adjustlogin.js')}}"></script>
   </head>
 
 <body>
-{{ macro.header() }}
-<h2>adjust password</h2>
-<!-- css bootstrap documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/  -->
-{% import 'partials/macros.html' as macro %}
-<!doctype html>
-<html lang="en">
-  <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>adjust login</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/adjustlogin.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/adjustlogin.js')}}"></script>
-  </head>
-
-<body>
-{{ macro.header() }}
 <h2>adjust password</h2>
 <form method = "Post" action = "{{ url_for('adminadjustlogin') }}">
       {{ form.csrf_token }}
@@ -43,10 +20,5 @@
       <br>
       <input type = "submit" id = "form" name = "form" value = "submit">
     </form>
-{{ macro.footer() }}
 </body>
-</html>
-{{ macro.footer() }}
   
-</body>
-</html>

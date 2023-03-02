@@ -5,16 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>view taught classes</title>
-    {{macro.imports()}}
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/style.css')}}" />
-    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet/viewtaughtclassses.css')}}" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/viewtaughtclassses.js')}}"></script>
   </head>
 
 <body>
 {{ macro.header() }}
-
-    <div>
 
         <h2>{{course1.CourseName}} (crn: {{course1.Crn}} | course id: {{course1.id}})</h2>
         <table class = "userTable">
@@ -50,7 +44,6 @@
 
         
         <h2>{{course2.CourseName}} (crn: {{course2.Crn}} | course id: {{course2.id}})</h2>
-        <div>
         <table class = "userTable">
             <thead>
                 <th>slot id</th>
@@ -81,7 +74,4 @@
 
 
         </table>
-
-{{ macro.footer() }}
 </body>
-</html>
