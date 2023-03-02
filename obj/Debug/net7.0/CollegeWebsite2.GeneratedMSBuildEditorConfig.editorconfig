@@ -404,10 +404,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2hhcmVkXENoYW5nZW1ham9ybWlub3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Adjustlogin.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxBZGp1c3Rsb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Changemajorminor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxDaGFuZ2VtYWpvcm1pbm9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -467,6 +463,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/programming files/asp.net core/CollegeWebsite2/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Adjustlogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxBZGp1c3Rsb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-g12u3slobp
 
 [D:/programming files/asp.net core/CollegeWebsite2/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
