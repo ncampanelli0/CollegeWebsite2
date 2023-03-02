@@ -11,7 +11,7 @@
 
 
     <h2>edit a class</h2>
-    <form method = "post" action = "{{ url_for('admineditclass') }}">
+    <form method = "post" action = "/admineditclass">
       {{ form2.csrf_token }}
       {{ form2.courseid.label }}
       {{ form2.courseid }}

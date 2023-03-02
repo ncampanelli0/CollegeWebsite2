@@ -12,7 +12,7 @@
 
     <h2>add professor</h2>
 
-    <form method = "Post" action = "{{ url_for('adminaddprofessorclass') }}">
+    <form method = "Post" action = "/adminaddprofessorclass">
         {{ form2.csrf_token }}
         {{ form2.username.label }}
         {{ form2.username }}
@@ -21,8 +21,6 @@
         
         <input type = "submit" id = "form2" name = "form2" value = "submit">
     </form>
-
-  {{macro.footer()}}
 
   
 </body>

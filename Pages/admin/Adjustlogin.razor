@@ -9,7 +9,7 @@
 
 <body>
 <h2>adjust password</h2>
-<form method = "Post" action = "{{ url_for('adminadjustlogin') }}">
+<form method = "Post" action = "/adminadjustlogin">
       {{ form.csrf_token }}
       {{ form.password }}
       {{ form.password.label }}

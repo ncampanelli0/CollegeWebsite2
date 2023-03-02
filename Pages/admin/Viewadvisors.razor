@@ -48,7 +48,7 @@
         <div id = "tablePagination"></div>
     </div>
 
-    <form method = "Post" action = "{{ url_for('adminviewadvisor') }}">
+    <form method = "Post" action = "adminviewadvisor">
       {{ form.csrf_token }}
       {{ form.username.label }}
       {{ form.username }}

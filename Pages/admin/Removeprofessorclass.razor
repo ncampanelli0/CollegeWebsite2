@@ -11,7 +11,7 @@
 
     <h2>remove professor (by course id)</h2>
 
-    <form method = "Post" action = "{{ url_for('adminremoveprofessorclass') }}">
+    <form method = "Post" action = "/adminremoveprofessorclass">
         {{ form6.csrf_token }}
         {{ form6.courseid.label }}
         {{ form6.courseid }}

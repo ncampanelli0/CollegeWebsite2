@@ -11,7 +11,7 @@
 
 
     <h2>add user to class</h2>
-    <form method = "Post" action = "{{ url_for('adminadduserclass') }}">
+    <form method = "Post" action = "/adminadduserclass">
     {{ form4.csrf_token }}
     {{ form4.username.label }}
     {{ form4.username }}

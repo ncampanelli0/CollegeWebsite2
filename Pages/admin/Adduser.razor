@@ -9,10 +9,8 @@
 
 <body>
 
-  {{ macro.header() }}
-
     <h2>create new user</h2>
-    <form method = "Post" action = "{{ url_for('adminadduser') }}">
+    <form method = "Post" action = "/adminadduser">
     {{ form.csrf_token }}
     {{ form.AccountType.label }}
     {{ form.AccountType }}

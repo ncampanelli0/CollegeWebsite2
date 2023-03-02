@@ -12,7 +12,7 @@
  <h2>edit user</h2>
 
  <p><kbd>required *</kbd></p>
-    <form method = "Post" action = "{{ url_for('adminedituser') }}">
+    <form method = "Post" action = "/adminedituser">
     {{ form2.csrf_token }}
     {{ form2.email.label }} <kbd>*</kbd>
     {{ form2.email }}@@clearwater.edu

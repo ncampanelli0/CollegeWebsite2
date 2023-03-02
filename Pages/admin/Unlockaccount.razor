@@ -12,7 +12,7 @@
   {{ macro.header() }}
 
     <h2>unlock account:</h2>
-    <form method = "Post" action = "{{ url_for('adminunlockaccount') }}">
+    <form method = "Post" action = "/adminunlockaccount">
       {{ form.csrf_token }}
       {{ form.username.label }}
       {{ form.username }}

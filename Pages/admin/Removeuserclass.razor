@@ -11,7 +11,7 @@
 
     <h2>remove user</h2>
 
-    <form method = "Post" action = "{{ url_for('adminremoveuserclass') }}">
+    <form method = "Post" action = "/adminremoveuserclass">
         {{ form6.csrf_token }}
         {{ form6.slotid.label }}
         {{ form6.slotid }}

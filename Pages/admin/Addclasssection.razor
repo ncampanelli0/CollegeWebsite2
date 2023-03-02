@@ -9,11 +9,9 @@
 
 <body>
 
-  {{ macro.header() }}
-
 
      <h2>add class section</h2>
-    <form method = "Post" action = "{{ url_for('adminaddclasssection') }}">
+    <form method = "Post" action = "/adminaddclasssection">
         {{ form.csrf_token }}
         <br>
         {{ form.crn.label }}

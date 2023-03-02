@@ -11,7 +11,7 @@
 
 
   <h2>view semester and transcript</h2>
-  <form method = "Post" action = "{{ url_for('adminviewallusers') }}">
+  <form method = "Post" action = "/adminviewallusers"
     {{ form3.csrf_token }}
     {{ form3.username.label }}
     {{ form3.username }}

@@ -10,7 +10,7 @@
 <body>
 
 <h2>add new course</h2>
-    <form method = "Post" action = "{{ url_for('adminaddnewcourse') }}">
+    <form method = "Post" action = "/adminaddnewcourse">
         {{ form3.csrf_token }}
         <br>
         {{ form3.coursename.label }}
