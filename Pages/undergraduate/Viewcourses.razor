@@ -22,18 +22,19 @@
               <th>Department</th>
               <th>Description</th>
               
-            </tr>
+            </th>
             </thead>
             <tbody>
 
             {% for klasses in klass %}
-                <th class = "list item"></<i class="fa fa-th" aria-hidden="true"></i>>
+                <th class = "list item">
                 <td>{{ klasses.CourseName }}</td>
                 <td>{{ klasses.Type }}</td>
                 <td>{{ klasses.Prerequiste }}</td>
                 <td>{{ klasses.MinimumRequirements }}</td>
                 <td>{{ klasses.Department }}</td>
                 <td>{{ klasses.Description }}</td>
+                </th>
                
                 
             {% endfor %}
