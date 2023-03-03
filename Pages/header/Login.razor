@@ -1,5 +1,5 @@
 @page "/login"
-@inject Blazored.SessionStorage.ISessionStorageService session
+@inject ProtectedLocalStorage storage
 
 
 <!doctype html>
@@ -11,13 +11,48 @@
     
 </head>
   <body>
-      <button @onclick = "@setSession">set session data</button>
+      <button @onclick = "@StoreValueAsync">set session data</button>
+
+      <button @onclick = "@removeValueAsync">remove session data</button>
+
+      <button @onclick = "@getValueAsync">get values</button>
+
+      @testString
+
+      
   </body>
 
 @code
 {
-    public void setSession()
+    private string? testString = "teststring";
+
+    public void StoreValueAsync()
     {
-        
+        storage.SetAsync("username", "user");
+        storage.SetAsync("password", "pass");
     }
-  }
+
+    public void removeValueAsync()
+    {
+        storage.DeleteAsync("username");
+        storage.DeleteAsync("password");
+    }
+
+    public void getValueAsync()
+    {
+        string? user = storage.GetAsync<string>("username").ToString();
+        var pass = storage.GetAsync<string>("password");
+
+        if (user != null)
+        {
+            testString = user + " and user is not null";
+        }
+        else
+        {
+            testString = user + "and user is null";
+        }
+
+    }
+
+
+}
