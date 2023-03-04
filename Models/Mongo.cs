@@ -33,6 +33,14 @@ public class Mongo
         return collection.Find(filter).First();
     }
 
+    public T LoadRecordByString<T>(string table, string field, string search)
+    {
+        var collection = db.GetCollection<T>(table);
+        var filter = Builders<T>.Filter.Eq(field, search);
+
+        return collection.Find(filter).First();
+    }
+
     public void UpsertRecord<T>(string table, BsonBinaryData id, T record)
     {
         var collection = db.GetCollection<T>(table);

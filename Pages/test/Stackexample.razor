@@ -1,0 +1,47 @@
+﻿@page "/stackexample"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage BrowserStorage
+
+<PageTitle>Index</PageTitle>
+
+<h1>Test Local Storage</h1>
+
+<input class="form-control mb-3" type="text" @bind-value="Model.Value" @bind-value:event="oninput" />
+
+<button class="btn btn-success" @onclick="SetValueAsync">Save</button>
+<button class="btn btn-primary" @onclick="GetValueAsync">Read</button>
+
+<div class="alert alert-info m-3">Current Value: @Model.Value</div>
+
+@code {
+    [Inject] private LocalStorageService _storage { get; set; } = default!;
+    const string key = "mydata";
+    private MyData Model = new();
+
+    async Task SetValueAsync()
+    {
+        await BrowserStorage.SetAsync(key, Model);
+    }
+
+    async Task GetValueAsync()
+    {
+        var result = await BrowserStorage.GetAsync<MyData>(key);
+        Model = result.Value ?? new MyData();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var result = await BrowserStorage.GetAsync<MyData>(key);
+            Model = result.Value ?? new MyData();
+            if (result.Success)
+                StateHasChanged();
+        }
+    }
+
+    public class MyData
+    {
+        public string? Value { get; set; }
+    }
+}

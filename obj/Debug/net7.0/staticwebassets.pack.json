@@ -369,14 +369,6 @@
       "PackagePath": "staticwebassets\\import\\datatables.min.js"
     },
     {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\footable.bootstrap.min.css",
-      "PackagePath": "staticwebassets\\import\\footable.bootstrap.min.css"
-    },
-    {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\footable.min.js",
-      "PackagePath": "staticwebassets\\import\\footable.min.js"
-    },
-    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\jquery.js",
       "PackagePath": "staticwebassets\\import\\jquery.js"
     },

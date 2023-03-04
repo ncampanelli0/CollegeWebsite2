@@ -3,29 +3,28 @@
 
 
 <!doctype html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>login</title>
 
-    
+
 </head>
-  <body>
-      <button @onclick = "@StoreValueAsync">set session data</button>
+<body>
+    <button @onclick="@StoreValueAsync">set session data</button>
 
-      <button @onclick = "@removeValueAsync">remove session data</button>
+    <button @onclick="@removeValueAsync">remove session data</button>
 
-      <button @onclick = "@getValueAsync">get values</button>
+    <button @onclick = "@getValueAsync">get value</button>
 
-      @testString
+    @testString
 
-      
-  </body>
+
+</body>
 
 @code
 {
-    private string? testString = "teststring";
-
+    private string testString = "nothing";
 
     public void StoreValueAsync()
     {
@@ -41,18 +40,15 @@
 
     public void getValueAsync()
     {
-        string? user = storage.GetAsync<string>("username").ToString();
+        var user = storage.GetAsync<string>("username");
         var pass = storage.GetAsync<string>("password");
+
 
         if (user != null)
         {
-            testString = user + " and user is not null";
+            testString = user.ToString() + "string";
         }
-        else
-        {
-            testString = user + "and user is null";
-        }
-
+        
     }
 
 

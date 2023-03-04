@@ -1,34 +1,40 @@
 ﻿@page "/blazoredlocalstoragetest"
 @inject Blazored.LocalStorage.ILocalStorageService storage
 
-<input type="text" @bind = "sessionValue" class = "form-control"/>
+<input type="text" @bind = "email" placeholder = "email"/>
 <br />
-
-<button class=" btn btn-success" @onclick = "saveSession">save session</button>
-<button class=" btn btn-success" @onclick = "clearSession">clear session</button>
-<br /> <br />
-
-<span style = "color: red;">@sessionValue</span>
+<input type="password" @bind = "password" placeholder = "password"/>
+<button class= "btncolor" @onclick = "saveSession">save</button>
+<button class= "btncolor" @onclick = "clearSession">clear</button>
 
 @code 
 {
-    string sessionValue = "";
-    string message = "";
+    string email;
+    string password;
+    string view;
 
-    protected override async Task OnInitializedAsync()
+ protected override async Task OnInitializedAsync()
     {
-        sessionValue = await storage.GetItemAsync<string>("sessionValue");
+
     }
 
     public async void saveSession()
     {
-        await storage.SetItemAsync("mysessionvalue", sessionValue);
+        await storage.SetItemAsync("email", "test email");
+        await storage.SetItemAsync("password", "test password");
     }
 
     public async void clearSession()
     {
-        message = "session cleared";
-        sessionValue = "";
         await storage.ClearAsync();
+    }
+
+    private void login()
+    {
+        Mongo mongo = new Mongo("college-site-2");
+
+        var userQuery = mongo.LoadRecordByString<string>("AllUser", "Email", email);
+        var passQuery = mongo.LoadRecordByString<string>("AllUser", "Email", email);
+
     }
 }
