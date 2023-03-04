@@ -24,6 +24,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\import\bootstrap.min.js" />
+    <None Include="wwwroot\import\bootstrap.min.js.map" />
+    <None Include="wwwroot\import\datatables.min.js" />
+    <None Include="wwwroot\import\footable.min.js" />
+    <None Include="wwwroot\import\jquery.js" />
+    <None Include="wwwroot\import\popper.min.js" />
+    <None Include="wwwroot\script\shared.js" />
+    <None Include="wwwroot\script\table.js" />
+    <None Include="wwwroot\stylesheet\bootstrap.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.3.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />

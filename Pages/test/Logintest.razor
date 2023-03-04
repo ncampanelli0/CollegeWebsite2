@@ -1,26 +1,26 @@
-@page "/login"
+﻿@page "/logintest"
 @inject ProtectedLocalStorage storage
 
 
 <!doctype html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>login</title>
 
-
+    
 </head>
-<body>
-    <button @onclick="@StoreValueAsync">set session data</button>
+  <body>
+      <button @onclick = "@StoreValueAsync">set session data</button>
 
-    <button @onclick="@removeValueAsync">remove session data</button>
+      <button @onclick = "@removeValueAsync">remove session data</button>
 
-    <button @onclick="@getValueAsync">get values</button>
+      <button @onclick = "@getValueAsync">get values</button>
 
-    @testString
+      @testString
 
-
-</body>
+      
+  </body>
 
 @code
 {

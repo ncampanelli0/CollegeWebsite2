@@ -1,0 +1,34 @@
+﻿@page "/blazoredlocalstoragetest"
+@inject Blazored.LocalStorage.ILocalStorageService storage
+
+<input type="text" @bind = "sessionValue" class = "form-control"/>
+<br />
+
+<button class=" btn btn-success" @onclick = "saveSession">save session</button>
+<button class=" btn btn-success" @onclick = "clearSession">clear session</button>
+<br /> <br />
+
+<span style = "color: red;">@sessionValue</span>
+
+@code 
+{
+    string sessionValue = "";
+    string message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        sessionValue = await storage.GetItemAsync<string>("sessionValue");
+    }
+
+    public async void saveSession()
+    {
+        await storage.SetItemAsync("mysessionvalue", sessionValue);
+    }
+
+    public async void clearSession()
+    {
+        message = "session cleared";
+        sessionValue = "";
+        await storage.ClearAsync();
+    }
+}

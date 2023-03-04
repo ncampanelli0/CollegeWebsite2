@@ -197,12 +197,208 @@
       "PackagePath": "staticwebassets\\homepageimage\\hompageimage1.jpg"
     },
     {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\ACS_Logo.jpg",
+      "PackagePath": "staticwebassets\\image\\accreditation\\ACS_Logo.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\MSCHE.png",
+      "PackagePath": "staticwebassets\\image\\accreditation\\MSCHE.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\NYSEDLogo.png",
+      "PackagePath": "staticwebassets\\image\\accreditation\\NYSEDLogo.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\aaqep_blues_small.jpg",
+      "PackagePath": "staticwebassets\\image\\accreditation\\aaqep_blues_small.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\ceph_bachelors_only_red_transparent.png",
+      "PackagePath": "staticwebassets\\image\\accreditation\\ceph_bachelors_only_red_transparent.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Abby Kinleyside.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Abby Kinleyside.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Belle Leftridge.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Belle Leftridge.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Benson Curneen.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Benson Curneen.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Casie Panons.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Casie Panons.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Elliot Strickland.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Elliot Strickland.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Jenni Athridge.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Jenni Athridge.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Kala Leban.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Kala Leban.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Maresa Levings.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Maresa Levings.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Marve Leborne.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Marve Leborne.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Marven Lamyman.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Marven Lamyman.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Mich Whitfield.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Mich Whitfield.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Pauly Pitrasso.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Pauly Pitrasso.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Sadie Aspinal.png",
+      "PackagePath": "staticwebassets\\image\\departmenthead\\Sadie Aspinal.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\3rdway.jpg",
+      "PackagePath": "staticwebassets\\image\\distinction\\3rdway.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\BB-Journal.gif",
+      "PackagePath": "staticwebassets\\image\\distinction\\BB-Journal.gif"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\On-Acctg-Value.jpg",
+      "PackagePath": "staticwebassets\\image\\distinction\\On-Acctg-Value.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\Study_Recognized_School_Badge.png",
+      "PackagePath": "staticwebassets\\image\\distinction\\Study_Recognized_School_Badge.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\TreeCampus2019-web.gif",
+      "PackagePath": "staticwebassets\\image\\distinction\\TreeCampus2019-web.gif"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\UNAI.gif",
+      "PackagePath": "staticwebassets\\image\\distinction\\UNAI.gif"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\USAT-CF-diversity-ethnic18.png",
+      "PackagePath": "staticwebassets\\image\\distinction\\USAT-CF-diversity-ethnic18.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\heed_logo2021_small.jpg",
+      "PackagePath": "staticwebassets\\image\\distinction\\heed_logo2021_small.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\presidents-honor-roll-banner.jpg",
+      "PackagePath": "staticwebassets\\image\\distinction\\presidents-honor-roll-banner.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\usnwrsquare.png",
+      "PackagePath": "staticwebassets\\image\\distinction\\usnwrsquare.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\collegelogo.png",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\collegelogo.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage1.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\homepage1.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage2.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\homepage2.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage3.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\homepage3.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepageimage2.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\homepageimage2.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepageimage3.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\homepageimage3.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\hompageimage1.jpg",
+      "PackagePath": "staticwebassets\\image\\homepageimage\\hompageimage1.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\image\\placeholder.jpg"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\salmon.png",
+      "PackagePath": "staticwebassets\\image\\salmon.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_asc.png",
+      "PackagePath": "staticwebassets\\image\\sort_asc.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_both.png",
+      "PackagePath": "staticwebassets\\image\\sort_both.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_desc.png",
+      "PackagePath": "staticwebassets\\image\\sort_desc.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\import\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\import\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\datatables.min.js",
+      "PackagePath": "staticwebassets\\import\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\footable.bootstrap.min.css",
+      "PackagePath": "staticwebassets\\import\\footable.bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\footable.min.js",
+      "PackagePath": "staticwebassets\\import\\footable.min.js"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\jquery.js",
+      "PackagePath": "staticwebassets\\import\\jquery.js"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\popper.min.js",
+      "PackagePath": "staticwebassets\\import\\popper.min.js"
+    },
+    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\placeholder.jpg",
       "PackagePath": "staticwebassets\\placeholder.jpg"
     },
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\salmon.png",
       "PackagePath": "staticwebassets\\salmon.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\script\\shared.js",
+      "PackagePath": "staticwebassets\\script\\shared.js"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\script\\table.js",
+      "PackagePath": "staticwebassets\\script\\table.js"
     },
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_asc.png",
@@ -215,6 +411,26 @@
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_desc.png",
       "PackagePath": "staticwebassets\\sort_desc.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\stylesheet\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\stylesheet\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\datatables.min.css",
+      "PackagePath": "staticwebassets\\stylesheet\\datatables.min.css"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\style.css",
+      "PackagePath": "staticwebassets\\stylesheet\\style.css"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\teststyle.css",
+      "PackagePath": "staticwebassets\\stylesheet\\teststyle.css"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.CollegeWebsite2.Microsoft.AspNetCore.StaticWebAssets.props",
