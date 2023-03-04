@@ -5,6 +5,8 @@ namespace CollegeWebsite2.Models
 {
     public class Advisor
     {
+
+        [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
         [BsonElement("FirstName")]

@@ -6,6 +6,7 @@ namespace CollegeWebsite2.Models
     public class GradCourses
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id {get; set;}
 
         [BsonElement("CourseName")]

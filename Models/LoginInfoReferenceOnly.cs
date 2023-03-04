@@ -6,6 +6,7 @@ namespace CollegeWebsite2.Models
     public class LoginInfoReferenceOnly
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id {get; set;}
 
         [BsonElement("UserID")]

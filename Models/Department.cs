@@ -6,6 +6,7 @@ namespace CollegeWebsite2
     public class Department
     {
         [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id {get; set;}
 
         [BsonElement("Departments")]
