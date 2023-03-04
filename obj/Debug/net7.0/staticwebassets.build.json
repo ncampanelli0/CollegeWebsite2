@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QSxqUwLE0lfkspTsi07FlL1/AgQgHPXvOjJ3ROzWmcU=",
+  "Hash": "7rcfYPhOrLRk2EDweY8msNyWb6lBsQhsb+GW1LDiTXU=",
   "Source": "CollegeWebsite2",
   "BasePath": "_content/CollegeWebsite2",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "CollegeWebsite2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "BasePath": "_content/CollegeWebsite2",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
+    },
+    {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
@@ -270,23 +287,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
-    },
-    {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "CollegeWebsite2",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
-      "BasePath": "_content/CollegeWebsite2",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\ICON-LICENSE",

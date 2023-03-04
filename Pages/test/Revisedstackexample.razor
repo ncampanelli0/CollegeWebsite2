@@ -1,0 +1,54 @@
+﻿@page "/revisedstackexample"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedLocalStorage storage
+
+
+<div>
+    <button @onclick="@StoreValueAsync">set session data</button>
+
+    <button @onclick="@removeValueAsync">remove session data</button>
+
+    <button @onclick="@getValueAsync">get values</button>
+
+</div>
+
+<div class="alert alert-info m-3">
+    @testString
+</div>
+
+
+@code
+{
+    private string? testString = "teststring";
+
+    public void StoreValueAsync()
+    {
+        storage.SetAsync("username", "fred");
+        storage.SetAsync("password", "pass");
+    }
+
+    public void removeValueAsync()
+    {
+        storage.DeleteAsync("username");
+        storage.DeleteAsync("password");
+    }
+
+    public async Task getValueAsync()
+    {
+        string? user = null;
+        var result = await storage.GetAsync<string>("username");
+
+        if (result.Success)
+            user = result.Value;
+            
+
+        if (user != null)
+        {
+            testString = user + " and user is not null";
+        }
+        else
+        {
+            testString = user + "and user is null";
+        }
+    }
+}
