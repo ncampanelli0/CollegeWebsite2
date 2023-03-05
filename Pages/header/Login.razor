@@ -1,26 +1,68 @@
 @page "/login"
 @inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
 
+    <input type="text" placeholder="email" @bind-value = "email"/>
+    <br />
+    <input type="password" placeholder="password" @bind-value = "password"/>
+    <button @onclick="login" class = "btncolor">login</button>
 
-<!doctype html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>login</title>
-
-
-</head>
-<body>
-
-
-</body>
+    <p style="color: red">@notification</p>
 
 @code
 {
     Mongo mongo = new Mongo("college-site-2");
 
-    
-}
+    private string? email { get; set; }
+    private string? password { get; set; }
 
+    string notification = "";
+
+    private void login()
+    {
+        if (email != null && password != null)
+        {
+            var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+
+            /*
+            <p>Logged in as: {{session["email"]}}</p>
+            <p>Account Type: {{ session["accountType"] }}</p>
+            <p>User ID: {{ session["id"] }}</p>
+            <p>First Name: {{ session["firstName"] }}</p>
+            <p>Last Name: {{ session["lastName"] }}</p>
+            <p>Address: {{ session["address"] }}</p>
+            <p>Phonenumber: {{ session["phoneNumber"] }}</p>
+            <p>Advisor: {{ session["advisor"] }}</p>
+            <p> Hold Status: {{ session["hold"] }} </p>
+            <p>Major: {{ session["major"].Major }}</p>
+            <p>Minor: {{ session["minor"].Minor}}</p>
+
+             */
+
+
+            if (email == queryUser.Email && password == queryUser.Password)
+            {
+                storage.SetAsync("email", queryUser.Email);
+                storage.SetAsync("accountType", queryUser.AccountType);
+                storage.SetAsync("userId", queryUser.Id);
+                storage.SetAsync("firstName", queryUser.FirstName);
+                storage.SetAsync("lastName", queryUser.LastName);
+                storage.SetAsync("address", queryUser.Address);
+                storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
+                storage.SetAsync("advisor", queryUser.Advisor);
+                storage.SetAsync("holdStatus", queryUser.Holds);
+                storage.SetAsync("major", queryUser.Major);
+                storage.SetAsync("minor", queryUser.Minor);
+                storage.SetAsync("loggedIn", "true");
+
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        else
+        {
+            notification = "invalid username or password";
+        }
+
+    }
 
 }

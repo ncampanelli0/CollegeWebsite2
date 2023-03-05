@@ -1,4 +1,6 @@
 ﻿@inherits LayoutComponentBase
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
 
 <PageTitle>CollegeWebsite2</PageTitle>
 <div class="page">
@@ -30,8 +32,8 @@
 </div>
         
 <!-- {% if session["loggedIn"] == False or session["loggedIn"] is not defined %} -->
-@if (false)
-        
+
+@if (!loggedIn)
 {
             <ul class=navbar-nav>
                 <li class="nav-item">
@@ -56,7 +58,7 @@
                     </button>
                 </li>
             </ul>
-        }
+}
 
 
          <!-- {% if session["accountType"] == "Undergraduate" %} -->
@@ -202,7 +204,7 @@
         }
 
    <!-- {% if session["loggedIn"] == False or session["loggedIn"] is not defined %} -->
-        @if (false)
+        @if (!loggedIn)
         {
             <ul class=navbar-nav>
                 <li = class="nav-item">
@@ -257,3 +259,29 @@
     </div>
   </div>
   </div>
+
+
+@code
+{
+    private bool loggedIn { get; set; } = false;
+    private string accountType { get; set; } = "Visitor";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var loggedInCheck = await storage.GetAsync<bool>("loggedIn");
+        loggedIn = loggedInCheck.Value;
+
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != null)
+        {
+            accountType = accountTypeCheck.Value;
+        }
+        else
+        {
+            accountType = "Visitor";
+        }
+
+
+    }
+}
