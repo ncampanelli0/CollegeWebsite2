@@ -9,20 +9,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="CollegeWebsite2.styles.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon.png"/>
-    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
-    
-    <link rel="stylesheet" href="/stylesheet/bootstrap.min.css">
-    <script type="text/javascript" src="/import/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/import/jquery.js"></script>
-    <link rel="stylesheet" href="/stylesheet/datatables.min.css">
-    <script type="text/javascript" src="/import/datatables.min.js"></script>
-    <script type="text/javascript" src="/script/table.js"></script>
-    <script type="text/javascript" src="/script/shared.js"></script>
-    <link rel="stylesheet" href="stylesheet/style.css" />
+    <component type="typeof(HeadOutlet)" render-mode="Server" />
+    <script type="text/javascript" src="import/popper.min.js"></script>
+    <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
+    <script type="text/javascript" src="import/bootstrap.min.js"></script>
+    <script type="text/javascript" src="import/jquery.js"></script>
+    <link rel="stylesheet" href="stylesheet/datatables.min.css">
+    <script type="text/javascript" src="import/datatables.min.js"></script>
+    <script type="text/javascript" src="import/footable.min.js"></script>
+    <script type="text/javascript" src="script/table.js"></script>
+    <script type="text/javascript" src="script/shared.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='stylesheet/style.css">
 </head>
 <body>
     <component type="typeof(App)" render-mode="Server" />
