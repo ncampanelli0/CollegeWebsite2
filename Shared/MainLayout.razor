@@ -33,7 +33,7 @@
         
 <!-- {% if session["loggedIn"] == False or session["loggedIn"] is not defined %} -->
 
-@if (!loggedIn)
+@if (accountType == "Visitor")
 {
             <ul class=navbar-nav>
                 <li class="nav-item">
