@@ -18,7 +18,7 @@
 
     string notification = "";
 
-    private void login()
+    private async Task login()
     {
         if (email != null && password != null)
         {
@@ -42,18 +42,18 @@
 
             if (email == queryUser.Email && password == queryUser.Password)
             {
-                storage.SetAsync("email", queryUser.Email);
-                storage.SetAsync("accountType", queryUser.AccountType);
-                storage.SetAsync("userId", queryUser.Id);
-                storage.SetAsync("firstName", queryUser.FirstName);
-                storage.SetAsync("lastName", queryUser.LastName);
-                storage.SetAsync("address", queryUser.Address);
-                storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
-                storage.SetAsync("advisor", queryUser.Advisor);
-                storage.SetAsync("holdStatus", queryUser.Holds);
-                storage.SetAsync("major", queryUser.Major);
-                storage.SetAsync("minor", queryUser.Minor);
-                storage.SetAsync("loggedIn", true);
+                await storage.SetAsync("email", queryUser.Email);
+                await storage.SetAsync("accountType", queryUser.AccountType);
+                await storage.SetAsync("userId", queryUser.Id);
+                await storage.SetAsync("firstName", queryUser.FirstName);
+                await storage.SetAsync("lastName", queryUser.LastName);
+                await storage.SetAsync("address", queryUser.Address);
+                await storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
+                await storage.SetAsync("advisor", queryUser.Advisor);
+                await storage.SetAsync("holdStatus", queryUser.Holds);
+                await storage.SetAsync("major", queryUser.Major);
+                await storage.SetAsync("minor", queryUser.Minor);
+                await storage.SetAsync("loggedIn", true);
 
                 navigate.NavigateTo("/homepage");
             }

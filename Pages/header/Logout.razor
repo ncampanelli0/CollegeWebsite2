@@ -1,20 +1,24 @@
 @page "/logout"
-<!doctype html>
-  <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>logged out</title>
-  </head>
-
-<body>
-
-  {{ macro.header() }}
-
-
+@inject ProtectedLocalStorage storage
+    
     <h2>you have been logged out</h2>
 
-  {{macro.footer()}}
-
-  
-</body>
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await storage.DeleteAsync("email");
+        await storage.DeleteAsync("accountType");
+        await storage.DeleteAsync("userId");
+        await storage.DeleteAsync("firstName");
+        await storage.DeleteAsync("lastName");
+        await storage.DeleteAsync("address");
+        await storage.DeleteAsync("phoneNumber");
+        await storage.DeleteAsync("advisor");
+        await storage.DeleteAsync("holdStatus");
+        await storage.DeleteAsync("major");
+        await storage.DeleteAsync("minor");
+        await storage.DeleteAsync("loggedIn");
+        
+    }
+}
