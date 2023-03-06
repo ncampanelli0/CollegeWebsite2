@@ -6,20 +6,19 @@ namespace CollegeWebsite2.Models
     public class AllUser
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)] 
         public ObjectId Id {get; set;}
         [BsonElement("Schedule")]
-        public string[]? Schedule {get; set;}
+        public ObjectId[]? Schedule {get; set;}
         [BsonElement("SchedulePlainText")]
         public string[]? SchedulePlainText {get; set;}
         [BsonElement("ScheduleGrades")]
         public string[]? ScheduleGrades {get; set;}
         
         [BsonElement("Transcript")]
-        public string[]? Transcript {get; set;}
+        public ObjectId[]? Transcript {get; set;}
 
         [BsonElement("TranscriptCredits")]
-        public string[]? TranscriptCredits {get; set;}
+        public int[]? TranscriptCredits {get; set;}
 
         [BsonElement("TranscriptPlainText")]
         public string[]? TranscriptPlainText {get; set;}
@@ -28,10 +27,10 @@ namespace CollegeWebsite2.Models
         public string[]? TranscriptGrades {get; set;}
 
         [BsonElement("Major")]
-        public string Major {get; set;} = String.Empty;
+        public ObjectId Major {get; set;}
 
         [BsonElement("Minor")]
-        public string Minor {get; set;} = String.Empty;
+        public ObjectId Minor {get; set;}
         
         [BsonElement("FirstName")]
         public string FirstName {get; set;} = String.Empty;
@@ -57,14 +56,14 @@ namespace CollegeWebsite2.Models
         [BsonElement("LoginCounter")]
         public int LoginCounter {get; set;}
 
-        [BsonElement("PartOrFullTime")]
+        [BsonElement("PartorFullTime")]
         public string PartOrFullTime {get; set;} = String.Empty;
 
         [BsonElement("CreditsEarned")]
         public int CreditsEarned {get; set;} 
 
         [BsonElement("Advisor")]
-        public string Advisor {get; set;} = String.Empty;
+        public BsonObjectId Advisor {get; set;}
         
         [BsonElement("Holds")]
         public string Holds {get; set;} = String.Empty;

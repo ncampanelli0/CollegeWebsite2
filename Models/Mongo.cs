@@ -32,7 +32,7 @@ public class Mongo
     }
 
     /// <summary>
-    /// loads an entire collection (table) from the database and converts it to a list.
+    /// loads an entire record from the database and converts it to a list.
     /// </summary>
     /// <typeparam name="T">specfies the type of model to grab (which fields)</typeparam>
     /// <param name="table">specfies which table to search</param>
@@ -55,7 +55,6 @@ public class Mongo
     {
         var collection = db.GetCollection<T>(table);
         var filter = Builders<T>.Filter.Eq("Id", id);
-
         return collection.Find(filter).First();
     }
 

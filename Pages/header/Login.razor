@@ -23,23 +23,6 @@
         if (email != null && password != null)
         {
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-
-            /*
-            <p>Logged in as: {{session["email"]}}</p>
-            <p>Account Type: {{ session["accountType"] }}</p>
-            <p>User ID: {{ session["id"] }}</p>
-            <p>First Name: {{ session["firstName"] }}</p>
-            <p>Last Name: {{ session["lastName"] }}</p>
-            <p>Address: {{ session["address"] }}</p>
-            <p>Phonenumber: {{ session["phoneNumber"] }}</p>
-            <p>Advisor: {{ session["advisor"] }}</p>
-            <p> Hold Status: {{ session["hold"] }} </p>
-            <p>Major: {{ session["major"].Major }}</p>
-            <p>Minor: {{ session["minor"].Minor}}</p>
-
-             */
-
-
             if (email == queryUser.Email && password == queryUser.Password)
             {
                 await storage.SetAsync("email", queryUser.Email);
@@ -54,7 +37,7 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("loggedIn", true);
-
+                
                 navigate.NavigateTo("/homepage");
             }
         }
