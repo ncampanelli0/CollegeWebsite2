@@ -63,7 +63,7 @@
 
          <!-- {% if session["accountType"] == "Undergraduate" %} -->
 
-        @if (false)
+        @if (accountType == "Undergraduate")
         {
             <div class="btn-group">
                 <button type="button" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -94,7 +94,7 @@
         }
 
         <!--  {% if session["accountType"] == "Graduate" %} -->
-        @if (false)
+        @if (accountType == "Graduate")
         {
             <div class="btn-group">
                 <button type="button" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -128,7 +128,7 @@
 
         <!-- {% if session["accountType"] == "Admin" %} -->
             
-        @if (false)
+        @if (accountType == "Admin")
         {
             <div class="btn-group">
                 <button type="button" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -176,7 +176,7 @@
         }
 
         <!-- {% if session["accountType"] == "Faculty" %} -->
-        @if (false)
+        @if (accountType == "Faculty")
         {
             <div class="btn-group">
                 <button type="button" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -216,7 +216,7 @@
         }
 
   <!-- {% if session["loggedIn"] == True %} -->
-        @if (false)
+        @if (loggedIn == true)
         {
             <ul class=navbar-nav>
                 <li = class="nav-item">

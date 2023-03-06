@@ -53,7 +53,7 @@
                 storage.SetAsync("holdStatus", queryUser.Holds);
                 storage.SetAsync("major", queryUser.Major);
                 storage.SetAsync("minor", queryUser.Minor);
-                storage.SetAsync("loggedIn", "true");
+                storage.SetAsync("loggedIn", true);
 
                 navigate.NavigateTo("/homepage");
             }
