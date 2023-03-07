@@ -7,8 +7,8 @@ namespace CollegeWebsite2.Models
     {
 
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+        public BsonObjectId Id { get; set; }
+
         [BsonElement("FirstName")]
         public string FirstName {get; set;} = String.Empty;
         [BsonElement("LastName")]

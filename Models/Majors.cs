@@ -6,8 +6,7 @@ namespace CollegeWebsite2.Models
     public class Majors
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id {get; set;}
+        public BsonObjectId Id { get; set; }
 
         [BsonElement("Major")]
         public string Major {get; set;} = String.Empty;

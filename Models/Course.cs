@@ -6,8 +6,7 @@ namespace CollegeWebsite2.Models
     public class Course
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id {get; set;} = String.Empty;
+        public BsonObjectId Id { get; set; }
 
         [BsonElement("Crn")]
         public string CRN {get; set;} = String.Empty;
