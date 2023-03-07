@@ -15,6 +15,7 @@ namespace CollegeWebsite2.Models
         [BsonElement("Attendance")]
         public string[]? Attendance {get; set;}
 
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Enrolled")]
         public string[]? Enrolled {get; set;}
 
@@ -57,6 +58,7 @@ namespace CollegeWebsite2.Models
         [BsonElement("Day")]
         public string Day {get; set;} = String.Empty;
 
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Professor")]
         public string Professor {get; set;} = String.Empty;
 

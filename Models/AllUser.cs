@@ -8,7 +8,7 @@ namespace CollegeWebsite2.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id {get; set;}
-        
+
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Schedule")]
         public string[]? Schedule {get; set;}
