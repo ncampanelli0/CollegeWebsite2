@@ -10,80 +10,77 @@ namespace CollegeWebsite2.Models
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Schedule")]
-        public string[]? Schedule {get; set;}
+        public string[]? Schedule { get; set; } = null;
 
 
         [BsonElement("SchedulePlainText")]
-        public string[]? SchedulePlainText {get; set;}
+        public string[]? SchedulePlainText {get; set; } = null;
 
         [BsonElement("ScheduleGrades")]
-        public string[]? ScheduleGrades {get; set;}
+        public string[]? ScheduleGrades {get; set; } = null;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Transcript")]
-        public string[]? Transcript {get; set;}
+        public string[]? Transcript {get; set; } = null;
 
-        [BsonElement("TranscriptCredits")]
-        public int[]? TranscriptCredits {get; set;}
+        [BsonElement("TranscriptCredits")] public int[]? TranscriptCredits { get; set; } = null;
 
-        [BsonElement("TranscriptPlainText")]
-        public string[]? TranscriptPlainText {get; set;}
+        [BsonElement("TranscriptPlainText")] public string[]? TranscriptPlainText { get; set; } = null;
         
-        [BsonElement("TranscriptGrades")]
-        public string[]? TranscriptGrades {get; set;}
+        [BsonElement("TranscriptGrades")] public string[]? TranscriptGrades { get; set; } = null;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Major")]
-        public string? Major {get; set;}
+        public string? Major { get; set; } = null;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Minor")]
-        public string? Minor {get; set;}
-        
-        [BsonElement("FirstName")]
-        public string FirstName {get; set;} = String.Empty;
+        public string? Minor {get; set; } = null;
+
+        [BsonElement("FirstName")] 
+        public string? FirstName {get; set;} = null; 
         
         [BsonElement("LastName")]
-        public string LastName {get; set;} = String.Empty;
+        public string? LastName {get; set;} = null;
 
         [BsonElement("Birthday")]
-        public string Birthday {get; set;} = String.Empty;
+        public string? Birthday {get; set;} = null;
 
         [BsonElement("Email")]
-        public string Email {get; set;} = String.Empty;
+        public string? Email {get; set;} = null;
 
         [BsonElement("Password")]
-        public string Password {get; set;} = String.Empty;
+        public string? Password {get; set;} = null;
 
         [BsonElement("AccountType")]
-        public string AccountType {get; set;} = String.Empty;
+        public string? AccountType {get; set;} = null;
 
         [BsonElement("Address")]
-        public string Address {get; set;} = String.Empty;
-        
+        public string? Address {get; set;} = null;
+
         [BsonElement("LoginCounter")]
-        public int LoginCounter {get; set;}
+        public int LoginCounter { get; set; } = 0;
 
         [BsonElement("PartorFullTime")]
-        public string PartOrFullTime {get; set;} = String.Empty;
+        public string? PartOrFullTime {get; set;} = null;
 
         [BsonElement("CreditsEarned")]
-        public int CreditsEarned {get; set;}
+        public int CreditsEarned { get; set; } = 0;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Advisor")]
         public string? Advisor {get; set;}
         
         [BsonElement("Holds")]
-        public string Holds {get; set;} = String.Empty;
+        public string? Holds {get; set;} = null;
         
         [BsonElement("PhoneNumber")]
-        public string PhoneNumber {get; set;} = String.Empty;
+        public string? PhoneNumber {get; set;} = null;
 
         [BsonElement("Department")]
-        public string Department {get; set;} = String.Empty;
-        
+        public string? Department {get; set;} = null;
+
         [BsonElement("ClassCount")]
-        public int ClassCount {get; set;}
+        public int ClassCount { get; set; } = 0;
     }
 }

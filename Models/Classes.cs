@@ -9,72 +9,72 @@ namespace CollegeWebsite2.Models
         public BsonObjectId Id { get; set; }
 
         [BsonElement("Grades")]
-        public string[]? Grades {get; set;}
+        public string[]? Grades { get; set; } = null;
 
         [BsonElement("Attendance")]
-        public string[]? Attendance {get; set;}
+        public string[]? Attendance {get; set; } = null;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Enrolled")]
-        public string[]? Enrolled {get; set;}
+        public string[]? Enrolled {get; set; } = null;
 
         [BsonElement("AttendanceDate")]
-        public string[]? AttendanceDate {get; set;}
+        public string[]? AttendanceDate {get; set; } = null;
 
         [BsonElement("CourseName")]
-        public string CourseName {get; set;} = String.Empty;
+        public string CourseName {get; set;} = null;
 
         [BsonElement("Crn")]
-        public string CRN {get; set;} = String.Empty;
+        public string CRN {get; set;} = null;
 
         [BsonElement("Prerequiste")]
-        public string[]? Prerequiste {get; set;}
+        public string[]? Prerequiste {get; set; } = null;
 
         [BsonElement("MinimumRequirement")]
-        public string[]? MinimumRequirements {get; set;}
+        public string[]? MinimumRequirements {get; set; } = null;
 
         [BsonElement("Description")]
-        public string[]? Description {get; set;}
+        public string[]? Description {get; set; } = null;
 
         [BsonElement("RoomID")]
-        public int RoomID {get; set;}
+        public int? RoomID { get; set; } = null;
 
         [BsonElement("BuildingID")]
-        public int BuildingID {get; set;}
+        public int? BuildingID { get; set; } = null;
 
         [BsonElement("Type")]
-        public string Type {get; set;} = String.Empty;
+        public string? Type {get; set;} = null;
 
         [BsonElement("TimeSlot")]
-        public int TimeSlot {get; set;}
+        public int? TimeSlot {get; set; } = null;
 
         [BsonElement("Credits")]
-        public int Credits {get; set;}
+        public int? Credits {get; set; } = null;
 
         [BsonElement("MaxCapacity")]
-        public int MaxCapacity {get; set;}
+        public int MaxCapacity { get; set; } = 0;
 
         [BsonElement("Day")]
-        public string Day {get; set;} = String.Empty;
+        public string? Day {get; set;} = null;
 
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Professor")]
-        public string Professor {get; set;} = String.Empty;
+        public string? Professor {get; set;} = null;
 
         [BsonElement("Department")]
-        public string Department {get; set;} = String.Empty;
-        
+        public string? Department {get; set;} = null;
+
         [BsonElement("Year")]
-        public int Year {get; set;}
+        public int? Year { get; set; } = null;
 
         [BsonElement("Season")]
-        public string Season {get; set;} = String.Empty;
+        public string? Season {get; set;} = null;
 
         [BsonElement("StartDate")]
-        public string StartDate {get; set;} = String.Empty;
+        public string? StartDate {get; set;} = null;
 
         [BsonElement("EndDate")]
-        public string EndDate {get; set;} = String.Empty;
+        public string? EndDate {get; set;} = null;
 
     }
 }

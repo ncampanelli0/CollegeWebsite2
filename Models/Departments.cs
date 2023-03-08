@@ -3,15 +3,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CollegeWebsite2
 {
-    public class Department
+    public class Departments
     {
         [BsonId]
         public BsonObjectId Id { get; set; }
 
-        [BsonElement("Departments")]
-        public string Departments {get; set;} = String.Empty;
+        [BsonElement("Department")]
+        public string Department {get; set;}
 
         [BsonElement("CrnPrefix")]
-        public string CRNPrefix {get; set;} = String.Empty;
+        public string CRNPrefix {get; set;}
     }
 }

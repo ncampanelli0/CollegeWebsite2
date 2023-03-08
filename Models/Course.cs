@@ -9,22 +9,22 @@ namespace CollegeWebsite2.Models
         public BsonObjectId Id { get; set; }
 
         [BsonElement("Crn")]
-        public string CRN {get; set;} = String.Empty;
+        public string? CRN {get; set;} = null;
 
         [BsonElement("CourseName")]
-        public string CourseName {get; set;} = String.Empty;
+        public string CourseName {get; set;}
 
         [BsonElement("Prerequiste")]
-        public string[]? Prerequiste {get; set;}
+        public string[]? Prerequiste { get; set; } = null;
 
         [BsonElement("Description")]
-        public string[]? Description {get; set;}
+        public string Description { get; set; }
         
         [BsonElement("Type")]
-        public string Type {get; set;} = String.Empty;
+        public string Type {get; set;}
         
         [BsonElement("Department")]
-        public string Department {get; set;} = String.Empty;
+        public string Department {get; set;}
         
         [BsonElement("MinimumRequirements")]
         public string[]? MinimumRequirements {get; set;}
