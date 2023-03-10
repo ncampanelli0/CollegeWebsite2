@@ -276,7 +276,7 @@ kbd
     position: relative;
 }
 
-.content h3 
+.content h6 
 {
     color: #fff;
     font-size: 6em;
@@ -284,13 +284,13 @@ kbd
     transform: translate(-50%, -50%);
 }
 
-        .content h3:nth-child(1) 
+        .content h6:nth-child(1) 
         {
             color: transparent;
             -webkit-text-stroke: 3px #ffffff;
         }
 
-        .content h3:nth-child(2) 
+        .content h6:nth-child(2) 
         {
             color: #08b3e7;
             animation: animate 4s ease-in-out infinite;

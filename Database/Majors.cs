@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace CollegeWebsite2.Models
+namespace CollegeWebsite2.Database
 {
     public class Majors
     {

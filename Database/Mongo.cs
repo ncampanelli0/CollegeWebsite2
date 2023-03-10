@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using CollegeWebsite2.Models;
+using CollegeWebsite2.Database;
 
 /// <summary>
 ///  <c>Mongo:</c> connect to the database 

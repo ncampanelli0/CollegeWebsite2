@@ -1,26 +1,26 @@
 @page "/login"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
+@inject NotificationService NotificationService
 
     <input type="text" placeholder="email" @bind-value = "email"/>
     <br />
     <input type="password" placeholder="password" @bind-value = "password"/>
     <button @onclick="login" class = "btncolor">login</button>
 
-    <p style="color: red">@notification</p>
-
 @code
 {
     Mongo mongo = new Mongo("college-site-2");
-
+    Notify notify = new Notify();
     private string? email { get; set; }
     private string? password { get; set; }
 
-    string notification = "";
+
 
     private async Task login()
     {
-        if (email != null && password != null)
+
+    if (email != null && password != null)
         {
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
             if (email == queryUser.Email && password == queryUser.Password)
@@ -37,13 +37,14 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("loggedIn", true);
-                
+
                 navigate.NavigateTo("/homepage");
             }
         }
         else
         {
-            notification = "invalid username or password";
+            var notification = notify.NotificationError("Cannot Login", "Email or password is incorrect", 5000);
+            NotificationService.Notify(notification);
         }
 
     }
