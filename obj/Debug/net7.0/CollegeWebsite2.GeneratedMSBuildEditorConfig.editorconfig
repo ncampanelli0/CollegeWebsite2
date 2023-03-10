@@ -312,6 +312,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXFNhZGllYXNwaW5hbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXFRlc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/shared/Changemajorminor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2hhcmVkXENoYW5nZW1ham9ybWlub3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

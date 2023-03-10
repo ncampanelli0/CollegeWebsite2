@@ -1,5 +1,7 @@
 @page "/logout"
 @inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+
 <div class="stylecontent">
     <h2>you have been logged out</h2>
     </div>
@@ -19,6 +21,6 @@
         await storage.DeleteAsync("major");
         await storage.DeleteAsync("minor");
         await storage.DeleteAsync("loggedIn");
-        
+        navigate.NavigateTo("/homepage", true);
     }
 }

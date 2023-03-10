@@ -19,15 +19,15 @@
 
     private async Task login()
     {
-
-    if (email != null && password != null)
+        if (email != null && password != null)
         {
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
             if (email == queryUser.Email && password == queryUser.Password)
             {
+                Console.WriteLine("if statement activated");
                 await storage.SetAsync("email", queryUser.Email);
                 await storage.SetAsync("accountType", queryUser.AccountType);
-                await storage.SetAsync("userId", queryUser.Id);
+                //await storage.SetAsync("userId", queryUser.Id); //this causes the login system to break because it wants a boolean, god knows why so start demanding answers from him
                 await storage.SetAsync("firstName", queryUser.FirstName);
                 await storage.SetAsync("lastName", queryUser.LastName);
                 await storage.SetAsync("address", queryUser.Address);
@@ -37,13 +37,19 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("loggedIn", true);
-
-                navigate.NavigateTo("/homepage");
+                StateHasChanged();
+                navigate.NavigateTo("/homepage", true);
+            }
+            else
+            {
+                Console.WriteLine("else statement activated");
+                var notification = notify.NotificationError("Cannot Login", $"Email or password is incorrect {email} {password}", 5000);
+                NotificationService.Notify(notification);
             }
         }
         else
         {
-            var notification = notify.NotificationError("Cannot Login", "Email or password is incorrect", 5000);
+            var notification = notify.NotificationError("Cannot Login", "Email or password is missing", 5000);
             NotificationService.Notify(notification);
         }
 
