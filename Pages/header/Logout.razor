@@ -3,7 +3,7 @@
 @inject NavigationManager navigate
 
 <div class="stylecontent">
-    <h2>you have been logged out</h2>
+    <h2>you are being logged out</h2>
     </div>
 @code
 {
@@ -21,6 +21,8 @@
         await storage.DeleteAsync("major");
         await storage.DeleteAsync("minor");
         await storage.DeleteAsync("loggedIn");
+
+        
         navigate.NavigateTo("/homepage", true);
     }
 }

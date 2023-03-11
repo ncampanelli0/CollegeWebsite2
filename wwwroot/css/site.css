@@ -89,7 +89,7 @@ font-weight: 100;
     transform: translate(-50%,-50%);
 }
 
-table 
+.tableStyle !important 
 {
     width: 1400px;
     border-collapse: collapse;
