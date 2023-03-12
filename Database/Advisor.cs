@@ -27,7 +27,6 @@ namespace CollegeWebsite2.Database
         public int? LoginCounter { get; set; } = null;
         [BsonElement("PartorFullTime")]
         public string? PartOrFullTime {get; set;} = null;
-        
         [BsonElement("PhoneNumber")]
         public string? PhoneNumber {get; set;} = null;
 

@@ -1,0 +1,27 @@
+﻿@page "/updateclasses"
+
+<button @onclick = "updateclasses">update classes</button>
+
+@code
+{
+    private void updateclasses()
+    {
+        Mongo mongo = new Mongo("college-site-2");
+
+        var query = mongo.LoadRecord<Classes>("classes");
+        var query2 = mongo.LoadRecord<TimeWindow>("timeWindow");
+
+        Random random = new Random();
+
+        int rando = random.Next(0, 48);
+
+        foreach (var update in query)
+        {
+            rando = random.Next(0, 48);
+            update.Time = (ObjectId) query2[rando].Id;
+            Console.WriteLine($"{update.Time}");
+            mongo.UpsertRecord<Classes>("classes", update.Id, update);
+            
+        }
+    }
+}

@@ -9,17 +9,17 @@ namespace CollegeWebsite2.Database
         public BsonObjectId Id { get; set; }
 
         [BsonElement("Grades")]
-        public string[]? Grades { get; set; } = null;
+        public BsonArray Grades { get; set; } = null;
 
+        
         [BsonElement("Attendance")]
-        public string[]? Attendance {get; set; } = null;
+        public BsonArray Attendance { get; set; } = null;
 
-        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Enrolled")]
-        public string[]? Enrolled {get; set; } = null;
+        public BsonArray Enrolled {get; set; } = null;
 
         [BsonElement("AttendanceDate")]
-        public string[]? AttendanceDate {get; set; } = null;
+        public BsonArray? AttendanceDate {get; set; } = null;
 
         [BsonElement("CourseName")]
         public string CourseName {get; set;} = null;
@@ -34,7 +34,7 @@ namespace CollegeWebsite2.Database
         public string[]? MinimumRequirements {get; set; } = null;
 
         [BsonElement("Description")]
-        public string[]? Description {get; set; } = null;
+        public string? Description {get; set; }
 
         [BsonElement("RoomID")]
         public int? RoomID { get; set; } = null;
@@ -75,6 +75,9 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("EndDate")]
         public string? EndDate {get; set;} = null;
+
+        [BsonElement("Time")]
+        public ObjectId Time { get; set; }
 
     }
 }
