@@ -1,13 +1,13 @@
 ﻿@page "/tabletest"
 
 
-<RadzenDataGrid class= "--rz-primary-light" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
     Data="@queryUser" TItem="AllUser" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
     <Columns>
-        <RadzenDataGridColumn TItem="AllUser" Property="FirstName" Title="First Name" Frozen="true" Width="160px" />
-        <RadzenDataGridColumn TItem="AllUser" Property="LastName" Title="Last Name" Frozen="true" Width="160px" />
-        <RadzenDataGridColumn TItem="AllUser" Property="Email" Title="Email" Frozen="true" Width="160px" />
-        <RadzenDataGridColumn TItem="AllUser" Property="AccountType" Title="Account Type" Frozen="true" Width="160px" />
+        <RadzenDataGridColumn TItem="AllUser" Property="FirstName" Title="First Name" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="AllUser" Property="LastName" Title="Last Name" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="AllUser" Property="Email" Title="Email" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="AllUser" Property="AccountType" Title="Account Type" Frozen="true" Width="0px" />
     </Columns>
 </RadzenDataGrid>
 
