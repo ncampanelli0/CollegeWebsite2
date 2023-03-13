@@ -1,9 +1,23 @@
 @page "/visitor/masterschedule"
 
-<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Data="@query" TItem="Classes" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Data="@queryUser"  TItem = "Classes" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
     <Columns>
+        <RadzenDataGridColumn TItem="Classes" Property="CourseName" Title="Course Name" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="Section" Title="Section" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="Description" Title="Description" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="RoomID" Title="Room ID" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="BuildingID" Title="Building ID" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="Type" Title="Type" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="Professor" Title="Professor" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="Department" Title="Department" Frozen="true" Width="0px" />
         <RadzenDataGridColumn TItem="Classes" Property="CRN" Title="CRN" Frozen="true" Width="0px" />
-        <RadzenDataGridColumn TItem="Classes" Property="" Title="Section" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="TimeWindow" Property="StartDate" Title="Time" Frozen="true" Width="0px" />
+    </Columns>
+</RadzenDataGrid>
+
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Data="@queryTime" TItem="TimeWindow" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+    <Columns>
+        <RadzenDataGridColumn TItem="TimeWindow" Property="StartDate" Title="Course Name" Frozen="true" Width="0px" />
     </Columns>
 </RadzenDataGrid>
 
@@ -12,12 +26,28 @@
 {
 
     Mongo mongo = new Mongo("college-site-2");
-    IEnumerable<Classes> query;
+    List<Classes> queryUser;
+    List<TimeWindow> queryTime;
 
 
     protected override async Task OnInitializedAsync()
     {
-        query = mongo.LoadRecord<Classes>("classes");
+        queryUser = mongo.LoadRecord<Classes>("classes");
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
+
+        var combined = 
+        from user in queryUser
+        join time in queryTime on user.TimeID equals time.Id
+        select new
+        {
+            StartDate = time.StartDate,
+            EndDate = time.EndDate,
+            Semester = time.Semester,
+            Period = time.Period,
+            GradeLimit = time.GradeLimit,
+            RegisterationLimit = time.RegistrationLimit,
+            WithdrawLimit = time.WithdrawLimit
+        };
     }
 
 }

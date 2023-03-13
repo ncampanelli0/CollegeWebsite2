@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using CollegeWebsite2.Database;
+using MongoDB.Driver.Linq;
 
 /// <summary>
 ///  <c>Mongo:</c> connect to the database 
@@ -17,6 +18,8 @@ public class Mongo
     {
         var client = new MongoClient("mongodb+srv://admin:2bRNijsPDrHkwcb2@college-site.ot9hk.mongodb.net/college-site-2");
         db = client.GetDatabase(database);
+
+        
     }
 
     /// <summary>
@@ -44,13 +47,20 @@ public class Mongo
         return collection.Find(new BsonDocument()).ToList();
     }
 
-    public List<T> LoadSortedRecord<T>(string table, string field)
+    public List<T> LoadRecordSortedDes<T>(string table, string field)
     {
         var collection = db.GetCollection<T>(table);
-
         var sort = Builders<T>.Sort.Descending(field);
 
         return collection.Find(new BsonDocument()).Sort(sort).ToList();
+    }
+
+    public List<T> LoadRecordSortedAsc<T>(string table, string field)
+    {
+        var collection = db.GetCollection<T>(table);
+        var sort = Builders<T>.Sort.Ascending(field);
+
+        return collection.Find(new BsonDocument{}).Sort(sort).ToList();
     }
 
     /// <summary>
@@ -64,6 +74,7 @@ public class Mongo
     {
         var collection = db.GetCollection<T>(table);
         var filter = Builders<T>.Filter.Eq("Id", id);
+
         return collection.Find(filter).First();
     }
 

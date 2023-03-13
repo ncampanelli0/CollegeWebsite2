@@ -1,0 +1,176 @@
+@page "/developer/writetodatabase"
+
+<style>
+    button
+    {
+        color: red;
+        background-color: black;
+    }
+
+    h2
+    {
+        color: red;
+        background-color:black;
+        text-align: center;
+    }
+</style>
+
+<h2>developer page (database writer)</h2>
+
+<button @onclick="updatePasswords">update passwords</button>
+
+<button @onclick="updateclasses">update classes</button>
+
+<button @onclick = "CourseID">course id generation</button>
+
+<button @onclick = "sectionNumber">section number generation</button>
+
+<button @onclick="moveTimeWindowToClasses">move time window to classes</button>
+
+@code 
+{
+    string finalString = "";
+    Random random = new Random();
+    Mongo mongo = new Mongo("college-site-2");
+
+    private void updatePasswords()
+    {
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var stringChars = new char[8];
+        var random = new Random();
+
+
+        var list = new List<string> { };
+        var counter = 0;
+        for (int i = 0; i < 5000; i++)
+        {
+            for (int j = 0; j < stringChars.Length; j++)
+            {
+                stringChars[j] = chars[random.Next(chars.Length)];
+            }
+
+            finalString = new String(stringChars);
+            list.Add(finalString);
+            Console.WriteLine($"counter1: {counter}   {list[counter]}");
+            counter++;
+
+        }
+
+        var userQuery = mongo.LoadRecord<AllUser>("allUser");
+        var advisorQuery = mongo.LoadRecord<Advisor>("advisor");
+
+
+        int counter2 = 0;
+        Console.WriteLine("before write");
+        foreach (var user in userQuery)
+        {
+            Console.WriteLine($"{list.Count}");
+            Console.WriteLine($"before: {user.Password}");
+            user.Password = list[counter2];
+            mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+            Console.WriteLine($"after: {user.Password}");
+            Console.WriteLine($"counter2 {counter2}   {list[counter2]}");
+            counter2++;
+
+        }
+
+        foreach (var advisor in advisorQuery)
+        {
+            Console.WriteLine($"{list.Count}");
+            Console.WriteLine($"before: {advisor.Password}");
+            advisor.Password = list[counter2];
+            mongo.UpsertRecord<Advisor>("advisor", advisor.Id, advisor);
+            Console.WriteLine($"after: {advisor.Password}");
+            Console.WriteLine($"counter2 {counter2}   {list[counter2]}");
+            counter2++;
+        }
+
+    }
+
+    private void updateclasses()
+    {
+
+        var query = mongo.LoadRecord<Classes>("classes");
+        var query2 = mongo.LoadRecord<TimeWindow>("timeWindow");
+
+        int rando = random.Next(0, 48);
+
+        foreach (var update in query)
+        {
+            rando = random.Next(0, 48);
+            update.TimeID = (ObjectId)query2[rando].Id;
+            Console.WriteLine($"{update.TimeID}");
+            mongo.UpsertRecord<Classes>("classes", update.Id, update);
+
+        }
+    }
+
+
+
+
+    private void CourseID()
+    {
+
+
+        var query = mongo.LoadRecord<Classes>("classes");
+        int y = 1000;
+        foreach (var whatever in query) 
+        {
+            whatever.CRN = y;
+            Console.WriteLine($"{y}");
+            mongo.UpsertRecord<Classes>("classes",whatever.Id,whatever);
+            y++;
+        }
+
+    }
+
+    private void sectionNumber()
+    {
+        var query = mongo.LoadRecordSortedAsc<Classes>("classes", "CourseName");
+
+
+        int sectionNum = 0;
+        string currentCourseName = "";
+        foreach (var x in query)
+        {
+
+            if (x.CourseName == currentCourseName)
+            {
+                sectionNum++;
+            }
+            else
+            {
+                sectionNum = 0;
+            }
+            currentCourseName = x.CourseName;
+            x.Section = "00" + (sectionNum+1).ToString();
+            mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            Console.WriteLine($"{x.CourseName}");
+        }
+
+    }
+
+    private void moveTimeWindowToClasses()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+        Console.WriteLine("running moveTimeWindowToClasses()");
+        foreach (var classes in queryClasses)
+        {
+            var queryTimeWindow = mongo.LoadRecordById<TimeWindow>("timeWindow", classes.TimeID);
+
+            classes.Semester = queryTimeWindow.Semester;
+            classes.Period = queryTimeWindow.Period;
+            classes.StartDate = queryTimeWindow.StartDate;
+            classes.EndDate = queryTimeWindow.EndDate;
+            classes.GradeLimit = queryTimeWindow.GradeLimit;
+            classes.RegistrationLimit = queryTimeWindow.RegistrationLimit;
+            classes.WithdrawLimit = queryTimeWindow.WithdrawLimit;
+
+            mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
+        }
+        Console.WriteLine("done updating table");
+    }
+
+
+}
