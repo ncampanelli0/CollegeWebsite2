@@ -1,0 +1,23 @@
+@page "/visitor/masterschedule"
+
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Data="@query" TItem="Classes" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+    <Columns>
+        <RadzenDataGridColumn TItem="Classes" Property="CRN" Title="CRN" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Classes" Property="" Title="Section" Frozen="true" Width="0px" />
+    </Columns>
+</RadzenDataGrid>
+
+
+@code
+{
+
+    Mongo mongo = new Mongo("college-site-2");
+    IEnumerable<Classes> query;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        query = mongo.LoadRecord<Classes>("classes");
+    }
+
+}

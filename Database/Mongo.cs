@@ -44,6 +44,15 @@ public class Mongo
         return collection.Find(new BsonDocument()).ToList();
     }
 
+    public List<T> LoadSortedRecord<T>(string table, string field)
+    {
+        var collection = db.GetCollection<T>(table);
+
+        var sort = Builders<T>.Sort.Descending(field);
+
+        return collection.Find(new BsonDocument()).Sort(sort).ToList();
+    }
+
     /// <summary>
     /// loads the first found document matching the specified id in the specified table
     /// </summary>

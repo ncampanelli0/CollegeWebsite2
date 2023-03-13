@@ -11,7 +11,9 @@ namespace CollegeWebsite2.Database
         [BsonElement("Grades")]
         public BsonArray Grades { get; set; } = null;
 
-        
+        [BsonElement("CRN")]
+        public int? CRN {get; set; } 
+
         [BsonElement("Attendance")]
         public BsonArray Attendance { get; set; } = null;
 
@@ -24,14 +26,17 @@ namespace CollegeWebsite2.Database
         [BsonElement("CourseName")]
         public string CourseName {get; set;} = null;
 
-        [BsonElement("Crn")]
-        public string CRN {get; set;} = null;
+        [BsonElement("PotentialID")]
+        public string PotentialID {get; set;} = null;
+
+        [BsonElement("Section")]
+        public string? Section {get; set;} 
 
         [BsonElement("Prerequiste")]
-        public string[]? Prerequiste {get; set; } = null;
+        public BsonArray? Prerequiste {get; set; } = null;
 
         [BsonElement("MinimumRequirement")]
-        public string[]? MinimumRequirements {get; set; } = null;
+        public BsonArray? MinimumRequirements {get; set; } = null;
 
         [BsonElement("Description")]
         public string? Description {get; set; }
@@ -44,9 +49,6 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("Type")]
         public string? Type {get; set;} = null;
-
-        [BsonElement("TimeSlot")]
-        public int? TimeSlot {get; set; } = null;
 
         [BsonElement("Credits")]
         public int? Credits {get; set; } = null;
@@ -63,18 +65,6 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("Department")]
         public string? Department {get; set;} = null;
-
-        [BsonElement("Year")]
-        public int? Year { get; set; } = null;
-
-        [BsonElement("Season")]
-        public string? Season {get; set;} = null;
-
-        [BsonElement("StartDate")]
-        public string? StartDate {get; set;} = null;
-
-        [BsonElement("EndDate")]
-        public string? EndDate {get; set;} = null;
 
         [BsonElement("Time")]
         public ObjectId Time { get; set; }

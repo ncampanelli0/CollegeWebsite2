@@ -15,7 +15,7 @@ namespace CollegeWebsite2.Database
         public string CourseName {get; set;}
 
         [BsonElement("Prerequiste")]
-        public string[]? Prerequiste { get; set; } = null;
+        public BsonArray? Prerequiste { get; set; } = null;
 
         [BsonElement("Description")]
         public string Description { get; set; }
@@ -27,7 +27,7 @@ namespace CollegeWebsite2.Database
         public string Department {get; set;}
         
         [BsonElement("MinimumRequirements")]
-        public string[]? MinimumRequirements {get; set;}
+        public BsonArray? MinimumRequirements {get; set;}
         
         [BsonElement("Credits")]
         public int Credits {get; set;}

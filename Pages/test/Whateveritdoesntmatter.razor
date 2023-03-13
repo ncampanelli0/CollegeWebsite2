@@ -1,0 +1,54 @@
+@page "/whateveritdoesntmatter"
+
+<button @onclick = "CourseID">course id generation</button>
+
+<button @onclick = "sectionNumber">section number generation</button>
+
+@code 
+{
+
+        Random random = new Random();
+        Mongo mongo = new Mongo("college-site-2");
+
+        private void CourseID()
+        {
+
+
+            var query = mongo.LoadRecord<Classes>("classes");
+            int y = 1000;
+            foreach (var whatever in query) 
+            {
+                whatever.CRN = y;
+                Console.WriteLine($"{y}");
+                mongo.UpsertRecord<Classes>("classes",whatever.Id,whatever);
+                y++;
+            }
+
+        }
+
+        private void sectionNumber()
+        {
+            var query = mongo.LoadSortedRecord<Classes>("classes", "CourseName");
+
+
+            int sectionNum = 0;
+            string currentCourseName = "";
+            foreach (var x in query)
+            {
+
+                if (x.CourseName == currentCourseName)
+                {
+                    sectionNum++;
+                }
+                else
+                {
+                    sectionNum = 0;
+                }
+                currentCourseName = x.CourseName;
+                x.Section = sectionNum.ToString();
+                mongo.UpsertRecord<Classes>("classes", x.Id, x);
+                Console.WriteLine($"{x.CourseName}");
+            }
+
+    }
+}

@@ -12,6 +12,6 @@ namespace CollegeWebsite2.Database
         public string Minor {get; set;}
 
         [BsonElement("MinorRequirements")]
-        public string[]? MinorRequirements {get; set;} 
+        public BsonArray? MinorRequirements {get; set;} 
     }
 }

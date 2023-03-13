@@ -360,6 +360,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxVcGRhdGVwYXNzd29yZHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Whateveritdoesntmatter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXaGF0ZXZlcml0ZG9lc250bWF0dGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Changemajorminor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxDaGFuZ2VtYWpvcm1pbm9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
