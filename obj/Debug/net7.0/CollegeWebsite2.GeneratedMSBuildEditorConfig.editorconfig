@@ -408,6 +408,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclxWaWV3cmVxdWlyZW1lbnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/BiologicalSciences.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXEJpb2xvZ2ljYWxTY2llbmNlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/ChemistryandPhysics.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXENoZW1pc3RyeWFuZFBoeXNpY3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/Criminology.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXENyaW1pbm9sb2d5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/English.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXEVuZ2xpc2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/IndustrialLaborRelations.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXEluZHVzdHJpYWxMYWJvclJlbGF0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/visitor/viewrequirements/major/Sociology.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdmlzaXRvclx2aWV3cmVxdWlyZW1lbnRzXG1ham9yXFNvY2lvbG9neS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

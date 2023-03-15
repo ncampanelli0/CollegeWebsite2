@@ -1,53 +1,62 @@
 @page "/visitor/viewrequirements"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view requirements</title>
-  </head>
-
-<body>
-    <div>
-        <table class = "userTable">
-            <thead>
-            <tr>
-              <th>Major</th>
-              <th>Major Requirements</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {% for majors in majorreqs %}
-                <tr class = "list item">
-                <td>{{ majors.Major }}</td>
-                <td>{{ majors.MajorRequirements }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-
-
-      <div>
-        <table class = "userTable">
-            <thead>
-            <tr>
-              <th>Minor</th>
-              <th>Minor Requirements</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {% for minors in minorreqs %}
-                <tr class = "list item">
-                <td>{{ minors.Minor }}</td>
-                <td>{{ minors.MinorRequirements }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-</body>
+<h2>majors</h2>
+<a class = "link"href="visitor/viewrequirements/major/sociology"> Sociology </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/Criminology"> Criminology </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/English"> English </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/BiologicalSciences"> Biological Sciences </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/IndustrialandLaborRelations"> Industrial Labor Relations </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/ChemistryandPhysics"> Chemistry and Physics </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/PoliticsEconomicsandLaw"> Politics Economics and Law </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/Psychology"> Psychology </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/AmericanStudies"> American Studies </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/ModernLanguage"> Modern Language </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/Health and Society"> Health and Society </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/History and Philosophy"> History and Philosophy </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/Mathematics"> Mathematics </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/VisualArts"> VisualArts </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/major/ComputerScience"> Computer Science </a>
+<h2>minors</h2>
+<a class = "link" href="visitor/viewrequirements/minor/Chemistry"> Chemistry </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/ComputerInfomationScience"> Computer Information Science </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/EnvironmentalStudies"> Environmental Studies </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/GlobalStudies"> Global Studies </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/HispanicCultureStudies"> Hispanic Culture Studies </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/Mathematics"> Mathematics </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/MediaDesign"> Media Design </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/MediaandCommunications"> Media and Communications </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/PhilosophyandReligion"> Philsophy and Religion </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/Physics"> Physics </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/PrelawStudies"> Prelaw Studies </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/PrehealthProfessions"> Prehealth Professions </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/Spanish"> Spanish </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/VisualArts"> Visual Arts </a>
+<br />
+<a class = "link" href="visitor/viewrequirements/minor/PublicPolicy"> Public Policy </a>

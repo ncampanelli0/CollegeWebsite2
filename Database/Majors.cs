@@ -9,9 +9,10 @@ namespace CollegeWebsite2.Database
         public BsonObjectId Id { get; set; }
 
         [BsonElement("Major")]
-        public string Major {get; set;}
+        public string Major { get; set; }
 
         [BsonElement("MajorRequirements")]
-        public BsonArray? MajorRequirements {get; set;} 
+        public string[]? MajorRequirements { get; set; } = null;
+
     }
 }

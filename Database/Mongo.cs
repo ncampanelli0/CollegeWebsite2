@@ -1,7 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using CollegeWebsite2.Database;
-using MongoDB.Driver.Linq;
 
 /// <summary>
 ///  <c>Mongo:</c> connect to the database 
@@ -19,7 +18,7 @@ public class Mongo
         var client = new MongoClient("mongodb+srv://admin:2bRNijsPDrHkwcb2@college-site.ot9hk.mongodb.net/college-site-2");
         db = client.GetDatabase(database);
 
-        
+
     }
 
     /// <summary>

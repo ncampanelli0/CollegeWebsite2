@@ -1,0 +1,20 @@
+﻿@page "/visitor/viewrequirements/major/sociology"
+<h3>template</h3>
+
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="20" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Data="@queryMajor" TItem="Majors" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
+    <Columns>
+        <RadzenDataGridColumn TItem="Majors" Property="Major" Title="Major" Frozen="true" Width="0px" />
+        <RadzenDataGridColumn TItem="Majors" Property="MajorRequirements" Title="Major Requirements" Frozen="true" Width="0px" />
+    </Columns>
+</RadzenDataGrid>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<Majors> queryMajor;
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryMajor = mongo.LoadRecord<Majors>("majors");
+    }
+}

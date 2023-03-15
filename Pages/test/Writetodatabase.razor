@@ -27,6 +27,10 @@
 
 <button @onclick="moveTimeWindowToClasses">move time window to classes</button>
 
+<br />
+
+<button @onclick="moveProfessorNamesToClasses">move professor names to classes</button>
+
 @code 
 {
     string finalString = "";
@@ -170,6 +174,21 @@
             mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
         }
         Console.WriteLine("done updating table");
+    }
+
+    private void moveProfessorNamesToClasses()
+    {
+        var queryClass = mongo.LoadRecord<Classes>("classes");
+        Console.WriteLine("running moveProfessorNamesToClasses");
+        foreach (var classes in queryClass)
+        {
+            var queryProf = mongo.LoadRecordById<AllUser>("allUser", classes.Professor);
+
+            classes.ProfessorName = $"{queryProf.FirstName}  {queryProf.LastName}";
+            mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
+
+        }
+        Console.WriteLine("table updated");
     }
 
 

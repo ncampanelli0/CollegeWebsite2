@@ -59,12 +59,11 @@ namespace CollegeWebsite2.Database
         [BsonElement("Day")]
         public string? Day {get; set;} = null;
 
-        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Professor")]
-        public string? Professor {get; set;} = null;
+        public ObjectId? Professor {get; set;} = null;
 
         [BsonElement("Department")]
-        public string? Department {get; set;} = null;
+        public String? Department {get; set;} = null;
 
         [BsonElement("Time ID")]
         public ObjectId TimeID { get; set; }
@@ -89,6 +88,9 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("GradeLimit")]
         public DateTime GradeLimit { get; set; }
+
+        [BsonElement("ProfessorName")]
+        public string ProfessorName { get; set; }
 
     }
 }

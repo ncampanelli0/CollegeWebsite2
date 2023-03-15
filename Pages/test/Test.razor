@@ -5,14 +5,28 @@
 
 <button @onclick = "click">database connection</button>
 
+<button @onclick = "dbCheck"> db check </button>
+
 @code
 {
-
+    Mongo db = new Mongo("college-site-2");
     public void click()
     {
-        Mongo db = new Mongo("college-site-2");
+        
         db.InsertRecord("Users", new AllUser { FirstName = "wetgrweg", LastName = "wrhygrrsgdsweag" });
 
     }
+
+    private void dbCheck()
+    {
+        List<Majors> queryMajor;
+        queryMajor = db.LoadRecord<Majors>("majors");
+
+        foreach (var major in queryMajor)
+        {
+            var x = major.MajorRequirements[0];
+            Console.WriteLine(x);
+        }
+}
 
 }
