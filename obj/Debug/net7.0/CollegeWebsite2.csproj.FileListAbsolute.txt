@@ -63,6 +63,4 @@ D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.Asp
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.JSInterop.dll
-D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Radzen.Blazor.dll
-D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Linq.Dynamic.Core.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MudBlazor.dll

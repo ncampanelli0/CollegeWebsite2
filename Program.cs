@@ -3,7 +3,7 @@ using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
-using Radzen;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +12,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddBlazoredLocalStorage();
-builder.Services.AddScoped<DialogService>();
-builder.Services.AddScoped<NotificationService>();
-builder.Services.AddScoped<TooltipService>();
-builder.Services.AddScoped<ContextMenuService>();
 builder.Services.AddMudServices();
 
 

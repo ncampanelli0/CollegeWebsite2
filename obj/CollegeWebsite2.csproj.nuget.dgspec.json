@@ -75,10 +75,6 @@
               "target": "Package",
               "version": "[6.2.0, )"
             },
-            "Radzen.Blazor": {
-              "target": "Package",
-              "version": "[4.7.12, )"
-            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[7.0.0, )"

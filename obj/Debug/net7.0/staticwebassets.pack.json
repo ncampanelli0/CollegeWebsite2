@@ -417,10 +417,6 @@
       "PackagePath": "staticwebassets\\stylesheet\\datatables.min.css"
     },
     {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\radzen.css",
-      "PackagePath": "staticwebassets\\stylesheet\\radzen.css"
-    },
-    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\style.css",
       "PackagePath": "staticwebassets\\stylesheet\\style.css"
     },

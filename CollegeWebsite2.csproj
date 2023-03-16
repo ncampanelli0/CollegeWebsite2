@@ -36,7 +36,6 @@
     <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.19.0" />
     <PackageReference Include="MudBlazor" Version="6.2.0" />
-    <PackageReference Include="Radzen.Blazor" Version="4.7.12" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 

@@ -15,7 +15,6 @@
           "MongoDB.Driver": "2.19.0",
           "MongoDB.Driver.Core": "2.19.0",
           "MudBlazor": "6.2.0",
-          "Radzen.Blazor": "4.7.12",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "runtime": {
@@ -74,7 +73,6 @@
           }
         }
       },
-      "LibSassBuilder/2.0.1": {},
       "Microsoft.AspNetCore.Authorization/7.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "7.0.1",
@@ -135,7 +133,6 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
@@ -263,21 +260,6 @@
           }
         }
       },
-      "Radzen.Blazor/4.7.12": {
-        "dependencies": {
-          "LibSassBuilder": "2.0.1",
-          "Microsoft.AspNetCore.Components": "7.0.1",
-          "Microsoft.AspNetCore.Components.Web": "7.0.1",
-          "Microsoft.CSharp": "4.7.0",
-          "System.Linq.Dynamic.Core": "1.2.22"
-        },
-        "runtime": {
-          "lib/net7.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "4.7.12.0",
-            "fileVersion": "4.7.12.0"
-          }
-        }
-      },
       "SharpCompress/0.30.1": {
         "runtime": {
           "lib/net5.0/SharpCompress.dll": {
@@ -329,14 +311,6 @@
         }
       },
       "System.IO.Pipelines/7.0.0": {},
-      "System.Linq.Dynamic.Core/1.2.22": {
-        "runtime": {
-          "lib/net6.0/System.Linq.Dynamic.Core.dll": {
-            "assemblyVersion": "1.2.22.0",
-            "fileVersion": "1.2.22.0"
-          }
-        }
-      },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
@@ -442,13 +416,6 @@
       "path": "dnsclient/1.6.1",
       "hashPath": "dnsclient.1.6.1.nupkg.sha512"
     },
-    "LibSassBuilder/2.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-f+7TWQtCirW94VdzKL9SaAfeSF96TeEqdtDztmTGbndrcUlZZlL6uJLZKQCXQgj1BB3OqX0584OCvqFHrkAusA==",
-      "path": "libsassbuilder/2.0.1",
-      "hashPath": "libsassbuilder.2.0.1.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Authorization/7.0.1": {
       "type": "package",
       "serviceable": true,
@@ -490,13 +457,6 @@
       "sha512": "sha512-IY2hcEYR+q4PJ/rsfzakTTeS8UOU14rlYzfTWArJCmfL+jpNeu0pkr7SHiRQbL1MKNz7aT4n3qQG7jcGHQVOjQ==",
       "path": "microsoft.aspnetcore.metadata/7.0.1",
       "hashPath": "microsoft.aspnetcore.metadata.7.0.1.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",
@@ -603,13 +563,6 @@
       "path": "mudblazor/6.2.0",
       "hashPath": "mudblazor.6.2.0.nupkg.sha512"
     },
-    "Radzen.Blazor/4.7.12": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OOr/rMQGucbDHkszdDL5Al9eBokH0Ihs3RR/P/mDjnL2cEo1pY2JBF+lTjo0ZB3oC/iKLGFiDmw4L05ImW0z8g==",
-      "path": "radzen.blazor/4.7.12",
-      "hashPath": "radzen.blazor.4.7.12.nupkg.sha512"
-    },
     "SharpCompress/0.30.1": {
       "type": "package",
       "serviceable": true,
@@ -658,13 +611,6 @@
       "sha512": "sha512-jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
       "path": "system.io.pipelines/7.0.0",
       "hashPath": "system.io.pipelines.7.0.0.nupkg.sha512"
-    },
-    "System.Linq.Dynamic.Core/1.2.22": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PB57h0KkIvCF1X/x7iZZKdgiQSo/5geNrConfaw4KEsbyX25MuAEcLOc5RF5GNycSfC7qwaL4L8Mm6b8uMmcAw==",
-      "path": "system.linq.dynamic.core/1.2.22",
-      "hashPath": "system.linq.dynamic.core.1.2.22.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
