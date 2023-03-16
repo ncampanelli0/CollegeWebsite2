@@ -429,7 +429,30 @@
           }
         }
       },
-      "Radzen.Blazor/4.7.9": {
+      "MudBlazor/6.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "7.0.1",
+          "Microsoft.AspNetCore.Components.Web": "7.0.1"
+        },
+        "compile": {
+          "lib/net7.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
+      "Radzen.Blazor/4.7.12": {
         "type": "package",
         "dependencies": {
           "LibSassBuilder": "2.0.1",
@@ -1485,10 +1508,33 @@
         "runtimes/win/native/mongocrypt.dll"
       ]
     },
-    "Radzen.Blazor/4.7.9": {
-      "sha512": "FQnRmBoeDzeXhmDiVP/hfNfkwHy9iBh5m2peNnFVPfF7WnG+YhLuxF3jNHzYhRgyFrJBdAMNN4THs4wJ1++J6A==",
+    "MudBlazor/6.2.0": {
+      "sha512": "Oqf+63FIhPGwuBURFihcXmCsE94doxHTcnpRa8Dna8TI/Mk3DAheWxOu7tnkKyCJiEzWEJSiFGbGPETIywVWVQ==",
       "type": "package",
-      "path": "radzen.blazor/4.7.9",
+      "path": "mudblazor/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net6.0/MudBlazor.dll",
+        "lib/net6.0/MudBlazor.xml",
+        "lib/net7.0/MudBlazor.dll",
+        "lib/net7.0/MudBlazor.xml",
+        "mudblazor.6.2.0.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js"
+      ]
+    },
+    "Radzen.Blazor/4.7.12": {
+      "sha512": "OOr/rMQGucbDHkszdDL5Al9eBokH0Ihs3RR/P/mDjnL2cEo1pY2JBF+lTjo0ZB3oC/iKLGFiDmw4L05ImW0z8g==",
+      "type": "package",
+      "path": "radzen.blazor/4.7.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1507,7 +1553,7 @@
         "lib/net7.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.4.7.9.nupkg.sha512",
+        "radzen.blazor.4.7.12.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -2034,7 +2080,8 @@
       "MongoDB.Bson >= 2.19.0",
       "MongoDB.Driver >= 2.19.0",
       "MongoDB.Driver.Core >= 2.19.0",
-      "Radzen.Blazor >= 4.7.9",
+      "MudBlazor >= 6.2.0",
+      "Radzen.Blazor >= 4.7.12",
       "System.Configuration.ConfigurationManager >= 7.0.0"
     ]
   },
@@ -2110,9 +2157,13 @@
             "target": "Package",
             "version": "[2.19.0, )"
           },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[4.7.9, )"
+            "version": "[4.7.12, )"
           },
           "System.Configuration.ConfigurationManager": {
             "target": "Package",

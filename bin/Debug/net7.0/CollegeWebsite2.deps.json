@@ -14,7 +14,8 @@
           "MongoDB.Bson": "2.19.0",
           "MongoDB.Driver": "2.19.0",
           "MongoDB.Driver.Core": "2.19.0",
-          "Radzen.Blazor": "4.7.9",
+          "MudBlazor": "6.2.0",
+          "Radzen.Blazor": "4.7.12",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "runtime": {
@@ -250,7 +251,19 @@
           }
         }
       },
-      "Radzen.Blazor/4.7.9": {
+      "MudBlazor/6.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "7.0.1",
+          "Microsoft.AspNetCore.Components.Web": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/MudBlazor.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.0"
+          }
+        }
+      },
+      "Radzen.Blazor/4.7.12": {
         "dependencies": {
           "LibSassBuilder": "2.0.1",
           "Microsoft.AspNetCore.Components": "7.0.1",
@@ -260,8 +273,8 @@
         },
         "runtime": {
           "lib/net7.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "4.7.9.0",
-            "fileVersion": "4.7.9.0"
+            "assemblyVersion": "4.7.12.0",
+            "fileVersion": "4.7.12.0"
           }
         }
       },
@@ -583,12 +596,19 @@
       "path": "mongodb.libmongocrypt/1.7.0",
       "hashPath": "mongodb.libmongocrypt.1.7.0.nupkg.sha512"
     },
-    "Radzen.Blazor/4.7.9": {
+    "MudBlazor/6.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FQnRmBoeDzeXhmDiVP/hfNfkwHy9iBh5m2peNnFVPfF7WnG+YhLuxF3jNHzYhRgyFrJBdAMNN4THs4wJ1++J6A==",
-      "path": "radzen.blazor/4.7.9",
-      "hashPath": "radzen.blazor.4.7.9.nupkg.sha512"
+      "sha512": "sha512-Oqf+63FIhPGwuBURFihcXmCsE94doxHTcnpRa8Dna8TI/Mk3DAheWxOu7tnkKyCJiEzWEJSiFGbGPETIywVWVQ==",
+      "path": "mudblazor/6.2.0",
+      "hashPath": "mudblazor.6.2.0.nupkg.sha512"
+    },
+    "Radzen.Blazor/4.7.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OOr/rMQGucbDHkszdDL5Al9eBokH0Ihs3RR/P/mDjnL2cEo1pY2JBF+lTjo0ZB3oC/iKLGFiDmw4L05ImW0z8g==",
+      "path": "radzen.blazor/4.7.12",
+      "hashPath": "radzen.blazor.4.7.12.nupkg.sha512"
     },
     "SharpCompress/0.30.1": {
       "type": "package",

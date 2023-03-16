@@ -106,4 +106,99 @@ public class Mongo
 
         var result = collection.ReplaceOne(new BsonDocument("_id", id), record, new ReplaceOptions { IsUpsert = true });
     }
+
+
+    //broken for now, will be fixed later (probably)
+    /*
+    private string selectFromArray<T>(List<T> query, string field, int number, int value)
+    {
+
+        List<string> result = new List<string>();
+
+
+        string temp;
+
+        foreach (var x in query)
+        {
+            try
+            {
+                if (x.field[value] != null || value > x.MajorRequirements.Length)
+                {
+                    Console.WriteLine("if true");
+                    temp = x.MajorRequirements[value];
+                }
+                else
+                {
+                    Console.WriteLine("if false");
+                    temp = "none";
+                }
+            }
+            catch
+            {
+                temp = "none";
+            }
+
+
+
+            result.Add(temp);
+            Console.WriteLine("before");
+            Console.WriteLine(result[0]);
+            Console.WriteLine("after");
+        }
+        Console.WriteLine("before 2");
+        string[] resultArray = result.ToArray();
+        Console.WriteLine("after 2");
+
+
+        return resultArray[number];
+
+    }
+    */
+
+    //stand alone version, copy and paste into local file and modify
+    /*
+    private string selectFromArrayStandAlone<T>(int number, int value)
+    {
+
+        List<string> result = new List<string>();
+
+
+        string temp;
+
+        foreach (var x in query)
+        {
+            try
+            {
+                if (x.MajorRequirements[value] != null || value > x.MajorRequirements.Length)
+                {
+                    Console.WriteLine("if true");
+                    temp = x.MajorRequirements[value];
+                }
+                else
+                {
+                    Console.WriteLine("if false");
+                    temp = "none";
+                }
+            }
+            catch
+            {
+                temp = "none";
+            }
+
+
+
+            result.Add(temp);
+            Console.WriteLine("before");
+            Console.WriteLine(result[0]);
+            Console.WriteLine("after");
+        }
+        Console.WriteLine("before 2");
+        string[] resultArray = result.ToArray();
+        Console.WriteLine("after 2");
+
+
+        return resultArray[number];
+
+    }
+    */
 }

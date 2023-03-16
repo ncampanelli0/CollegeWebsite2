@@ -1,6 +1,6 @@
 ﻿@page "/tabletest"
 
-
+<!--
 <RadzenDataGrid AllowFiltering="true" AllowColumnResize="false" AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="15" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
     Data="@queryUser" TItem="AllUser" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
     <Columns>
@@ -10,6 +10,26 @@
         <RadzenDataGridColumn TItem="AllUser" Property="AccountType" Title="Account Type" Frozen="true" Width="0px" />
     </Columns>
 </RadzenDataGrid>
+-->
+
+
+<MudDataGrid Items="@queryMajor">
+    <Columns>
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[0]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[1]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[2]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[3]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[4]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[5]" />
+        <PropertyColumn Title="First Name" Property="x => x.MajorRequirements[6]" />
+
+
+
+
+
+
+    </Columns>
+</MudDataGrid>
 
 
 @code
@@ -17,11 +37,15 @@
 
     Mongo mongo = new Mongo("college-site-2");
     IEnumerable<AllUser> queryUser;
+    IEnumerable<Majors> queryMajor;
 
 
     protected override async Task OnInitializedAsync()
     {
         queryUser = mongo.LoadRecord<AllUser>("allUser");
+        queryMajor = mongo.LoadRecord<Majors>("majors");
     }
 
 }
+
+

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QAKsHy2xGkF9tXVlS4AOxizjnIQHkAEHVj0mj6F+ipMFNun76UWsjWmjqMcNFMDL286/AksvO6/NJOBmAmMm0w==",
+  "dgSpecHash": "cC/eNB9hO0Sjadn5oaraNwlD7v2XUQohn0e8QiqoCkL9c+t56025X2sqsj7Gr+vVaWaPEG8baHhzihgtXE2QZg==",
   "success": true,
   "projectFilePath": "D:\\programming files\\asp.net core\\CollegeWebsite2\\CollegeWebsite2.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,8 @@
     "C:\\Users\\baddestwheel\\.nuget\\packages\\mongodb.driver\\2.19.0\\mongodb.driver.2.19.0.nupkg.sha512",
     "C:\\Users\\baddestwheel\\.nuget\\packages\\mongodb.driver.core\\2.19.0\\mongodb.driver.core.2.19.0.nupkg.sha512",
     "C:\\Users\\baddestwheel\\.nuget\\packages\\mongodb.libmongocrypt\\1.7.0\\mongodb.libmongocrypt.1.7.0.nupkg.sha512",
-    "C:\\Users\\baddestwheel\\.nuget\\packages\\radzen.blazor\\4.7.9\\radzen.blazor.4.7.9.nupkg.sha512",
+    "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\mudblazor.6.2.0.nupkg.sha512",
+    "C:\\Users\\baddestwheel\\.nuget\\packages\\radzen.blazor\\4.7.12\\radzen.blazor.4.7.12.nupkg.sha512",
     "C:\\Users\\baddestwheel\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\baddestwheel\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\baddestwheel\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

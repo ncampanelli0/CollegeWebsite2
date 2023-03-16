@@ -71,9 +71,13 @@
               "target": "Package",
               "version": "[2.19.0, )"
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[4.7.9, )"
+              "version": "[4.7.12, )"
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
