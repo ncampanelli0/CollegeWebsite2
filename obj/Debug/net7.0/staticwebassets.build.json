@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kyHsxoTLBu7aAuaY0MSOs7AyKFAmPmsC3msSC9o8rVs=",
+  "Hash": "Yk9bl5192bpDBTzbO5Nvwk/Mpeczov7Kn0ml3ksg9l8=",
   "Source": "CollegeWebsite2",
   "BasePath": "_content/CollegeWebsite2",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
+      "SourceId": "CollegeWebsite2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "BasePath": "_content/CollegeWebsite2",
+      "RelativePath": "css/mudblazor.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mudblazor.css"
     },
     {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\FONT-LICENSE",

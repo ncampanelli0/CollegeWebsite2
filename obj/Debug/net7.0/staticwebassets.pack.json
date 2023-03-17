@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
+      "PackagePath": "staticwebassets\\css\\mudblazor.css"
+    },
+    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },

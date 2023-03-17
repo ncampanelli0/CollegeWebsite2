@@ -21,40 +21,30 @@
 
     private async Task login()
     {
-        try
-        {
-            if (email != null && password != null)
-            {
-                var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-                if (email == queryUser.Email && password == queryUser.Password)
+                try
                 {
-                    Console.WriteLine("if statement activated");
-                    await storage.SetAsync("email", queryUser.Email);
-                    await storage.SetAsync("accountType", queryUser.AccountType);
-                    //await storage.SetAsync("userId", queryUser.Id); //this causes the login system to break because it wants a boolean, god knows why so start demanding answers from him
-                    await storage.SetAsync("firstName", queryUser.FirstName);
-                    await storage.SetAsync("lastName", queryUser.LastName);
-                    await storage.SetAsync("address", queryUser.Address);
-                    await storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
-                    await storage.SetAsync("advisor", queryUser.Advisor);
-                    await storage.SetAsync("holdStatus", queryUser.Holds);
-                    await storage.SetAsync("major", queryUser.Major);
-                    await storage.SetAsync("minor", queryUser.Minor);
-                    await storage.SetAsync("loggedIn", true);
-                    navigate.NavigateTo("/homepage", true);
+                    var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+                    if (email == queryUser.Email && password == queryUser.Password)
+                    {
+                        Console.WriteLine("if statement activated");
+                        await storage.SetAsync("email", queryUser.Email);
+                        await storage.SetAsync("accountType", queryUser.AccountType);
+                        //await storage.SetAsync("userId", queryUser.Id); //this causes the login system to break because it wants a boolean, god knows why so start demanding answers from him
+                        await storage.SetAsync("firstName", queryUser.FirstName);
+                        await storage.SetAsync("lastName", queryUser.LastName);
+                        await storage.SetAsync("address", queryUser.Address);
+                        await storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
+                        await storage.SetAsync("advisor", queryUser.Advisor);
+                        await storage.SetAsync("holdStatus", queryUser.Holds);
+                        await storage.SetAsync("major", queryUser.Major);
+                        await storage.SetAsync("minor", queryUser.Minor);
+                        await storage.SetAsync("loggedIn", true);
+                        navigate.NavigateTo("/homepage", true);
+                    }
                 }
-                else
+                catch
                 {
-                    Snackbar.Add($"</li><li>catch</li></ul>");
-                    Console.WriteLine("else");
+                    Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
                 }
             }
-        }
-        catch
-        {
-            Snackbar.Add($"</li><li>catch</li></ul>");
-        }
-    }
-
-
     }
