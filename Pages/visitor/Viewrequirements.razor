@@ -1,62 +1,53 @@
 @page "/visitor/viewrequirements"
 
 <h2>majors</h2>
-<a class = "link"href="visitor/viewrequirements/major/sociology"> Sociology </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/Criminology"> Criminology </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/English"> English </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/BiologicalSciences"> Biological Sciences </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/IndustrialandLaborRelations"> Industrial Labor Relations </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/ChemistryandPhysics"> Chemistry and Physics </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/PoliticsEconomicsandLaw"> Politics Economics and Law </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/Psychology"> Psychology </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/AmericanStudies"> American Studies </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/ModernLanguage"> Modern Language </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/Health and Society"> Health and Society </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/History and Philosophy"> History and Philosophy </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/Mathematics"> Mathematics </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/VisualArts"> VisualArts </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/major/ComputerScience"> Computer Science </a>
+
+
+<MudExpansionPanels MultiExpansion="false">
+    <MudExpansionPanel Text="Criminology">
+        <ol>
+            @for (int i = 0; i < course0.Length; i++)
+            {
+                <li>@course0[i] (@grade0[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel Text="English">
+        <ol>
+            @for (int i = 0; i < course1.Length; i++)
+            {
+                <li>@course1[i] (@grade1[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+</MudExpansionPanels>
+
 <h2>minors</h2>
-<a class = "link" href="visitor/viewrequirements/minor/Chemistry"> Chemistry </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/ComputerInfomationScience"> Computer Information Science </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/EnvironmentalStudies"> Environmental Studies </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/GlobalStudies"> Global Studies </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/HispanicCultureStudies"> Hispanic Culture Studies </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/Mathematics"> Mathematics </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/MediaDesign"> Media Design </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/MediaandCommunications"> Media and Communications </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/PhilosophyandReligion"> Philsophy and Religion </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/Physics"> Physics </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/PrelawStudies"> Prelaw Studies </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/PrehealthProfessions"> Prehealth Professions </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/Spanish"> Spanish </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/VisualArts"> Visual Arts </a>
-<br />
-<a class = "link" href="visitor/viewrequirements/minor/PublicPolicy"> Public Policy </a>
+
+@code
+{
+    bool open;
+    Anchor anchor;
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Majors> queryMajor;
+    string[] course0;
+    string[] grade0;
+    string[] course1;
+    string[] grade1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryMajor = mongo.LoadRecord<Majors>("majors");
+
+        course0 = queryMajor[0].MajorRequirements.ToArray();
+        grade0 = queryMajor[0].GradeRequirements.ToArray();
+        
+        course1 = queryMajor[1].MajorRequirements.ToArray();
+        grade1 = queryMajor[1].GradeRequirements.ToArray();
+        
+    }
+
+
+}

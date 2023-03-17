@@ -1,17 +1,39 @@
 @page "/visitor/masterschedule"
 
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+        <PropertyColumn Title="Section" Property="x => x.Section" />
+        <PropertyColumn Title="Professor Name" Property="x => x.ProfessorName" />
+        <PropertyColumn Title="Start Date/Time" Property="x =>x.StartDate" />
+        <PropertyColumn Title="End Date/Time" Property="x => x.EndDate" />
+        <PropertyColumn Title="Period" Property="x => x.Period" />
+        <PropertyColumn Title="Building ID" Property="x => x.BuildingID" />
+        <PropertyColumn Title="Room ID" Property="x => x.RoomID" />
+        <PropertyColumn Title="Day" Property="x => x.Day" />
+        <PropertyColumn Title="Remaining Capacity" Property="x => x.MaxCapacity - x.Enrolled.Count" />
+        
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Classes" />
+    </PagerContent>
+</MudDataGrid>
+
 
 @code
 {
 
     Mongo mongo = new Mongo("college-site-2");
-    List<Classes> queryUser;
+    List<Classes> queryClasses;
     List<TimeWindow> queryTime;
+
 
 
     protected override async Task OnInitializedAsync()
     {
-        queryUser = mongo.LoadRecord<Classes>("classes");
+        queryClasses = mongo.LoadRecord<Classes>("classes");
         queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
     }
 

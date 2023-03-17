@@ -1,44 +1,30 @@
 @page "/visitor/viewcourses"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view courses</title>
-  </head>
+<MudDataGrid Items="@queryCourse" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Course Name" Property="x => x. CourseName" />
+        <PropertyColumn Title="Credits" Property="x => x.Credits" />
+        <PropertyColumn Title="Prerequiste" Property="x => x.Prerequiste" />
+        <PropertyColumn Title="Prerequiste" Property="x => x.MinimumRequirements" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Course" />
+    </PagerContent>
+</MudDataGrid>
 
-<body>
 
-  {{ macro.header() }}
+@code
+{
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Course> queryCourse;
 
 
-            <table class = "userTable">
-            <thead>
-            <tr>
-              <th>Course Name</th>
-              <th>Type</th>
-              <th>Prequisite</th>
-              <th>Department</th>
-              <th>Description</th>
-              <th>Minimum Requirements</th>
-            </tr>
-            </thead>
-            <tbody>
+    protected override async Task OnInitializedAsync()
+    {
+        queryCourse = mongo.LoadRecord<Course>("course");
+    }
 
-            {% for klasses in klass %}
-                <tr class = "list item">
-                <td>{{ klasses.CourseName }}</td>
-                <td>{{ klasses.Type }}</td>
-                <td>{{ klasses.Prerequiste }}</td>
-                <td>{{ klasses.Department }}</td>
-                <td>{{ klasses.Description }}</td>
-                <td>{{ klasses.MinimumRequirements }}</td>
-                </tr>
-                
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-
-  
-</body>
+}
