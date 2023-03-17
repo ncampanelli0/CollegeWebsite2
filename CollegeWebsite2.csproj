@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="functionality\" />
     <Folder Include="Pages\visitor\viewrequirements\minor\" />
   </ItemGroup>
 
