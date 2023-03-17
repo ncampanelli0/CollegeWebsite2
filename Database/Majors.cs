@@ -14,5 +14,8 @@ namespace CollegeWebsite2.Database
         [BsonElement("MajorRequirements")]
         public string[]? MajorRequirements { get; set; } = null;
 
+        [BsonElement("GradeRequirements")]
+        public string[]? GradeRequirements { get; set; } = null;
+
     }
 }

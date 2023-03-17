@@ -31,6 +31,8 @@
 
 <button @onclick="moveProfessorNamesToClasses">move professor names to classes</button>
 
+<button @onclick = "addGradeRequirements">add grade requirements to majors and minors</button>
+
 @code 
 {
     string finalString = "";
@@ -191,5 +193,43 @@
         Console.WriteLine("table updated");
     }
 
+    private void addGradeRequirements()
+    {
+        var queryMajor = mongo.LoadRecord<Majors>("majors");
+        var queryMinor = mongo.LoadRecord<Minors>("minors");
+        List<string> grades = new List<string> { };
+
+        Console.WriteLine("running addGradeRequirements()");
+        
+        
+        foreach (var x in queryMajor)
+        {
+            foreach (var y in x.MajorRequirements)
+            {
+                Console.WriteLine("wrote a c");
+                grades.Add("C");
+            }
+
+            x.GradeRequirements = grades.ToArray();
+            mongo.UpsertRecord<Majors>("majors", x.Id, x);
+
+            grades.Clear();
+        }
+        
+        foreach (var x in queryMinor)
+        {
+            foreach (var y in x.MinorRequirements)
+            {
+                grades.Add("C");
+            }
+
+            x.GradeRequirements = grades.ToArray();
+            mongo.UpsertRecord<Minors>("minors", x.Id, x);
+
+            grades.Clear();
+        }
+        Console.WriteLine("done updating database");
+       
+    }
 
 }
