@@ -186,7 +186,7 @@
         {
             var queryProf = mongo.LoadRecordById<AllUser>("allUser", classes.Professor);
 
-            classes.ProfessorName = $"{queryProf.FirstName}  {queryProf.LastName}";
+            classes.ProfessorName = $"{queryProf.FirstName} {queryProf.LastName}";
             mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
 
         }
