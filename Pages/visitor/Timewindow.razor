@@ -1,0 +1,33 @@
+﻿@page "/visitor/timeWindow"
+
+<MudDataGrid Items="@queryTime" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Semester" Property="x => x.Semester + x.StartDate.Year" />
+        <PropertyColumn Title="Period" Property="x => x.Period" />
+        <PropertyColumn Title="Start Date" Property="x => x.StartDate" />
+        <PropertyColumn Title="End Date" Property="x => x.EndDate" />
+        <PropertyColumn Title="Grade Limit" Property="x => x.GradeLimit" />
+        <PropertyColumn Title="Registeration Limit" Property="x => x.RegistrationLimit" />
+        <PropertyColumn Title="Withdraw Limit" Property="x => x.WithdrawLimit" />
+
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="TimeWindow" />
+    </PagerContent>
+</MudDataGrid>
+
+
+@code
+{
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<TimeWindow> queryTime;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
+    }
+
+}
