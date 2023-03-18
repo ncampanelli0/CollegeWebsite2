@@ -1,5 +1,8 @@
 @page "/"
 @page "/homepage"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
 
 <div class= "stylecontent">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -24,36 +27,66 @@
     </button>
   </div>
 
-  {% if session['loggedIn'] %}
-  <p>Logged in as: {{session["email"]}}</p> 
-  <p>Account Type: {{ session["accountType"] }}</p>
-  <p>User ID: {{ session["id"] }}</p>
-  <p>First Name: {{ session["firstName"] }}</p>
-  <p>Last Name: {{ session["lastName"] }}</p>
-  <p>Address: {{ session["address"] }}</p>
-  <p>Phonenumber: {{ session["phoneNumber"] }}</p>
-  <p>Advisor: {{ session["advisor"] }}</p>
-  <p> Hold Status: {{ session["hold"] }} </p>
-  <p>Major: {{ session["major"].Major }}</p>
-  <p>Minor: {{ session["minor"].Minor}}</p>
-  {% endif %}
+    <section class="center">
+        <div class="contentbody content">
+            <h6>Clearwater</h6>
+            <h6>Clearwater</h6>
+        </div>
 
-  <section class = "center">
-  <div class = "contentbody content">
-  <h6>Clearwater</h6>
-  <h6>Clearwater</h6>
-  </div>
+        <div class="contentbody content">
+            <h6>Community</h6>
+            <h6>Community</h6>
+        </div>
 
-  <div class = "contentbody content">
-  <h6>Community</h6>
-  <h6>Community</h6>
-  </div>
+        <div class="contentbody content">
+            <h6>College</h6>
+            <h6>College</h6>
+        </div>
+    </section>
+    <div>
 
-  <div class = "contentbody content">
-  <h6>College</h6>
-  <h6>College</h6>
-  </div>
-  </section>
+
+    @if (loginStudent)
+        {
+            <MudPaper Width="300px">
+                <MudList Clickable="true">
+                    <MudListItem Text="Account Information" InitiallyExpanded="false">
+                        <NestedList>
+                            <MudListItem>
+                                Account Type: @accountType
+                            </MudListItem>
+                            <MudListItem>
+                                Email: @email
+                            </MudListItem>
+                            <MudListItem>
+                                Name: @name
+                            </MudListItem>
+                            <MudListItem>
+                                Address: @address
+                            </MudListItem>
+                            <MudListItem>
+                                Phone Number: @phoneNumber
+                            </MudListItem>
+                            <MudListItem>
+                                Advisor: @advisor
+                            </MudListItem>
+                            <MudListItem>
+                                Major: @major
+                            </MudListItem>
+                            <MudListItem>
+                                Minor: @minor
+                            </MudListItem>
+                            <MudListItem>
+                                Hold Status: @holdStatus
+                            </MudListItem>
+                        </NestedList>
+                    </MudListItem>
+                </MudList>
+            </MudPaper>
+        }
+        
+    </div>
+ 
 
 
   <div class="accordion bg-black text-white" id="accordionExample">
@@ -275,3 +308,74 @@
 
 </div>
 </div>
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    bool loginStudent;
+    bool loginStaff;
+    string accountType;
+    string email;
+    string name;
+    string address;
+    string phoneNumber;
+    string advisor;
+    string major;
+    string minor;
+    string holdStatus;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        var emailCheck = await storage.GetAsync<string>("email");
+        var firstNameCheck = await storage.GetAsync<string>("firstName");
+        var lastNameCheck = await storage.GetAsync<string>("lastName");
+        var addressCheck = await storage.GetAsync<string>("address");
+        var phoneNumberCheck = await storage.GetAsync<string>("phoneNumber");
+        var advisorCheck = await storage.GetAsync<string>("advisor");
+        var majorCheck = await storage.GetAsync<string>("major");
+        var minorCheck = await storage.GetAsync<string>("minor");
+        var holdStatusCheck = await storage.GetAsync<string>("holdStatus");
+
+        //var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", (BsonObjectId)advisorCheck.Value);
+        //var queryMajor = mongo.LoadRecordById<Majors>("majors", (BsonObjectId)majorCheck.Value);
+        //var queryMinor = mongo.LoadRecordById<Minors>("minors", (BsonObjectId)minorCheck.Value);
+
+
+
+
+
+        if (accountTypeCheck.Value == "Graduate" || accountTypeCheck.Value == "Undergraduate")
+        {
+            loginStudent = true;
+            accountType = accountTypeCheck.Value;
+            email = emailCheck.Value;
+            name = firstNameCheck.Value + " " + lastNameCheck.Value;
+            address =  addressCheck.Value;
+            phoneNumber = phoneNumberCheck.Value;
+            advisor = advisorCheck.Value;
+            major = majorCheck.Value;
+            minor = minorCheck.Value;
+            holdStatus = holdStatusCheck.Value;
+
+        }
+        else
+        {
+            loginStudent = false;
+        }
+
+        if (accountTypeCheck.Value == "Faculty" || accountTypeCheck.Value == "Admin")
+        {
+            loginStaff = true;
+        }
+        else
+        {
+            loginStaff = false;
+        }
+
+
+    }
+}
