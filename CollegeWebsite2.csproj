@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\visitor\viewrequirements\**" />
+    <Content Remove="Pages\visitor\viewrequirements\**" />
+    <EmbeddedResource Remove="Pages\visitor\viewrequirements\**" />
+    <None Remove="Pages\visitor\viewrequirements\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Pages\people\Checklist.txt" />
   </ItemGroup>
 
@@ -41,7 +48,7 @@
 
   <ItemGroup>
     <Folder Include="functionality\" />
-    <Folder Include="Pages\visitor\viewrequirements\minor\" />
+    <Folder Include="Pages\visitor\" />
   </ItemGroup>
 
 </Project>

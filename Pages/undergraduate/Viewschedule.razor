@@ -1,66 +1,90 @@
 @page "/undergraduate/viewschedule"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view user schedule</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
 
-<body>
+<MudDataGrid Items="@tableSchedule" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade" Property="x => x.grade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="TableSchedule" />
+    </PagerContent>
+</MudDataGrid>
 
-        <!-- flip the headers and the rows if there is extra time -->
-        <!-- -Nick -->
+<MudDataGrid Items="@tableTranscript" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade" Property="x => x.grade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="TableTranscript" />
+    </PagerContent>
+</MudDataGrid>
 
-    Credits Earned: {{calculatedCredits}}
 
-        <h2>most recent semester</h2>
-        <table class = "userTable">
-                <thead>
-                <tr>
-                <th>slot id</th>
-                <th>id</th>
-                <th>course</th>
-                <th>grade</th>
-                </tr>
-                </thead>
 
-                <tbody>
-                {% for x in range(0, userSchedule["Schedule"]|length) %}
-                <tr>
-                <td>{{ loop.index0 }}</td>
-                <td>{{ userSchedule["Schedule"][x] }}</td>
-                <td>{{ userSchedule["SchedulePlainText"][x] }}</td>
-                <td>{{ userSchedule["ScheduleGrades"][x] }}</td>
-                </tr>
-                {% endfor %}
-                </tbody>
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<TableSchedule> tableSchedule = new List<TableSchedule> { };
+    List<TableTranscript> tableTranscript = new List<TableTranscript> { };
 
-        </table>
+    protected override async Task OnInitializedAsync()
+    {
+        populateTableSchedule();
+        populateTableTranscript();
+    }
 
-            <h2>transcript</h2>
-            <table class = "userTable">
+    public class TableSchedule
+    {
+        public string className { get; set; }
+        public string grade { get; set; }
+    }
 
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>course name</th>
-                <th>grade</th>
-              </tr>
-            </thead>
-            
-            <tbody>
-                  {% for x in range(0, userSchedule["Transcript"]|length) %}
-                    <tr>
-                    <td>{{ userSchedule["Transcript"][x] }}</td>
-                    <td>{{ userSchedule["TranscriptPlainText"][x] }}</td>
-                    <td>{{ userSchedule["TranscriptGrades"][x] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
+    private class TableTranscript
+    {
+        public string className { get; set; }
+        public string grade { get; set; }
+    }
 
-    </table>
 
-  {{macro.footer()}}
+    public async Task populateTableSchedule()
+    {
+        var userEmail = await storage.GetAsync<string>("email");
+        string email = userEmail.Value;
+        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
 
-</body>
+        for (int i = 0; i < queryUser.SchedulePlainText.Length; i++)
+        {
+            TableSchedule y = new TableSchedule();
+
+            y.className = queryUser.SchedulePlainText[i];
+            y.grade = queryUser.ScheduleGrades[i];
+
+            tableSchedule.Add(y);
+        }
+    }
+
+    public async Task populateTableTranscript()
+    {
+        var userEmail = await storage.GetAsync<string>("email");
+        string email = userEmail.Value;
+        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+
+        for (int i = 0; i < queryUser.TranscriptPlainText.Length; i++)
+        {
+            TableTranscript y = new TableTranscript();
+
+            y.className = queryUser.TranscriptPlainText[i];
+            y.grade = queryUser.TranscriptGrades[i];
+
+            tableTranscript.Add(y);
+        }
+    }
+
+
+
+}
