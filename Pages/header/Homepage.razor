@@ -46,7 +46,7 @@
     <div>
 
 
-    @if (loginStudent)
+        @if (loginStudent)
         {
             <MudPaper Width="300px">
                 <MudList Clickable="true">
@@ -78,6 +78,36 @@
                             </MudListItem>
                             <MudListItem>
                                 Hold Status: @holdStatus
+                            </MudListItem>
+                        </NestedList>
+                    </MudListItem>
+                </MudList>
+            </MudPaper>
+        }
+
+        @if (loginStaff)
+        {
+            <MudPaper Width="300px">
+                <MudList Clickable="true">
+                    <MudListItem Text="Account Information" InitiallyExpanded="false">
+                        <NestedList>
+                            <MudListItem>
+                                Account Type: @accountType
+                            </MudListItem>
+                            <MudListItem>
+                                Email: @email
+                            </MudListItem>
+                            <MudListItem>
+                                Name: @name
+                            </MudListItem>
+                            <MudListItem>
+                                Address: @address
+                            </MudListItem>
+                            <MudListItem>
+                                Phone Number: @phoneNumber
+                            </MudListItem>
+                            <MudListItem>
+                                Department: @department
                             </MudListItem>
                         </NestedList>
                     </MudListItem>
@@ -324,6 +354,7 @@
     string major;
     string minor;
     string holdStatus;
+    string department;
 
 
 
@@ -339,6 +370,7 @@
         var majorCheck = await storage.GetAsync<string>("major");
         var minorCheck = await storage.GetAsync<string>("minor");
         var holdStatusCheck = await storage.GetAsync<string>("holdStatus");
+        var departmentCheck = await storage.GetAsync<string>("department");
 
         //var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", (BsonObjectId)advisorCheck.Value);
         //var queryMajor = mongo.LoadRecordById<Majors>("majors", (BsonObjectId)majorCheck.Value);
@@ -370,6 +402,12 @@
         if (accountTypeCheck.Value == "Faculty" || accountTypeCheck.Value == "Admin")
         {
             loginStaff = true;
+            accountType = accountTypeCheck.Value;
+            email = emailCheck.Value;
+            name = firstNameCheck.Value + " " + lastNameCheck.Value;
+            address = addressCheck.Value;
+            phoneNumber = phoneNumberCheck.Value;
+            department = departmentCheck.Value;
         }
         else
         {

@@ -1,64 +1,88 @@
 @page "/undergraduate/viewdegreeaudit"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view degree audit</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
 
-<body>
+<MudDataGrid Items="@major" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade Requirement" Property="x => x.gradeRequirement" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Major" />
+    </PagerContent>
+</MudDataGrid>
 
-  {{ macro.header() }}
-
-    <div>
-        <table class = "userTable">
-            <thead>
-            <th>major: {{ session["major"].Major }}</th>
-            <th>completed</th>
-            </thead>
-            <tbody>
-
-            {% for x in session["major"].MajorRequirements %}
-                <tr class = "list item">
-                <td>{{ x }}</td>
-                {% if majorCompletion == [] %}
-                    <td>not started</td>
-                {% elif majorCompletion != [] %}
-                <td>{{majorCompletion[loop.index0]}}</td>
-                </tr>
-                {% endif %}
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-
-    <div>
-        <table class = "userTable">
-            <thead>
-            <th>minor: {{ session["minor"].Minor }}</th>
-            <th> completed </th>
-            </thead>
-            <tbody>
-
-            {% for x in session["minor"].MinorRequirements %}
-                <tr class = "list item">
-                <td>{{ x }}</td>
-                {% if minorCompletion == [] %}
-                    <td>not started</td>
-                {% elif minorCompletion != [] %}
-                <td>{{minorCompletion[loop.index0]}}</td>
-                </tr>
-                {% endif %}
-                
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
+<MudDataGrid Items="@minor" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade Requirement" Property="x => x.gradeRequirement" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Minor" />
+    </PagerContent>
+</MudDataGrid>
 
 
 
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<Major> major = new List<Major> { };
+    List<Minor> minor = new List<Minor> { };
 
-</body>
+    protected override async Task OnInitializedAsync()
+    {
+        populateTableMajor();
+        populateTableMinor();
+    }
+
+    public class Major
+    {
+        public string className { get; set; }
+        public string gradeRequirement { get; set; }
+    }
+
+    public class Minor
+    {
+        public string className { get; set; }
+        public string gradeRequirement { get; set; }
+    }
+
+
+    public async Task populateTableMajor()
+    {
+        var userMajor = await storage.GetAsync<ObjectId>("major");
+        var queryMajor = mongo.LoadRecordById<Majors>("majors", userMajor.Value);
+
+        for (int i = 0; i < queryMajor.MajorRequirements.Length; i++)
+        {
+            Major y = new Major();
+
+            y.className = queryMajor.MajorRequirements[i];
+            y.gradeRequirement = queryMajor.GradeRequirements[i];
+
+            major.Add(y);
+        }
+    }
+
+    public async Task populateTableMinor()
+    {
+        var userMinor = await storage.GetAsync<ObjectId>("minor");
+        var queryMinor = mongo.LoadRecordById<Minors>("minors", userMinor.Value);
+
+        for (int i = 0; i < queryMinor.MinorRequirements.Length; i++)
+        {
+            Minor y = new Minor();
+
+            y.className = queryMinor.MinorRequirements[i];
+            y.gradeRequirement = queryMinor.GradeRequirements[i];
+
+            minor.Add(y);
+        }
+    }
+
+
+
+}

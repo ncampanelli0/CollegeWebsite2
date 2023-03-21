@@ -31,7 +31,11 @@
 
 <button @onclick="moveProfessorNamesToClasses">move professor names to classes</button>
 
-<button @onclick = "addGradeRequirements">add grade requirements to majors and minors</button>
+<button @onclick="addGradeRequirements">add grade requirements to majors and minors</button>
+
+<button @onclick="moveAdvisorToStudents">move advisors to students</button>
+
+<button @onclick="moveMajorMinorToStudents">move Majors and Minors to students</button>
 
 @code 
 {
@@ -200,8 +204,8 @@
         List<string> grades = new List<string> { };
 
         Console.WriteLine("running addGradeRequirements()");
-        
-        
+
+
         foreach (var x in queryMajor)
         {
             foreach (var y in x.MajorRequirements)
@@ -215,7 +219,7 @@
 
             grades.Clear();
         }
-        
+
         foreach (var x in queryMinor)
         {
             foreach (var y in x.MinorRequirements)
@@ -229,7 +233,68 @@
             grades.Clear();
         }
         Console.WriteLine("done updating database");
-       
+
     }
+
+
+    private void moveAdvisorToStudents()
+    {
+        var queryUser = mongo.LoadRecord<AllUser>("allUser");
+        Console.WriteLine("running moveAdvisorToStudents");
+        foreach (var user in queryUser)
+        {
+            if (user.AdvisorID != null)
+            {
+                var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", user.AdvisorID);
+
+                user.Advisor = $"{queryAdvisor.FirstName} {queryAdvisor.LastName}";
+                mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+            }
+
+
+        }
+        Console.WriteLine("table updated");
+    }
+
+    private void moveMajorMinorToStudents()
+    {
+        var queryUser = mongo.LoadRecord<AllUser>("allUser");
+        Console.WriteLine("running moveMajorMinorToStudents");
+        foreach (var user in queryUser)
+        {
+            try
+            {
+                if (user.MajorID != null)
+                {
+                    var queryMajor = mongo.LoadRecordById<Majors>("majors", user.MajorID);
+                    user.Major = $"{queryMajor.Major}";
+                    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("try failed major");
+            }
+
+            try
+            {
+                if (user.MinorID != null)
+                {
+                    var queryMinor = mongo.LoadRecordById<Minors>("minors", user.MinorID);
+                    user.Minor = $"{queryMinor.Minor}";
+                    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("try failed minor");
+            }
+
+
+
+        }
+        Console.WriteLine("table updated");
+    }
+
 
 }

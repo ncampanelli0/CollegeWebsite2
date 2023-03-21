@@ -1,0 +1,93 @@
+@page "/undergraduate/viewschedule"
+@page "/graduate/viewschedule"
+@page "/faculty/viewschedule"
+@page "/admin/viewschedule"
+
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
+
+<MudDataGrid Items="@tableSchedule" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade" Property="x => x.grade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="TableSchedule" />
+    </PagerContent>
+</MudDataGrid>
+
+<MudDataGrid Items="@tableTranscript" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Class Name" Property="x => x.className" />
+        <PropertyColumn Title="Grade" Property="x => x.grade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="TableTranscript" />
+    </PagerContent>
+</MudDataGrid>
+
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<TableSchedule> tableSchedule = new List<TableSchedule> { };
+    List<TableTranscript> tableTranscript = new List<TableTranscript> { };
+
+    protected override async Task OnInitializedAsync()
+    {
+        populateTableSchedule();
+        populateTableTranscript();
+    }
+
+    public class TableSchedule
+    {
+        public string className { get; set; }
+        public string grade { get; set; }
+    }
+
+    private class TableTranscript
+    {
+        public string className { get; set; }
+        public string grade { get; set; }
+    }
+
+
+    public async Task populateTableSchedule()
+    {
+        var userEmail = await storage.GetAsync<string>("email");
+        string email = userEmail.Value;
+        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+
+        for (int i = 0; i < queryUser.SchedulePlainText.Length; i++)
+        {
+            TableSchedule y = new TableSchedule();
+
+            y.className = queryUser.SchedulePlainText[i];
+            y.grade = queryUser.ScheduleGrades[i];
+
+            tableSchedule.Add(y);
+        }
+    }
+
+    public async Task populateTableTranscript()
+    {
+        var userEmail = await storage.GetAsync<string>("email");
+        string email = userEmail.Value;
+        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+
+        for (int i = 0; i < queryUser.TranscriptPlainText.Length; i++)
+        {
+            TableTranscript y = new TableTranscript();
+
+            y.className = queryUser.TranscriptPlainText[i];
+            y.grade = queryUser.TranscriptGrades[i];
+
+            tableTranscript.Add(y);
+        }
+    }
+
+
+
+}

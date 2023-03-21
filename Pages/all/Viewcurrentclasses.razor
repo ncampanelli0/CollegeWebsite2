@@ -1,0 +1,86 @@
+@page "/undergraduate/viewcurrentclasses"
+@page "/graduate/viewcurrentclasses"
+@page "/faculty/viewcurrentclasses"
+@page "/admin/viewcurrentclasses"
+
+<MudDataGrid Items="@pop" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.department" />
+        <PropertyColumn Title="Course Name" Property="x => x.courseName" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+        <PropertyColumn Title="Section" Property="x => x.section" />
+        <PropertyColumn Title="Professor Name" Property="x => x.professorName" />
+        <PropertyColumn Title="Start Date/Time" Property="x => x.startDateTime" />
+        <PropertyColumn Title="End Date/Time" Property="x => x.endDateTime" />
+        <PropertyColumn Title="Period" Property="x => x.period" />
+        <PropertyColumn Title="Building ID" Property="x => x.buildingID" />
+        <PropertyColumn Title="Room ID" Property="x => x.roomID" />
+        <PropertyColumn Title="Day" Property="x => x.day" />
+        <PropertyColumn Title="Remaining Capacity" Property="x => x.remainingCapacity" />
+
+
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="popTable" />
+    </PagerContent>
+</MudDataGrid>
+
+@code
+{
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Classes> queryClasses;
+    List<TimeWindow> queryTime;
+    List<popTable> pop = new List<popTable> { };
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+        populateTable();
+    }
+    
+    public class popTable
+    {
+        public string department { get; set; }
+        public string courseName { get; set; }
+        public int? CRN { get; set; }
+        public string section { get; set; }
+        public string professorName{ get; set; }
+        public DateTime startDateTime{ get; set; }
+        public DateTime endDateTime { get; set; }
+        public string period { get; set; }
+        public int? buildingID { get; set; }
+        public int? roomID { get; set; }
+        public string day { get; set; }
+        public int remainingCapacity { get; set; }
+    }
+
+    private void populateTable()
+    {
+
+        foreach (var x in queryClasses)
+        {
+            if (x.StartDate.Year == 2023)
+            {
+                pop.Add(new popTable
+                    {
+                        department = x.Department,
+                        courseName = x.CourseName,
+                        CRN = x.CRN,
+                        section = x.Section,
+                        professorName = x.ProfessorName,
+                        startDateTime = x.StartDate,
+                        endDateTime = x.EndDate,
+                        period = x.Period,
+                        buildingID = x.BuildingID,
+                        roomID = x.RoomID,
+                        day = x.Day,
+                        remainingCapacity = x.MaxCapacity - x.Enrolled
+                });
+            }
+        }
+        
+    }
+
+}

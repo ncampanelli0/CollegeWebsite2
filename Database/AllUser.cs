@@ -29,13 +29,17 @@ namespace CollegeWebsite2.Database
         
         [BsonElement("TranscriptGrades")] public string[]? TranscriptGrades { get; set; } = null;
 
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("MajorID")]
+        public ObjectId? MajorID { get; set; } = null;
+
+        [BsonElement("MinorID")]
+        public ObjectId? MinorID {get; set; } = null;
+
         [BsonElement("Major")]
         public string? Major { get; set; } = null;
 
-        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("Minor")]
-        public string? Minor {get; set; } = null;
+        public string? Minor { get; set; } = null;
 
         [BsonElement("FirstName")] 
         public string? FirstName {get; set;} = null; 
@@ -67,10 +71,12 @@ namespace CollegeWebsite2.Database
         [BsonElement("CreditsEarned")]
         public int CreditsEarned { get; set; } = 0;
 
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("AdvisorID")]
+        public BsonObjectId AdvisorID { get; set; }
+
         [BsonElement("Advisor")]
-        public string? Advisor {get; set;}
-        
+        public string? Advisor { get; set; }
+
         [BsonElement("Holds")]
         public string? Holds {get; set;} = null;
         

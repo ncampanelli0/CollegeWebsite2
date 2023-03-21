@@ -1,79 +1,9 @@
 @page "/faculty/viewstudents"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view students</title>
-  </head>
 
-<body>
 
-  {{ macro.header() }}
 
-    <div>
-        <table class = "userTable">
-            <thead>
-            <tr>
-                <th>User ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Account Type</th>
-                <th>Time</th>
-                <th>Address</th>
-                <th>Phone Number</th>
-                <th>Credits Earned</th>
-                <th>Holds</th>
-                <th>Advisor</th>
-            </tr>
-            </thead>
-            <tbody>
+@code
+{
 
-            {% for users in user %}
-                <tr class = "list item">
-                <td>{{ users["id"] }}</td>
-                <td>{{ users["FirstName"] }}</td>
-                <td>{{ users["LastName"] }}</td>
-                <td>{{ users["Email"] }}</td>
-                <td>{{ users["AccountType"] }}</td>
-                <td>{{ users["PartorFullTime"] }}</td>
-                <td>{{ users["Address"] }}</td>
-                <td>{{ users["PhoneNumber"] }}</td>
-                <td>{{ users["CreditsEarned"] }}</td>
-                <td>{{ users["Holds"] }}</td>
-                <td>{{ users["Advisor"]["FirstName"] }} {{ users["Advisor"]["LastName"] }}</td>
-                </tr>
-            {% endfor %}
-
-            {% for users in user2 %}
-                <tr class = "list item">
-                <td>{{ users["id"] }}</td>
-                <td>{{ users["FirstName"] }}</td>
-                <td>{{ users["LastName"] }}</td>
-                <td>{{ users["Email"] }}</td>
-                <td>{{ users["AccountType"] }}</td>
-                <td>{{ users["PartorFullTime"] }}</td>
-                <td>{{ users["Address"] }}</td>
-                <td>{{ users["PhoneNumber"] }}</td>
-                <td>{{ users["CreditsEarned"] }}</td>
-                <td>{{ users["Holds"] }}</td>
-                <td>{{ users["Advisor"]["FirstName"] }} {{ users["Advisor"]["LastName"] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-
-    <h2>view student grades</h2>
-    <form method = "Post" action = "{{ url_for('facultyviewstudents') }}">
-      {{ form.csrf_token }}
-      {{ form.username.label }}
-      {{ form.username }}
-
-      <input type = "submit" id = "form" name = "form" value = "submit" >
-    </form>
-
-  
-</body>
+}
