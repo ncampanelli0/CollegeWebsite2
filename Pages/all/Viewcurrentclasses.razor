@@ -1,4 +1,7 @@
 @page "/undergraduate/viewcurrentclasses"
+@page "/graduate/viewcurrentclasses"
+@page "/faculty/viewcurrentclasses"
+@page "/admin/viewcurrentclasses"
 
 <MudDataGrid Items="@pop" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
@@ -36,7 +39,7 @@
         queryClasses = mongo.LoadRecord<Classes>("classes");
         populateTable();
     }
-
+    
     public class popTable
     {
         public string department { get; set; }
