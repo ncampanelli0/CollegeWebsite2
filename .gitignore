@@ -7,3 +7,5 @@ bin/Debug/net7.0/CollegeWebsite2.dll
 .vs/ProjectEvaluation/collegewebsite2.projects.v6.1
 bin/Debug/net7.0/CollegeWebsite2.dll
 obj/Debug/net7.0/project.razor.vs.json
+*.dll
+*.pdb
