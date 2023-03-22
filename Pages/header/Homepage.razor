@@ -85,7 +85,7 @@
             </MudPaper>
         }
 
-        @if (loginStaff)
+        @if (loginFaculty)
         {
             <MudPaper Width="300px">
                 <MudList Clickable="true">
@@ -115,6 +115,34 @@
             </MudPaper>
         }
         
+        @if (loginAdmin)
+        {
+            <MudPaper Width="300px">
+                <MudList Clickable="true">
+                    <MudListItem Text="Account Information" InitiallyExpanded="false">
+                        <NestedList>
+                            <MudListItem>
+                                Account Type: @accountType
+                            </MudListItem>
+                            <MudListItem>
+                                Email: @email
+                            </MudListItem>
+                            <MudListItem>
+                                Name: @name
+                            </MudListItem>
+                            <MudListItem>
+                                Address: @address
+                            </MudListItem>
+                            <MudListItem>
+                                Phone Number: @phoneNumber
+                            </MudListItem>
+                        </NestedList>
+                    </MudListItem>
+                </MudList>
+            </MudPaper>
+        }
+
+
     </div>
  
 
@@ -344,7 +372,8 @@
 {
     Mongo mongo = new Mongo("college-site-2");
     bool loginStudent;
-    bool loginStaff;
+    bool loginFaculty;
+    bool loginAdmin;
     string accountType;
     string email;
     string name;
@@ -399,9 +428,9 @@
             loginStudent = false;
         }
 
-        if (accountTypeCheck.Value == "Faculty" || accountTypeCheck.Value == "Admin")
+        if (accountTypeCheck.Value == "Faculty")
         {
-            loginStaff = true;
+            loginFaculty = true;
             accountType = accountTypeCheck.Value;
             email = emailCheck.Value;
             name = firstNameCheck.Value + " " + lastNameCheck.Value;
@@ -411,7 +440,21 @@
         }
         else
         {
-            loginStaff = false;
+            loginFaculty = false;
+        }
+
+        if (accountTypeCheck.Value == "Admin")
+        {
+            loginAdmin = true;
+            accountType = accountTypeCheck.Value;
+            email = emailCheck.Value;
+            name = firstNameCheck.Value + " " + lastNameCheck.Value;
+            address = addressCheck.Value;
+            phoneNumber = phoneNumberCheck.Value;
+        }
+        else
+        {
+            loginAdmin = false;
         }
 
 
