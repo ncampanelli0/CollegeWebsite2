@@ -104,16 +104,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld2FsbGNvdXJzZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewallusers.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld2FsbHVzZXJzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewclasses.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld2NsYXNzZXMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewcurrentcourses.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld2N1cnJlbnRjb3Vyc2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewsemestertranscript.razor]
@@ -210,10 +202,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Signup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcU2lnbnVwLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Viewcoursecatalog.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld2NvdXJzZWNhdGFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Viewdegreeaudit.razor]
@@ -342,10 +330,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Signup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXAucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewcoursecatalog.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3Y291cnNlY2F0YWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewdegreeaudit.razor]

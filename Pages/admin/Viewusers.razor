@@ -1,50 +1,36 @@
 @page "/admin/viewusers"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view users</title>
-  </head>
+<MudDataGrid Items="@queryUser" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="First Name" Property="x => x.FirstName" />
+        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+        <PropertyColumn Title="Birthday" Property="x => x.Birthday" />
+        <PropertyColumn Title="Email" Property="x => x.Email" />
+        <PropertyColumn Title="AccountType" Property="x => x.AccountType" />
+        <PropertyColumn Title="Address" Property="x => x.Address" />
+        <PropertyColumn Title="Part Or Full Time" Property="x => x.PartOrFullTime" />
+        <PropertyColumn Title="Credits Earned" Property="x => x.CreditsEarned" />
+        <PropertyColumn Title="Advisor" Property='x => x.Advisor == "None None" ? "None" : x.Advisor' />
+        <PropertyColumn Title="Hold Status" Property="x => x.Holds" />
+        <PropertyColumn Title="Phone Number" Property="x => x.PhoneNumber" />
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Currently Enrolled Count" Property="x => x.ClassCount" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="AllUser" />
+    </PagerContent>
+</MudDataGrid>
 
-<body>
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<AllUser> queryUser = new List<AllUser> { };
 
-        <div>
-        <table class = "userTable">
-            <thead>
-            <tr>
-                <th>User ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Account Type</th>
-                <th>Time</th>
-                <th>Address</th>
-                <th>Phone Number</th>
-                <th>Credits Earned</th>
-                <th>Holds</th>
-            </tr>
-            </thead>
-            <tbody>
+    protected override async Task OnInitializedAsync()
+    {
+        queryUser = mongo.LoadRecord<AllUser>("allUser");
+    }
 
-            {% for users in user %}
-                <tr class = "list item">
-                <td>{{ users["id"] }}</td>
-                <td>{{ users["FirstName"] }}</td>
-                <td>{{ users["LastName"] }}</td>
-                <td>{{ users["Email"] }}</td>
-                <td>{{ users["AccountType"] }}</td>
-                <td>{{ users["PartorFullTime"] }}</td>
-                <td>{{ users["Address"] }}</td>
-                <td>{{ users["PhoneNumber"] }}</td>
-                <td>{{ users["CreditsEarned"] }}</td>
-                <td>{{ users["Holds"] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
 
-</body>
 
+}
