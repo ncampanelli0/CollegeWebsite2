@@ -37,6 +37,16 @@
 
 <button @onclick="moveMajorMinorToStudents">move Majors and Minors to students</button>
 
+<button @onclick="writeCrnAndRelatedToCourses">write CRN and related to courses</button>
+
+<br />
+
+<button @onclick="writeCrnAndRelatedToClasses">write CRN and related to classes</button>
+
+<button @onclick="writeCourseIDIntoClass">write course id into class</button>
+
+<button @onclick="writeCrnAndRelatedToClassesAndwriteCourseIDIntoClass"> write CRN and related to classes and write course id into class </button>
+
 @code 
 {
     string finalString = "";
@@ -296,5 +306,84 @@
         Console.WriteLine("table updated");
     }
 
+    private void writeCrnAndRelatedToCourses()
+    {
+        var queryCourse = mongo.LoadRecord<Course>("course");
+
+        int courseIDStartNumber = 1000;
+
+        Console.WriteLine("writeCrnAndRelatedToCourses running");
+
+
+        foreach (var x in queryCourse)
+        {
+            x.CourseID = courseIDStartNumber;
+            courseIDStartNumber++;
+
+
+            mongo.UpsertRecord<Course>("course", x.Id, x);
+        }
+
+        Console.WriteLine("table updated");
+    }
+
+    private void writeCrnAndRelatedToClasses()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+        int cRNStartNumber = 10000;
+
+
+
+        Console.WriteLine("writeCrnAndRelatedToClasses running");
+
+        foreach (var x in queryClasses)
+        {
+            x.CRN = cRNStartNumber;
+            cRNStartNumber += 10;
+            mongo.UpsertRecord<Classes>("classes", x.Id, x);
+        }
+
+        sectionNumber();
+
+
+        Console.WriteLine("table updated");
+    }
+
+    private void writeCourseIDIntoClass()
+    {
+        var queryClass = mongo.LoadRecord<Classes>("classes");
+        var queryCourse = mongo.LoadRecord<Course>("course");
+
+        Console.WriteLine("running writeCourseIDIntoClass");
+
+        int counter = 0;
+        bool flag = false;
+        int temp = 0;
+        foreach (var x in queryClass)
+        {
+            x.CourseID = queryCourse[counter].CourseID;
+
+            if (flag)
+            {
+                if (queryCourse[counter].CourseID != temp)
+                {
+                    counter++;
+                }
+            }
+
+            flag = true;
+            temp = x.CourseID;
+
+            mongo.UpsertRecord<Classes>("classes", x.Id, x);
+        }
+        Console.WriteLine("table updated");
+    }
+
+    private void writeCrnAndRelatedToClassesAndwriteCourseIDIntoClass()
+    {
+        writeCrnAndRelatedToClasses();
+        writeCourseIDIntoClass();
+    }
 
 }

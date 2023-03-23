@@ -31,5 +31,8 @@ namespace CollegeWebsite2.Database
         
         [BsonElement("Credits")]
         public int Credits {get; set;}
+
+        [BsonElement("CourseID")]
+        public int CourseID { get; set; }
     }
 }
