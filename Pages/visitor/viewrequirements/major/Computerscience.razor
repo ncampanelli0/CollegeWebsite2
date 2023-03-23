@@ -1,0 +1,31 @@
+@page "/visitor/viewrequirements/major/computerscience"
+<h3>Computer Science Requirements:</h3>
+
+<ol>
+    <li>@course[0] (@grade[0])</li>
+    <li>@course[1] (@grade[1])</li>
+    <li>@course[2] (@grade[2])</li>
+    <li>@course[3] (@grade[3])</li>
+    <li>@course[4] (@grade[4])</li>
+    <li>@course[5] (@grade[5])</li>
+    <li>@course[6] (@grade[6])</li>
+</ol>
+
+
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<Majors> queryMajor;
+    string[] course;
+    string[] grade;
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryMajor = mongo.LoadRecord<Majors>("majors");
+
+        course = queryMajor[0].MajorRequirements.ToArray();
+        grade = queryMajor[0].GradeRequirements.ToArray();
+    }
+}
