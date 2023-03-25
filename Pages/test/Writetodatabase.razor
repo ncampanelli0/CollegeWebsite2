@@ -352,31 +352,38 @@
 
     private void writeCourseIDIntoClass()
     {
-        var queryClass = mongo.LoadRecord<Classes>("classes");
-        var queryCourse = mongo.LoadRecord<Course>("course");
+
+        var queryClass = mongo.LoadRecordSortedAsc<Classes>("classes", "CourseName");
+        var queryCourse = mongo.LoadRecordSortedAsc<Course>("course", "CourseName");
+        bool flag = false;
 
         Console.WriteLine("running writeCourseIDIntoClass");
 
         int counter = 0;
-        bool flag = false;
-        int temp = 0;
-        foreach (var x in queryClass)
-        {
-            x.CourseID = queryCourse[counter].CourseID;
+        string temp = queryCourse[0].CourseName;
 
-            if (flag)
+        for (int i = 0; i < queryClass.Count; i++)
+        {
+            temp = queryCourse[counter].CourseName;
+            queryClass[i].CourseID = queryCourse[counter].CourseID;
+            Console.WriteLine($"queryCourse[{counter}]: {queryCourse[counter].CourseName} - temp: {temp} - written crn: {queryCourse[counter].CourseID}");
+
+            
+
+            if (queryClass[i].CourseName != temp)
             {
-                if (queryCourse[counter].CourseID != temp)
-                {
                     counter++;
-                }
+                    Console.WriteLine("counter increased");
             }
 
-            flag = true;
-            temp = x.CourseID;
+            
+            
 
-            mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            mongo.UpsertRecord<Classes>("classes", queryClass[i].Id, queryClass[i]);
         }
+
+
+
         Console.WriteLine("table updated");
     }
 
