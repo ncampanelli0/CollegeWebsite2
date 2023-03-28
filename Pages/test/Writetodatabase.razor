@@ -80,6 +80,7 @@
         var advisorQuery = mongo.LoadRecord<Advisor>("advisor");
 
 
+
         int counter2 = 0;
         Console.WriteLine("before write");
         foreach (var user in userQuery)
@@ -200,7 +201,8 @@
         {
             var queryProf = mongo.LoadRecordById<AllUser>("allUser", classes.Professor);
 
-            classes.ProfessorName = $"{queryProf.FirstName} {queryProf.LastName}";
+            classes.ProfFirstName = $"{queryProf.FirstName}";
+            classes.ProfLastName = $"{queryProf.LastName}";
             mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
 
         }
@@ -364,21 +366,21 @@
 
         for (int i = 0; i < queryClass.Count; i++)
         {
-            
-            
 
-            
+
+
+
 
             if (queryClass[i].CourseName != temp)
             {
-                    counter++;
-                    Console.WriteLine("counter increased");
+                counter++;
+                Console.WriteLine("counter increased");
             }
             queryClass[i].CourseID = queryCourse[counter].CourseID;
             Console.WriteLine($"queryCourse[{i}]: {queryCourse[counter].CourseName} - temp: {temp} - written crn: {queryCourse[counter].CourseID}");
             temp = queryCourse[counter].CourseName;
-            
-            
+
+
 
             mongo.UpsertRecord<Classes>("classes", queryClass[i].Id, queryClass[i]);
         }
@@ -392,6 +394,11 @@
     {
         writeCrnAndRelatedToClasses();
         writeCourseIDIntoClass();
+    }
+
+    private void assignProfessorsToClasses()
+    {
+        
     }
 
 }

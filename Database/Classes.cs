@@ -95,5 +95,11 @@ namespace CollegeWebsite2.Database
         [BsonElement("CourseID")]
         public int CourseID { get; set; }
 
+        [BsonElement("ProfFirstName")] 
+        public string? ProfFirstName {get; set;} = null; 
+        
+        [BsonElement("ProfLastName")]
+        public string? ProfLastName {get; set;} = null;
+
     }
 }
