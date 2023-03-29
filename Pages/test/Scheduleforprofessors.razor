@@ -1,6 +1,6 @@
 ﻿@page "/developer/scheduleprofessors"
 
-<button @onclick = "scheduleProfessors">schedule professors</button>
+<button @onclick = "applyProfessorsToClasses">schedule professors</button>
 
 <button @onclick = "assignProfessorsToClasses">assign professors to class</button>
 
@@ -8,34 +8,133 @@
 {
     Mongo mongo = new Mongo("college-site-2");
 
-    private void scheduleProfessors()
+    private void applyProfessorsToClasses()
     {
         var queryClass = mongo.LoadRecord<Classes>("classes");
+        var queryClass2018 = mongo.LoadRecordFromClassesByYear<Classes>(2018);
+        var queryClass2019 = mongo.LoadRecordFromClassesByYear<Classes>(2019);
+        var queryClass2020 = mongo.LoadRecordFromClassesByYear<Classes>(2020);
+        var queryClass2021 = mongo.LoadRecordFromClassesByYear<Classes>(2021);
+        var queryClass2022 = mongo.LoadRecordFromClassesByYear<Classes>(2022);
+        var queryClass2023 = mongo.LoadRecordFromClassesByYear<Classes>(2023);
         var queryUser = mongo.LoadRecord<AllUser>("allUser");
 
         List<string> transcript = new List<string> { };
 
         Console.WriteLine("running scheduleProfessors");
 
-        for (int i = 0; i < queryUser.Count; i++)
+        for (int x = 0; x < queryUser.Count; x++)
         {
-            for (int j = 0; j < queryClass.Count; j++)
+            for (int i = 0; i < queryUser.Count; i++)
             {
-                if (queryClass[j].ProfFirstName == queryUser[i].FirstName)
+                for (int j = 0; j < queryClass2018.Count; j++)
                 {
-                    transcript.Add(queryClass[j].CourseName);
-                    Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    if (queryClass2018[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2018[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
+
                 }
+
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+
+
+
+
             }
-            Console.WriteLine("\n\n\n");
-            queryUser[i].TranscriptPlainText = transcript.ToArray();
 
+            for (int i = 0; i < queryUser.Count; i++)
+            {
+                for (int j = 0; j < queryClass2019.Count; j++)
+                {
+                    if (queryClass2019[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2019[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
 
+                }
 
-            mongo.UpsertRecord<AllUser>("allUser", queryUser[i].Id, queryUser[i]);
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+            }
+
+            for (int i = 0; i < queryUser.Count; i++)
+            {
+                for (int j = 0; j < queryClass2020.Count; j++)
+                {
+                    if (queryClass2020[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2020[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
+
+                }
+
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+            }
+
+            for (int i = 0; i < queryUser.Count; i++)
+            {
+                for (int j = 0; j < queryClass2021.Count; j++)
+                {
+                    if (queryClass2021[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2021[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
+
+                }
+
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+            }
+
+            for (int i = 0; i < queryUser.Count; i++)
+            {
+                for (int j = 0; j < queryClass2022.Count; j++)
+                {
+                    if (queryClass2022[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2022[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
+
+                }
+
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+            }
+
+            for (int i = 0; i < queryUser.Count; i++)
+            {
+                for (int j = 0; j < queryClass2023.Count; j++)
+                {
+                    if (queryClass2023[j].ProfFirstName == queryUser[i].FirstName)
+                    {
+                        transcript.Add(queryClass2023[j].CourseName);
+                        Console.WriteLine($"{queryUser[i].FirstName} {queryUser[i].LastName}: {queryClass[j].CourseName}");
+                    }
+
+                }
+
+                Console.WriteLine("");
+                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
+            }
+            mongo.UpsertRecord<AllUser>("allUser", queryUser[x].Id, queryUser[x]);
             transcript.Clear();
-
         }
+
+        
         Console.WriteLine("table updated");
     }
 
@@ -49,28 +148,31 @@
         Console.WriteLine("running assignProfessorsToClasses");
         for (int i = 0; i < queryClass.Count; i++)
         {
-            if (queryClass[i].Department == queryUser[counter].Department && queryUser[counter].PartOrFullTime == "Part Time")
+            if (queryUser[i].AccountType == "Faculty")
             {
-                queryClass[i].ProfFirstName = queryUser[counter].FirstName;
-                queryClass[i].ProfLastName = queryUser[counter].LastName;
-                queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
-                counter++;
-                break;
+                
+                if (queryClass[i].Department == queryUser[counter].Department && queryUser[counter].PartOrFullTime == "Part Time")
+                {
+                    
+                    queryClass[i].ProfFirstName = queryUser[counter].FirstName;
+                    queryClass[i].ProfLastName = queryUser[counter].LastName;
+                    queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+                }
+
+                if (queryClass[i].Department == queryUser[counter].Department && queryUser[counter].PartOrFullTime == "Full Time")
+                {
+                    queryClass[i].ProfFirstName = queryUser[counter].FirstName;
+                    queryClass[i].ProfLastName = queryUser[counter].LastName;
+                    queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+
+                    i++;
+
+                    queryClass[i].ProfFirstName = queryUser[counter].FirstName;
+                    queryClass[i].ProfLastName = queryUser[counter].LastName;
+                    queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+                }
             }
-
-            if (queryClass[i].Department == queryUser[counter].Department && queryUser[counter].PartOrFullTime == "Full Time")
-            {
-                queryClass[i].ProfFirstName = queryUser[counter].FirstName;
-                queryClass[i].ProfLastName = queryUser[counter].LastName;
-                queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
-
-                i++;
-
-                queryClass[i].ProfFirstName = queryUser[counter].FirstName;
-                queryClass[i].ProfLastName = queryUser[counter].LastName;
-                queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
-            }
-
+            counter++;
             mongo.UpsertRecord<Classes>("classes", queryClass[i].Id, queryClass[i]);
         }
         Console.WriteLine("table updated");

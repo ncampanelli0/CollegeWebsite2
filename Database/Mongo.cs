@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using CollegeWebsite2.Database;
+using Microsoft.VisualBasic;
 
 /// <summary>
 ///  <c>Mongo:</c> connect to the database 
@@ -106,6 +107,20 @@ public class Mongo
 
         var result = collection.ReplaceOne(new BsonDocument("_id", id), record, new ReplaceOptions { IsUpsert = true });
     }
+
+
+    //past this point are specific reads/writes
+    //do not edit or add anything past this line
+    //unless its a specific read
+
+    public List<Classes> LoadRecordFromClassesByYear<T>(int year)
+    {
+        var collection = db.GetCollection<Classes>("classes");
+        //var sort = Builders<Classes>.Filter.Eq(x => x.StartDate.Year.ToString(), year);
+
+        return collection.Find(x => x.StartDate.Year == year).ToList<Classes>();
+    }
+
 
 
     //broken for now, will be fixed later (probably)
