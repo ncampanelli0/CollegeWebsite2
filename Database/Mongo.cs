@@ -94,6 +94,14 @@ public class Mongo
         return collection.Find(filter).First();
     }
 
+    public List<T> FilterCollectionByString<T>(string table, string field, string search)
+    {
+        var collection = db.GetCollection<T>(table);
+        var filter = Builders<T>.Filter.Eq(field, search);
+
+        return collection.Find(filter).ToList();
+    }
+
     /// <summary>
     /// updates a record, if it doesn't exist creates it instead
     /// </summary>

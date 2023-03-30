@@ -1,8 +1,6 @@
 ﻿@page "/developer/scheduleprofessors"
 
-<button @onclick = "applyProfessorsToClasses">schedule professors</button>
-
-<button @onclick = "assignProfessorsToClasses">assign professors to class</button>
+<button @onclick = "runBothInOrder">schedule and assign professors</button>
 
 @code
 {
@@ -10,6 +8,7 @@
 
     private void applyProfessorsToClasses()
     {
+        Console.WriteLine("running scheduleProfessors");
         var queryClass = mongo.LoadRecord<Classes>("classes");
         var queryClass2018 = mongo.LoadRecordFromClassesByYear<Classes>(2018);
         var queryClass2019 = mongo.LoadRecordFromClassesByYear<Classes>(2019);
@@ -22,8 +21,7 @@
         List<string> transcript = new List<string> { };
 
         Console.WriteLine("running scheduleProfessors");
-
-        for (int x = 0; x < queryUser.Count; x++)
+        for (int x = 0; x < queryClass.Count; x++)
         {
             for (int i = 0; i < queryUser.Count; i++)
             {
@@ -38,7 +36,6 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
 
 
 
@@ -59,7 +56,6 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
 
             }
 
@@ -76,7 +72,6 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
 
             }
 
@@ -93,7 +88,6 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
 
             }
 
@@ -110,7 +104,6 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
 
             }
 
@@ -127,20 +120,22 @@
                 }
 
                 Console.WriteLine("");
-                queryUser[i].TranscriptPlainText = transcript.ToArray();
+
 
             }
+            queryUser[x].TranscriptPlainText = transcript.ToArray();
             mongo.UpsertRecord<AllUser>("allUser", queryUser[x].Id, queryUser[x]);
             transcript.Clear();
-        }
 
-        
-        Console.WriteLine("table updated");
+
+            Console.WriteLine("table updated");
+        }
     }
 
 
     private void assignProfessorsToClasses()
     {
+        Console.WriteLine("running assignProfessorsToClasses");
         var queryClass = mongo.LoadRecord<Classes>("classes");
         var queryUser = mongo.LoadRecord<AllUser>("allUser");
 
@@ -150,10 +145,10 @@
         {
             if (queryUser[i].AccountType == "Faculty")
             {
-                
+
                 if (queryClass[i].Department == queryUser[counter].Department && queryUser[counter].PartOrFullTime == "Part Time")
                 {
-                    
+
                     queryClass[i].ProfFirstName = queryUser[counter].FirstName;
                     queryClass[i].ProfLastName = queryUser[counter].LastName;
                     queryClass[i].ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
@@ -175,6 +170,15 @@
             counter++;
             mongo.UpsertRecord<Classes>("classes", queryClass[i].Id, queryClass[i]);
         }
+
         Console.WriteLine("table updated");
     }
-}
+
+    private void runBothInOrder()
+    {
+        applyProfessorsToClasses();
+        assignProfessorsToClasses();
+        Console.WriteLine(":both scripts done");
+    }
+
+    }
