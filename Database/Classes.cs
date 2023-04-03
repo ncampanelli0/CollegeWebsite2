@@ -12,7 +12,7 @@ namespace CollegeWebsite2.Database
         public BsonArray Grades { get; set; } = null;
 
         [BsonElement("CRN")]
-        public int? CRN {get; set; } 
+        public int CRN {get; set; } 
 
         [BsonElement("Attendance")]
         public BsonArray Attendance { get; set; } = null;
@@ -42,16 +42,16 @@ namespace CollegeWebsite2.Database
         public string? Description {get; set; }
 
         [BsonElement("RoomID")]
-        public int? RoomID { get; set; } = null;
+        public int RoomID { get; set; }
 
         [BsonElement("BuildingID")]
-        public int? BuildingID { get; set; } = null;
+        public int BuildingID { get; set; }
 
         [BsonElement("Type")]
         public string? Type {get; set;} = null;
 
         [BsonElement("Credits")]
-        public int? Credits {get; set; } = null;
+        public int Credits {get; set; }
 
         [BsonElement("MaxCapacity")]
         public int MaxCapacity { get; set; } = 0;

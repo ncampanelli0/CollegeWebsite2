@@ -45,6 +45,12 @@
 
 <button @onclick="writeCrnAndRelatedToClassesAndwriteCourseIDIntoClass"> write CRN and related to classes and write course id into class </button>
 
+<button @onclick="CreateIdsForStudents">create id for students</button>
+
+
+
+
+
 @code 
 {
     string finalString = "";
@@ -395,5 +401,25 @@
     }
 
 
+    private void CreateIdsForStudents()
+    {
+        Random random = new Random();
+
+
+
+        var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
+        Console.WriteLine("running CreateIdsForStudents");
+        foreach (var x in queryUser)
+        {
+            if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
+            {
+                string id = $"CCC{random.Next(1000, 9999)}";
+                x.StudentID = id;
+
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+            }
+        }
+        Console.WriteLine("table updated");
+    }
 
 }

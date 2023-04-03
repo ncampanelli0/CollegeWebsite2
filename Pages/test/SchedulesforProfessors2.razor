@@ -23,7 +23,6 @@
     Mongo mongo = new Mongo("college-site-2");
     private void runFunctions()
     {
-
         List<string> departmentList = new List<string>
         {
             "American Studies",
@@ -34,7 +33,7 @@
             "Math and Computers",
             "Media and Communications",
             "Modern Language",
-            "politics Economics and Law",
+            "Politics Economics and Law",
             "Psychology",
             "Public Health",
             "Sociology and Criminology",
@@ -44,67 +43,37 @@
         Console.WriteLine("running all scripts");
         for (int x = 0; x < departmentList.Count; x++)
         {
-            
-            assignProfessorsToClass(2018, "Fall", departmentList[x]);
-            assignProfessorsToClass(2019, "Fall", departmentList[x]);
-            assignProfessorsToClass(2020, "Fall", departmentList[x]);
-            assignProfessorsToClass(2021, "Fall", departmentList[x]);
-            assignProfessorsToClass(2022, "Fall", departmentList[x]);
-            assignProfessorsToClass(2023, "Fall", departmentList[x]);
-
-            assignProfessorsToClass(2018, "Spring", departmentList[x]);
-            assignProfessorsToClass(2019, "Spring", departmentList[x]);
-            assignProfessorsToClass(2020, "Spring", departmentList[x]);
-            assignProfessorsToClass(2021, "Spring", departmentList[x]);
-            assignProfessorsToClass(2022, "Spring", departmentList[x]);
-            assignProfessorsToClass(2023, "Spring", departmentList[x]);
-
-
-            assignProfessorsToClass(2018, "Summer", departmentList[x]);
-            assignProfessorsToClass(2019, "Summer", departmentList[x]);
-            assignProfessorsToClass(2020, "Summer", departmentList[x]);
-            assignProfessorsToClass(2021, "Summer", departmentList[x]);
-            assignProfessorsToClass(2022, "Summer", departmentList[x]);
-            assignProfessorsToClass(2023, "Summer", departmentList[x]);
-
-            assignProfessorsToClass(2018, "Winter", departmentList[x]);
-            assignProfessorsToClass(2019, "Winter", departmentList[x]);
-            assignProfessorsToClass(2020, "Winter", departmentList[x]);
-            assignProfessorsToClass(2021, "Winter", departmentList[x]);
-            assignProfessorsToClass(2022, "Winter", departmentList[x]);
-            assignProfessorsToClass(2023, "Winter", departmentList[x]);
-            
-
             /*
-            assignProfessorsToClass("2018-11-16T00:00:00.000Z", "Fall", departmentList[x]);
-            assignProfessorsToClass("2019-11-16T00:00:00.000Z", "Fall", departmentList[x]);
-            assignProfessorsToClass("2020-11-16T00:00:00.000Z", "Fall", departmentList[x]);
-            assignProfessorsToClass("2021-11-16T00:00:00.000Z", "Fall", departmentList[x]);
-            assignProfessorsToClass("2022-11-16T00:00:00.000Z", "Fall", departmentList[x]);
-            assignProfessorsToClass("2023-11-16T00:00:00.000Z", "Fall", departmentList[x]);
+            assignProfessorsToClass2(2018, "Fall", departmentList[x]);
+            assignProfessorsToClass2(2019, "Fall", departmentList[x]);
+            assignProfessorsToClass2(2020, "Fall", departmentList[x]);
+            assignProfessorsToClass2(2021, "Fall", departmentList[x]);
+            assignProfessorsToClass2(2022, "Fall", departmentList[x]);
+            assignProfessorsToClass2(2023, "Fall", departmentList[x]);
 
-            assignProfessorsToClass("2018-02-01T00:00:00.000Z", "Spring", departmentList[x]);
-            assignProfessorsToClass("2019-02-01T00:00:00.000Z", "Spring", departmentList[x]);
-            assignProfessorsToClass("2020-02-01T00:00:00.000Z", "Spring", departmentList[x]);
-            assignProfessorsToClass("2021-02-01T00:00:00.000Z", "Spring", departmentList[x]);
-            assignProfessorsToClass("2022-02-01T00:00:00.000Z", "Spring", departmentList[x]);
-            assignProfessorsToClass("2023-02-01T00:00:00.000Z", "Spring", departmentList[x]);
+            assignProfessorsToClass2(2018, "Spring", departmentList[x]);
+            assignProfessorsToClass2(2019, "Spring", departmentList[x]);
+            assignProfessorsToClass2(2020, "Spring", departmentList[x]);
+            assignProfessorsToClass2(2021, "Spring", departmentList[x]);
+            assignProfessorsToClass2(2022, "Spring", departmentList[x]);
+            assignProfessorsToClass2(2023, "Spring", departmentList[x]);
 
 
-            assignProfessorsToClass("2018-06-18T00:00:00.000Z", "Summer", departmentList[x]);
-            assignProfessorsToClass("2019-06-18T00:00:00.000Z", "Summer", departmentList[x]);
-            assignProfessorsToClass("2020-06-18T00:00:00.000Z", "Summer", departmentList[x]);
-            assignProfessorsToClass("2021-06-18T00:00:00.000Z", "Summer", departmentList[x]);
-            assignProfessorsToClass("2022-06-18T00:00:00.000Z", "Summer", departmentList[x]);
-            assignProfessorsToClass("2023-06-18T00:00:00.000Z", "Summer", departmentList[x]);
+            assignProfessorsToClass2(2018, "Summer", departmentList[x]);
+            assignProfessorsToClass2(2019, "Summer", departmentList[x]);
+            assignProfessorsToClass2(2020, "Summer", departmentList[x]);
+            assignProfessorsToClass2(2021, "Summer", departmentList[x]);
+            assignProfessorsToClass2(2022, "Summer", departmentList[x]);
+            assignProfessorsToClass2(2023, "Summer", departmentList[x]);
 
-            assignProfessorsToClass("2018-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            assignProfessorsToClass("2019-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            assignProfessorsToClass("2020-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            assignProfessorsToClass("2021-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            assignProfessorsToClass("2022-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            assignProfessorsToClass("2023-01-10T00:00:00.000Z", "Winter", departmentList[x]);
-            */
+
+            assignProfessorsToClass2(2018, "Winter", departmentList[x]);
+            assignProfessorsToClass2(2019, "Winter", departmentList[x]);
+            assignProfessorsToClass2(2020, "Winter", departmentList[x]);
+            assignProfessorsToClass2(2021, "Winter", departmentList[x]);
+            assignProfessorsToClass2(2022, "Winter", departmentList[x]);
+            assignProfessorsToClass2(2023, "Winter", departmentList[x]);
+        */
         }
         writeProfessorSchedulesToTranscript(); 
         Console.WriteLine("done running all scripts");
@@ -151,23 +120,129 @@
         }
         catch
         {
-            Console.WriteLine("breaking loop");
-            
+            counter = 0;
+
         }
-    
+
 
 
         Console.WriteLine("table updated");
     }
 
+
+    private void assignProfessorsToClass2(int year, string semester, string department)
+    {
+
+        var queryUser = mongo.FilterCollectionByString<AllUser>("allUser", "Department", department);
+        var queryClasses = mongo.FilterCollectionByString<Classes>("classes", "Department", department);
+
+        int counter = 0;
+        try
+        {
+            foreach (var x in queryClasses)
+            {
+                Console.WriteLine($"professor (department): {queryUser[counter].FirstName} {queryUser[counter].LastName} ({queryUser[counter].Department}) class department: {x.Department} counter: {counter}");
+                if (queryUser[counter].PartOrFullTime == "Part Time" && queryUser[counter].AccountType == "Faculty")
+                {
+                    x.ProfFirstName = queryUser[counter].FirstName;
+                    x.ProfLastName = queryUser[counter].LastName;
+                    x.ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+                    mongo.UpsertRecord<Classes>("classes", x.Id, x);
+                    counter++;
+                }
+
+                if (queryUser[counter].PartOrFullTime == "Full Time" && queryUser[counter].AccountType == "Faculty")
+                {
+                    x.ProfFirstName = queryUser[counter].FirstName;
+                    x.ProfLastName = queryUser[counter].LastName;
+                    x.ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+                    mongo.UpsertRecord<Classes>("classes", x.Id, x);
+                    counter++;
+
+                    x.ProfFirstName = queryUser[counter].FirstName;
+                    x.ProfLastName = queryUser[counter].LastName;
+                    x.ProfessorName = $"{queryUser[counter].FirstName} {queryUser[counter].LastName}";
+                    mongo.UpsertRecord<Classes>("classes", x.Id, x);
+                    counter++;
+
+                }
+
+                if (counter >= 30)
+                {
+                    counter = 0;
+                }
+            }
+        }
+        catch
+        {
+            counter = 0;
+
+        }
+
+
+
+        Console.WriteLine("table updated");
+    }
 
     private void writeProfessorSchedulesToTranscript()
     {
+
+        var tempFirst = "no data stored";
+        var tempLast = "no data stored";
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
         Console.WriteLine("running writeProfessorSchedulesToTranscript");
+
+        foreach (var x in queryClasses)
+        {
+            var queryUserFirst = mongo.LoadRecordByString<AllUser>("allUser", "FirstName", x.ProfFirstName);
+            var queryUserLast = mongo.LoadRecordByString<AllUser>("allUser", "LastName", x.ProfLastName);
+
+            if (queryUserFirst.FirstName == queryUserLast.FirstName && queryUserFirst.LastName == queryUserLast.LastName)
+            {
+                List<Transcript> transcript = new List<Transcript> {};
+
+                Transcript transcriptToAdd = new Transcript
+                {
+                        Building = x.BuildingID,
+                        CourseName = x.CourseName,
+                        CourseID = x.CourseID,
+                        Credits = x.Credits,
+                        CRN = x.CRN,
+                        EndDate = x.EndDate,
+                        Grade = "IP",
+                        RoomID = x.RoomID,
+                        Semester = x.Semester,
+                        StartDate = x.StartDate
+                };
+                try
+                {
+                    Console.WriteLine("try");
+                    transcript.Add(transcriptToAdd);
+
+                    queryUserLast.Transcript = transcript.ToArray();
+
+                    mongo.UpsertRecord<AllUser>("allUser", queryUserLast.Id, queryUserLast);
+
+                    transcript.Clear();
+                }
+                catch
+                {
+                    Console.WriteLine("catch");
+                }
+
+                tempFirst = queryUserFirst.FirstName;
+                tempLast = queryUserLast.LastName;
+
+            }
+
+        }
+
+
+
 
         Console.WriteLine("table updated");
     }
-
 
 
 

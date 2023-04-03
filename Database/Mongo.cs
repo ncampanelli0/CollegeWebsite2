@@ -101,13 +101,6 @@ public class Mongo
 
         return collection.Find(filter).ToList();
     }
-    public List<T> FilterCollectionByString<T>(string table, string field, string search, string field2, string search2)
-    {
-        var collection = db.GetCollection<T>(table);
-        var filter = Builders<T>.Filter.Eq(field, search) & Builders<T>.Filter.Eq(field2, search2);
-
-        return collection.Find(filter).ToList();
-    }
 
     /// <summary>
     /// updates a record, if it doesn't exist creates it instead

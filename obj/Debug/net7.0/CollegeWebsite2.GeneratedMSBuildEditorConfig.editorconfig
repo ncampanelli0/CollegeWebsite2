@@ -308,10 +308,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxSZXZpc2Vkc3RhY2tleGFtcGxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Scheduleforprofessors.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTY2hlZHVsZWZvcnByb2Zlc3NvcnMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/SchedulesforProfessors2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTY2hlZHVsZXNmb3JQcm9mZXNzb3JzMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
