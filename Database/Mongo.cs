@@ -2,13 +2,14 @@
 using MongoDB.Driver;
 using CollegeWebsite2.Database;
 using Microsoft.VisualBasic;
+using System;
 
 /// <summary>
 ///  <c>Mongo:</c> connect to the database 
 /// </summary>
 public class Mongo
 {
-    private IMongoDatabase db;
+    public IMongoDatabase db;
 
     /// <summary>
     /// constructor: requires string of database to connect to
@@ -46,6 +47,14 @@ public class Mongo
 
         return collection.Find(new BsonDocument()).ToList();
     }
+
+    public BsonDocument LoadRecordNoList<T>(string table)
+    {
+        var collection = db.GetCollection<T>(table);
+
+        return (BsonDocument) collection.Find(new BsonDocument());
+    }
+
 
     public List<T> LoadRecordSortedDes<T>(string table, string field)
     {
@@ -130,98 +139,19 @@ public class Mongo
     }
 
 
-
-    //broken for now, will be fixed later (probably)
-    /*
-    private string selectFromArray<T>(List<T> query, string field, int number, int value)
+    public AllUser GetPersonByAllUser(string firstName, string lastName)
     {
+        var collection = db.GetCollection<AllUser>("allUser");
 
-        List<string> result = new List<string>();
-
-
-        string temp;
-
-        foreach (var x in query)
-        {
-            try
-            {
-                if (x.field[value] != null || value > x.MajorRequirements.Length)
-                {
-                    Console.WriteLine("if true");
-                    temp = x.MajorRequirements[value];
-                }
-                else
-                {
-                    Console.WriteLine("if false");
-                    temp = "none";
-                }
-            }
-            catch
-            {
-                temp = "none";
-            }
-
-
-
-            result.Add(temp);
-            Console.WriteLine("before");
-            Console.WriteLine(result[0]);
-            Console.WriteLine("after");
-        }
-        Console.WriteLine("before 2");
-        string[] resultArray = result.ToArray();
-        Console.WriteLine("after 2");
-
-
-        return resultArray[number];
-
+        var filter = Builders<AllUser>.Filter.Eq(p => p.FirstName, firstName) & Builders<AllUser>.Filter.Eq(p => p.LastName, lastName);
+        return collection.Find(filter).FirstOrDefault();
     }
-    */
 
-    //stand alone version, copy and paste into local file and modify
-    /*
-    private string selectFromArrayStandAlone<T>(int number, int value)
+    public Classes GetClassByClasses(string professorFirstName, string courseName)
     {
+        var collection = db.GetCollection<Classes>("classes");
 
-        List<string> result = new List<string>();
-
-
-        string temp;
-
-        foreach (var x in query)
-        {
-            try
-            {
-                if (x.MajorRequirements[value] != null || value > x.MajorRequirements.Length)
-                {
-                    Console.WriteLine("if true");
-                    temp = x.MajorRequirements[value];
-                }
-                else
-                {
-                    Console.WriteLine("if false");
-                    temp = "none";
-                }
-            }
-            catch
-            {
-                temp = "none";
-            }
-
-
-
-            result.Add(temp);
-            Console.WriteLine("before");
-            Console.WriteLine(result[0]);
-            Console.WriteLine("after");
-        }
-        Console.WriteLine("before 2");
-        string[] resultArray = result.ToArray();
-        Console.WriteLine("after 2");
-
-
-        return resultArray[number];
-
+        var filter = Builders<Classes>.Filter.Eq(p => p.ProfFirstName, professorFirstName) & Builders<Classes>.Filter.Eq(p => p.CourseName, courseName);
+        return collection.Find(filter).FirstOrDefault();
     }
-    */
 }

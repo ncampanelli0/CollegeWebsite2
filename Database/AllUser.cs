@@ -69,11 +69,12 @@ namespace CollegeWebsite2.Database
         public int ClassCount { get; set; } = 0;
 
         [BsonElement("Transcript")]
-        public Transcript Transcript { get; set; }
+        public List<Transcript> Transcript { get; set; }
 
+        /*
         [BsonElement("Schedule")]
-        public Schedule Schedule { get; set; }
-
+        public List<Schedule>? Schedule { get; set; }
+        */
         [BsonElement("StudentID")]
         public string StudentID { get; set; }
     }

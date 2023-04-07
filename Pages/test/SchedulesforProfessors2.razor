@@ -1,5 +1,4 @@
 ﻿@page "/developer/scheduleprofessors2"
-
 <style>
     button
     {
@@ -15,7 +14,7 @@
     }
 </style>
 
-<button @onclick = "runFunctions">schedule and assign professors 2</button>
+<button @onclick="runFunctions">schedule and assign professors 2</button>
 
 
 @code
@@ -43,7 +42,7 @@
         Console.WriteLine("running all scripts");
         for (int x = 0; x < departmentList.Count; x++)
         {
-            /*
+            
             assignProfessorsToClass2(2018, "Fall", departmentList[x]);
             assignProfessorsToClass2(2019, "Fall", departmentList[x]);
             assignProfessorsToClass2(2020, "Fall", departmentList[x]);
@@ -73,9 +72,9 @@
             assignProfessorsToClass2(2021, "Winter", departmentList[x]);
             assignProfessorsToClass2(2022, "Winter", departmentList[x]);
             assignProfessorsToClass2(2023, "Winter", departmentList[x]);
-        */
+        
         }
-        writeProfessorSchedulesToTranscript(); 
+        writeProfessorSchedulesToTranscript();
         Console.WriteLine("done running all scripts");
     }
 
@@ -167,7 +166,7 @@
 
                 }
 
-                if (counter >= 30)
+                if (counter >= 60)
                 {
                     counter = 0;
                 }
@@ -187,64 +186,41 @@
     private void writeProfessorSchedulesToTranscript()
     {
 
-        var tempFirst = "no data stored";
-        var tempLast = "no data stored";
         var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+
 
         Console.WriteLine("running writeProfessorSchedulesToTranscript");
 
         foreach (var x in queryClasses)
         {
-            var queryUserFirst = mongo.LoadRecordByString<AllUser>("allUser", "FirstName", x.ProfFirstName);
-            var queryUserLast = mongo.LoadRecordByString<AllUser>("allUser", "LastName", x.ProfLastName);
+            var queryClassTest = mongo.GetClassByClasses(x.ProfFirstName, x.CourseName);
+            var queryUser = mongo.GetPersonByAllUser(x.ProfFirstName, x.ProfLastName);
 
-            if (queryUserFirst.FirstName == queryUserLast.FirstName && queryUserFirst.LastName == queryUserLast.LastName)
+            if (queryUser.AccountType == "Faculty")
             {
-                List<Transcript> transcript = new List<Transcript> {};
-
                 Transcript transcriptToAdd = new Transcript
                 {
-                        Building = x.BuildingID,
-                        CourseName = x.CourseName,
-                        CourseID = x.CourseID,
-                        Credits = x.Credits,
-                        CRN = x.CRN,
-                        EndDate = x.EndDate,
-                        Grade = "IP",
-                        RoomID = x.RoomID,
-                        Semester = x.Semester,
-                        StartDate = x.StartDate
+                    Building = x.BuildingID,
+                    CourseName = x.CourseName,
+                    CourseID = x.CourseID,
+                    Credits = x.Credits,
+                    CRN = x.CRN,
+                    EndDate = x.EndDate,
+                    Grade = "C",
+                    RoomID = x.RoomID,
+                    Semester = x.Semester,
+                    StartDate = x.StartDate
                 };
-                try
-                {
-                    Console.WriteLine("try");
-                    transcript.Add(transcriptToAdd);
 
-                    queryUserLast.Transcript = transcript.ToArray();
+                queryUser.Transcript.Add(transcriptToAdd);
 
-                    mongo.UpsertRecord<AllUser>("allUser", queryUserLast.Id, queryUserLast);
-
-                    transcript.Clear();
-                }
-                catch
-                {
-                    Console.WriteLine("catch");
-                }
-
-                tempFirst = queryUserFirst.FirstName;
-                tempLast = queryUserLast.LastName;
+                mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
 
             }
 
         }
-
-
-
-
+        
         Console.WriteLine("table updated");
     }
-
-
-
-
 }
