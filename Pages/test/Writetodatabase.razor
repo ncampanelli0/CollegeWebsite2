@@ -1,16 +1,14 @@
 @page "/developer/writetodatabase"
 
 <style>
-    button
-    {
+    button {
         color: red;
         background-color: black;
     }
 
-    h2
-    {
+    h2 {
         color: red;
-        background-color:black;
+        background-color: black;
         text-align: center;
     }
 </style>
@@ -47,6 +45,12 @@
 
 <button @onclick="writeCrnAndRelatedToClassesAndwriteCourseIDIntoClass"> write CRN and related to classes and write course id into class </button>
 
+<button @onclick="CreateIdsForStudents">create id for students</button>
+
+
+
+
+
 @code 
 {
     string finalString = "";
@@ -78,6 +82,7 @@
 
         var userQuery = mongo.LoadRecord<AllUser>("allUser");
         var advisorQuery = mongo.LoadRecord<Advisor>("advisor");
+
 
 
         int counter2 = 0;
@@ -200,7 +205,8 @@
         {
             var queryProf = mongo.LoadRecordById<AllUser>("allUser", classes.Professor);
 
-            classes.ProfessorName = $"{queryProf.FirstName} {queryProf.LastName}";
+            classes.ProfFirstName = $"{queryProf.FirstName}";
+            classes.ProfLastName = $"{queryProf.LastName}";
             mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
 
         }
@@ -364,20 +370,21 @@
 
         for (int i = 0; i < queryClass.Count; i++)
         {
-            temp = queryCourse[counter].CourseName;
-            queryClass[i].CourseID = queryCourse[counter].CourseID;
-            Console.WriteLine($"queryCourse[{counter}]: {queryCourse[counter].CourseName} - temp: {temp} - written crn: {queryCourse[counter].CourseID}");
 
-            
+
+
+
 
             if (queryClass[i].CourseName != temp)
             {
-                    counter++;
-                    Console.WriteLine("counter increased");
+                counter++;
+                Console.WriteLine("counter increased");
             }
+            queryClass[i].CourseID = queryCourse[counter].CourseID;
+            Console.WriteLine($"queryCourse[{i}]: {queryCourse[counter].CourseName} - temp: {temp} - written crn: {queryCourse[counter].CourseID}");
+            temp = queryCourse[counter].CourseName;
 
-            
-            
+
 
             mongo.UpsertRecord<Classes>("classes", queryClass[i].Id, queryClass[i]);
         }
@@ -391,6 +398,28 @@
     {
         writeCrnAndRelatedToClasses();
         writeCourseIDIntoClass();
+    }
+
+
+    private void CreateIdsForStudents()
+    {
+        Random random = new Random();
+
+
+
+        var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
+        Console.WriteLine("running CreateIdsForStudents");
+        foreach (var x in queryUser)
+        {
+            if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
+            {
+                string id = $"CCC{random.Next(1000, 9999)}";
+                x.StudentID = id;
+
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+            }
+        }
+        Console.WriteLine("table updated");
     }
 
 }

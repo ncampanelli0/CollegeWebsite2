@@ -1,0 +1,28 @@
+﻿@page "/developer/viewcourseid"
+
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
+        <PropertyColumn Title="Course ID" Property="x => x.CourseID" />
+
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Classes" />
+    </PagerContent>
+</MudDataGrid>
+
+
+@code
+{
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Classes> queryClasses;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+    }
+
+}

@@ -37,8 +37,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        populateTableSchedule();
-        populateTableTranscript();
+        
     }
 
     public class TableSchedule
@@ -51,41 +50,6 @@
     {
         public string className { get; set; }
         public string grade { get; set; }
-    }
-
-
-    public async Task populateTableSchedule()
-    {
-        var userEmail = await storage.GetAsync<string>("email");
-        string email = userEmail.Value;
-        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-
-        for (int i = 0; i < queryUser.SchedulePlainText.Length; i++)
-        {
-            TableSchedule y = new TableSchedule();
-
-            y.className = queryUser.SchedulePlainText[i];
-            y.grade = queryUser.ScheduleGrades[i];
-
-            tableSchedule.Add(y);
-        }
-    }
-
-    public async Task populateTableTranscript()
-    {
-        var userEmail = await storage.GetAsync<string>("email");
-        string email = userEmail.Value;
-        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-
-        for (int i = 0; i < queryUser.TranscriptPlainText.Length; i++)
-        {
-            TableTranscript y = new TableTranscript();
-
-            y.className = queryUser.TranscriptPlainText[i];
-            y.grade = queryUser.TranscriptGrades[i];
-
-            tableTranscript.Add(y);
-        }
     }
 
 
