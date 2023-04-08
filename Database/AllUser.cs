@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Reflection.Metadata;
 
 namespace CollegeWebsite2.Database
 {
@@ -71,10 +72,9 @@ namespace CollegeWebsite2.Database
         [BsonElement("Transcript")]
         public List<Transcript> Transcript { get; set; }
 
-        /*
         [BsonElement("Schedule")]
-        public List<Schedule>? Schedule { get; set; }
-        */
+        public List<Schedule> Schedule { get; set; }
+
         [BsonElement("StudentID")]
         public string StudentID { get; set; }
     }
@@ -106,11 +106,11 @@ namespace CollegeWebsite2.Database
         [BsonElement("EndDate")]
         public DateTime EndDate { get; set; }
 
-        [BsonElement("Grade")]
-        public string Grade { get; set; }
-
         [BsonElement("CourseID")]
         public int CourseID { get; set; }
+
+        [BsonElement("StudentData")]
+        public StudentData? StudentData { get; set; }
 
     }
 
@@ -140,24 +140,39 @@ namespace CollegeWebsite2.Database
         [BsonElement("EndDate")]
         public DateTime EndDate { get; set; }
 
-        public string? Grade { get; set; } = null;
-
-
         [BsonElement("CourseID")]
         public int CourseID { get; set; }
+
+
+        [BsonElement("StudentData")]
+        public StudentData? StudentData { get; set; }
     }
 
     public class StudentData
     {
+        [BsonElement("StudentID")]
+        public string StudentID { get; set; }
+
+        [BsonElement("FirstName")]
         public string FirstName { get; set; }
 
+        [BsonElement("LastName")]
         public string LastName { get; set; }
 
+        [BsonElement("Major")]
         public string Major { get; set; }
 
+        [BsonElement("Minor")]
         public string Minor { get; set;}
 
-        public string[] Grade { get; set; }
+        [BsonElement("Grade")]
+        public List<string>? Grade { get; set; }
+
+        [BsonElement("MidtermGrade")]
+        public string MidtermGrade { get; set; }
+
+        [BsonElement("FinalGrade")]
+        public string FinalGrade { get; set; }
     }
 
 

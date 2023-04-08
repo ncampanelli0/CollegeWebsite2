@@ -17,9 +17,6 @@ namespace CollegeWebsite2.Database
         [BsonElement("Attendance")]
         public BsonArray Attendance { get; set; } = null;
 
-        [BsonElement("Enrolled")]
-        public int Enrolled {get; set; } = 0;
-
         [BsonElement("AttendanceDate")]
         public BsonArray? AttendanceDate {get; set; } = null;
 
@@ -100,6 +97,9 @@ namespace CollegeWebsite2.Database
         
         [BsonElement("ProfLastName")]
         public string? ProfLastName {get; set;} = null;
+
+        [BsonElement("Enrolled")]
+        public List<string>? Enrolled { get; set; } = null;
 
     }
 }
