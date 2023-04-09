@@ -76,7 +76,7 @@
                         buildingID = x.BuildingID,
                         roomID = x.RoomID,
                         day = x.Day,
-                        remainingCapacity = x.MaxCapacity - x.Enrolled
+                        remainingCapacity = x.MaxCapacity - x.Enrolled.Count
                 });
             }
         }
