@@ -30,11 +30,13 @@
             "English and Education",
             "History and Philosophy",
             "Math and Computers",
+            "Math and Computers",
             "Media and Communications",
             "Modern Language",
             "Politics Economics and Law",
             "Psychology",
             "Public Health",
+            "Sociology and Criminology",
             "Sociology and Criminology",
             "Visual Arts"
         };
@@ -61,7 +63,10 @@
         Console.WriteLine("running all scripts");
         for (int x = 0; x < departmentList.Count; x++)
         {
-            //assignStudentsToClass(majorList[x], departmentList[x]);
+
+            assignStudentsToClass(majorList[x], departmentList[x]);
+
+            /*
             assignProfessorsToClassNoCap(2018, "Fall", departmentList[x]);
             assignProfessorsToClassNoCap(2019, "Fall", departmentList[x]);
             assignProfessorsToClassNoCap(2020, "Fall", departmentList[x]);
@@ -91,10 +96,12 @@
             assignProfessorsToClassNoCap(2021, "Winter", departmentList[x]);
             assignProfessorsToClassNoCap(2022, "Winter", departmentList[x]);
             assignProfessorsToClass(2023, "Winter", departmentList[x], 1);
+            */
+
 
 
         }
-        writeProfessorSchedulesToTranscript();
+        //writeProfessorSchedulesToTranscript();
         Console.WriteLine("done running all scripts");
     }
 
@@ -135,10 +142,10 @@
                     counter++;
 
                 }
-                    if (counter >= 60)
-                    {
-                        counter = 0;
-                    }
+                if (counter >= 60)
+                {
+                    counter = 0;
+                }
             }
         }
         catch
@@ -216,6 +223,7 @@
         Console.WriteLine("table updated");
     }
 
+    
     private void assignStudentsToClass(string major, string department)
     {
         var queryClasses = mongo.FilterCollectionByString<Classes>("classes", "Department", department);
@@ -223,44 +231,69 @@
 
         Console.WriteLine("running assignStudentsToClass");
 
-        int counter = 0;
-
-        foreach (var x in queryUser)
+        int classCounter = 0;
+        foreach (var x in queryClasses)
         {
-            if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Full Time")
+            Console.WriteLine($"{x.Department} {x.CourseName} {x.StartDate.Year}/{x.StartDate.Month}/{x.StartDate.Day} - {classCounter}");
+            classCounter++;
+        }
+
+        int userCounter = 0;
+        foreach (var y in queryUser)
+        {
+            Console.WriteLine($"{y.Major} {y.FirstName} {y.LastName} - {userCounter}");
+            userCounter++;
+        }
+
+        int counter = 0;
+        try
+        {
+            foreach (var x in queryUser)
             {
-                for (int i = 0; i < 4; i++)
+                if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Full Time")
                 {
-                    queryClasses[counter].Enrolled.Add(x.StudentID);
-                    counter++;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        queryClasses[counter].Enrolled.Add(x.StudentID);
+                        mongo.UpsertRecord<Classes>("classes", queryClasses[counter].Id, queryClasses[counter]);
+                        counter++;
+                    }
+
+                }
+                else if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Part Time")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        queryClasses[counter].Enrolled.Add(x.StudentID);
+                        mongo.UpsertRecord<Classes>("classes", queryClasses[counter].Id, queryClasses[counter]);
+                        counter++;
+                    }
+                }
+                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Part Time")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        queryClasses[counter].Enrolled.Add(x.StudentID);
+                        mongo.UpsertRecord<Classes>("classes", queryClasses[counter].Id, queryClasses[counter]);
+                        counter++;
+                    }
+                }
+                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Full Time")
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        queryClasses[counter].Enrolled.Add(x.StudentID);
+                        mongo.UpsertRecord<Classes>("classes", queryClasses[counter].Id, queryClasses[counter]);
+                    }
                 }
 
-            }
-            else if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Part Time")
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    queryClasses[counter].Enrolled.Add(x.StudentID);
-                    counter++;
-                }
-            }
-            else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Part Time")
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    queryClasses[counter].Enrolled.Add(x.StudentID);
-                    counter++;
-                }
-            }
-            else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Full Time")
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    queryClasses[counter].Enrolled.Add(x.StudentID);
-                    counter++;
-                }
             }
         }
+        catch
+        {
+            Console.WriteLine("catch");
+        }
+
         Console.WriteLine("table updated");
     }
 
@@ -277,10 +310,8 @@
 
         foreach (var x in queryClasses)
         {
-            var queryClassTest = mongo.GetClassByClasses(x.ProfFirstName, x.CourseName);
+            var queryClassTest = mongo.GetClassByClasses(x.ProfLastName, x.CourseName);
             var queryUser = mongo.GetPersonByAllUser(x.ProfFirstName, x.ProfLastName);
-            if (queryUser.AccountType != null && x.StartDate != null)
-            {
                 if (!(queryUser.AccountType == "Faculty" && x.StartDate.Year == 2023 && x.StartDate.Month == 1))
                 {
 
@@ -340,8 +371,6 @@
 
                     mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
                 }
-
-            }
             }
             
         
