@@ -9,12 +9,6 @@ namespace CollegeWebsite2.Database
         [BsonId]
         public BsonObjectId Id { get; set; }
 
-        [BsonElement("MajorID")]
-        public ObjectId? MajorID { get; set; } = null;
-
-        [BsonElement("MinorID")]
-        public ObjectId? MinorID { get; set; } = null;
-
         [BsonElement("Major")]
         public string? Major { get; set; } = null;
 
@@ -50,9 +44,6 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("CreditsEarned")]
         public int CreditsEarned { get; set; } = 0;
-
-        [BsonElement("AdvisorID")]
-        public BsonObjectId AdvisorID { get; set; }
 
         [BsonElement("Advisor")]
         public string? Advisor { get; set; }

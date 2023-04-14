@@ -31,9 +31,9 @@
 
 <button @onclick="addGradeRequirements">add grade requirements to majors and minors</button>
 
-<button @onclick="moveAdvisorToStudents">move advisors to students</button>
+<!-- <button @onclick="moveAdvisorToStudents">move advisors to students</button> -->
 
-<button @onclick="moveMajorMinorToStudents">move Majors and Minors to students</button>
+<!-- <button @onclick="moveMajorMinorToStudents">move Majors and Minors to students</button> -->
 
 <button @onclick="writeCrnAndRelatedToCourses">write CRN and related to courses</button>
 
@@ -45,7 +45,9 @@
 
 <button @onclick="writeCrnAndRelatedToClassesAndwriteCourseIDIntoClass"> write CRN and related to classes and write course id into class </button>
 
-<button @onclick="CreateIdsForStudents">create id for students</button>
+<button @onclick="CreateIdsForStudents">create id for students (incredibly slow)</button>
+
+<button @onclick = "CreateIdsForStudentsSemiRandom">create id for students (semi random)</button>
 
 
 
@@ -252,66 +254,68 @@
 
     }
 
-
-    private void moveAdvisorToStudents()
-    {
-        var queryUser = mongo.LoadRecord<AllUser>("allUser");
+            /*
+            private void moveAdvisorToStudents()
+            {
+            var queryUser = mongo.LoadRecord<AllUser>("allUser");
         Console.WriteLine("running moveAdvisorToStudents");
-        foreach (var user in queryUser)
-        {
-            if (user.AdvisorID != null)
-            {
-                var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", user.AdvisorID);
-
-                user.Advisor = $"{queryAdvisor.FirstName} {queryAdvisor.LastName}";
-                mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
-            }
-
-
-        }
-        Console.WriteLine("table updated");
-    }
-
-    private void moveMajorMinorToStudents()
+    foreach (var user in queryUser)
     {
-        var queryUser = mongo.LoadRecord<AllUser>("allUser");
-        Console.WriteLine("running moveMajorMinorToStudents");
-        foreach (var user in queryUser)
-        {
-            try
-            {
-                if (user.MajorID != null)
-                {
-                    var queryMajor = mongo.LoadRecordById<Majors>("majors", user.MajorID);
-                    user.Major = $"{queryMajor.Major}";
-                    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
-                }
-            }
-            catch
-            {
-                Console.WriteLine("try failed major");
-            }
+    if (user.AdvisorID != null)
+    {
+    var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", user.AdvisorID);
 
-            try
-            {
-                if (user.MinorID != null)
-                {
-                    var queryMinor = mongo.LoadRecordById<Minors>("minors", user.MinorID);
-                    user.Minor = $"{queryMinor.Minor}";
-                    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
-                }
-            }
-            catch
-            {
-                Console.WriteLine("try failed minor");
-            }
-
+    user.Advisor = $"{queryAdvisor.FirstName} {queryAdvisor.LastName}";
+    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+        }
 
 
         }
         Console.WriteLine("table updated");
+        }
+            */
+
+            /*
+            private void moveMajorMinorToStudents()
+    {
+    var queryUser = mongo.LoadRecord<AllUser>("allUser");
+    Console.WriteLine("running moveMajorMinorToStudents");
+    foreach (var user in queryUser)
+    {
+    try
+    {
+    if (user.MajorID != null)
+    {
+    var queryMajor = mongo.LoadRecordById<Majors>("majors", user.MajorID);
+    user.Major = $"{queryMajor.Major}";
+            mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+        }
+        }
+    catch
+    {
+    Console.WriteLine("try failed major");
     }
 
+    try
+    {
+    if (user.MinorID != null)
+    {
+    var queryMinor = mongo.LoadRecordById<Minors>("minors", user.MinorID);
+    user.Minor = $"{queryMinor.Minor}";
+    mongo.UpsertRecord<AllUser>("allUser", user.Id, user);
+    }
+    }
+    catch
+        {
+        Console.WriteLine("try failed minor");
+    }
+
+
+
+    }
+    Console.WriteLine("table updated");
+    }
+    */
     private void writeCrnAndRelatedToCourses()
     {
         var queryCourse = mongo.LoadRecord<Course>("course");
@@ -409,14 +413,73 @@
 
         var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
         Console.WriteLine("running CreateIdsForStudents");
+
+        List<int> assigned = new List<int> { };
+        int rando;
+        bool flag = false;
+
+
         foreach (var x in queryUser)
         {
             if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
             {
-                string id = $"CCC{random.Next(1000, 9999)}";
-                x.StudentID = id;
 
+
+                while (!flag)
+                {
+                    rando = random.Next(10000, 99999);
+                    foreach (var y in assigned)
+                    {
+                        if (y == rando)
+                        {
+                            flag = false;
+                            break;
+                        }
+                        else
+                        {
+                            flag = true;
+                        }
+                    }
+
+                    if (flag)
+                    {
+                        string id = $"CCC{rando}";
+                        x.StudentID = id;
+                        assigned.Add(rando);
+                        mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+                    }
+                }
+
+
+
+            }
+        }
+        Console.WriteLine("table updated");
+    }
+
+    private void CreateIdsForStudentsSemiRandom()
+    {
+        Random random = new Random();
+
+
+
+        var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
+        Console.WriteLine("running CreateIdsForStudents");
+
+        List<int> assigned = new List<int> { };
+        bool flag = false;
+        int currentVal = 10000;
+        int writeCount = 1;
+        Console.WriteLine(queryUser.Count);
+        foreach (var x in queryUser)
+        {
+            if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
+            {
+                x.StudentID = "CCC" + currentVal;
+                currentVal += random.Next(1, 5);
+                Console.WriteLine($"write count: {writeCount} generated Value: {x.StudentID}");
                 mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+                writeCount++;
             }
         }
         Console.WriteLine("table updated");
