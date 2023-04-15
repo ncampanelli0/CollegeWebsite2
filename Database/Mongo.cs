@@ -99,7 +99,7 @@ public class Mongo
     {
         var collection = db.GetCollection<T>(table);
         var filter = Builders<T>.Filter.Eq(field, search);
-
+        
         return collection.Find(filter).First();
     }
 
@@ -110,6 +110,30 @@ public class Mongo
 
         return collection.Find(filter).ToList();
     }
+
+
+    public List<T> FilterCollectionByStringAndSortASC<T>(string table, string field, string search, string sort)
+    {
+        var collection = db.GetCollection<T>(table);
+        var filter = Builders<T>.Filter.Eq(field, search);
+        var sortRule = Builders<T>.Sort.Ascending(sort);
+
+        return collection.Find(filter).Sort(sortRule).ToList();
+    }
+
+    public List<T> FilterCollectionByStringAndSortDES<T>(string table, string field, string search, string sort)
+    {
+        var collection = db.GetCollection<T>(table);
+        var filter = Builders<T>.Filter.Eq(field, search);
+        var sortRule = Builders<T>.Sort.Descending(sort);
+
+        return collection.Find(filter).Sort(sortRule).ToList();
+    }
+
+
+
+
+
 
     /// <summary>
     /// updates a record, if it doesn't exist creates it instead

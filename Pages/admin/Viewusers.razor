@@ -14,7 +14,7 @@
         <PropertyColumn Title="Hold Status" Property="x => x.Holds" />
         <PropertyColumn Title="Phone Number" Property="x => x.PhoneNumber" />
         <PropertyColumn Title="Department" Property="x => x.Department" />
-        <PropertyColumn Title="Currently Enrolled Count" Property="x => x.ClassCount" />
+        <PropertyColumn Title="Currently Enrolled Count" Property="x => x.Schedule.Count" />
     </Columns>
     <PagerContent>
         <MudDataGridPager T="AllUser" />
