@@ -30,13 +30,11 @@
             "English and Education",
             "History and Philosophy",
             "Math and Computers",
-            "Math and Computers",
             "Media and Communications",
             "Modern Language",
             "Politics Economics and Law",
             "Psychology",
             "Public Health",
-            "Sociology and Criminology",
             "Sociology and Criminology",
             "Visual Arts"
         };
@@ -48,14 +46,12 @@
             "Chemistry and Physics",
             "English",
             "History and Philosophy",
-            "Mathematics",
             "Computer Science",
             "Industrial and Labor Relations",
             "Modern Language",
             "Politics Economics and Law",
             "Psychology",
             "Health and Society",
-            "Sociology",
             "Criminology",
             "Visual Arts"
         };
@@ -99,8 +95,6 @@
             */
 
             assignStudentsToClass(majorList[x], departmentList[x], 2018, "Fall");
-
-
             assignStudentsToClass(majorList[x], departmentList[x], 2019, "Fall");
             assignStudentsToClass(majorList[x], departmentList[x], 2020, "Fall");
             assignStudentsToClass(majorList[x], departmentList[x], 2021, "Fall");
@@ -121,12 +115,12 @@
             assignStudentsToClass(majorList[x], departmentList[x], 2022, "Winter");
             assignStudentsToClass(majorList[x], departmentList[x], 2023, "Winter");
 
-            assignStudentsToClass(majorList[x], departmentList[x], 2018, "Fall");
-            assignStudentsToClass(majorList[x], departmentList[x], 2019, "Fall");
-            assignStudentsToClass(majorList[x], departmentList[x], 2020, "Fall");
-            assignStudentsToClass(majorList[x], departmentList[x], 2021, "Fall");
-            assignStudentsToClass(majorList[x], departmentList[x], 2022, "Fall");
-            assignStudentsToClass(majorList[x], departmentList[x], 2023, "Fall");
+            assignStudentsToClass(majorList[x], departmentList[x], 2018, "Summer");
+            assignStudentsToClass(majorList[x], departmentList[x], 2019, "Summer");
+            assignStudentsToClass(majorList[x], departmentList[x], 2020, "Summer");
+            assignStudentsToClass(majorList[x], departmentList[x], 2021, "Summer");
+            assignStudentsToClass(majorList[x], departmentList[x], 2022, "Summer");
+            assignStudentsToClass(majorList[x], departmentList[x], 2023, "Summer");
 
         }
         //writeProfessorSchedulesToTranscript();
@@ -254,82 +248,158 @@
 
     private void assignStudentsToClass(string major, string department, int year, string semester)
     {
-        var queryClasses = mongo.FilterCollectionByString<Classes>("classes", "Department", department);
-        var queryUser = mongo.FilterCollectionByString<AllUser>("allUser", "Major", major);
 
-        var queryClassesSorted = mongo.FilterCollectionByStringAndSortASC<Classes>("classes", "Department", department, department);
+        var queryClassesSorted = mongo.GetAllUserByFilterAndSortByYear(department, year);
         var queryUserSorted = mongo.FilterCollectionByStringAndSortASC<AllUser>("allUser", "Major", major, major);
         Console.WriteLine("running assignStudentsToClass");
 
+        /*
+        foreach (var y in queryClassesSorted)
+            {
+            Console.WriteLine($"{y.Department} {y.Semester} {y.StartDate.Year}");
+        }
+        */
 
         int counter = 0;
 
         foreach (var x in queryUserSorted)
         {
+            string[] gradeChoices = { "A", "B", "C", "D", "F" };
+            List<string> gradesToAdd = new List<string> { };
+            bool[] attended = { true, false };
+            Random random = new Random();
+
             try
             {
-
-
                 while (!(queryClassesSorted[counter].StartDate.Year == year && queryClassesSorted[counter].Semester == semester))
                 {
                     counter++;
-                    
                 }
 
-                if (queryClassesSorted[counter].Enrolled.Count >= 20)
+                if (queryClassesSorted[counter].Enrolled.Count >= 25)
                 {
                     counter++;
                 }
-                Console.WriteLine($"counter: {counter} department: {queryClassesSorted[counter].Department} year: {queryClassesSorted[counter].StartDate.Year} semester: {queryClassesSorted[counter].Semester}");
+                //Console.WriteLine($"counter: {counter} department: {queryClassesSorted[counter].Department} year: {queryClassesSorted[counter].StartDate.Year} semester: {queryClassesSorted[counter].Semester}");
                 if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Full Time")
                 {
-                    
-                    for (int i = 0; i < 4; i++)
-                        {
-                            queryClassesSorted[counter].Enrolled.Add($"{x.FirstName} {x.LastName} {x.StudentID}");
-                            mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
-                            counter++;
-                        }
-                        counter -= 4;
 
-                    }
-                else if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Part Time")
+
+                    for (int i = 0; i < 4; i++)
                     {
-                        for (int i = 0; i < 2; i++)
+                        Enrolled toAdd = new Enrolled();
+
+                        for (int y = 0; y < 5; y++)
                         {
-                            queryClassesSorted[counter].Enrolled.Add($"{x.FirstName} {x.LastName} {x.StudentID}");
-                            mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
-                            counter++;
+                            gradesToAdd.Add(gradeChoices[random.Next(0, 4)]);
+
                         }
-                        counter -= 2;
+
+                        toAdd.FirstName = x.FirstName;
+                        toAdd.LastName = x.LastName;
+                        toAdd.StudentID = x.StudentID;
+                        toAdd.Grades = gradesToAdd;
+                        toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.Attendance = random.Next(26, 32);
+
+
+                        queryClassesSorted[counter].Enrolled.Add(toAdd);
+                        mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
+                        counter++;
                     }
-                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Part Time")
-                    {
-                        for (int i = 0; i < 2; i++)
-                        {
-                            queryClassesSorted[counter].Enrolled.Add($"{x.FirstName} {x.LastName} {x.StudentID}");
-                            mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
-                            counter++;
-                        }
-                        counter -= 2;
-                    }
-                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Full Time")
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            queryClassesSorted[counter].Enrolled.Add($"{x.FirstName} {x.LastName} {x.StudentID}");
-                            mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
-                            counter++;
-                        }
                         counter -= 4;
-                    }
+                        gradesToAdd.Clear();
+
                 }
-                catch
+                else if (x.AccountType == "Undergraduate" && x.PartOrFullTime == "Part Time")
                 {
-                    //Console.WriteLine("catch");
+                    
+                    for (int i = 0; i < 2; i++)
+                    {
+                        Enrolled toAdd = new Enrolled();
+
+                        for (int y = 0; y < 5; y++)
+                        {
+                            gradesToAdd.Add(gradeChoices[random.Next(0, 4)]);
+
+                        }
+
+                        toAdd.FirstName = x.FirstName;
+                        toAdd.LastName = x.LastName;
+                        toAdd.StudentID = x.StudentID;
+                        toAdd.Grades = gradesToAdd;
+                        toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.Attendance = random.Next(26, 32);
+
+                        queryClassesSorted[counter].Enrolled.Add(toAdd);
+                        mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
+                        counter++;
+                    }
+                    counter -= 2;
+                    gradesToAdd.Clear();
+                }
+                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Part Time")
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        Enrolled toAdd = new Enrolled();
+
+                        for (int y = 0; y < 5; y++)
+                        {
+                            gradesToAdd.Add(gradeChoices[random.Next(0, 4)]);
+
+                        }
+
+                        toAdd.FirstName = x.FirstName;
+                        toAdd.LastName = x.LastName;
+                        toAdd.StudentID = x.StudentID;
+                        toAdd.Grades = gradesToAdd;
+                        toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.Attendance = random.Next(26, 32);
+
+                        queryClassesSorted[counter].Enrolled.Add(toAdd);
+                        mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
+                        counter++;
+                    }
+                    counter -= 2;
+                    gradesToAdd.Clear();
+                }
+                else if (x.AccountType == "Graduate" && x.PartOrFullTime == "Full Time")
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Enrolled toAdd = new Enrolled();
+
+                        for (int y = 0; y < 5; y++)
+                        {
+                            gradesToAdd.Add(gradeChoices[random.Next(0, 4)]);
+                        }
+
+                        toAdd.FirstName = x.FirstName;
+                        toAdd.LastName = x.LastName;
+                        toAdd.StudentID = x.StudentID;
+                        toAdd.Grades = gradesToAdd;
+                        toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
+                        toAdd.Attendance = random.Next(26, 32);
+
+                        queryClassesSorted[counter].Enrolled.Add(toAdd);
+                        mongo.UpsertRecord<Classes>("classes", queryClassesSorted[counter].Id, queryClassesSorted[counter]);
+                        counter++;
+                    }
+                    counter -= 4;
+                    gradesToAdd.Clear();
                 }
             }
-                
+                catch
+                {
+                    Console.WriteLine("catch");
+                }
+        }
+            
 
         Console.WriteLine("table updated");
     }
@@ -358,7 +428,7 @@
                         {
                             gradeList[i] = gradeChoices[random.Next(0, 4)];
                         }
-                        var queryStudent = mongo.LoadRecordByString<AllUser>("allUser", "StudentID", x.Enrolled[y]);
+                        var queryStudent = mongo.LoadRecordByString<AllUser>("allUser", "StudentID", x.Enrolled[y].StudentID);
                         StudentData studentData = new StudentData
                             {
                                 StudentID = queryStudent.StudentID,
@@ -366,9 +436,7 @@
                                 LastName = queryStudent.LastName,
                                 Major = queryStudent.Major,
                                 Minor = queryStudent.Minor,
-                                Grade = gradeList.ToList(),
-                                MidtermGrade = gradeChoices[random.Next(0, 4)],
-                                FinalGrade = gradeChoices[random.Next(0, 4)]
+                                Grade = gradeList.ToList()
                             };
 
                         Transcript transcriptToAdd = new Transcript

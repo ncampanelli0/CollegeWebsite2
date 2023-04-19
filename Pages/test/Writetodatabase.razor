@@ -155,7 +155,9 @@
 
     private void sectionNumber()
     {
+        Console.WriteLine("running sectionNumber");
         var query = mongo.LoadRecordSortedAsc<Classes>("classes", "CourseName");
+
 
 
         int sectionNum = 0;
@@ -169,10 +171,22 @@
             }
             else
             {
+                var queryCourse = mongo.LoadRecordByString<Course>("course", "CourseName",  x.CourseName);
+                queryCourse.SectionCounter = sectionNum;
+                mongo.UpsertRecord<Course>("course", queryCourse.Id, queryCourse);
                 sectionNum = 0;
+                
+
             }
             currentCourseName = x.CourseName;
-            x.Section = "00" + (sectionNum+1).ToString();
+            if (sectionNum <= 8)
+            {
+                x.Section = "000" + (sectionNum + 1).ToString();
+            }
+            else
+            {
+                x.Section = "00" + (sectionNum + 1).ToString();
+            }
             mongo.UpsertRecord<Classes>("classes", x.Id, x);
             Console.WriteLine($"{x.CourseName}");
         }

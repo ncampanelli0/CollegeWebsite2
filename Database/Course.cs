@@ -8,9 +8,6 @@ namespace CollegeWebsite2.Database
         [BsonId]
         public BsonObjectId Id { get; set; }
 
-        [BsonElement("Crn")]
-        public string? CRN {get; set;} = null;
-
         [BsonElement("CourseName")]
         public string CourseName {get; set;}
 
@@ -34,5 +31,8 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("CourseID")]
         public int CourseID { get; set; }
+
+        [BsonElement("SectionCounter")]
+        public int SectionCounter { get; set;}
     }
 }

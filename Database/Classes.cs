@@ -8,23 +8,11 @@ namespace CollegeWebsite2.Database
         [BsonId]
         public BsonObjectId Id { get; set; }
 
-        [BsonElement("Grades")]
-        public BsonArray Grades { get; set; } = null;
-
         [BsonElement("CRN")]
-        public int CRN {get; set; } 
-
-        [BsonElement("Attendance")]
-        public BsonArray Attendance { get; set; } = null;
-
-        [BsonElement("AttendanceDate")]
-        public BsonArray? AttendanceDate {get; set; } = null;
+        public int CRN {get; set; }
 
         [BsonElement("CourseName")]
-        public string CourseName {get; set;} = null;
-
-        [BsonElement("PotentialID")]
-        public string PotentialID {get; set;} = null;
+        public string CourseName { get; set; } = null;
 
         [BsonElement("Section")]
         public string? Section {get; set;} 
@@ -99,7 +87,33 @@ namespace CollegeWebsite2.Database
         public string? ProfLastName {get; set;} = null;
 
         [BsonElement("Enrolled")]
-        public List<string>? Enrolled { get; set; } = null;
+        public List<Enrolled>? Enrolled { get; set; } = null;
 
+    }
+
+
+    public class Enrolled
+    {
+
+        [BsonElement("StudentID")]
+        public string StudentID { get; set; }
+
+        [BsonElement("FirstName")]
+        public string FirstName { get; set; }
+
+        [BsonElement("LastName")]
+        public string LastName { get; set; }
+
+        [BsonElement("Grades")]
+        public List<string>? Grades { get; set; } = null;
+
+        [BsonElement("MidTermGrade")]
+        public string? MidTermGrade { get; set; } = null;
+
+        [BsonElement("FinalGrade")]
+        public string? FinalGrade { get; set; } = null;
+
+        [BsonElement("Attendance")]
+        public int Attendance { get; set; } = 0;
     }
 }

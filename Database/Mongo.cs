@@ -134,7 +134,6 @@ public class Mongo
 
 
 
-
     /// <summary>
     /// updates a record, if it doesn't exist creates it instead
     /// </summary>
@@ -178,4 +177,22 @@ public class Mongo
         var filter = Builders<Classes>.Filter.Eq(p => p.ProfFirstName, professorFirstName) & Builders<Classes>.Filter.Eq(p => p.CourseName, courseName);
         return collection.Find(filter).FirstOrDefault();
     }
+
+    public List<Classes> GetAllUserByFilterAndSortByYear(string department, int year)
+    {
+        var collection = db.GetCollection<Classes>("classes");
+
+        DateTime startDate = new DateTime(year, 1, 1);
+        DateTime endDate = new DateTime(year + 1, 1, 1);
+
+        var filter = Builders<Classes>.Filter.Eq(p => p.Department, department) & Builders<Classes>.Filter.Gte(x => x.StartDate, startDate) & Builders<Classes>.Filter.Lt(x => x.StartDate, endDate);
+        var sortedList = collection.Find(filter).ToList();
+
+        sortedList = sortedList.OrderBy(x => x.StartDate).ToList();
+
+
+        return sortedList;
+    }
+
+
 }

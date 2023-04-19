@@ -42,9 +42,6 @@ namespace CollegeWebsite2.Database
         [BsonElement("PartorFullTime")]
         public string? PartOrFullTime { get; set; } = null;
 
-        [BsonElement("CreditsEarned")]
-        public int CreditsEarned { get; set; } = 0;
-
         [BsonElement("Advisor")]
         public string? Advisor { get; set; }
 
@@ -151,21 +148,11 @@ namespace CollegeWebsite2.Database
         public string Major { get; set; }
 
         [BsonElement("Minor")]
-        public string Minor { get; set;}
+        public string Minor { get; set; }
 
         [BsonElement("Grade")]
         public List<string>? Grade { get; set; }
 
-        [BsonElement("MidtermGrade")]
-        public string MidtermGrade { get; set; }
-
-        [BsonElement("FinalGrade")]
-        public string FinalGrade { get; set; }
     }
-
-
-
-
-
 
 }
