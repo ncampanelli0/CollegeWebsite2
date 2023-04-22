@@ -8,146 +8,137 @@
 
 
 <MudExpansionPanels MultiExpansion="false">
-    <MudExpansionPanel Text="Criminology">
+    <MudExpansionPanel Text="American Studies">
         <ol>
-            @for (int i = 0; i < course0.Length; i++)
+            @for (int i = 0; i < majorInfo[0].majorGrade.Length; i++)
             {
-                <li>@course0[i] (@grade0[i] or higher required)</li>
+                <li>@majorInfo[0].majorCourses[i] (@majorInfo[0].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Biological Sciences">
+        <ol>
+            @for (int i = 0; i < majorInfo[1].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[1].majorCourses[i] (@majorInfo[1].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel Text="Chemistry and Physics">
+        <ol>
+            @for (int i = 0; i < majorInfo[2].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[2].majorCourses[i] (@majorInfo[2].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Computer Science">
+        <ol>
+            @for (int i = 0; i < majorInfo[3].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[3].majorCourses[i] (@majorInfo[3].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Criminology">
+        <ol>
+            @for (int i = 0; i < majorInfo[4].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[4].majorCourses[i] (@majorInfo[4].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="English">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[5].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Biological">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Biological Sciences">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Industrial and Labor Relations">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-     <MudExpansionPanel Text="Chemistry and Physics">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-     <MudExpansionPanel Text="Politics,Economics, and Law">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-     <MudExpansionPanel Text="Psychology">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-        </MudExpansionPanel>
-
-        <MudExpansionPanel Text="American Studies">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Modern Language">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[5].majorCourses[i] (@majorInfo[5].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="Health and Society">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[6].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[6].majorCourses[i] (@majorInfo[6].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="History and Philosophy">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[7].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[7].majorCourses[i] (@majorInfo[7].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Mathematics">
+        <MudExpansionPanel Text="Industrial and Labor Relations">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[8].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[8].majorCourses[i] (@majorInfo[8].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Visual Arts">
+   <MudExpansionPanel Text="Mathematics">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[9].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[9].majorCourses[i] (@majorInfo[9].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Computer Science">
+   <MudExpansionPanel Text="Modern Language">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[10].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[10].majorCourses[i] (@majorInfo[10].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Sociology">
+    <MudExpansionPanel Text="Politics,Economics and Law">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < majorInfo[11].majorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@majorInfo[11].majorCourses[i] (@majorInfo[11].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel Text="Psychology">
+        <ol>
+            @for (int i = 0; i < majorInfo[12].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[12].majorCourses[i] (@majorInfo[12].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+ <MudExpansionPanel Text="Sociology">
+        <ol>
+            @for (int i = 0; i < majorInfo[13].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[13].majorCourses[i] (@majorInfo[13].majorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Visual Arts">
+        <ol>
+            @for (int i = 0; i < majorInfo[14].majorGrade.Length; i++)
+            {
+                <li>@majorInfo[14].majorCourses[i] (@majorInfo[14].majorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
@@ -156,146 +147,137 @@
 <h2>minors</h2>
 
     <MudExpansionPanels MultiExpansion="false">
-    <MudExpansionPanel Text="Media Design">
+   <MudExpansionPanel Text="Chemistry">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+             @for (int i = 0; i < minorInfo[0].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[0].minorCourses[i] (@minorInfo[0].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="PreLaw Studies">
+   <MudExpansionPanel Text="Computer Information Science">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+             @for (int i = 0; i < minorInfo[1].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[1].minorCourses[i] (@minorInfo[1].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Visual Arts">
+  <MudExpansionPanel Text="Enviromental Studies">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[2].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Mathematics">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Media and Communications">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[2].minorCourses[i] (@minorInfo[2].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="Global Studies">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[3].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Environmental Studies">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Chemistry">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Philosophy and Religion">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
-            }
-        </ol>
-    </MudExpansionPanel>
-
-    <MudExpansionPanel Text="Computer Information Science">
-        <ol>
-            @for (int i = 0; i < course1.Length; i++)
-            {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[3].minorCourses[i] (@minorInfo[3].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="Hispanic Culture Studies">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[4].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[4].minorCourses[i] (@minorInfo[4].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Physics">
+   <MudExpansionPanel Text="Mathematics">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+           @for (int i = 0; i < minorInfo[5].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[5].minorCourses[i] (@minorInfo[5].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Prehealth Professions">
+    <MudExpansionPanel Text="Media Design">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[6].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[6].minorCourses[i] (@minorInfo[6].minorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Media and Communications">
+        <ol>
+           @for (int i = 0; i < minorInfo[7].minorGrade.Length; i++)
+            {
+                <li>@minorInfo[7].minorCourses[i] (@minorInfo[7].minorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="Philisophy and Religion">
+        <ol>
+           @for (int i = 0; i < minorInfo[8].minorGrade.Length; i++)
+            {
+                <li>@minorInfo[8].minorCourses[i] (@minorInfo[8].minorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+ <MudExpansionPanel Text="Physics">
+        <ol>
+            @for (int i = 0; i < minorInfo[9].minorGrade.Length; i++)
+            {
+                <li>@minorInfo[9].minorCourses[i] (@minorInfo[9].minorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+   <MudExpansionPanel Text="PreLaw Studies">
+        <ol>
+            @for (int i = 0; i < minorInfo[10].minorGrade.Length; i++)
+            {
+                <li>@minorInfo[10].minorCourses[i] (@minorInfo[10].minorGrade[i] or higher required)</li>
+            }
+        </ol>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel Text="Prehealth Studies">
+        <ol>
+            @for (int i = 0; i < minorInfo[11].minorGrade.Length; i++)
+            {
+                <li>@minorInfo[11].minorCourses (@minorInfo[11].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
     <MudExpansionPanel Text="Public Policy">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+           @for (int i = 0; i < minorInfo[12].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[12].minorCourses[i] (@minorInfo[12].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="Spanish">
+   <MudExpansionPanel Text="Spanish">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[13].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[13].minorCourses[i] (@minorInfo[13].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
 
-    <MudExpansionPanel Text="No Minor">
+    <MudExpansionPanel Text="Visual Arts">
         <ol>
-            @for (int i = 0; i < course1.Length; i++)
+            @for (int i = 0; i < minorInfo[14].minorGrade.Length; i++)
             {
-                <li>@course1[i] (@grade1[i] or higher required)</li>
+                <li>@minorInfo[14].minorCourses[i] (@minorInfo[14].minorGrade[i] or higher required)</li>
             }
         </ol>
     </MudExpansionPanel>
@@ -306,22 +288,56 @@
     bool open;
     Anchor anchor;
 
+    public class MajorInfo
+    {
+        public string majorName { get; set; }
+        public string[] majorGrade { get; set; }
+        public string[] majorCourses { get; set; }
+    }
+
+    public class MinorInfo
+    {
+        public string minorName { get; set; }
+        public string[] minorGrade { get; set; }
+        public string[] minorCourses { get; set; }
+    }
+
+
     Mongo mongo = new Mongo("college-site-2");
-    List<Majors> queryMajor;
-    string[] course0;
-    string[] grade0;
-    string[] course1;
-    string[] grade1;
+    List<Majors> queryMajor = new List<Majors> { };
+    List<Minors> queryMinor = new List<Minors> { };
+
+    List<MajorInfo> majorInfo = new List<MajorInfo> { };
+    List<MinorInfo> minorInfo = new List<MinorInfo> { };
 
     protected override async Task OnInitializedAsync()
     {
-        queryMajor = mongo.LoadRecord<Majors>("majors");
+        queryMajor = mongo.LoadRecordSortedAsc<Majors>("majors", "Major");
+        queryMinor = mongo.LoadRecordSortedAsc<Minors>("minors", "Minor");
 
-        course0 = queryMajor[0].MajorRequirements.ToArray();
-        grade0 = queryMajor[0].GradeRequirements.ToArray();
-        
-        course1 = queryMajor[1].MajorRequirements.ToArray();
-        grade1 = queryMajor[1].GradeRequirements.ToArray();
+        foreach (var x in queryMajor)
+        {
+
+            MajorInfo toAdd = new MajorInfo();
+
+            toAdd.majorName = x.Major;
+            toAdd.majorGrade = x.GradeRequirements;
+            toAdd.majorCourses = x.MajorRequirements;
+
+            majorInfo.Add(toAdd);
+        }
+
+        foreach (var x in queryMinor)
+        {
+
+            MinorInfo toAdd2 = new MinorInfo();
+
+            toAdd2.minorName = x.Minor;
+            toAdd2.minorGrade = x.GradeRequirements;
+            toAdd2.minorCourses = x.MinorRequirements;
+
+            minorInfo.Add(toAdd2);
+        }
         
     }
 

@@ -115,5 +115,9 @@ namespace CollegeWebsite2.Database
 
         [BsonElement("Attendance")]
         public int Attendance { get; set; } = 0;
+
+        [BsonElement("MissedAttendance")]
+
+        public int MissedAttendance { get; set; } = 0;
     }
 }

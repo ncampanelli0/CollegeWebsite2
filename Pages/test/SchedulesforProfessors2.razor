@@ -302,6 +302,7 @@
                         toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.Attendance = random.Next(26, 32);
+                        toAdd.MissedAttendance = random.Next(0, 5);
 
 
                         queryClassesSorted[counter].Enrolled.Add(toAdd);

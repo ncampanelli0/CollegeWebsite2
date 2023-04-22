@@ -10,9 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="functionality\**" />
     <Compile Remove="Pages\visitor\viewrequirements\**" />
+    <Content Remove="functionality\**" />
     <Content Remove="Pages\visitor\viewrequirements\**" />
+    <EmbeddedResource Remove="functionality\**" />
     <EmbeddedResource Remove="Pages\visitor\viewrequirements\**" />
+    <None Remove="functionality\**" />
     <None Remove="Pages\visitor\viewrequirements\**" />
   </ItemGroup>
 
@@ -47,7 +51,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="functionality\" />
     <Folder Include="Pages\visitor\" />
   </ItemGroup>
 
