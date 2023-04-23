@@ -22,7 +22,7 @@ namespace CollegeWebsite2.Database
         public string? LastName { get; set; } = null;
 
         [BsonElement("Birthday")]
-        public string? Birthday { get; set; } = null;
+        public DateTime Birthday { get; set; }
 
         [BsonElement("Email")]
         public string? Email { get; set; } = null;
