@@ -482,4 +482,86 @@
         
         Console.WriteLine("table updated");
     }
+
+    private void addMissingAttendance()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+        Console.WriteLine("running addMissingAttendance");
+
+        foreach (var x in queryClasses)
+        {
+            foreach (var y in x.Enrolled)
+            {
+                y.MissedAttendance = 0;
+                mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            }
+        }
+    }
+
+    private void clearGrades()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+        Console.WriteLine("running clearGrades");
+
+        foreach (var x in queryClasses)
+        {
+            foreach (var y in x.Enrolled)
+            {
+                y.Grades.Clear();
+                mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            }
+        }
+    }
+
+    private void addGrades()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+        Random random = new Random();
+        string[] grades = {"A", "B", "C", "D", "F" };
+
+        Console.WriteLine("running addGrades");
+
+        foreach (var x in queryClasses)
+        {
+            foreach (var y in x.Enrolled)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    y.Grades.Add(grades[random.Next(0, 4)]);
+                    mongo.UpsertRecord<Classes>("classes", x.Id, x);
+                }
+
+            }
+        }
+    }
+
+    private void writeBirthDaysToUsers()
+    {
+        var queryUser = mongo.LoadRecord<AllUser>("allUser");
+        Random random = new Random();
+
+        Console.WriteLine("running writeBirthDaysToUsers");
+
+        foreach (var x in queryUser)
+        {
+            int year = random.Next(1970, 2000);
+            int month = random.Next(1, 12);
+            int day = random.Next(1, 28);
+            int hour = 0;
+            int minute = 0;
+            int second = 0;
+
+            DateTime bday = new DateTime(year, month, day, hour, minute, second);
+
+            x.Birthday = bday;
+
+            mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+        }
+
+        Console.WriteLine("table updated");
+    }
+
+
 }
