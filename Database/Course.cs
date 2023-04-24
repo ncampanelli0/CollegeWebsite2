@@ -9,30 +9,39 @@ namespace CollegeWebsite2.Database
         public BsonObjectId Id { get; set; }
 
         [BsonElement("CourseName")]
-        public string CourseName {get; set;}
-
-        [BsonElement("Prerequiste")]
-        public BsonArray? Prerequiste { get; set; } = null;
+        public string CourseName { get; set; }
 
         [BsonElement("Description")]
         public string Description { get; set; }
-        
+
         [BsonElement("Type")]
-        public string Type {get; set;}
-        
+        public string Type { get; set; }
+
         [BsonElement("Department")]
-        public string Department {get; set;}
-        
-        [BsonElement("MinimumRequirements")]
-        public BsonArray? MinimumRequirements {get; set;}
-        
+        public string Department { get; set; }
+
         [BsonElement("Credits")]
-        public int Credits {get; set;}
+        public int Credits { get; set; }
 
         [BsonElement("CourseID")]
         public int CourseID { get; set; }
 
         [BsonElement("SectionCounter")]
-        public int SectionCounter { get; set;}
+        public int SectionCounter { get; set; }
+
+        public List<Prerequiste>? Prerequiste { get; set; } = null;
+
     }
+
+    public class Prerequiste
+    {
+
+        [BsonElement("Prereq")]
+        public string? Prereq { get; set; } = null;
+
+        [BsonElement("MinimumRequirements")]
+        public string? MinimumRequirements { get; set; }
+    }
+
+
 }
