@@ -1,0 +1,23 @@
+﻿@page "/admin/editclass"
+
+<h3>Edit class</h3>
+
+<MudNumericField @bind-Value="courseID" Label="Course ID" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
+<MudNumericField @bind-Value="roomID" Label="Room ID" Variant="Variant.Outlined" Min="1" Max="99"></MudNumericField>
+<MudNumericField @bind-Value="buildingID" Label="Building ID" Variant="Variant.Outlined" Min="1" Max="3"></MudNumericField>
+<MudNumericField @bind-Value="maxCapacity" Label="Max Capacity" Variant="Variant.Outlined" Min="5" Max="30"></MudNumericField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+
+@code 
+{
+    private int courseID { get; set; }
+    private int roomID { get; set; }
+    private int buildingID { get; set; }
+    private int maxCapacity { get; set; }
+
+    private void submitForm()
+    {
+
+    }
+}

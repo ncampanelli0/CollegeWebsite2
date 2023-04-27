@@ -10,9 +10,10 @@
         <PropertyColumn Title="Department" Property="x => x.Department" />
         <PropertyColumn Title="Course Name" Property="x => x. CourseName" />
         <PropertyColumn Title="Credits" Property="x => x.Credits" />
-        <PropertyColumn Title="Prerequiste" Property="x => x.Prerequiste" />
-        <!-- <PropertyColumn Title="Prerequiste" Property="x => x.MinimumRequirements" /> -->
         <PropertyColumn Title="Course ID" Property="x => x.CourseID" />
+        <PropertyColumn Title="Prerequiste (grade required)" Property='x => $"{x.Prerequiste[0].Prereq} ({x.Prerequiste[0].MinimumRequirements})"' />
+        
+        
     </Columns>
     <PagerContent>
         <MudDataGridPager T="Course" />
@@ -25,7 +26,6 @@
 
     Mongo mongo = new Mongo("college-site-2");
     List<Course> queryCourse;
-
 
     protected override async Task OnInitializedAsync()
     {
