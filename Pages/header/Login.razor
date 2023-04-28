@@ -21,9 +21,10 @@
 
     private async Task login()
     {
-        var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+        
         try
         {
+            var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
             if (queryUser.LoginCounter >= 4)
             {
                 Snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
@@ -58,12 +59,13 @@
         catch
         {
             Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
-
+             
             if (email == queryUser.Email)
             {
                 queryUser.LoginCounter++;
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
+            
         }
     }
 }
