@@ -21,7 +21,7 @@ namespace CollegeWebsite2.Database
         public BsonArray? Prerequiste {get; set; } = null;
 
         [BsonElement("MinimumRequirement")]
-        public BsonArray? MinimumRequirements {get; set; } = null;
+        public BsonArray? MinimumRequirement {get; set; } = null;
 
         [BsonElement("Description")]
         public string? Description {get; set; }

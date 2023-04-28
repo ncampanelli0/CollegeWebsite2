@@ -1,0 +1,121 @@
+﻿@page "/testertest"
+<h3>Testertest</h3>
+
+<button @onclick = "fuckit"> peter has a nice meatball sub for lunch</button> 
+
+
+
+
+
+@code 
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+        /*
+        private void peter()
+        {
+        var w = db.LoadRecord<Course>("course"); 
+        var y = db.LoadRecord<Classes>("classes");
+            List<string> courseListPrereq = new List<string> { };
+            List<string> courseListMinreq = new List<string> { };
+
+            int counter = 0;
+        for (int z = 0; z < w.Count; z++)
+        {
+        for (int x = 0; x < 8; x++)
+            {
+            courseListPrereq.Clear();
+            courseListMinreq.Clear();
+
+            try
+            {
+            if (w[z].Prerequiste[counter] != null)
+        {
+        courseListPrereq.Add(w[z].Prerequiste[counter].Prereq);
+        courseListMinreq.Add(w[z].Prerequiste[counter].MinimumRequirements);
+        }
+    else
+    {
+    courseListPrereq.Add("none");
+    courseListMinreq.Add("none");
+    }
+    }
+    catch
+    {
+    courseListPrereq.Add("none");
+    courseListMinreq.Add("none");
+    }
+    w[z].Prerequiste[counter].Prereq = courseListPrereq.ToArray()[x];
+    w[z].Prerequiste[counter].MinimumRequirements = courseListMinreq.ToArray()[x];
+    }
+
+
+
+    db.UpsertRecord<Course>("course", w[z].Id, w[z]);
+    }
+    }
+    */
+
+
+    private void fuckit()
+    {
+        List<Prerequiste> nullList = new List<Prerequiste> { };
+        List<string> nullVal = new List<string> { };
+
+        Prerequiste nullObject = new Prerequiste();
+
+        nullObject.Prereq = "none";
+        nullObject.MinimumRequirements = "none";
+
+
+
+        var queryCourse = mongo.LoadRecord<Course>("course");
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+        Console.WriteLine("running fuckit");
+
+        /*
+        foreach (var x in queryCourse)
+        {
+
+            for (int i = 0; i < (8 - x.Prerequiste.Count); i++)
+            {
+                nullList.Add(nullObject);
+            }
+
+            for (int i = 0; i < nullList.Count; i++)
+            {
+                x.Prerequiste.Add(nullList[0]);
+            }
+            mongo.UpsertRecord<Course>("course", x.Id, x);
+            nullList.Clear();
+
+        }
+        */
+
+        foreach (var x in queryClasses)
+        {
+            for (int i = 0; i < (8 - x.Prerequiste.Count); i++)
+            {
+                nullList.Add(nullObject);
+            }
+
+            for (int i = 0; i < nullList.Count; i++)
+            {
+                x.Prerequiste.Add("none");
+                x.MinimumRequirement.Add("none");
+            }
+            
+            mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            nullList.Clear();
+        }
+
+        Console.WriteLine("table updated");
+
+    }
+
+
+
+
+
+}

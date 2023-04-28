@@ -21,7 +21,7 @@
 
     private async Task login()
     {
-        
+
         try
         {
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
@@ -59,12 +59,6 @@
         catch
         {
             Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
-             
-            if (email == queryUser.Email)
-            {
-                queryUser.LoginCounter++;
-                mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
-            }
             
         }
     }
