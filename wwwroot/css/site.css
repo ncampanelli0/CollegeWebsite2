@@ -89,6 +89,7 @@ font-weight: 100;
     transform: translate(-50%,-50%);
 }
 
+/*
 .tableStyle
 {
     width: 1400px;
@@ -119,7 +120,7 @@ tbody tr:hover {
 tbody td {
     position: relative !important;
 }
-
+*/
 .btncolor 
 {
     background-color: rgb(7, 126, 190);

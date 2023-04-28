@@ -21,31 +21,45 @@
 
     private async Task login()
     {
-                try
-                {
-                    var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-                    if (email == queryUser.Email && password == queryUser.Password)
-                    {
-                        Console.WriteLine("if statement activated");
-                        await storage.SetAsync("email", queryUser.Email);
-                        await storage.SetAsync("accountType", queryUser.AccountType);
-                        //await storage.SetAsync("userId", queryUser.Id); //this causes the login system to break because it wants a boolean, god knows why so start demanding answers from him
-                        await storage.SetAsync("firstName", queryUser.FirstName);
-                        await storage.SetAsync("lastName", queryUser.LastName);
-                        await storage.SetAsync("address", queryUser.Address);
-                        await storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
-                        await storage.SetAsync("advisor", queryUser.Advisor);
-                        await storage.SetAsync("holdStatus", queryUser.Holds);
-                        await storage.SetAsync("major", queryUser.Major);
-                        await storage.SetAsync("minor", queryUser.Minor);
-                        await storage.SetAsync("department", queryUser.Department);
-                        await storage.SetAsync("loggedIn", true);
-                        navigate.NavigateTo("/homepage", true);
-                    }
-                }
-                catch
-                {
-                    Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
-                }
+
+        try
+        {
+            var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+            if (queryUser.LoginCounter >= 4)
+            {
+                Snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
+                queryUser.LoginCounter++;
+                mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
+            else if (email == queryUser.Email && password == queryUser.Password)
+            {
+                Console.WriteLine("if statement activated");
+                await storage.SetAsync("email", queryUser.Email);
+                await storage.SetAsync("accountType", queryUser.AccountType);
+                //await storage.SetAsync("userId", queryUser.Id); //this causes the login system to break because it wants a boolean, god knows why so start demanding answers from him
+                await storage.SetAsync("firstName", queryUser.FirstName);
+                await storage.SetAsync("lastName", queryUser.LastName);
+                await storage.SetAsync("address", queryUser.Address);
+                await storage.SetAsync("phoneNumber", queryUser.PhoneNumber);
+                await storage.SetAsync("advisor", queryUser.Advisor);
+                await storage.SetAsync("holdStatus", queryUser.Holds);
+                await storage.SetAsync("major", queryUser.Major);
+                await storage.SetAsync("minor", queryUser.Minor);
+                await storage.SetAsync("department", queryUser.Department);
+                await storage.SetAsync("loggedIn", true);
+                navigate.NavigateTo("/homepage", true);
+            }
+            else
+            {
+                Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+                queryUser.LoginCounter++;
+                mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
+            }
+        }
+        catch
+        {
+            Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+            
+        }
     }
+}

@@ -1,0 +1,21 @@
+﻿@page "/admin/removeuserclass"
+
+<h2>Remove user from class</h2>
+
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
+<MudNumericField @bind-Value="courseID" Label="Course ID" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+
+
+@code
+{
+    private string userID { get; set; }
+    private int courseID { get; set; }
+
+    private void submitForm()
+    {
+
+    }
+}
+

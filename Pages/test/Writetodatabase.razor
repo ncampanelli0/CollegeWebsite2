@@ -460,7 +460,7 @@
                     if (flag)
                     {
                         string id = $"CCC{rando}";
-                        x.StudentID = id;
+                        x.UserID = id;
                         assigned.Add(rando);
                         mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
                     }
@@ -495,9 +495,9 @@
         {
             if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
             {
-                x.StudentID = "CCC" + currentVal;
+                x.UserID = "CCC" + currentVal;
                 currentVal += random.Next(1, 6);
-                Console.WriteLine($"write count: {writeCount} generated Value: {x.StudentID}");
+                Console.WriteLine($"write count: {writeCount} generated Value: {x.UserID}");
                 mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
                 writeCount++;
             }

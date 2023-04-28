@@ -1,0 +1,36 @@
+﻿@page "/admin/edituser"
+
+<h2>Edit user</h2>
+
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="address" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudDatePicker @bind-Date="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
+<MudTextField @bind-Value="department" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+
+@code 
+{
+    private string? accountType { get; set; }
+    private string? address { get; set; }
+    private string? advisor { get; set; }
+    private DateTime? birthday { get; set; }
+    private string? department { get; set; }
+    private string email { get; set; }
+    private string? firstName { get; set; }
+    private string? holds { get; set; }
+    private string? lastName { get; set; }
+    private string? major { get; set; }
+    private string? minor { get; set; }
+    private string? partOrFullTime { get; set; }
+    private string? phoneNumber { get; set; }
+    private string? userID { get; set; }
+}

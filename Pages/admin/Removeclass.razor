@@ -1,0 +1,18 @@
+﻿@page "/admin/removeclass"
+
+<h2>Remove class</h2>
+
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+
+@code 
+{
+    private string CRN { get; set; }
+
+    private void submitForm()
+    {
+        
+    }
+
+}

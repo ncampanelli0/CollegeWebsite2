@@ -60,8 +60,8 @@ namespace CollegeWebsite2.Database
         [BsonElement("Schedule")]
         public List<Schedule> Schedule { get; set; }
 
-        [BsonElement("StudentID")]
-        public string StudentID { get; set; }
+        [BsonElement("UserID")]
+        public string UserID { get; set; }
     }
 
 
