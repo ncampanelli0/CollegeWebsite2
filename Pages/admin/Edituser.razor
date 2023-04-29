@@ -3,22 +3,30 @@
 <h2>Edit user</h2>
 
 <MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="address" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="advisor" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Advisor" Variant="Variant.Outlined"></MudTextField>
 <MudDatePicker @bind-Date="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
-<MudTextField @bind-Value="department" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="department" Label="Department" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="email" Label="Email" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="major" Label="Major" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="minor" Label="Minor" Variant="Variant.Outlined"></MudTextField>
+
+<MudSelect @bind-Value="partOrFullTime" T="string" Label="Part or Full Time" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var x in partOrFullTimeList)
+    {
+        <MudSelectItem Value="@x"></MudSelectItem>
+    }
+</MudSelect>
+
+<MudTextField @bind-Value="phoneNumber" Label="Phone Number" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
 
 @code 
 {
+    List<string> partOrFullTimeList = new List<string> { "Part Time", "Full Time" };
+
     private string? accountType { get; set; }
     private string? address { get; set; }
     private string? advisor { get; set; }
@@ -26,7 +34,6 @@
     private string? department { get; set; }
     private string email { get; set; }
     private string? firstName { get; set; }
-    private string? holds { get; set; }
     private string? lastName { get; set; }
     private string? major { get; set; }
     private string? minor { get; set; }
