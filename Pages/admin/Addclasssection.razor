@@ -19,36 +19,37 @@
 
 @code 
 {
+
     //must be written in form field:
-    private int? courseID { get; set; }
-    private int? buildingID { get; set; }
-    private string? day { get; set; }
-    private int? maxCapacity { get; set; }
-    private int? roomID { get; set; }
+    private static int? courseID { get; set; }
+    private static int? buildingID { get; set; }
+    private static string? day { get; set; }
+    private static int? maxCapacity { get; set; }
+    private static int? roomID { get; set; }
 
     //comes from course:
-    private int? CRN { get; set; }
-    private string? courseName { get; set; }
-    private int? credits { get; set; }
-    private string? department { get; set; }
-    private string? description { get; set; }
-    private string[]? enrolled { get; set; }
-    private DateTime? gradeLimit { get; set; }
-    private string[]? minimumRequirement { get; set; }
-    private string? section { get; set; }
-    private string? type { get; set; }
+    private static int? CRN { get; set; }
+    private static string? courseName { get; set; }
+    private static int? credits { get; set; }
+    private static string? department { get; set; }
+    private static string? description { get; set; }
+    private static string[]? enrolled { get; set; }
+    private static DateTime? gradeLimit { get; set; }
+    private static string[]? minimumRequirement { get; set; }
+    private static string? section { get; set; }
+    private static string? type { get; set; }
 
     //comes from timeWindow:
-    private DateTime? startDate { get; set; }
-    private DateTime? withdrawLimit { get; set; }
-    private string? semester { get; set; }
-    private DateTime? endDate { get; set; }
-    private DateTime? registerationLimit { get; set; }
+    private static DateTime? startDate { get; set; }
+    private static DateTime? withdrawLimit { get; set; }
+    private static string? semester { get; set; }
+    private static DateTime? endDate { get; set; }
+    private static DateTime? registerationLimit { get; set; }
 
     //comes from allUser:
-    private string? profFirstName { get; set; }
-    private string? profLastName { get; set; }
-    private string? professorName { get; set; }
+    private static string? profFirstName { get; set; }
+    private static string? profLastName { get; set; }
+    private static string? professorName { get; set; }
 
     private void submitForm()
     {
