@@ -54,6 +54,16 @@
     private static string? profLastName { get; set; }
     private static string? professorName { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
     private void submitForm()
     {
         //form validation

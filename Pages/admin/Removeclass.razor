@@ -13,6 +13,16 @@
 {
     private static string CRN { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
     private void submitForm()
     {
         bool validForm = true;

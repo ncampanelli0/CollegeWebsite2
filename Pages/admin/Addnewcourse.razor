@@ -128,6 +128,16 @@
     private static int? sectionCounter { get; set; }
     private static string? type { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
     protected override void OnAfterRender(bool firstRender)
     {
         Console.WriteLine("on after render (local) ran");

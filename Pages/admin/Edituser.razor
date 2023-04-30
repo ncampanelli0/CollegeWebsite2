@@ -44,6 +44,16 @@
     private static string? phoneNumber { get; set; }
     private static string? userID { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
     private void submitForm()
     {
         bool validForm = true;
