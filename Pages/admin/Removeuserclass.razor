@@ -1,4 +1,7 @@
 ﻿@page "/admin/removeuserclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Remove user from class</h2>
 
@@ -15,7 +18,16 @@
 
     private void submitForm()
     {
+        bool validForm = true;
 
+        if (userID == null)
+        {
+            validForm = false;
+        }
+        else if (courseID == null)
+        {
+            validForm = false;
+        }
     }
 }
 

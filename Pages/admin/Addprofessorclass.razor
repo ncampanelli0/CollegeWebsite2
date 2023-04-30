@@ -1,4 +1,7 @@
 ﻿@page "/admin/addprofessorclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Add professor to class</h2>
 
@@ -15,6 +18,15 @@
 
     private void submitForm()
     {
+        bool validForm = true;
 
+        if (userID == null)
+        {
+            validForm = false;
+        }
+        else if (classID == null)
+        {
+            validForm = false;
+        }
     }
 }

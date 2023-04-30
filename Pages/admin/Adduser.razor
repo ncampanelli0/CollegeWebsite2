@@ -1,4 +1,7 @@
 ﻿@page "/admin/adduser"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Add user</h2>
 
@@ -6,7 +9,6 @@
 <MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined"></MudTextField>
 <MudTextField @bind-Value="advisor" Label="Advisor" Variant="Variant.Outlined"></MudTextField>
 <MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
-
 <MudTextField @bind-Value="department" Label="Department" Variant="Variant.Outlined"></MudTextField>
 <MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined"></MudTextField>
 <MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined"></MudTextField>
@@ -34,4 +36,58 @@
     private static string phoneNumber { get; set; }
     private static string userID { get; set; }
 
+
+    private void submitForm()
+    {
+        bool validForm = true;
+
+        if (accountType == null)
+        {
+            validForm = false;
+        }
+        else if (address == null)
+        {
+            validForm = false;
+        }
+        else if (advisor == null)
+        {
+            validForm = false;
+        }
+        else if (birthday == null)
+        {
+            validForm = false;
+        }
+        else if (department == null)
+        {
+            validForm = false;
+        }
+        else if (firstName == null)
+        {
+            validForm = false;
+        }
+        else if (lastName == null)
+        {
+            validForm = false;
+        }
+        else if (major == null)
+        {
+            validForm = false;
+        }
+        else if (minor == null)
+        {
+            validForm = false;
+        }
+        else if (partOrFullTime == null)
+        {
+            validForm = false;
+        }
+        else if (phoneNumber == null)
+        {
+            validForm = false;
+        }
+        else if (userID == null)
+        {
+            validForm = false;
+        }
+    }
 }

@@ -1,4 +1,7 @@
 ﻿@page "/admin/addclasssection"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Add class section</h2>
 
@@ -53,6 +56,33 @@
 
     private void submitForm()
     {
+        //form validation
+        bool validForm = true;
         
+        if (courseID == null)
+        {
+            validForm = false;
+        }
+        else if (buildingID == null)
+        {
+            validForm = false;
+        }
+        else if (day == null)
+        {
+            validForm = false;
+        }
+        else if (maxCapacity == null)
+        {
+            validForm = false;
+        }
+        else if (roomID == null)
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+
+        }
     }
 }

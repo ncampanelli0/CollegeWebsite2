@@ -1,4 +1,7 @@
 ﻿@page "/admin/edituser"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Edit user</h2>
 
@@ -40,4 +43,62 @@
     private static string? partOrFullTime { get; set; }
     private static string? phoneNumber { get; set; }
     private static string? userID { get; set; }
+
+    private void submitForm()
+    {
+        bool validForm = true;
+
+        if (accountType == null)
+        {
+            validForm = false;
+        }
+        else if (address == null)
+        {
+            validForm = false;
+        }
+        else if (advisor == null)
+        {
+            validForm = false;
+        }
+        else if (birthday == null)
+        {
+            validForm = false;
+        }
+        else if (department == null)
+        {
+            validForm = false;
+        }
+        else if (email == null)
+        {
+            validForm = false;
+        }
+        else if (firstName == null)
+        {
+            validForm = false;
+        }
+        else if (lastName == null)
+        {
+            validForm = false;
+        }
+        else if (major == null)
+        {
+            validForm = false;
+        }
+        else if (minor == null)
+        {
+            validForm = false;
+        }
+        else if (partOrFullTime == null)
+        {
+            validForm = false;
+        }
+        else if (phoneNumber == null)
+        {
+            validForm = false;
+        }
+        else if (userID == null)
+        {
+            validForm = false;
+        }
+    }
 }

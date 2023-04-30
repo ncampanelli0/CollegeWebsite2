@@ -1,4 +1,7 @@
 ﻿@page "/admin/addnewcourse"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Add new course</h2>
 
@@ -139,6 +142,31 @@
 
     private void submitForm()
     {
-        
+        bool validForm = true;
+
+        if (courseID == null)
+        {
+            validForm = false;
+        }
+        else if (courseName == null)
+        {
+            validForm = false;
+        }
+        else if (credits == null)
+        {
+            validForm = false;
+        }
+        else if (department == null)
+        {
+            validForm = false;
+        }
+        else if (description == null)
+        {
+            validForm = false;
+        }
+        else if (type == null)
+        {
+            validForm = false;
+        }
     }
 }

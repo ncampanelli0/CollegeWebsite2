@@ -1,4 +1,7 @@
 ﻿@page "/admin/unlockaccount"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Unlock account</h2>
 
@@ -11,4 +14,14 @@
 @code 
 {
     private static string userID { get; set; }
+
+    private void submitForm()
+    {
+        bool validForm = true;
+
+        if (userID == null)
+        {
+            validForm = false;
+        }
+    }
 }

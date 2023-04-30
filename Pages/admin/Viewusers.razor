@@ -1,4 +1,7 @@
 ﻿@page "/admin/viewusers"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>View users</h2>
 
@@ -7,4 +10,14 @@
 @code 
 {
     private static string userID { get; set; }
+
+    private void submitForm()
+    {
+        bool validForm = true;
+
+        if (userID == null)
+        {
+            validForm = false;
+        }
+    }
 }
