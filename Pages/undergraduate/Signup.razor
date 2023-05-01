@@ -1,62 +1,61 @@
 @page "/undergraduate/signup"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>sign up</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-<body> 
+<h2>Classes</h2>
 
-    <div>
-        <table class = "userTable">
-            <thead>
-                <th>Class ID</th>
-                <th>Class Name</th>
-                <th>Time Slot / Days</th>
-                <th>Prerequiste</th>
-                <th>Minimum Requirements</th>
-                <th>Description</th>
-                <th>Building ID - Room ID</th>
-                <th>Type / Credits</th>
-                <th>Seats Taken / Max Capacity</th>
-                <th>Year / Season</th>
-                <th>Professor</th>
-            </thead>
-            <tbody>
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+        <PropertyColumn Title="Section" Property="x => x.Section" />
+        <PropertyColumn Title="Professor Name" Property="x => x.ProfessorName" />
+        <PropertyColumn Title="Start Date/Time" Property="x =>x.StartDate" />
+        <PropertyColumn Title="End Date/Time" Property="x => x.EndDate" />
+        <PropertyColumn Title="Period" Property="x => x.Period" />
+        <PropertyColumn Title="Building ID" Property="x => x.BuildingID" />
+        <PropertyColumn Title="Room ID" Property="x => x.RoomID" />
+        <PropertyColumn Title="Day" Property="x => x.Day" />
+        <PropertyColumn Title="Remaining Capacity" Property="x => x.MaxCapacity - x.Enrolled.Count" />
 
-                {% for klasses in klass %}
-                <tr class = "list item">
-                <td>{{ klasses["id"] }}</td>
-                <td>{{ klasses["CourseName"] }}</td>
-                <td>{{ klasses["TimeSlot"] }} / {{ klasses["Day"] }}</td>
-                <td>{{ klasses["Prerequiste"] }}</td>
-                <td>{{ klasses["MinimumRequirement"] }}</td>
-                <td><button id = "desc{{loop.index}}" class = "btncolor" onclick="getDescription('#desc{{loop.index}}')" data-description = "{{klasses['Description']}}">Description</button></td>
-                <td>{{ klasses["BuildingID"] }} - {{ klasses["RoomID"] }}</td>
-                <td>{{ klasses["Type"] }} / {{ klasses["Credits"] }}</td>
-                <td>{{ klasses["Enrolled"]|length }} / {{ klasses["MaxCapacity"] }}</td>
-                <td>{{ klasses["Year"] }} / {{ klasses["Season"] }}</td>
-                <td>{{ klasses["Professor"]["FirstName"] }} {{ klasses["Professor"]["LastName"] }}</td>
-                </tr>
-                
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-    <h2>add class</h2>
-    <form method = "Post" action = "{{ url_for('undergraduatesignup') }}">
-    {{ form.csrf_token }}
-    {{ form.courseid.label }}
-    {{ form.courseid }}
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Classes" />
+    </PagerContent>
+</MudDataGrid>
+
+<h2>Add A Class</h2>
+
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+@code
+{
+  protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Classes> queryClasses;
+    List<TimeWindow> queryTime;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
+    }
+
     
-    <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
-
-    
-
-  {{macro.footer()}}
-
-</body>
+}

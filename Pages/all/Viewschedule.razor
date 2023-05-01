@@ -11,6 +11,8 @@
     <Columns>
         <PropertyColumn Title="Class Name" Property="x => x.className" />
         <PropertyColumn Title="Grade" Property="x => x.grade" />
+        <PropertyColumn Title= "Attendance Grade" TValue="decimal?" Property="x => x.attendanceGrade" @bind-Value="value" Format="#######0.#####'%'"></PropertyColumn> 
+        
     </Columns>
     <PagerContent>
         <MudDataGridPager T="TableSchedule" />
@@ -21,6 +23,7 @@
     <Columns>
         <PropertyColumn Title="Class Name" Property="x => x.className" />
         <PropertyColumn Title="Grade" Property="x => x.grade" />
+        <PropertyColumn Title= "Attendance Grade" TValue="decimal?" Property="x => x.attendanceGrade" @bind-Value="value" Format="#######0.#####'%'"></PropertyColumn> 
     </Columns>
     <PagerContent>
         <MudDataGridPager T="TableTranscript" />
@@ -44,12 +47,14 @@
     {
         public string className { get; set; }
         public string grade { get; set; }
+        public string attendanceGrade { get; set; }
     }
 
     private class TableTranscript
     {
         public string className { get; set; }
         public string grade { get; set; }
+        public string attendanceGrade { get; set; }
     }
 
 

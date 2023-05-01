@@ -1,23 +1,28 @@
 @page "/undergraduate/adjustlogin"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>adjust login</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-<body>
-<h2>adjust password</h2>
-<form method = "Post" action = "{{ url_for('adminadjustlogin') }}">
-      {{ form.csrf_token }}
-      {{ form.password }}
-      {{ form.password.label }}
-      <br>
-      {{ form.passwordconfirm }}
-      {{ form.passwordconfirm.label }}
-      
-      <br>
-      <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
-</body>
+<h2>Adjust User Login</h2>
+
+
+@code{
+
+protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+
+private void mailTrapTest()
+{
+  Mailtrap mail = new Mailtrap();
+  mail.sendMail("sender@test.com", "reciever@test.com", "email subject", "body of email");
+}
+}

@@ -28,6 +28,15 @@
 
 @code
 {
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
     Mongo mongo = new Mongo("college-site-2");
     List<Major> major = new List<Major> { };
     List<Minor> minor = new List<Minor> { };

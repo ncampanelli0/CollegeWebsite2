@@ -1,22 +1,47 @@
 @page "/undergraduate/dropclass"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>drop class</title>
-  </head>
 
-<body>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-  <h2>drop from class</h2>
-    <form method = "Post" action = "{{ url_for('undergraduatedropclass') }}">
-    {{ form.csrf_token }}
-    {{ form.courseid.label }}
-    {{ form.courseid }}
+<h2>Drop A Class</h2>
 
-    <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="classID" Label="Class ID" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
-  
-</body>
+
+
+@code
+{
+  protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+    private static string classID { get; set; }
+    private static string CRN { get; set; }
+
+
+    private void submitForm()
+    {
+        bool validForm = true;
+
+        if (CRN == null)
+        {
+            validForm = false;
+        }
+        else if (classID == null)
+        {
+            validForm = false;
+        }
+    }
+
+}
+
+
