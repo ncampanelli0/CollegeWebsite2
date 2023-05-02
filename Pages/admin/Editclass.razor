@@ -14,10 +14,10 @@
 
 @code 
 {
-    private static int courseID { get; set; }
-    private static int roomID { get; set; }
-    private static int buildingID { get; set; }
-    private static int maxCapacity { get; set; }
+    private static int? courseID { get; set; }
+    private static int? roomID { get; set; }
+    private static int? buildingID { get; set; }
+    private static int? maxCapacity { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -34,19 +34,19 @@
     {
         bool validForm = true;
 
-        if (courseID == null)
+        if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
             validForm = false;
         }
-        else if (roomID == null)
+        else if (roomID == null || !(roomID <= 1 && roomID >= 99))
         {
             validForm = false;
         }
-        else if (buildingID == null)
+        else if (buildingID == null || !(buildingID >= 1 && buildingID <= 3))
         {
             validForm = false;
         }
-        else if (maxCapacity == null)
+        else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
         {
             validForm = false;
         }

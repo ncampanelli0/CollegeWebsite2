@@ -154,27 +154,27 @@
     {
         bool validForm = true;
 
-        if (courseID == null)
+        if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
             validForm = false;
         }
-        else if (courseName == null)
+        else if (courseName == null || courseName == "")
         {
             validForm = false;
         }
-        else if (credits == null)
+        else if (credits == null || !(credits >= 1 && credits <= 4))
         {
             validForm = false;
         }
-        else if (department == null)
+        else if (department == null || department == "")
         {
             validForm = false;
         }
-        else if (description == null)
+        else if (description == null || !(description == ""))
         {
             validForm = false;
         }
-        else if (type == null)
+        else if (type == null || type == "")
         {
             validForm = false;
         }

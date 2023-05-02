@@ -6,6 +6,7 @@
 <h2>View users</h2>
 
 <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 @code 
 {
@@ -25,7 +26,7 @@
     {
         bool validForm = true;
 
-        if (userID == null)
+        if (userID == null || userID == "")
         {
             validForm = false;
         }

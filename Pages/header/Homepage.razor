@@ -79,6 +79,9 @@
                             <MudListItem>
                                 Hold Status: @holdStatus
                             </MudListItem>
+                            <MudListItem>
+                                User ID: @userID
+                            </MudListItem>
                         </NestedList>
                     </MudListItem>
                 </MudList>
@@ -109,6 +112,9 @@
                             <MudListItem>
                                 Department: @department
                             </MudListItem>
+                            <MudListItem>
+                                User ID: @userID
+                            </MudListItem>
                         </NestedList>
                     </MudListItem>
                 </MudList>
@@ -135,6 +141,9 @@
                             </MudListItem>
                             <MudListItem>
                                 Phone Number: @phoneNumber
+                            </MudListItem>
+                            <MudListItem>
+                                User ID: @userID
                             </MudListItem>
                         </NestedList>
                     </MudListItem>
@@ -384,6 +393,7 @@
     string minor;
     string holdStatus;
     string department;
+    string userID;
 
 
 
@@ -400,6 +410,8 @@
         var minorCheck = await storage.GetAsync<string>("minor");
         var holdStatusCheck = await storage.GetAsync<string>("holdStatus");
         var departmentCheck = await storage.GetAsync<string>("department");
+        var userIDCheck = await storage.GetAsync<string>("userID");
+
 
         //var queryAdvisor = mongo.LoadRecordById<Advisor>("advisor", (BsonObjectId)advisorCheck.Value);
         //var queryMajor = mongo.LoadRecordById<Majors>("majors", (BsonObjectId)majorCheck.Value);
@@ -421,7 +433,7 @@
             major = majorCheck.Value;
             minor = minorCheck.Value;
             holdStatus = holdStatusCheck.Value;
-
+            userID = userIDCheck.Value;
         }
         else
         {
@@ -437,6 +449,7 @@
             address = addressCheck.Value;
             phoneNumber = phoneNumberCheck.Value;
             department = departmentCheck.Value;
+            userID = userIDCheck.Value;
         }
         else
         {
@@ -451,6 +464,7 @@
             name = firstNameCheck.Value + " " + lastNameCheck.Value;
             address = addressCheck.Value;
             phoneNumber = phoneNumberCheck.Value;
+            userID = userIDCheck.Value;
         }
         else
         {

@@ -31,11 +31,11 @@
     {
         bool validForm = true;
 
-        if (userID == null)
+        if (userID == null || userID == "")
         {
             validForm = false;
         }
-        else if (courseID == null)
+        else if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
             validForm = false;
         }

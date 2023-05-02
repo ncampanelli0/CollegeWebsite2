@@ -46,6 +46,7 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("department", queryUser.Department);
+                await storage.SetAsync("userID", queryUser.UserID);
                 await storage.SetAsync("loggedIn", true);
                 navigate.NavigateTo("/homepage", true);
             }

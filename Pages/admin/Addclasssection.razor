@@ -8,7 +8,7 @@
 <MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
 <MudNumericField @bind-Value="buildingID" Label="building id" Variant="Variant.Outlined" Min="1" Max="3"></MudNumericField>
 <MudNumericField @bind-Value="maxCapacity" Label="max capacity" Variant="Variant.Outlined" Min="5" Max="30"></MudNumericField>
-<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined"></MudNumericField>
+<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined" Min="1" Max="99"></MudNumericField>
 <MudSelect @bind-Value="day" T="string" Label="Day" AnchorOrigin="Origin.BottomCenter">
     <MudSelectItem Value="@("Monday & Wednesday")" />
     <MudSelectItem Value="@("Tuesday & Thursday")" />
@@ -68,12 +68,11 @@
     {
         //form validation
         bool validForm = true;
-        
-        if (courseID == null)
+        if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
             validForm = false;
         }
-        else if (buildingID == null)
+        else if (buildingID == null && !(buildingID <= 1 && buildingID >= 3))
         {
             validForm = false;
         }
@@ -81,11 +80,11 @@
         {
             validForm = false;
         }
-        else if (maxCapacity == null)
+        else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
         {
             validForm = false;
         }
-        else if (roomID == null)
+        else if (roomID == null || !(roomID >= 1 && roomID <= 99))
         {
             validForm = false;
         }
