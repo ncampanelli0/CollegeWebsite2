@@ -11,6 +11,8 @@
 
 @code 
 {
+    Mongo mongo = new Mongo("college-site-2");
+
     private static string userID { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -33,6 +35,18 @@
         if (userID == null || userID == "")
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+            mongo.DeleteRecordById<AllUser>("allUser", queryAllUserID.Id);
+            snackbar.Add("User was removed successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("User was not removed successfully", Severity.Error); 
         }
     }
 

@@ -80,7 +80,7 @@
     private static string minor { get; set; }
     private static string partOrFullTime { get; set; }
     private static string phoneNumber { get; set; }
-    
+
     //private static string userIDIdentifier { get; set; }
     //private static string userID { get; set; }
 
@@ -114,12 +114,12 @@
         {
             minors.Add(x.Minor);
         }
-        
+
     }
 
     protected override void OnAfterRender(bool firstRender)
     {
-        
+
     }
 
     private void submitForm()
@@ -169,6 +169,30 @@
         else if (phoneNumber == null || !(phoneNumber.ToString().Length == 10))
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            AllUser toWrite = new AllUser();
+
+            toWrite.AccountType = accountType;
+            toWrite.Address = address;
+            toWrite.Advisor = advisor;
+            toWrite.Birthday = birthday;
+            toWrite.Department = department;
+            toWrite.FirstName = firstName;
+            toWrite.LastName = lastName;
+            toWrite.Major = major;
+            toWrite.Minor = minor;
+            toWrite.PartOrFullTime = partOrFullTime;
+            toWrite.PhoneNumber = phoneNumber;
+
+            mongo.InsertRecord<AllUser>("allUser", toWrite);
+            snackbar.Add("User added successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("User added successfully", Severity.Error);
         }
     }
 }

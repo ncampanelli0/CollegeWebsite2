@@ -27,11 +27,28 @@
 
     private void submitForm()
     {
+        Mongo mongo = new Mongo("college-site-2");
+
         bool validForm = true;
 
         if (userID == null || userID == "")
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+            queryAllUserID.LoginCounter = 0;
+
+            mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+
+            snackbar.Add("Account was succesfully unlocked", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Account was not succesfully unlocked", Severity.Error);
         }
     }
 }

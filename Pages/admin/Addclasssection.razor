@@ -18,41 +18,73 @@
     <MudSelectItem Value="@("Thursday")" />
     <MudSelectItem Value="@("Friday")" />
 </MudSelect>
+
+<MudSelect @bind-Value="year" T="int" Label="Year" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Value="@(2023)" />
+    <MudSelectItem Value="@(2024)" />
+</MudSelect>
+
+<MudSelect @bind-Value="semester" T="string" Label="Semester" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Value="@("Spring")" />
+    <MudSelectItem Value="@("Fall")" />
+    <MudSelectItem Value="@("Summer")" />
+    <MudSelectItem Value="@("Winter")" />
+</MudSelect>
+
+<MudTextField @bind-Value="profID" Label="Professor ID" Variant="Variant.Outlined"></MudTextField>
+
+<MudSelect @bind-Value="period" T="string" Label="Period" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Value="@("Period 1")" />
+    <MudSelectItem Value="@("Period 2")" />
+    <MudSelectItem Value="@("Period 3")" />
+    <MudSelectItem Value="@("Period 4")" />
+    <MudSelectItem Value="@("Period 5")" />
+    <MudSelectItem Value="@("Period 6")" />
+    <MudSelectItem Value="@("Period 7")" />
+    <MudSelectItem Value="@("Period 8")" />
+</MudSelect>
+
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 @code 
 {
 
-    //must be written in form field:
-    private static int? courseID { get; set; }
-    private static int? buildingID { get; set; }
-    private static string? day { get; set; }
-    private static int? maxCapacity { get; set; }
-    private static int? roomID { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+
+    //comes from form:
+    private static int courseID { get; set; }
+    private static int buildingID { get; set; }
+    private static string day { get; set; }
+    private static int maxCapacity { get; set; }
+    private static int roomID { get; set; }
+    private static int year { get; set; }
+    private static string semester { get; set; }
+    private static string profID { get; set; }
+    private static string period { get; set; }
 
     //comes from course:
-    private static int? CRN { get; set; }
-    private static string? courseName { get; set; }
-    private static int? credits { get; set; }
-    private static string? department { get; set; }
-    private static string? description { get; set; }
-    private static string[]? enrolled { get; set; }
-    private static DateTime? gradeLimit { get; set; }
-    private static string[]? minimumRequirement { get; set; }
-    private static string? section { get; set; }
-    private static string? type { get; set; }
+    private static int CRN { get; set; }
+    private static string courseName { get; set; }
+    private static int credits { get; set; }
+    private static string department { get; set; }
+    private static string description { get; set; }
+    private static string[] enrolled { get; set; }
+    private static DateTime gradeLimit { get; set; }
+    private static string[] minimumRequirement { get; set; }
+    private static string section { get; set; }
+    private static string type { get; set; }
 
     //comes from timeWindow:
-    private static DateTime? startDate { get; set; }
-    private static DateTime? withdrawLimit { get; set; }
-    private static string? semester { get; set; }
-    private static DateTime? endDate { get; set; }
-    private static DateTime? registerationLimit { get; set; }
+    private static DateTime startDate { get; set; }
+    private static DateTime withdrawLimit { get; set; }
+    private static DateTime endDate { get; set; }
+    private static DateTime registerationLimit { get; set; }
+    private static DateTime GradeLimit { get; set; }
 
     //comes from allUser:
-    private static string? profFirstName { get; set; }
-    private static string? profLastName { get; set; }
-    private static string? professorName { get; set; }
+    private static string profFirstName { get; set; }
+    private static string profLastName { get; set; }
+    private static string professorName { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -64,8 +96,10 @@
         }
     }
 
+
     private void submitForm()
     {
+
         //form validation
         bool validForm = true;
         if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
@@ -88,10 +122,81 @@
         {
             validForm = false;
         }
+        else if (year == null || !(year <= 2023 && year >= 2024))
+        {
+            validForm = false;
+        }
+        else if (profID == null || !(profID.Contains("FCC")))
+        {
+            validForm = false;
+        }
 
         if (validForm)
         {
+            var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
+            var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
 
+            Classes toWrite = new Classes();
+
+            /*
+            * add professor to list
+            */
+
+            //from form
+            toWrite.CourseID = courseID;
+            toWrite.BuildingID = buildingID;
+            toWrite.MaxCapacity = maxCapacity;
+            toWrite.RoomID = roomID;
+            toWrite.Day = day;
+
+            //from course
+            toWrite.CourseName = queryCourseID.CourseName;
+            toWrite.Credits = queryCourseID.Credits;
+            toWrite.Department = queryCourseID.Department;
+            toWrite.Description = queryCourseID.Description;
+
+            foreach (var x in queryCourseID.Prerequiste)
+            {
+                toWrite.Prerequiste.Add(x.Prereq);
+            }
+
+            foreach (var x in queryCourseID.Prerequiste)
+            {
+                toWrite.MinimumRequirement.Add(x.MinimumRequirements);
+            }
+
+            if (queryCourseID.SectionCounter <= 9)
+            {
+                toWrite.Section = $"000{queryCourseID.SectionCounter}";
+            }
+            else if (queryCourseID.SectionCounter >= 10 && queryCourseID.SectionCounter <= 99)
+            {
+                toWrite.Section = $"00{queryCourseID.SectionCounter}";
+            }
+            else if (queryCourseID.SectionCounter >= 100 && queryCourseID.SectionCounter <= 999)
+            {
+                toWrite.Section = $"0{queryCourseID.SectionCounter}";
+            }
+
+            //from timeWindow
+            toWrite.StartDate = queryTimeWindowTimeData.StartDate;
+            toWrite.WithdrawLimit = queryTimeWindowTimeData.WithdrawLimit;
+            toWrite.EndDate = queryTimeWindowTimeData.EndDate;
+            toWrite.RegistrationLimit = queryTimeWindowTimeData.RegistrationLimit;
+            toWrite.GradeLimit = queryTimeWindowTimeData.GradeLimit;
+
+            //from allUser
+            toWrite.ProfFirstName = queryAllUserID.FirstName;
+            toWrite.ProfLastName = queryAllUserID.LastName;
+            toWrite.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
+
+            mongo.InsertRecord<Classes>("classes", toWrite);
+            snackbar.Add("Class section added successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Class section was not added successfully", Severity.Error);
         }
     }
 }

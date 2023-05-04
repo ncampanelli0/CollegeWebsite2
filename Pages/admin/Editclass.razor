@@ -14,10 +14,12 @@
 
 @code 
 {
-    private static int? courseID { get; set; }
-    private static int? roomID { get; set; }
-    private static int? buildingID { get; set; }
-    private static int? maxCapacity { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static int courseID { get; set; }
+    private static int roomID { get; set; }
+    private static int buildingID { get; set; }
+    private static int maxCapacity { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,6 +51,23 @@
         else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+
+            queryClassesID.CourseID = courseID;
+            queryClassesID.RoomID = roomID;
+            queryClassesID.BuildingID = buildingID;
+            queryClassesID.MaxCapacity = maxCapacity;
+
+            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+            snackbar.Add("Class edited successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Class was not edited successfully", Severity.Error);
         }
     }
 }

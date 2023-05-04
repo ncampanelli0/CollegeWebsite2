@@ -11,6 +11,8 @@
 
 @code 
 {
+    Mongo mongo = new Mongo("college-site-2");
+
     private static string CRN { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -30,6 +32,19 @@
         if (CRN == null || CRN == "")
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+
+            mongo.DeleteRecordByString<Classes>("classes", "CRN", CRN);
+
+            snackbar.Add("Class removed successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Class was not removed successfully", Severity.Error);
         }
     }
 

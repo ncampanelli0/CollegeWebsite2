@@ -104,29 +104,29 @@
     private static string[] grades = { "A", "B", "C", "D", "F" };
     private static string[] gradType = { "Undergraduate", "Graduate" };
 
-    private static int? courseID { get; set; }
-    private static string? courseName { get; set; }
-    private static int? credits { get; set; }
-    private static string? department { get; set; }
-    private static string? description { get; set; }
-    private static string? prerequisite1 { get; set; }
-    private static string? prerequisite2 { get; set; }
-    private static string? prerequisite3 { get; set; }
-    private static string? prerequisite4 { get; set; }
-    private static string? prerequisite5 { get; set; }
-    private static string? prerequisite6 { get; set; }
-    private static string? prerequisite7 { get; set; }
-    private static string? prerequisite8 { get; set; }
-    private static string? gradeReq1 { get; set; }
-    private static string? gradeReq2 { get; set; }
-    private static string? gradeReq3 { get; set; }
-    private static string? gradeReq4 { get; set; }
-    private static string? gradeReq5 { get; set; }
-    private static string? gradeReq6 { get; set; }
-    private static string? gradeReq7 { get; set; }
-    private static string? gradeReq8 { get; set; }
-    private static int? sectionCounter { get; set; }
-    private static string? type { get; set; }
+    private static int courseID { get; set; }
+    private static string courseName { get; set; }
+    private static int credits { get; set; }
+    private static string department { get; set; }
+    private static string description { get; set; }
+    private static string prerequisite1 { get; set; }
+    private static string prerequisite2 { get; set; }
+    private static string prerequisite3 { get; set; }
+    private static string prerequisite4 { get; set; }
+    private static string prerequisite5 { get; set; }
+    private static string prerequisite6 { get; set; }
+    private static string prerequisite7 { get; set; }
+    private static string prerequisite8 { get; set; }
+    private static string gradeReq1 { get; set; }
+    private static string gradeReq2 { get; set; }
+    private static string gradeReq3 { get; set; }
+    private static string gradeReq4 { get; set; }
+    private static string gradeReq5 { get; set; }
+    private static string gradeReq6 { get; set; }
+    private static string gradeReq7 { get; set; }
+    private static string gradeReq8 { get; set; }
+    private static int sectionCounter { get; set; }
+    private static string type { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -153,6 +153,8 @@
     private void submitForm()
     {
         bool validForm = true;
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+        var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
 
         if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
@@ -177,6 +179,109 @@
         else if (type == null || type == "")
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            Course toWrite = new Course();
+            List<Prerequiste> prereq = new List<Prerequiste> { };
+
+            toWrite.CourseID = courseID;
+            toWrite.CourseName = courseName;
+            toWrite.Credits = credits;
+            toWrite.Department = department;
+            toWrite.Description = description;
+
+            if (prerequisite1 != null || prerequisite1 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite1;
+                prereqToAdd.MinimumRequirements = gradeReq1;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite2 != null || prerequisite2 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite2;
+                prereqToAdd.MinimumRequirements = gradeReq2;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite3 != null || prerequisite3 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite3;
+                prereqToAdd.MinimumRequirements = gradeReq3;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite4 != null || prerequisite4 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite4;
+                prereqToAdd.MinimumRequirements = gradeReq4;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite5 != null || prerequisite5 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite5;
+                prereqToAdd.MinimumRequirements = gradeReq5;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite6 != null || prerequisite6 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite6;
+                prereqToAdd.MinimumRequirements = gradeReq6;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite7 != null || prerequisite7 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite7;
+                prereqToAdd.MinimumRequirements = gradeReq7;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            if (prerequisite8 != null || prerequisite8 != "")
+            {
+                Prerequiste prereqToAdd = new Prerequiste();
+
+                prereqToAdd.Prereq = prerequisite8;
+                prereqToAdd.MinimumRequirements = gradeReq8;
+
+                toWrite.Prerequiste.Add(prereqToAdd);
+            }
+
+            toWrite.SectionCounter = 0;
+            toWrite.Type = type;
+
+            mongo.InsertRecord<Course>("course", toWrite);
+
+            snackbar.Add("Course added successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Course was not added successfully", Severity.Error);
         }
     }
 }

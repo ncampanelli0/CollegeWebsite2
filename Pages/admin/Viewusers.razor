@@ -24,11 +24,22 @@
 
     private void submitForm()
     {
+        Mongo mongo = new Mongo("college-site-2");
+
         bool validForm = true;
 
         if (userID == null || userID == "")
         {
             validForm = false;
+        }
+
+        if (validForm)
+        {
+            
+        }
+        else
+        {
+            snackbar.Add("User not found", Severity.Error);
         }
     }
 }
