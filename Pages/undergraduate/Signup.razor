@@ -30,6 +30,10 @@
 <h2>Add A Class</h2>
 
 <MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+<<<<<<< Updated upstream
+=======
+<MudTextField @bind-Value="userID" Label="userID" Variant="Variant.Outlined"></MudTextField>
+>>>>>>> Stashed changes
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
@@ -49,13 +53,58 @@
     List<Classes> queryClasses;
     List<TimeWindow> queryTime;
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     protected override async Task OnInitializedAsync()
     {
         queryClasses = mongo.LoadRecord<Classes>("classes");
         queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
     }
 
+<<<<<<< Updated upstream
+=======
+private void submitForm()
+    {
+        bool validForm = true;
+
+        if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+        {
+            validForm = false;
+        }
+        else if (CRN == null || CRN == "")
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+            var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+            Registered toWrite = new Registered();
+
+            toWrite.FirstName = queryUserID.FirstName;
+            toWrite.LastName = queryUserID.LastName;
+            toWrite.UserID = queryUserID.UserID;
+            toWrite.Grades = new List<string> { };
+            toWrite.Attendance = 0;
+            toWrite.MidTermGrade = "none";
+            toWrite.FinalGrade = "none";
+
+            queryClassesID.Enrolled.Add(toWrite);
+
+            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+            snackbar.Add("User added to class successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("User was not added to class", Severity.Error);
+        }
+
+    }
+>>>>>>> Stashed changes
     
 }
