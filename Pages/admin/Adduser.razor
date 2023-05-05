@@ -60,13 +60,13 @@
 {
     Mongo mongo = new Mongo("college-site-2");
 
-    private static List<string> departments = new List<string> { };
-    private static List<string> advisors = new List<string> { };
-    private static List<string> majors = new List<string> { };
-    private static List<string> minors = new List<string> { };
-    private static string[] type = { "Undergraduate", "Graduate", "Faculty", "Admin"  };
-    private static string[] partOrFullTimeChoices = { "Part Time", "Full Time" };
-    private static string[] userIDIdentifierChoices = { "ACC10", "FCC10", "SCC10" };
+    private List<string> departments = new List<string> { };
+    private List<string> advisors = new List<string> { };
+    private List<string> majors = new List<string> { };
+    private List<string> minors = new List<string> { };
+    private string[] type = { "Undergraduate", "Graduate", "Faculty", "Admin"  };
+    private string[] partOrFullTimeChoices = { "Part Time", "Full Time" };
+    private string[] userIDIdentifierChoices = { "ACC10", "FCC10", "SCC10" };
 
     //field variables
     private static string accountType { get; set; }

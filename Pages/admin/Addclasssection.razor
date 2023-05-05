@@ -131,17 +131,58 @@
             validForm = false;
         }
 
+        //sanity check
+        bool sanityCheck = true;
         if (validForm)
+        {
+            var queryClass = mongo.LoadRecord<Classes>("classes");
+            var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
+
+            int profTaughtCounter = 0;
+            foreach (var x in queryClass)
+            {
+                if ($"{x.ProfFirstName} {x.ProfLastName}" == $"{queryProfessor.FirstName} {queryProfessor.LastName}" && (x.StartDate.Year == year && x.Semester == semester))
+                {
+                    profTaughtCounter++;
+                }
+
+                if (profTaughtCounter >= 2 && queryProfessor.PartOrFullTime == "Part Time")
+                {
+                    sanityCheck = false;
+                    break;
+                }
+                else if (profTaughtCounter >= 4 && queryProfessor.PartOrFullTime == "Full Time")
+                {
+                    sanityCheck = false;
+                    break;
+                }
+
+
+            }
+
+            if (sanityCheck)
+            {
+                foreach (var x in queryClass)
+                {
+                    if (x.Period == period && x.StartDate == startDate && x.BuildingID == buildingID && x.RoomID == roomID && x.Day == day)
+                    {
+                        sanityCheck = false;
+                        break;
+                    }
+
+                }
+            }
+            
+        }
+
+        //write to database
+        if (validForm && sanityCheck)
         {
             var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
             var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
 
             Classes toWrite = new Classes();
-
-            /*
-            * add professor to list
-            */
 
             //from form
             toWrite.CourseID = courseID;

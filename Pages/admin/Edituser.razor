@@ -47,12 +47,11 @@
 {
     Mongo mongo = new Mongo("college-site-2");
 
-    private static string[] accountTypeChoices = { "Undergraduate", "Graduate", "Faculty", "Admin" };
-    private static string[] partOrFullTimeChoices = { "Part Time", "Full Time" };
-    private static List<string> majorChoices = new List<string> { };
-    private static List<string> minorChoices = new List<string> { };
-
-    private static List<string> departmentChoices = new List<string> { };
+    private string[] accountTypeChoices = { "Undergraduate", "Graduate", "Faculty", "Admin" };
+    private string[] partOrFullTimeChoices = { "Part Time", "Full Time" };
+    private List<string> majorChoices = new List<string> { };
+    private List<string> minorChoices = new List<string> { };
+    private List<string> departmentChoices = new List<string> { };
 
     private static string accountType { get; set; }
     private static string address { get; set; }
