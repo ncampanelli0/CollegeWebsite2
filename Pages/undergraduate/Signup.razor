@@ -30,10 +30,7 @@
 <h2>Add A Class</h2>
 
 <MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
-<<<<<<< Updated upstream
-=======
 <MudTextField @bind-Value="userID" Label="userID" Variant="Variant.Outlined"></MudTextField>
->>>>>>> Stashed changes
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
@@ -53,19 +50,12 @@
     List<Classes> queryClasses;
     List<TimeWindow> queryTime;
 
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     protected override async Task OnInitializedAsync()
     {
         queryClasses = mongo.LoadRecord<Classes>("classes");
         queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
     }
 
-<<<<<<< Updated upstream
-=======
 private void submitForm()
     {
         bool validForm = true;
@@ -105,6 +95,5 @@ private void submitForm()
         }
 
     }
->>>>>>> Stashed changes
     
 }
