@@ -1,20 +1,49 @@
 ﻿@page "/admin/removeprofessorclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h3>Remove professor from class</h3>
 
-<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="classID" Label="Class ID" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 
 
 @code
 {
-    private string userID { get; set; }
-    private string classID { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static string CRN { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
 
     private void submitForm()
     {
+        bool validForm = true;
+
+        if (CRN == null && CRN == "")
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+        }
+        else
+        {
+            snackbar.Add("Professor was not removed successfully", Severity.Error);
+        }
 
     }
 }

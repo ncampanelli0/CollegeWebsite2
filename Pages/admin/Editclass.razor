@@ -1,4 +1,7 @@
 ﻿@page "/admin/editclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h3>Edit class</h3>
 
@@ -11,13 +14,60 @@
 
 @code 
 {
-    private int courseID { get; set; }
-    private int roomID { get; set; }
-    private int buildingID { get; set; }
-    private int maxCapacity { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static int courseID { get; set; }
+    private static int roomID { get; set; }
+    private static int buildingID { get; set; }
+    private static int maxCapacity { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
 
     private void submitForm()
     {
+        bool validForm = true;
 
+        if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
+        {
+            validForm = false;
+        }
+        else if (roomID == null || !(roomID <= 1 && roomID >= 99))
+        {
+            validForm = false;
+        }
+        else if (buildingID == null || !(buildingID >= 1 && buildingID <= 3))
+        {
+            validForm = false;
+        }
+        else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+
+            queryClassesID.CourseID = courseID;
+            queryClassesID.RoomID = roomID;
+            queryClassesID.BuildingID = buildingID;
+            queryClassesID.MaxCapacity = maxCapacity;
+
+            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+            snackbar.Add("Class edited successfully", Severity.Success);
+        }
+        else
+        {
+            snackbar.Add("Class was not edited successfully", Severity.Error);
+        }
     }
 }

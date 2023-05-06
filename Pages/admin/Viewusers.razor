@@ -1,0 +1,45 @@
+﻿@page "/admin/viewusers"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View users</h2>
+
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+@code 
+{
+    private static string userID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+    private void submitForm()
+    {
+        Mongo mongo = new Mongo("college-site-2");
+
+        bool validForm = true;
+
+        if (userID == null || userID == "")
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+            
+        }
+        else
+        {
+            snackbar.Add("User not found", Severity.Error);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+﻿@page "/developer/mailtraptest"
+
+<h3>Mailtraptest</h3>
+
+<button @onclick="mailTrapTest">mail trap test</button>
+
+@code 
+{
+    private void mailTrapTest()
+    {
+        Mailtrap mail = new Mailtrap();
+        mail.sendMail("test@tester.com", "reciever@tester.com", "subject", "body");
+    }
+}

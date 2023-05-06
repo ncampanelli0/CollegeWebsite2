@@ -82,7 +82,6 @@
                             <a class="dropdown-item dropdowncolor" href="/undergraduate/signup">add classes</a>
                             <a class="dropdown-item dropdowncolor" href="/undergraduate/changemajorminor">add/drop majors/minors </a>
                             <a class="dropdown-item dropdowncolor" href="/undergraduate/dropclass">drop class</a>
-                            <a class="dropdown-item dropdowncolor" href="/undergraduate/adjustlogin">adjust login</a>
                         </ul>
                     </div>
 
@@ -113,7 +112,6 @@
                             <a class="dropdown-item dropdowncolor" href="/graduate/signup">add classes</a>
                             <a class="dropdown-item dropdowncolor" href="/graduate/changemajorminor">add/drop majors/minors </a>
                             <a class="dropdown-item dropdowncolor" href="/graduate/dropclass">drop class</a>
-                            <a class="dropdown-item dropdowncolor" href="/graduate/adjustlogin">adjust login</a>
                         </ul>
                     </div>
 
@@ -175,7 +173,6 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item dropdowncolor" href="/admin/unlockaccount">unlock account</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/admin/adjustlogin">adjust login</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/admin/adduser">add user</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/admin/edituser">edit user</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/admin/sendpasswordreset">send password reset</a></li>
@@ -191,7 +188,6 @@
                             Action
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/adjustlogin">adjust login</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/faculty/givegrade">give grade</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/faculty/takeattendance">take attendance</a></li>
                         </ul>
@@ -263,14 +259,5 @@
             accountType = "Visitor";
         }
 
-    }
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        Console.WriteLine("\n\n\n on after render called \n\n\n");
-        if (firstRender)
-        {
-            
-        }
     }
 }

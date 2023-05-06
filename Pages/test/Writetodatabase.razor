@@ -53,7 +53,7 @@
 
 <button @onclick = "fixNullValuesForStudents">fix null values for students</button>
 
-
+<button @onclick="writeIDsForAllUsersSemiRandom">create id for all users (semi random)</button>
 
 @code 
 {
@@ -175,7 +175,7 @@
                 queryCourse.SectionCounter = sectionNum;
                 mongo.UpsertRecord<Course>("course", queryCourse.Id, queryCourse);
                 sectionNum = 0;
-                
+
 
             }
             currentCourseName = x.CourseName;
@@ -495,7 +495,7 @@
         {
             if (x.AccountType == "Graduate" || x.AccountType == "Undergraduate")
             {
-                x.UserID = "CCC" + currentVal;
+                x.UserID = "SCC" + currentVal;
                 currentVal += random.Next(1, 6);
                 Console.WriteLine($"write count: {writeCount} generated Value: {x.UserID}");
                 mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
@@ -511,6 +511,80 @@
         Console.WriteLine("table updated");
     }
 
+    private void CreateIdsForFacultySemiRandom()
+    {
+        Random random = new Random();
+
+
+
+        var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
+        Console.WriteLine("running CreateIdsForStudents");
+
+        List<int> assigned = new List<int> { };
+        bool flag = false;
+        int currentVal = 1000000;
+        int writeCount = 1;
+        Console.WriteLine(queryUser.Count);
+        foreach (var x in queryUser)
+        {
+            if (x.AccountType == "Faculty")
+            {
+                x.UserID = "FCC" + currentVal;
+                currentVal += random.Next(1, 6);
+                Console.WriteLine($"write count: {writeCount} generated Value: {x.UserID}");
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+                writeCount++;
+            }
+
+            if (currentVal >= 9999999)
+            {
+                currentVal = -99999;
+            }
+
+        }
+        Console.WriteLine("table updated");
+    }
+
+    private void CreateIdsForAdminSemiRandom()
+    {
+        Random random = new Random();
+
+
+
+        var queryUser = mongo.LoadRecordSortedAsc<AllUser>("allUser", "AccountType");
+        Console.WriteLine("running CreateIdsForStudents");
+
+        List<int> assigned = new List<int> { };
+        bool flag = false;
+        int currentVal = 1000000;
+        int writeCount = 1;
+        Console.WriteLine(queryUser.Count);
+        foreach (var x in queryUser)
+        {
+            if (x.AccountType == "Admin")
+            {
+                x.UserID = "ACC" + currentVal;
+                currentVal += random.Next(1, 6);
+                Console.WriteLine($"write count: {writeCount} generated Value: {x.UserID}");
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+                writeCount++;
+            }
+
+            if (currentVal >= 9999999)
+            {
+                currentVal = -99999;
+            }
+
+        }
+        Console.WriteLine("table updated");
+    }
+
+    private void writeIDsForAllUsersSemiRandom()
+    {
+        CreateIdsForStudentsSemiRandom();
+        CreateIdsForFacultySemiRandom();
+        CreateIdsForAdminSemiRandom();
+    }
 
     private void fixNullValuesForStudents()
     {

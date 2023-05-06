@@ -1,4 +1,7 @@
 ﻿@page "/admin/removeuserclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Remove user from class</h2>
 
@@ -10,12 +13,59 @@
 
 @code
 {
-    private string userID { get; set; }
-    private int courseID { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static string userID { get; set; }
+    private static int courseID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Admin")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
 
     private void submitForm()
     {
+        bool validForm = true;
 
+        if (userID == null || userID == "")
+        {
+            validForm = false;
+        }
+        else if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
+        {
+            validForm = false;
+        }
+
+        if (validForm)
+        {
+            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+            for (int i = 0; i < queryClassesID.Enrolled.Count; i++)
+            {
+                if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                {
+                    queryClassesID.Enrolled.RemoveAt(i);
+                    snackbar.Add("User removed from class", Severity.Success);
+                }
+                else
+                {
+                    snackbar.Add("User not found", Severity.Warning);
+                }
+            }
+
+
+        }
+        else
+        {
+            snackbar.Add("User not removed from class", Severity.Error);
+        }
     }
 }
 
