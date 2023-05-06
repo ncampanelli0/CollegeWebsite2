@@ -36,6 +36,7 @@
     {
         bool validForm = true;
 
+        //form validation
         if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
         {
             validForm = false;
@@ -53,7 +54,16 @@
             validForm = false;
         }
 
+        //sanity check
+        bool sanityCheck = true;
+
         if (validForm)
+        {
+            
+        }
+
+
+        if (validForm && sanityCheck)
         {
             var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
 

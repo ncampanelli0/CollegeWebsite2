@@ -32,6 +32,7 @@
     {
         bool validForm = true;
 
+        //form validation
         if ((userID == null || userID == "") && !(userID.Contains("FCC")))
         {
             validForm = false;
@@ -41,7 +42,20 @@
             validForm = false;
         }
 
+        //sanity check
+        bool sanityCheck = true;
         if (validForm)
+        {
+            var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            var queryClass = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+
+            if (queryProfessor.Department != queryClass.Department)
+            {
+                sanityCheck = false;
+            }
+        }
+
+        if (validForm && sanityCheck)
         {
             var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);

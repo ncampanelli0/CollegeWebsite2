@@ -126,6 +126,7 @@
     {
         bool validForm = true;
 
+        //form validation
         if (accountType == null || accountType == "")
         {
             validForm = false;
@@ -171,7 +172,83 @@
             validForm = false;
         }
 
+        //sanity check
+        bool sanityCheck = true;
+        string checkEmail = $"{firstName[0]}{lastName}@clearwater.edu";
+        string generatedUserID = "";
         if (validForm)
+        {
+            var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
+
+            //i think this while foreach loop is right -Nick
+
+            bool emailCheckBool = true;
+            bool foreachLoop = true;
+            int emailCheckNumber = 0;
+            while (emailCheckBool)
+            {
+                foreach (var x in queryAllUser)
+                {
+                    foreachLoop = false;
+                    if (x.Email == checkEmail)
+                    {
+                        emailCheckNumber++;
+                        checkEmail = $"{firstName[0]}{lastName}{emailCheckNumber}@clearwater.edu";
+                        emailCheckBool = false;
+                        break;
+
+                    }
+
+                }
+            }
+
+            foreach (var x in queryAllUser)
+            {
+                if (x.PhoneNumber == phoneNumber)
+                {
+                    sanityCheck = false;
+                }
+            }
+
+            int userIDValue = 1000;
+            string userIDIdentifier = "";
+
+            if (accountType == "Admin")
+            {
+                userIDIdentifier = "ACC";
+            }
+            else if (accountType == "Faculty")
+            {
+                userIDIdentifier = "FCC";
+            }
+            else if (accountType == "Undergraduate" || accountType == "Graduate")
+            {
+                userIDIdentifier = "SCC";
+            }
+
+
+            //i think this section is right -Nick
+            bool userIDCheck = true;
+            generatedUserID = $"{userIDIdentifier}{userIDValue}";
+
+            while (userIDCheck)
+            {
+                foreach (var x in queryAllUser)
+                {
+                    if (!(x.UserID == generatedUserID))
+                    {
+                        userIDCheck = false;
+                        break;
+                    }
+                }
+                userIDValue++;
+                generatedUserID = $"{userIDIdentifier}{userIDValue}";
+            }
+
+
+        }
+
+        if (validForm && sanityCheck)
         {
             AllUser toWrite = new AllUser();
 
@@ -186,6 +263,8 @@
             toWrite.Minor = minor;
             toWrite.PartOrFullTime = partOrFullTime;
             toWrite.PhoneNumber = phoneNumber;
+            toWrite.Email = checkEmail;
+            toWrite.UserID = generatedUserID;
 
             mongo.InsertRecord<AllUser>("allUser", toWrite);
             snackbar.Add("User added successfully", Severity.Success);
