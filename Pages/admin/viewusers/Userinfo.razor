@@ -1,0 +1,15 @@
+﻿@page "/admin/viewusers/userinfo"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>User info</h2>
+
+
+
+@code 
+{
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+
+
+}

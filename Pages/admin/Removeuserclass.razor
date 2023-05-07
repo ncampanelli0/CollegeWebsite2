@@ -6,7 +6,7 @@
 <h2>Remove user from class</h2>
 
 <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-<MudNumericField @bind-Value="courseID" Label="Course ID" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
+<MudNumericField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 
@@ -16,7 +16,7 @@
     Mongo mongo = new Mongo("college-site-2");
 
     private static string userID { get; set; }
-    private static int courseID { get; set; }
+    private static int CRN { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -37,14 +37,32 @@
         {
             validForm = false;
         }
-        else if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
+        else if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
         {
             validForm = false;
         }
 
+        //sanity check
+        bool sanityCheck = true;
+
         if (validForm)
         {
-            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+            var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+
+            //this if statement might need to be reworked, i'm not exactly sure
+            //how dates work in terms of compairison operator -Nick
+            if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+            {
+                sanityCheck = false;
+            }
+        }
+
+
+
+
+        if (validForm && sanityCheck)
+        {
+            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
             for (int i = 0; i < queryClassesID.Enrolled.Count; i++)

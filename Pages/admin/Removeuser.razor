@@ -32,14 +32,32 @@
     {
         bool validForm = true;
 
+        //form validation
         if (userID == null || userID == "")
         {
             validForm = false;
         }
 
-        if (validForm)
+        //sanity check not needed
+        bool sanityCheck = true;
+
+
+
+        if (validForm && sanityCheck)
         {
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (y.UserID == userID)
+                    {
+                        y.UserID = "Removed User";
+                    }
+                }
+            }
 
             mongo.DeleteRecordById<AllUser>("allUser", queryAllUserID.Id);
             snackbar.Add("User was removed successfully", Severity.Success);

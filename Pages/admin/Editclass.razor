@@ -59,7 +59,17 @@
 
         if (validForm)
         {
-            
+            var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+
+            if (queryClassID.Enrolled.Count <= maxCapacity);
+            {
+                sanityCheck = false;
+            }
+
+            if (queryClassID.RoomID == roomID && queryClassID.BuildingID == buildingID)
+            {
+                sanityCheck = false;
+            }
         }
 
 

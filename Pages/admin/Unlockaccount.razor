@@ -31,12 +31,17 @@
 
         bool validForm = true;
 
+        //form validation
         if (userID == null || userID == "")
         {
             validForm = false;
         }
 
-        if (validForm)
+        //sanity check not needed
+        bool sanityCheck = true;
+
+
+        if (validForm && sanityCheck)
         {
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
