@@ -20,9 +20,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -62,23 +69,28 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-            for (int i = 0; i < queryClassesID.Enrolled.Count; i++)
+            try
             {
-                if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                for (int i = 0; i < queryClassesID.Enrolled.Count; i++)
                 {
-                    queryClassesID.Enrolled.RemoveAt(i);
-                    snackbar.Add("User removed from class", Severity.Success);
-                }
-                else
-                {
-                    snackbar.Add("User not found", Severity.Warning);
+                    if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                    {
+                        queryClassesID.Enrolled.RemoveAt(i);
+                        snackbar.Add("User removed from class", Severity.Success);
+                    }
+                    else
+                    {
+                        snackbar.Add("User not found", Severity.Warning);
+                    }
                 }
             }
-
-
+            catch
+            {
+                snackbar.Add("User not removed from class", Severity.Error);
+            }
         }
         else
         {

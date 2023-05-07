@@ -5,34 +5,34 @@
 
 <h2>View user record</h2>
 
+    <MudExpansionPanels MultiExpansion="true">
 
-<MudExpansionPanels MultiExpansion="true">
+        @foreach (var x in classesList)
+        {
+            <MudExpansionPanel Text=@x.CourseName>
+                Building ID: @x.BuildingID <br /> <br />
+                Course ID: @x.CourseID <br /> <br />
+                Credits: @x.Credits <br /> <br />
+                CRN: @x.CRN <br /> <br />
+                Day: @x.Day <br /> <br />
+                Department: @x.Department <br /> <br />
+                Description: @x.Description <br /> <br />
+                EndDate: @x.EndDate.Date <br /> <br />
+                GradeLimit: @x.GradeLimit <br /> <br />
+                Enrolled: @x.Enrolled.Count/@x.MaxCapacity <br /> <br />
+                Period: @x.Period <br /> <br />
+                Professor: @x.ProfessorName <br /> <br />
+                RoomID: @x.RoomID <br /> <br />
+                Section: @x.Section <br /> <br />
+                Semester: @x.Semester <br /> <br />
+                Start Date: @x.StartDate <br /> <br />
+                Type: @x.Type <br /> <br />
+                Withdraw Limit: @x.WithdrawLimit <br /> <br />
+            </MudExpansionPanel>
+        }
 
-    @foreach (var x in classesList)
-    {
-        <MudExpansionPanel Text=@x.CourseName>
-            Building ID: @x.BuildingID <br /> <br />
-            Course ID: @x.CourseID <br /> <br />
-            Credits: @x.Credits <br /> <br />
-            CRN: @x.CRN <br /> <br />
-            Day: @x.Day <br /> <br />
-            Department: @x.Department <br /> <br />
-            Description: @x.Description <br /> <br />
-            EndDate: @x.EndDate.Date <br /> <br />
-            GradeLimit: @x.GradeLimit <br /> <br />
-            Enrolled: @x.Enrolled.Count/@x.MaxCapacity <br /> <br />
-            Period: @x.Period <br /> <br />
-            Professor: @x.ProfessorName <br /> <br />
-            RoomID: @x.RoomID <br /> <br />
-            Section: @x.Section <br /> <br />
-            Semester: @x.Semester <br /> <br />
-            Start Date: @x.StartDate <br /> <br />
-            Type: @x.Type <br /> <br />
-            Withdraw Limit: @x.WithdrawLimit <br /> <br />
-        </MudExpansionPanel>
-    }
-    
-</MudExpansionPanels>
+    </MudExpansionPanels>
+
 
 @code 
 {
@@ -42,37 +42,46 @@
     private List<Classes> classesList = new List<Classes> { };
     private List<Enrolled> enrolledList = new List<Enrolled> { };
 
-    class ScheduleDisplayData
-    {
-        
-    }
-
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
 
-        var queryAllClasses = mongo.LoadRecord<Classes>("classes");
 
-        foreach (var x in queryAllClasses)
+        try
         {
-            foreach (var y in x.Enrolled)
+            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryAllClasses)
             {
-                if (y.UserID == userID)
+                foreach (var y in x.Enrolled)
                 {
-                    classesList.Add(x);
-                    enrolledList.Add(y);
-
-
+                    if (y.UserID == userID)
+                    {
+                        classesList.Add(x);
+                        enrolledList.Add(y);
+                    }
                 }
             }
-        }
 
+        }
+        catch
+        {
+            snackbar.Add("data not found", Severity.Error);
+        }
     }
+        
 
 
 

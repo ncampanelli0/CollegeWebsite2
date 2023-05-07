@@ -5,49 +5,57 @@
 
 <h2>View users</h2>
 
-<MudDataGrid Items="@queryAllUser" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
-    <Columns>
-        <PropertyColumn Title="Account Type" Property="x => x.AccountType" />
-        <PropertyColumn Title="Address" Property="x => x.Address" />
-        <PropertyColumn Title="Advisor" Property="x => x.Advisor" />
-        <PropertyColumn Title="Birthday" Property="x => x.Birthday" />
-        <PropertyColumn Title="Department" Property="x => x.Department" />
-        <PropertyColumn Title="Email" Property="x => x.Email" />
-        <PropertyColumn Title="First Name" Property="x => x.FirstName" />
-        <PropertyColumn Title="Holds" Property="x => x.Holds" />
-        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
-        <PropertyColumn Title="Major" Property="x => x.Major" />
-        <PropertyColumn Title="Minor" Property="x => x.Minor" />
-        <PropertyColumn Title="Part/Full Time" Property="x => x.PartOrFullTime" />
-        <PropertyColumn Title="Phone Number" Property="x => x.PhoneNumber" />
-        <PropertyColumn Title="User ID" Property="x => x.UserID" />
-    </Columns>
-    <PagerContent>
-        <MudDataGridPager T="AllUser" />
-    </PagerContent>
-</MudDataGrid>
+@if (dataLoaded)
+{
+    <p>test</p>
+}
+
+
+    <MudDataGrid Items="@queryAllUser" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+        <Columns>
+            <PropertyColumn Title="Account Type" Property="x => x.AccountType" />
+            <PropertyColumn Title="Address" Property="x => x.Address" />
+            <PropertyColumn Title="Advisor" Property="x => x.Advisor" />
+            <PropertyColumn Title="Birthday" Property='x => x.Birthday.Date.ToString("M/d/yyyy")' />
+            <PropertyColumn Title="Department" Property="x => x.Department" />
+            <PropertyColumn Title="Email" Property="x => x.Email" />
+            <PropertyColumn Title="First Name" Property="x => x.FirstName" />
+            <PropertyColumn Title="Holds" Property="x => x.Holds" />
+            <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+            <PropertyColumn Title="Major" Property="x => x.Major" />
+            <PropertyColumn Title="Minor" Property="x => x.Minor" />
+            <PropertyColumn Title="Part/Full Time" Property="x => x.PartOrFullTime" />
+            <PropertyColumn Title="Phone Number" Property="x => x.PhoneNumber" />
+            <PropertyColumn Title="User ID" Property="x => x.UserID" />
+        </Columns>
+        <PagerContent>
+            <MudDataGridPager T="AllUser" />
+        </PagerContent>
+    </MudDataGrid>
+
+
 
 @code 
 {
     Mongo mongo = new Mongo("college-site-2");
     private List<AllUser> queryAllUser;
-
+    private bool dataLoaded = true;
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
-
-        queryAllUser = mongo.LoadRecord<AllUser>("allUser");
-    }
-
-    private void submitForm()
-    {
-        Mongo mongo = new Mongo("college-site-2");
-        
+        queryAllUser = mongo.LoadRecord<AllUser>("allUser");        
     }
 }

@@ -88,9 +88,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -99,145 +106,153 @@
 
     private void submitForm()
     {
-
-        //form validation
-        bool validForm = true;
-        if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
+        try
         {
-            validForm = false;
-        }
-        else if (buildingID == null && !(buildingID <= 1 && buildingID >= 3))
-        {
-            validForm = false;
-        }
-        else if (day == null)
-        {
-            validForm = false;
-        }
-        else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
-        {
-            validForm = false;
-        }
-        else if (roomID == null || !(roomID >= 1 && roomID <= 99))
-        {
-            validForm = false;
-        }
-        else if (year == null || !(year <= 2023 && year >= 2024))
-        {
-            validForm = false;
-        }
-        else if (profID == null || !(profID.Contains("FCC")))
-        {
-            validForm = false;
-        }
-
-        //sanity check
-        bool sanityCheck = true;
-        if (validForm)
-        {
-            var queryClass = mongo.LoadRecord<Classes>("classes");
-            var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
-
-            int profTaughtCounter = 0;
-            foreach (var x in queryClass)
+            //form validation
+            bool validForm = true;
+            if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
             {
-                if ($"{x.ProfFirstName} {x.ProfLastName}" == $"{queryProfessor.FirstName} {queryProfessor.LastName}" && (x.StartDate.Year == year && x.Semester == semester))
-                {
-                    profTaughtCounter++;
-                }
-
-                if (profTaughtCounter >= 2 && queryProfessor.PartOrFullTime == "Part Time")
-                {
-                    sanityCheck = false;
-                    break;
-                }
-                else if (profTaughtCounter >= 4 && queryProfessor.PartOrFullTime == "Full Time")
-                {
-                    sanityCheck = false;
-                    break;
-                }
-
-
+                validForm = false;
+            }
+            else if (buildingID == null && !(buildingID <= 1 && buildingID >= 3))
+            {
+                validForm = false;
+            }
+            else if (day == null)
+            {
+                validForm = false;
+            }
+            else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
+            {
+                validForm = false;
+            }
+            else if (roomID == null || !(roomID >= 1 && roomID <= 99))
+            {
+                validForm = false;
+            }
+            else if (year == null || !(year <= 2023 && year >= 2024))
+            {
+                validForm = false;
+            }
+            else if (profID == null || !(profID.Contains("FCC")))
+            {
+                validForm = false;
             }
 
-            if (sanityCheck)
+            //sanity check
+            bool sanityCheck = true;
+            if (validForm)
             {
+                var queryClass = mongo.LoadRecord<Classes>("classes");
+                var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
+
+                int profTaughtCounter = 0;
                 foreach (var x in queryClass)
                 {
-                    if (x.Period == period && x.StartDate == startDate && x.BuildingID == buildingID && x.RoomID == roomID && x.Day == day)
+                    if ($"{x.ProfFirstName} {x.ProfLastName}" == $"{queryProfessor.FirstName} {queryProfessor.LastName}" && (x.StartDate.Year == year && x.Semester == semester))
+                    {
+                        profTaughtCounter++;
+                    }
+
+                    if (profTaughtCounter >= 2 && queryProfessor.PartOrFullTime == "Part Time")
+                    {
+                        sanityCheck = false;
+                        break;
+                    }
+                    else if (profTaughtCounter >= 4 && queryProfessor.PartOrFullTime == "Full Time")
                     {
                         sanityCheck = false;
                         break;
                     }
 
+
                 }
+
+                if (sanityCheck)
+                {
+                    foreach (var x in queryClass)
+                    {
+                        if (x.Period == period && x.StartDate == startDate && x.BuildingID == buildingID && x.RoomID == roomID && x.Day == day)
+                        {
+                            sanityCheck = false;
+                            break;
+                        }
+
+                    }
+                }
+
             }
-            
+
+            //write to database
+            if (validForm && sanityCheck)
+            {
+                var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
+                var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
+
+                Classes toWrite = new Classes();
+
+                //from form
+                toWrite.CourseID = courseID;
+                toWrite.BuildingID = buildingID;
+                toWrite.MaxCapacity = maxCapacity;
+                toWrite.RoomID = roomID;
+                toWrite.Day = day;
+
+                //from course
+                toWrite.CourseName = queryCourseID.CourseName;
+                toWrite.Credits = queryCourseID.Credits;
+                toWrite.Department = queryCourseID.Department;
+                toWrite.Description = queryCourseID.Description;
+
+                foreach (var x in queryCourseID.Prerequiste)
+                {
+                    toWrite.Prerequiste.Add(x.Prereq);
+                }
+
+                foreach (var x in queryCourseID.Prerequiste)
+                {
+                    toWrite.MinimumRequirement.Add(x.MinimumRequirements);
+                }
+
+                if (queryCourseID.SectionCounter <= 9)
+                {
+                    toWrite.Section = $"000{queryCourseID.SectionCounter}";
+                }
+                else if (queryCourseID.SectionCounter >= 10 && queryCourseID.SectionCounter <= 99)
+                {
+                    toWrite.Section = $"00{queryCourseID.SectionCounter}";
+                }
+                else if (queryCourseID.SectionCounter >= 100 && queryCourseID.SectionCounter <= 999)
+                {
+                    toWrite.Section = $"0{queryCourseID.SectionCounter}";
+                }
+
+                //from timeWindow
+                toWrite.StartDate = queryTimeWindowTimeData.StartDate;
+                toWrite.WithdrawLimit = queryTimeWindowTimeData.WithdrawLimit;
+                toWrite.EndDate = queryTimeWindowTimeData.EndDate;
+                toWrite.RegistrationLimit = queryTimeWindowTimeData.RegistrationLimit;
+                toWrite.GradeLimit = queryTimeWindowTimeData.GradeLimit;
+
+                //from allUser
+                toWrite.ProfFirstName = queryAllUserID.FirstName;
+                toWrite.ProfLastName = queryAllUserID.LastName;
+                toWrite.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
+
+                mongo.InsertRecord<Classes>("classes", toWrite);
+                snackbar.Add("Class section added successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Class section was not added successfully", Severity.Error);
+            }
         }
-
-        //write to database
-        if (validForm && sanityCheck)
-        {
-            var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
-            var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
-
-            Classes toWrite = new Classes();
-
-            //from form
-            toWrite.CourseID = courseID;
-            toWrite.BuildingID = buildingID;
-            toWrite.MaxCapacity = maxCapacity;
-            toWrite.RoomID = roomID;
-            toWrite.Day = day;
-
-            //from course
-            toWrite.CourseName = queryCourseID.CourseName;
-            toWrite.Credits = queryCourseID.Credits;
-            toWrite.Department = queryCourseID.Department;
-            toWrite.Description = queryCourseID.Description;
-
-            foreach (var x in queryCourseID.Prerequiste)
-            {
-                toWrite.Prerequiste.Add(x.Prereq);
-            }
-
-            foreach (var x in queryCourseID.Prerequiste)
-            {
-                toWrite.MinimumRequirement.Add(x.MinimumRequirements);
-            }
-
-            if (queryCourseID.SectionCounter <= 9)
-            {
-                toWrite.Section = $"000{queryCourseID.SectionCounter}";
-            }
-            else if (queryCourseID.SectionCounter >= 10 && queryCourseID.SectionCounter <= 99)
-            {
-                toWrite.Section = $"00{queryCourseID.SectionCounter}";
-            }
-            else if (queryCourseID.SectionCounter >= 100 && queryCourseID.SectionCounter <= 999)
-            {
-                toWrite.Section = $"0{queryCourseID.SectionCounter}";
-            }
-
-            //from timeWindow
-            toWrite.StartDate = queryTimeWindowTimeData.StartDate;
-            toWrite.WithdrawLimit = queryTimeWindowTimeData.WithdrawLimit;
-            toWrite.EndDate = queryTimeWindowTimeData.EndDate;
-            toWrite.RegistrationLimit = queryTimeWindowTimeData.RegistrationLimit;
-            toWrite.GradeLimit = queryTimeWindowTimeData.GradeLimit;
-
-            //from allUser
-            toWrite.ProfFirstName = queryAllUserID.FirstName;
-            toWrite.ProfLastName = queryAllUserID.LastName;
-            toWrite.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
-
-            mongo.InsertRecord<Classes>("classes", toWrite);
-            snackbar.Add("Class section added successfully", Severity.Success);
-        }
-        else
+        catch
         {
             snackbar.Add("Class section was not added successfully", Severity.Error);
         }
+
+       
     }
 }

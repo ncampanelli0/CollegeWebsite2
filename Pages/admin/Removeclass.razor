@@ -17,9 +17,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -52,11 +59,19 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+            try
+            {
+                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
 
-            mongo.DeleteRecordByString<Classes>("classes", "CRN", CRN);
+                mongo.DeleteRecordByString<Classes>("classes", "CRN", CRN);
 
-            snackbar.Add("Class removed successfully", Severity.Success);
+                snackbar.Add("Class removed successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("Class was not removed successfully", Severity.Error);
+            }
+
         }
         else
         {

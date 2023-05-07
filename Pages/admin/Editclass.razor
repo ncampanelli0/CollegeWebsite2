@@ -23,9 +23,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -75,15 +82,22 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
+            try
+            {
+                var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
 
-            queryClassesID.CourseID = courseID;
-            queryClassesID.RoomID = roomID;
-            queryClassesID.BuildingID = buildingID;
-            queryClassesID.MaxCapacity = maxCapacity;
+                queryClassesID.CourseID = courseID;
+                queryClassesID.RoomID = roomID;
+                queryClassesID.BuildingID = buildingID;
+                queryClassesID.MaxCapacity = maxCapacity;
 
-            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
-            snackbar.Add("Class edited successfully", Severity.Success);
+                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                snackbar.Add("Class edited successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("Class was not edited successfully", Severity.Error);
+            }
         }
         else
         {

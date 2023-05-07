@@ -67,12 +67,21 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        
         var queryDepartment = mongo.LoadRecordSortedAsc<Departments>("department", "Department");
         var queryMajors = mongo.LoadRecordSortedAsc<Majors>("majors", "Major");
         var queryMinors = mongo.LoadRecordSortedAsc<Minors>("minors", "Minor");
 
-        if (accountTypeCheck.Value != "Admin")
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -101,49 +110,49 @@
     {
         //form validation
         bool validForm = true;
-        /*
-        if (accountType == null || accountType == "")
+            /*
+            if (accountType == null || accountType == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (address == null || address == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (advisor == null || advisor == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (birthday == null)
         {
             validForm = false;
-        }
-        else if (department == null || department == "")
+            }
+            else if (department == null || department == "")
         {
-            validForm = false;
-        }
-        else if (email == null || email == "")
-        {
+        validForm = false;
+            }
+            else if (email == null || email == "")
+            {
             validForm = false;
         }
         else if (firstName == null || firstName == "")
-        {
+            {
             validForm = false;
         }
         else if (lastName == null || lastName == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (major == null || major == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (minor == null || minor == "")
         {
-            validForm = false;
+        validForm = false;
         }
         else if (phoneNumber == null || !(phoneNumber.ToString().Length == 10))
-        {
+            {
             validForm = false;
         }
         */
@@ -159,65 +168,72 @@
 
         if (validForm && sanityCheck)
         {
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-            if (accountType != null && accountType != "")
+            try
             {
-                queryAllUserID.AccountType = accountType;
-            }
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-            if (address != null && address != "")
+                if (accountType != null && accountType != "")
+                {
+                    queryAllUserID.AccountType = accountType;
+                }
+
+                if (address != null && address != "")
+                {
+                    queryAllUserID.Address = address;
+                }
+
+                if (advisor != null && advisor != "")
+                {
+                    queryAllUserID.Advisor = advisor;
+                }
+
+                if (birthday != null)
+                {
+                    queryAllUserID.Birthday = birthday;
+                }
+
+                if (department != null && department != "")
+                {
+                    queryAllUserID.Department = department;
+                }
+
+                if (email != null && email != "")
+                {
+                    queryAllUserID.Email = email;
+                }
+
+                if (firstName != null && firstName != "")
+                {
+                    queryAllUserID.FirstName = firstName;
+                }
+
+                if (lastName != null && lastName != "")
+                {
+                    queryAllUserID.LastName = lastName;
+                }
+
+                if (major != null && major != "")
+                {
+                    queryAllUserID.Major = major;
+                }
+
+                if (minor != null && minor != "")
+                {
+                    queryAllUserID.Minor = minor;
+                }
+
+                if (phoneNumber != null && phoneNumber.ToString().Length == 10)
+                {
+                    queryAllUserID.PhoneNumber = phoneNumber;
+                }
+
+                mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+                snackbar.Add("User was edited successfully", Severity.Success);
+            }
+            catch
             {
-                queryAllUserID.Address = address;
+                snackbar.Add("User was not edited successfully", Severity.Error);
             }
-
-            if (advisor != null && advisor != "")
-            {
-                queryAllUserID.Advisor = advisor;
-            }
-
-            if (birthday != null)
-            {
-                queryAllUserID.Birthday = birthday;
-            }
-
-            if (department != null && department != "")
-            {
-                queryAllUserID.Department = department;
-            }
-
-            if (email != null && email != "")
-            {
-                queryAllUserID.Email = email;
-            }
-
-            if (firstName != null && firstName != "")
-            {
-                queryAllUserID.FirstName = firstName;
-            }
-
-            if (lastName != null && lastName != "")
-            {
-                queryAllUserID.LastName = lastName;
-            }
-
-            if (major != null && major != "")
-            {
-                queryAllUserID.Major = major;
-            }
-
-            if (minor != null && minor != "")
-            {
-                queryAllUserID.Minor = minor;
-            }
-
-            if (phoneNumber != null && phoneNumber.ToString().Length == 10)
-            {
-                queryAllUserID.PhoneNumber = phoneNumber;
-            }
-
-            mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
-            snackbar.Add("User was edited successfully", Severity.Success);
         }
         else
         {

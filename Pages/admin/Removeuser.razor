@@ -17,9 +17,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -45,26 +52,33 @@
 
         if (validForm && sanityCheck)
         {
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-            var queryClasses = mongo.LoadRecord<Classes>("classes");
-
-            foreach (var x in queryClasses)
+            try
             {
-                foreach (var y in x.Enrolled)
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+                foreach (var x in queryClasses)
                 {
-                    if (y.UserID == userID)
+                    foreach (var y in x.Enrolled)
                     {
-                        y.UserID = "Removed User";
+                        if (y.UserID == userID)
+                        {
+                            y.UserID = "Removed User";
+                        }
                     }
                 }
-            }
 
-            mongo.DeleteRecordById<AllUser>("allUser", queryAllUserID.Id);
-            snackbar.Add("User was removed successfully", Severity.Success);
+                mongo.DeleteRecordById<AllUser>("allUser", queryAllUserID.Id);
+                snackbar.Add("User was removed successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("User was not removed successfully", Severity.Error);
+            }
         }
         else
         {
-            snackbar.Add("User was not removed successfully", Severity.Error); 
+            snackbar.Add("User was not removed successfully", Severity.Error);
         }
     }
 

@@ -18,9 +18,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -56,13 +63,21 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+            try
+            {
+                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
 
-            queryClassesID.ProfessorName = "none none";
-            queryClassesID.ProfFirstName = "none";
-            queryClassesID.ProfLastName = "none";
+                queryClassesID.ProfessorName = "none none";
+                queryClassesID.ProfFirstName = "none";
+                queryClassesID.ProfLastName = "none";
 
-            mongo.UpsertRecord<Classes>("classes",  queryClassesID.Id, queryClassesID);
+                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+            }
+            catch
+            {
+                snackbar.Add("Professor was not removed successfully", Severity.Error);
+            }
+
         }
         else
         {

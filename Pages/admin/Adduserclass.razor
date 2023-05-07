@@ -21,9 +21,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -87,23 +94,31 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
-            var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            try
+            {
+                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-            Enrolled toWrite = new Enrolled();
+                Enrolled toWrite = new Enrolled();
 
-            toWrite.Attendance = 0;
-            toWrite.UserID = queryUserID.UserID;
-            toWrite.FinalGrade = "none";
-            toWrite.FirstName = queryUserID.FirstName;
-            toWrite.LastName = queryUserID.LastName;
-            toWrite.Grades = new List<string> { };
-            toWrite.MidTermGrade = "none";
+                toWrite.Attendance = 0;
+                toWrite.UserID = queryUserID.UserID;
+                toWrite.FinalGrade = "none";
+                toWrite.FirstName = queryUserID.FirstName;
+                toWrite.LastName = queryUserID.LastName;
+                toWrite.Grades = new List<string> { };
+                toWrite.MidTermGrade = "none";
 
-            queryClassesID.Enrolled.Add(toWrite);
+                queryClassesID.Enrolled.Add(toWrite);
 
-            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
-            snackbar.Add("User added to class successfully", Severity.Success);
+                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                snackbar.Add("User added to class successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("User was not added to class", Severity.Error);
+            }
+
         }
         else
         {

@@ -20,9 +20,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -57,16 +64,24 @@
 
         if (validForm && sanityCheck)
         {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            try
+            {
+                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-            queryClassesID.ProfFirstName = queryAllUserID.FirstName;
-            queryClassesID.ProfLastName = queryAllUserID.LastName;
-            queryClassesID.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
+                queryClassesID.ProfFirstName = queryAllUserID.FirstName;
+                queryClassesID.ProfLastName = queryAllUserID.LastName;
+                queryClassesID.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
 
-            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
-            snackbar.Add("Professor was added to class successfully", Severity.Success);
+                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                snackbar.Add("Professor was added to class successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("Professor was not added to class succesfully", Severity.Error);
+            }
         }
+
         else
         {
             snackbar.Add("Professor was not added to class succesfully", Severity.Error);

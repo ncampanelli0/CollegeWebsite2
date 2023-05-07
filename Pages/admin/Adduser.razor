@@ -88,9 +88,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -250,28 +257,35 @@
 
         if (validForm && sanityCheck)
         {
-            AllUser toWrite = new AllUser();
+            try
+            {
+                AllUser toWrite = new AllUser();
 
-            toWrite.AccountType = accountType;
-            toWrite.Address = address;
-            toWrite.Advisor = advisor;
-            toWrite.Birthday = birthday;
-            toWrite.Department = department;
-            toWrite.FirstName = firstName;
-            toWrite.LastName = lastName;
-            toWrite.Major = major;
-            toWrite.Minor = minor;
-            toWrite.PartOrFullTime = partOrFullTime;
-            toWrite.PhoneNumber = phoneNumber;
-            toWrite.Email = checkEmail;
-            toWrite.UserID = generatedUserID;
+                toWrite.AccountType = accountType;
+                toWrite.Address = address;
+                toWrite.Advisor = advisor;
+                toWrite.Birthday = birthday;
+                toWrite.Department = department;
+                toWrite.FirstName = firstName;
+                toWrite.LastName = lastName;
+                toWrite.Major = major;
+                toWrite.Minor = minor;
+                toWrite.PartOrFullTime = partOrFullTime;
+                toWrite.PhoneNumber = phoneNumber;
+                toWrite.Email = checkEmail;
+                toWrite.UserID = generatedUserID;
 
-            mongo.InsertRecord<AllUser>("allUser", toWrite);
-            snackbar.Add("User added successfully", Severity.Success);
+                mongo.InsertRecord<AllUser>("allUser", toWrite);
+                snackbar.Add("User added successfully", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("User was not added successfully", Severity.Error);
+            }
         }
         else
         {
-            snackbar.Add("User added successfully", Severity.Error);
+            snackbar.Add("User was not added successfully", Severity.Error);
         }
     }
 }

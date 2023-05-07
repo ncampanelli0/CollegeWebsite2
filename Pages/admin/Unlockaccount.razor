@@ -17,9 +17,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-        if (accountTypeCheck.Value != "Admin")
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
         {
             navigate.NavigateTo("/homepage");
         }
@@ -43,13 +50,20 @@
 
         if (validForm && sanityCheck)
         {
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            try
+            {
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-            queryAllUserID.LoginCounter = 0;
+                queryAllUserID.LoginCounter = 0;
 
-            mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+                mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
 
-            snackbar.Add("Account was succesfully unlocked", Severity.Success);
+                snackbar.Add("Account was succesfully unlocked", Severity.Success);
+            }
+            catch
+            {
+                snackbar.Add("Account was not succesfully unlocked", Severity.Error);
+            }
         }
         else
         {
