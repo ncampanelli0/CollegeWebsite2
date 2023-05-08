@@ -13,6 +13,7 @@
 
 @code 
 {
+    Mongo mongo = new Mongo("college-site-2");
     private static string userID { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -34,38 +35,38 @@
 
     private void submitForm()
     {
-        Mongo mongo = new Mongo("college-site-2");
-
-        bool validForm = true;
-
-        //form validation
-        if (userID == null || userID == "")
+        try
         {
-            validForm = false;
-        }
+            bool validForm = true;
 
-        //sanity check not needed
-        bool sanityCheck = true;
-
-
-        if (validForm && sanityCheck)
-        {
-            try
+            //form validation
+            if (userID == null || userID == "")
             {
-                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-                queryAllUserID.LoginCounter = 0;
-
-                mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
-
-                snackbar.Add("Account was succesfully unlocked", Severity.Success);
+                validForm = false;
             }
-            catch
+
+            //sanity check not needed
+            bool sanityCheck = true;
+
+
+            if (validForm && sanityCheck)
+            {
+                {
+                    var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                    queryAllUserID.LoginCounter = 0;
+
+                    mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+
+                    snackbar.Add("Account was succesfully unlocked", Severity.Success);
+                }
+            }
+            else
             {
                 snackbar.Add("Account was not succesfully unlocked", Severity.Error);
             }
         }
-        else
+        catch
         {
             snackbar.Add("Account was not succesfully unlocked", Severity.Error);
         }

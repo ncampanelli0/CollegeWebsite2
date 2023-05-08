@@ -38,38 +38,37 @@
 
     private void submitForm()
     {
-        bool validForm = true;
-
-        if (userID == null || userID == "")
+        try
         {
-            validForm = false;
-        }
-        else if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
-        {
-            validForm = false;
-        }
 
-        //sanity check
-        bool sanityCheck = true;
+            bool validForm = true;
 
-        if (validForm)
-        {
-            var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
-
-            //this if statement might need to be reworked, i'm not exactly sure
-            //how dates work in terms of compairison operator -Nick
-            if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+            if (userID == null || userID == "")
             {
-                sanityCheck = false;
+                validForm = false;
             }
-        }
+            else if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
+            {
+                validForm = false;
+            }
+
+            //sanity check
+            bool sanityCheck = true;
+
+            if (validForm)
+            {
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+
+                //this if statement might need to be reworked, i'm not exactly sure
+                //how dates work in terms of compairison operator -Nick
+                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+                {
+                    sanityCheck = false;
+                }
+            }
 
 
-
-
-        if (validForm && sanityCheck)
-        {
-            try
+            if (validForm && sanityCheck)
             {
                 var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
@@ -87,12 +86,12 @@
                     }
                 }
             }
-            catch
+            else
             {
                 snackbar.Add("User not removed from class", Severity.Error);
             }
         }
-        else
+        catch
         {
             snackbar.Add("User not removed from class", Severity.Error);
         }

@@ -37,22 +37,22 @@
 
     private void submitForm()
     {
-        bool validForm = true;
-
-        //form validation
-        if (userID == null || userID == "")
+        try
         {
-            validForm = false;
-        }
+            bool validForm = true;
 
-        //sanity check not needed
-        bool sanityCheck = true;
+            //form validation
+            if (userID == null || userID == "")
+            {
+                validForm = false;
+            }
+
+            //sanity check not needed
+            bool sanityCheck = true;
 
 
 
-        if (validForm && sanityCheck)
-        {
-            try
+            if (validForm && sanityCheck)
             {
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
                 var queryClasses = mongo.LoadRecord<Classes>("classes");
@@ -71,15 +71,16 @@
                 mongo.DeleteRecordById<AllUser>("allUser", queryAllUserID.Id);
                 snackbar.Add("User was removed successfully", Severity.Success);
             }
-            catch
+            else
             {
                 snackbar.Add("User was not removed successfully", Severity.Error);
             }
         }
-        else
+        catch
         {
             snackbar.Add("User was not removed successfully", Severity.Error);
         }
+
     }
 
 }

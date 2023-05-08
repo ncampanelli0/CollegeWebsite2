@@ -37,35 +37,36 @@
 
     private void submitForm()
     {
-        bool validForm = true;
-
-        //form validation
-        if ((userID == null || userID == "") && !(userID.Contains("FCC")))
+        try
         {
-            validForm = false;
-        }
-        else if (CRN == null || CRN == "")
-        {
-            validForm = false;
-        }
+            bool validForm = true;
 
-        //sanity check
-        bool sanityCheck = true;
-        if (validForm)
-        {
-            var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-            var queryClass = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
-
-            if (queryProfessor.Department != queryClass.Department)
+            //form validation
+            if ((userID == null || userID == "") && !(userID.Contains("FCC")))
             {
-                sanityCheck = false;
+                validForm = false;
             }
-        }
-
-        if (validForm && sanityCheck)
-        {
-            try
+            else if (CRN == null || CRN == "")
             {
+                validForm = false;
+            }
+
+            //sanity check
+            bool sanityCheck = true;
+            if (validForm)
+            {
+                var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                var queryClass = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+
+                if (queryProfessor.Department != queryClass.Department)
+                {
+                    sanityCheck = false;
+                }
+            }
+
+            if (validForm && sanityCheck)
+            {
+
                 var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
@@ -76,15 +77,15 @@
                 mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
                 snackbar.Add("Professor was added to class successfully", Severity.Success);
             }
-            catch
+            else
             {
                 snackbar.Add("Professor was not added to class succesfully", Severity.Error);
             }
         }
-
-        else
+        catch
         {
             snackbar.Add("Professor was not added to class succesfully", Severity.Error);
         }
+
     }
 }
