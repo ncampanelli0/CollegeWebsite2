@@ -4,15 +4,9 @@
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<<<<<<< Updated upstream
 <h2>Change Major and Minor</h2>
 
 <MudTextField @bind-Value="majorID" Label="major id" Variant="Variant.Outlined"></MudTextField>
-=======
-<h2>Change Major or Minor</h2>
-
-<MudTextField @bind-Value="majorID" Label="Major" Variant="Variant.Outlined"></MudTextField>
->>>>>>> Stashed changes
 <MudSelect @bind-Value="majorID" T="string" Label="majorID" AnchorOrigin="Origin.BottomCenter">
     <MudSelectItem Value="@("American Studies")" />
     <MudSelectItem Value="@("Biological Sciences")" />
@@ -32,11 +26,7 @@
 
 </MudSelect>
 
-<<<<<<< Updated upstream
 <MudTextField @bind-Value="minorID" Label="minor id" Variant="Variant.Outlined"></MudTextField>
-=======
-<MudTextField @bind-Value="minorID" Label="Minor" Variant="Variant.Outlined"></MudTextField>
->>>>>>> Stashed changes
 <MudSelect @bind-Value="minorID" T="string" Label="minorID" AnchorOrigin="Origin.BottomCenter">
     <MudSelectItem Value="@("Chemistry")" />
     <MudSelectItem Value="@("Computer Information Science")" />
@@ -56,7 +46,6 @@
     <MudSelectItem Value="@("No Minor")" />
    
 </MudSelect>
-<<<<<<< Updated upstream
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 @code
@@ -65,26 +54,10 @@
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-=======
-
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
-
-@code
-{
- protected override async Task OnInitializedAsync()
-    {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
-
->>>>>>> Stashed changes
         if (accountTypeCheck.Value != "Undergraduate")
         {
             navigate.NavigateTo("/homepage");
         }
-<<<<<<< Updated upstream
-    }
-
-    
-=======
         }
 
     private static string major { get; set; }
@@ -120,5 +93,4 @@
         }
     }
 }
->>>>>>> Stashed changes
 }

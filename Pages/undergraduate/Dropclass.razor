@@ -8,20 +8,14 @@
 <h2>Drop A Class</h2>
 
 <MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
-<<<<<<< Updated upstream
-<MudTextField @bind-Value="classID" Label="Class ID" Variant="Variant.Outlined"></MudTextField>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
-
-=======
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 <MudTextField @bind-Value="userID" Label="userID" Variant="Variant.Outlined"></MudTextField>
->>>>>>> Stashed changes
 
 
 @code
 {
-  protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
@@ -30,49 +24,43 @@
             navigate.NavigateTo("/homepage");
         }
     }
-<<<<<<< Updated upstream
-    private static string classID { get; set; }
     private static string CRN { get; set; }
 
-
-=======
-    private static string CRN { get; set; }
-    
->>>>>>> Stashed changes
     private void submitForm()
     {
         bool validForm = true;
 
-<<<<<<< Updated upstream
-=======
         if ((userID == null || userID == "") && !(userID.Contains("SCC")))
         {
             validForm = false;
         }
 
->>>>>>> Stashed changes
         if (CRN == null)
         {
             validForm = false;
         }
-<<<<<<< Updated upstream
-        else if (classID == null)
-        {
-            validForm = false;
-=======
 
         if (validForm)
         {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-            mongo.DeleteRecordByString<Classes>("classes", "CRN", CRN);
-
-            snackbar.Add("Class has been removed successfully", Severity.Success);
+            for (int w = 0; w < queryClassesID.Enrolled.Count; w++)
+            {
+                if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                {
+                    queryClassesID.Enrolled.RemoveAt(w);
+                    snackbar.Add("User has been removed from class", Severity.Success);
+                }
+                else
+                {
+                    snackbar.Add("User is not found", Severity.Warning);
+                }
+            }
         }
         else
         {
-            snackbar.Add("Class has not been removed successfully", Severity.Error);
->>>>>>> Stashed changes
+            snackbar.Add("User has been not removed from class", Severity.Error);
         }
     }
 

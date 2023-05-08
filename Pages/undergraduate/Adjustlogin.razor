@@ -3,39 +3,14 @@
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
-<<<<<<< Updated upstream
 
 <h2>Adjust User Login</h2>
 
-
-@code{
-
-protected override async Task OnInitializedAsync()
-    {
-        var accountTypeCheck = await storage.GetAsync<string>("accountType");
-
-        if (accountTypeCheck.Value != "Undergraduate")
-        {
-            navigate.NavigateTo("/homepage");
-        }
-    }
-
-
-private void mailTrapTest()
-{
-  Mailtrap mail = new Mailtrap();
-  mail.sendMail("sender@test.com", "reciever@test.com", "email subject", "body of email");
-}
-}
-=======
-
-<h2>Adjust User Login</h2>
-
-<MudTextField @bind-Value="email" Label="email" Variant="Variant.Outlined"></MudTextField> 
+<MudTextField @bind-Value="email" Label="email" Variant="Variant.Outlined"></MudTextField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
 
-@code{
+@code {
 
     Mongo mongo = new Mongo("college-site-2");
 
@@ -43,7 +18,7 @@ private void mailTrapTest()
 
     private static string email { get; set; }
 
-protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
@@ -53,7 +28,7 @@ protected override async Task OnInitializedAsync()
         }
     }
 
- private void submitForm()
+    private void submitForm()
     {
         bool validForm = true;
 
@@ -62,25 +37,24 @@ protected override async Task OnInitializedAsync()
             validForm = false;
         }
 
-    if (validForm)
+        if (validForm)
         {
             Mailtrap mail = new Mailtrap();
             var queryAllUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
 
             mail.sendMail(email, "Admin@clearwater.edu", "Password reset request");
-            snackbar.Add("Password reset requestnwas sent", Severity.Success);
+            snackbar.Add("Password reset request was sent", Severity.Success);
         }
         else
         {
             snackbar.Add("Password reset was not sent", Severity.Error);
         }
-        }
+    }
 
-private void Mailtrap()
-{
-  Mailtrap mail = new Mailtrap();
-  mail.sendMail("sender@test.com", "reciever@test.com", "email subject", "body of email");
-}
+    private void Mailtrap()
+    {
+        Mailtrap mail = new Mailtrap();
+        mail.sendMail("sender@test.com", "reciever@test.com", "email subject", "body of email");
+    }
 }
 
->>>>>>> Stashed changes
