@@ -29,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\import\bootstrap.min.js" />
-    <None Include="wwwroot\import\bootstrap.min.js.map" />
-    <None Include="wwwroot\import\datatables.min.js" />
     <None Include="wwwroot\import\jquery.js" />
     <None Include="wwwroot\import\popper.min.js" />
     <None Include="wwwroot\script\shared.js" />

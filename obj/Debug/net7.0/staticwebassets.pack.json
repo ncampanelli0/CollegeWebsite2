@@ -25,14 +25,6 @@
       "PackagePath": "staticwebassets\\accreditation\\ceph_bachelors_only_red_transparent.png"
     },
     {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
       "PackagePath": "staticwebassets\\css\\mudblazor.css"
     },
@@ -359,18 +351,6 @@
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_desc.png",
       "PackagePath": "staticwebassets\\image\\sort_desc.png"
-    },
-    {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\bootstrap.min.js",
-      "PackagePath": "staticwebassets\\import\\bootstrap.min.js"
-    },
-    {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\bootstrap.min.js.map",
-      "PackagePath": "staticwebassets\\import\\bootstrap.min.js.map"
-    },
-    {
-      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\datatables.min.js",
-      "PackagePath": "staticwebassets\\import\\datatables.min.js"
     },
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\jquery.js",
