@@ -70,7 +70,7 @@
             {
                 var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CourseID", courseID);
 
-                if (queryClassID.Enrolled.Count <= maxCapacity) ;
+                if (queryClassID.Enrolled.Count <= maxCapacity)
                 {
                     sanityCheck = false;
                 }
