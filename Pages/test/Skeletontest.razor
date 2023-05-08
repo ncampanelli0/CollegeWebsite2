@@ -1,0 +1,30 @@
+﻿@page "/developer/skeletontest"
+
+<h3>Skeletontest</h3>
+
+@if (loadData)
+{
+    <p>data is loaded</p>
+}
+else
+{
+    <p>data has changed</p>
+}
+
+<MudButton @onclick="button">test</MudButton>
+
+@code 
+{
+    private bool loadData = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    private void button()
+    {
+        loadData = !loadData;
+    }
+
+}

@@ -92,7 +92,7 @@
             assignProfessorsToClassNoCap(2021, "Winter", departmentList[x]);
             assignProfessorsToClassNoCap(2022, "Winter", departmentList[x]);
             assignProfessorsToClass(2023, "Winter", departmentList[x], 1);
-
+            */
 
             assignStudentsToClass(majorList[x], departmentList[x], 2018, "Fall");
             assignStudentsToClass(majorList[x], departmentList[x], 2019, "Fall");
@@ -121,7 +121,7 @@
             assignStudentsToClass(majorList[x], departmentList[x], 2021, "Summer");
             assignStudentsToClass(majorList[x], departmentList[x], 2022, "Summer");
             assignStudentsToClass(majorList[x], departmentList[x], 2023, "Summer");
-        */
+        
         }
         //writeProfessorSchedulesToTranscript();
         //fixPrerequisteToObjects();
@@ -298,7 +298,7 @@
 
                         toAdd.FirstName = x.FirstName;
                         toAdd.LastName = x.LastName;
-                        toAdd.StudentID = x.UserID;
+                        toAdd.UserID = x.UserID;
                         toAdd.Grades = gradesToAdd;
                         toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
@@ -329,7 +329,7 @@
 
                         toAdd.FirstName = x.FirstName;
                         toAdd.LastName = x.LastName;
-                        toAdd.StudentID = x.UserID;
+                        toAdd.UserID = x.UserID;
                         toAdd.Grades = gradesToAdd;
                         toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
@@ -356,7 +356,7 @@
 
                         toAdd.FirstName = x.FirstName;
                         toAdd.LastName = x.LastName;
-                        toAdd.StudentID = x.UserID;
+                        toAdd.UserID = x.UserID;
                         toAdd.Grades = gradesToAdd;
                         toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
@@ -382,7 +382,7 @@
 
                         toAdd.FirstName = x.FirstName;
                         toAdd.LastName = x.LastName;
-                        toAdd.StudentID = x.UserID;
+                        toAdd.UserID = x.UserID;
                         toAdd.Grades = gradesToAdd;
                         toAdd.MidTermGrade = gradeChoices[random.Next(0, 4)];
                         toAdd.FinalGrade = gradeChoices[random.Next(0, 4)];
@@ -430,7 +430,7 @@
                     {
                         gradeList[i] = gradeChoices[random.Next(0, 4)];
                     }
-                    var queryStudent = mongo.LoadRecordByString<AllUser>("allUser", "UserID", x.Enrolled[y].StudentID);
+                    var queryStudent = mongo.LoadRecordByString<AllUser>("allUser", "UserID", x.Enrolled[y].UserID);
                     StudentData studentData = new StudentData
                             {
                                 StudentID = queryStudent.UserID,

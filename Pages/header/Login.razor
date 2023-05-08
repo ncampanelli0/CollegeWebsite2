@@ -1,7 +1,7 @@
 @page "/login"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
-@inject ISnackbar Snackbar
+@inject ISnackbar snackbar
 
     <input type="text" placeholder="email" @bind-value = "email"/>
     <br /> <br />
@@ -27,7 +27,7 @@
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
             if (queryUser.LoginCounter >= 4)
             {
-                Snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
+                snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
                 queryUser.LoginCounter++;
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
@@ -46,19 +46,20 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("department", queryUser.Department);
+                await storage.SetAsync("userID", queryUser.UserID);
                 await storage.SetAsync("loggedIn", true);
                 navigate.NavigateTo("/homepage", true);
             }
             else
             {
-                Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+                snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
                 queryUser.LoginCounter++;
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
         }
         catch
         {
-            Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+            snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
             
         }
     }

@@ -95,8 +95,8 @@ namespace CollegeWebsite2.Database
     public class Enrolled
     {
 
-        [BsonElement("StudentID")]
-        public string StudentID { get; set; }
+        [BsonElement("UserID")]
+        public string UserID { get; set; }
 
         [BsonElement("FirstName")]
         public string FirstName { get; set; }
