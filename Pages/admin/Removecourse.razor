@@ -1,0 +1,84 @@
+﻿@page "/admin/removecourse"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Remove course</h2>
+
+<MudNumericField @bind-Value="courseID" Label="Max Capacity" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+
+@code 
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static int courseID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+    private void submitForm()
+    {
+        try
+        {
+            //form validation
+            bool validForm = true;
+
+            if (courseID == null)
+            {
+                validForm = false;
+            }
+            else if (!(courseID <= 1000 && courseID >= 9999))
+            {
+                validForm = false;
+            }
+
+
+            //sanity check not needed
+            bool sanityCheck = true;
+
+
+
+            if (validForm && sanityCheck)
+            {
+
+                var queryCourseID = mongo.LoadRecordByInt<Course>("course", "CourseID", courseID);
+                var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+                foreach (var x in queryClasses)
+                {
+                    if (x.CourseID == courseID && (x.StartDate.Date.ToLocalTime() < DateTime.Today.ToLocalTime()))
+                    {
+                        mongo.DeleteRecordByInt<Classes>("classes", "CourseID", courseID);
+                    }
+                }
+
+                mongo.DeleteRecordByInt<Course>("course", "CourseID", courseID);
+                snackbar.Add("Course removed succesfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Course was not removed succesfully", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Course was not removed succesfully", Severity.Error);
+        }
+    }
+}
