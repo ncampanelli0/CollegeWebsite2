@@ -28,42 +28,64 @@
 
     private void submitForm()
     {
-        bool validForm = true;
-
-        if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+        try
         {
-            validForm = false;
-        }
+            bool validForm = true;
 
-        if (CRN == null)
-        {
-            validForm = false;
-        }
-
-        if (validForm)
-        {
-            var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
-            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-            for (int w = 0; w < queryClassesID.Enrolled.Count; w++)
+            if ((userID == null || userID == "") && !(userID.Contains("SCC")))
             {
-                if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                validForm = false;
+            }
+
+            if (CRN == null)
+            {
+                validForm = false;
+            }
+
+            bool thealmightycheck = true;
+
+            if (thealmightycheck)
+            {
+                var queryClassID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+
+                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
                 {
-                    queryClassesID.Enrolled.RemoveAt(w);
-                    snackbar.Add("User has been removed from class", Severity.Success);
-                }
-                else
-                {
-                    snackbar.Add("User is not found", Severity.Warning);
+                    thealmightycheck = false;
                 }
             }
+
+
+            if (validForm && thealmightycheck)
+            {
+                var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                for (int w = 0; w < queryClassesID.Enrolled.Count; w++)
+                {
+                    if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                    {
+                        queryClassesID.Enrolled.RemoveAt(w);
+                        snackbar.Add("User has been removed from class", Severity.Success);
+                    }
+                    else
+                    {
+                        snackbar.Add("User cannot be not found", Severity.Warning);
+                    }
+                }
+            }
+            else
+            {
+                snackbar.Add("User has been not removed from class", Severity.Error);
+            }
         }
-        else
+
+        catch
         {
-            snackbar.Add("User has been not removed from class", Severity.Error);
+            snackbar.Add("Class was not removed successfully", Severity.Error);
         }
     }
 
 }
+
 
 
