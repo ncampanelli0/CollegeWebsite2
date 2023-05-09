@@ -79,7 +79,7 @@ protected override async Task OnInitializedAsync()
             if (thealmightycheck)
             {
                 var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
                 var queryClasses = mongo.LoadRecord<Classes>("classes");
 
                 int enrolledCreditCounter = 0;
@@ -87,7 +87,7 @@ protected override async Task OnInitializedAsync()
                 {
                     foreach (var y in x.Enrolled)
                     {
-                        if (y.UserID == queryStudentID.UserID && (queryClassesID.StartDate.Year == x.StartDate.Year && queryClassesID.Semester
+                        if (y.UserID == queryStudentID.UserID && (queryCRN.StartDate.Year == x.StartDate.Year && queryCRN.Semester
                         == x.Semester))
                         {
                             enrolledCreditCounter += x.Credits;
@@ -104,7 +104,7 @@ protected override async Task OnInitializedAsync()
                     thealmightycheck = false;
                 }
 
-                foreach (var x in queryClassesID.Enrolled)
+                foreach (var x in queryCRN.Enrolled)
                 {
                     if (x.UserID == queryStudentID.UserID)
                     {
@@ -117,7 +117,7 @@ protected override async Task OnInitializedAsync()
             if (validForm && thealmightycheck)
             {
 
-                var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
                 var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
                 Registered toWrite = new Registered();
@@ -130,9 +130,9 @@ protected override async Task OnInitializedAsync()
                 toWrite.MidTermGrade = "none";
                 toWrite.FinalGrade = "none";
 
-                queryClassesID.Enrolled.Add(toWrite);
+                queryCRN.Enrolled.Add(toWrite);
 
-                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                mongo.UpsertRecord<Classes>("classes", queryCRN.Id, queryCRN);
                 snackbar.Add("User added to class successfully", Severity.Success);
             }
             else

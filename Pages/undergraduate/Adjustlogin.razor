@@ -28,33 +28,50 @@
         }
     }
 
+        private string createPassword()
+    {
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var stringChars = new char[8];
+        var random = new Random();
+
+        for (int i = 0; i < 8; i++)
+        {
+            stringChars.Append(chars[random.Next(chars.Length)]);
+        }
+
+        return stringChars.ToString();
+    }
     private void submitForm()
     {
-        bool validForm = true;
-
-        if (email == "" || email == null)
+        try
         {
-            validForm = false;
-        }
+            if (email == null || email == "")
+            {
+                validForm = false;
+            }
 
-        if (validForm)
+            bool thealmightycheck = true;
+
+            if (validForm && thealmightycheck)
+            {
+                Mailtrap mail = new Mailtrap();
+                var queryAllUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+                string newestPassword = createPassword();
+
+                queryAllUser.Password = newestPassword;
+                mongo.UpsertRecord<AllUser>("allUser", queryAllUser.Id, queryAllUser);
+                mail.sendMail("Student@clearwater.edu", email, "Password has been reset", $"new password is: {newestPassword}");
+                snackbar.Add("Password reset was sent", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Password reset was not able to be sent", Severity.Error);
+            }
+        }
+        catch
         {
-            Mailtrap mail = new Mailtrap();
-            var queryAllUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
-
-            mail.sendMail(email, "Admin@clearwater.edu", "Password reset request");
-            snackbar.Add("Password reset request was sent", Severity.Success);
+            snackbar.Add("Password reset was not able to be sent", Severity.Error);
         }
-        else
-        {
-            snackbar.Add("Password reset was not sent", Severity.Error);
-        }
-    }
-
-    private void Mailtrap()
-    {
-        Mailtrap mail = new Mailtrap();
-        mail.sendMail("sender@test.com", "reciever@test.com", "email subject", "body of email");
     }
 }
 

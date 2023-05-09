@@ -46,7 +46,7 @@
 
             if (thealmightycheck)
             {
-                var queryClassID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
 
                 if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
                 {
@@ -57,14 +57,14 @@
 
             if (validForm && thealmightycheck)
             {
-                var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryCRN = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
                 for (int w = 0; w < queryClassesID.Enrolled.Count; w++)
                 {
-                    if (queryClassesID.Enrolled[i].UserID.Contains(userID))
+                    if (queryCRN.Enrolled[i].UserID.Contains(userID))
                     {
-                        queryClassesID.Enrolled.RemoveAt(w);
+                        queryCRN.Enrolled.RemoveAt(w);
                         snackbar.Add("User has been removed from class", Severity.Success);
                     }
                     else

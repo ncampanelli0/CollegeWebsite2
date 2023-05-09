@@ -1,16 +1,15 @@
-@page "/undergraduate/viewdegreeaudit"
+@page "/undergraduate/viewtranscript"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<h2>Degree Audit for @studentName</h2>
+<h2>Transcript for @studentName</h2>
 
 <MudExpansionPanels MultiExpansion="true">
 <br /> <br />
 <br /> <br />
 <p>Student ID: @userID &nbsp;&nbsp;&nbsp;  Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp;   Major: @foreach (var item in popList){  @item.Major  } &nbsp;&nbsp;&nbsp; Minor: @foreach (var item in popList){  @item.Minor  }</p>
     
-    <h3>Courses Completed</h3>
     @foreach (var x in classesList)
     { 
         
@@ -25,52 +24,29 @@
         </MudExpansionPanel>
      
     }
-    <h3>Courses Currently Taking</h3>
-    @foreach (var x in classesList)
-    { 
-        
-        <MudExpansionPanel Text=@x.CourseName>
-            Course ID: @x.CourseID <br /> <br />
-            Credits: @x.Credits <br /> <br />
-            Department: @x.Department <br /> <br />
-            Section: @x.Section <br /> <br />
-            Semester: @x.Semester- @x.StartDate.Year <br /> <br />
-            Grade: @x.Enrolled[0].FinalGrade <br /> <br />
-           
-        </MudExpansionPanel>
-     
-    }
-
-<h3>Major and/or Minor Requirements</h3>
 
 </MudExpansionPanels>
-
-<MudDataGrid Items="@major" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
-    <Columns>
-        <PropertyColumn Title="Class Name" Property="x => x.className" />
-        <PropertyColumn Title="Grade Requirement" Property="x => x.gradeRequirement" />
-    </Columns>
-    <PagerContent>
-        <MudDataGridPager T="Major" />
-    </PagerContent>
-</MudDataGrid>
-
-<MudDataGrid Items="@minor" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
-    <Columns>
-        <PropertyColumn Title="Class Name" Property="x => x.className" />
-        <PropertyColumn Title="Grade Requirement" Property="x => x.gradeRequirement" />
-    </Columns>
-    <PagerContent>
-        <MudDataGridPager T="Minor" />
-    </PagerContent>
-</MudDataGrid>
 
 @code
 {
     Mongo mongo = new Mongo("college-site-2");
-    
+    int counter = 0;
+        int val = 0;
+
+        int a = 8;
+        
+        int b = 6;
+      
+        int c = 4;
+        int hours = 0;       
+        int totalPoints;
+        int gpa;
+        string standing;
+        string studentName;
+
     private List<Classes> classesList = new List<Classes> { };
     private List<Enrolled> enrolledList = new List<Enrolled> { };
+
     private List<popTable2> popList = new List<popTable2> { };
 
       public class popTable2
@@ -81,11 +57,7 @@
        
         
     }
-     protected override async Task OnInitializedAsync()
-    {
-        populateTableMajor();
-        populateTableMinor();
-    }
+
     protected override async Task OnInitializedAsync()
     {
         try
@@ -102,70 +74,28 @@
             navigate.NavigateTo("/homepage");
         }
 
-        // view completed courses
+
         try
-       {
-            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
-
-            foreach (var x in queryAllClasses)
-            {
-                if (x.FinalGrade == "A,B,C,D,F")
-
-                    foreach (var y in x.Enrolled)
-                    {
-                        if (y.UserID == userID)
-                        {
-                            classesList.Add(x);
-                            enrolledList.Add(y);
-                        }
-                    }
-            }
-                //insert the function here
-                creditAmount();
-                findName();
-                gpaCalculator();
-                gpa = totalPoints/hours;
-
-                var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
-
-                     foreach (var a in queryAllUser){
-                                if(a.UserID == userID){
-                                   popTable2 majorMinor = new popTable2();
-                                   majorMinor.Major = a.Major;
-                                   majorMinor.Minor = a.Minor;
-                                   popList.Add(majorMinor);
-                                }
-
-                        }
-        }
-        catch
         {
-            snackbar.Add("data has not found", Severity.Error);
-        }
-
-        // view current courses
-        try
-       {
             var queryAllClasses = mongo.LoadRecord<Classes>("classes");
 
             foreach (var x in queryAllClasses)
             {
-                if (x.StartDate.year == "2023")
-
-                    foreach (var y in x.Enrolled)
+                foreach (var y in x.Enrolled)
+                {
+                    if (y.UserID == userID)
                     {
-                        if (y.UserID == userID)
-                        {
-                            classesList.Add(x);
-                            enrolledList.Add(y);
-                        }
+                        classesList.Add(x);
+                        enrolledList.Add(y);
                     }
+                }
             }
                 //insert the function here
                 creditAmount();
                 findName();
+
                 gpaCalculator();
-                gpa = totalPoints/hours;
+                  gpa = totalPoints/hours;
 
                 var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
 
@@ -182,39 +112,9 @@
         }
         catch
         {
-            snackbar.Add("data has not found", Severity.Error);
+            snackbar.Add("data not found", Severity.Error);
         }
-    }
-        // view major/minor requirements 
-        protected override async Task populateTableMajor()
-    {
-        var userMajor = await storage.GetAsync<ObjectId>("major");
-        var queryMajor = mongo.LoadRecordById<Majors>("majors", userMajor.Value);
 
-        for (int i = 0; i < queryMajor.MajorRequirements.Length; i++)
-        {
-            Major y = new Major();
-
-            y.className = queryMajor.MajorRequirements[i];
-            y.gradeRequirement = queryMajor.GradeRequirements[i];
-
-            major.Add(y);
-        }
-    }
-       protected override async Task populateTableMinor()
-    {
-        var userMinor = await storage.GetAsync<ObjectId>("minor");
-        var queryMinor = mongo.LoadRecordById<Minors>("minors", userMinor.Value);
-
-        for (int i = 0; i < queryMinor.MinorRequirements.Length; i++)
-        {
-            Minor y = new Minor();
-
-            y.className = queryMinor.MinorRequirements[i];
-            y.gradeRequirement = queryMinor.GradeRequirements[i];
-
-            minor.Add(y);
-        }
     }
 
 //@enrolledList[counter].FinalGrade
@@ -306,7 +206,5 @@
             }
           
         }
-}
-
-
+        }
 
