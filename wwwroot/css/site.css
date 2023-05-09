@@ -10,6 +10,34 @@ font-family: sans-serif;
 font-weight: 100;
 }
 
+#textFieldColor {
+    color: #637cf7;
+}
+
+.textFieldColor {
+    color: #637cf7;
+}
+
+label
+{
+    color: white !important;
+    background-color: black !important;
+}
+
+
+
+
+.selectFieldColor 
+{
+    background-color: black;
+    color: gold;
+}
+
+
+input {
+    color: white;
+}
+
 @keyframes buttonScrollOver 
 {
     0% 
@@ -68,10 +96,15 @@ font-weight: 100;
     }
 }
 
+.headerAlign
+{
+    text-align: center;
+}
+
 .caraousel 
 {
-    height: 350px;
-    width: 100%
+    height: 100%;
+    width: 100%;
 }
 
 .footerImg 
@@ -90,7 +123,7 @@ font-weight: 100;
     transform: translate(-50%,-50%);
 }
 
-/*
+
 .tableStyle
 {
     width: 1400px;
@@ -117,16 +150,37 @@ tbody tr:hover {
     background-color: rgba(255,255,255,0.3) !important;
 }
 
+.tableFooter {
+    background-color: #55608f;
+    color: white;
+}
 
 tbody td {
     position: relative !important;
+    background-color: rgb(7, 126, 190) !important
 }
-*/
+
 .btncolor 
 {
+    color: gold !important;
     background-color: rgb(7, 126, 190);
     border-radius: 25% !important;
-    border-color: white;
+    border-color: white !important;
+}
+
+.drawerColorHead
+{
+    background-color: black;
+}
+
+.drawerColorText
+{
+    color: gold;
+}
+
+.fieldText
+{
+    color: white; !important
 }
 
 .btncolor:hover 

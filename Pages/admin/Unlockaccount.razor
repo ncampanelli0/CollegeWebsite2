@@ -5,8 +5,8 @@
 
 <h2>Unlock account</h2>
 
-<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
 
 
@@ -14,6 +14,8 @@
 @code 
 {
     Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
+
     private static string userID { get; set; }
 
     protected override async Task OnInitializedAsync()

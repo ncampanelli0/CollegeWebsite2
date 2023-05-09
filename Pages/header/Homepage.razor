@@ -4,28 +4,26 @@
 @inject NavigationManager navigate
 @inject ISnackbar Snackbar
 
-<div class= "stylecontent">
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
+
+<MudCarousel Style="height:350px;" ShowArrows="true" ShowBullets="false" EnableSwipeGesture="true" TData="object">
+    <MudCarouselItem>
         <img src="homepageimage/homepage3.jpg" class="caraousel" alt="slide1">
-      </div>
-      <div class="carousel-item">
+    </MudCarouselItem>
+
+    <MudCarouselItem>
         <img src="homepageimage/homepageimage2.jpg" class="caraousel" alt="slide2">
-      </div>
-      <div class="carousel-item">
+    </MudCarouselItem>
+
+    <MudCarouselItem>
         <img src="homepageimage/homepageimage3.jpg" class="caraousel" alt="slide3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    </MudCarouselItem>
+</MudCarousel>
+<br /><br />
+
+
+
+
+
 
     <section class="center">
         <div class="contentbody content">
@@ -154,227 +152,60 @@
 
     </div>
  
+    <MudExpansionPanels>
+        <MudExpansionPanel Text="August">
+            <ol>
+                <li> 22-Aug Advising for all students </li>
+                <li> 27-Aug Residence Hall for all new students(First-year and Transfer) </li>
+                <li> 28-Aug Residence Hall Open for all returning students </li>
+                <li> 31-Aug Add/Drop (no fee) Late Registration ($50 fee) </li>
+                <li> 31-Aug First Day of Classes </li>
+            </ol>
+        </MudExpansionPanel>
 
+        <MudExpansionPanel Text="Septemeber">
+            <ol>
+                <li>5-Sep Labor Day-no classes offices closed</li>
+                <li>7-Sep Club Bash </li>
+            </ol>
+        </MudExpansionPanel>
 
-  <div class="accordion bg-black text-white" id="accordionExample">
+        <MudExpansionPanel Text="October">
+            <ol>
+                <li>3-Oct Last day to apply for Graduation for Fall 2022 and Winter 2023</li>
+                <li>3-Oct Advising begins</li>
+                <li>10-Oct Indigenous People's Day/Columbus Day-no classes, offices closed</li>
+                <li>2-Oct Midterm Week</li>
+                <li>19-Oct Last day to file for W or Cr/NC</li>
+                <li>21-Oct Mid-term advisory grades due </li>
+            </ol>
+        </MudExpansionPanel>
 
+        <MudExpansionPanel Text="November">
+            <ol>
+                <li>1-Nov Spring 2023 Registration for Seniors on the Web</li>
+                <li>7-Nov Spring 2023 Registration for Juniors on the Web</li>
+                <li>8-Nov Election Day-classes in session</li>
+                <li>11-Nov Spring 2023 Registration for Sophmores on the Web</li>
+                <li>11-Nov Veterans day-classes in session</li>
+                <li>16-Nov Spring 2023 Registration for First-Years on the Web</li>
+                <li>17-Nov Continuing Registration for Spring 2023 for all students on the Web</li>
+                <li>23-Nov Dining Hall Closes After Dinner</li>
+                <li>24-Nov Thanksgiving Recess-no classes</li>
+                <li>27-Nov Dining Hall Reopens for dinner</li>
+                <li>28-Nov Classes Resume </li>
+            </ol>
+        </MudExpansionPanel>
 
-
-  <!-- 1 -->
-  <div class="accordion-item bg-black text-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingOne">
-      <button class="
-        accordion-button
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-white text-center
-        bg-black
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-        aria-controls="collapseOne">
-        August
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <ul>
-        <strong>August</strong>
-            <li> 22-Aug Advising for all students </li>
-            <li> 27-Aug Residence Hall for all new students(First-year and Transfer) </li>
-            <li> 28-Aug Residence Hall Open for all returning students </li>
-            <li> 31-Aug Add/Drop (no fee) Late Registration($50 fee) </li>
-            <li> 31-Aug First Day of Classes </li>
-          </ul>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-  <!-- 2 -->
-  <div class="accordion-item bg-black text-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingTwo">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-white text-center
-        bg-black
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-        aria-controls="collapseTwo">
-        September
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-          <strong>September</strong>
-          <ul>
-            <li>5-Sep Labor Day-no classes offices closed</li>
-            <li>7-Sep Club Bash </li>
-          </ul>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-  <!-- 3 -->
-  <div class="accordion-item bg-black text-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingThree">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-white text-center
-        bg-black
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-        aria-controls="collapseThree">
-        October
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>October</strong>
-        <ul>
-            <li>3-Oct Last day to apply for Graduation for Fall 2022 and Winter 2023</li>
-            <li>3-Oct Advising begins</li>
-            <li>10-Oct Indigenous People's Day/Columbus Day-no classes, offices closed</li>
-            <li>2-Oct Midterm Week</li>
-            <li>19-Oct Last day to file for W or Cr/NC</li>
-            <li>21-Oct Mid-term advisory grades due </li>
-          </ul>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-    <!-- 4 -->
-    <div class="accordion-item bg-black text-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingFour">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-white text-center
-        bg-black
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-        aria-controls="collapseFour">
-        November
-      </button>
-    </h2>
-    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>November</strong>
-        <ul>
-            <li>1-Nov Spring 2023 Registration for Seniors on the Web</li>
-            <li>7-Nov Spring 2023 Registration for Juniors on the Web</li>
-            <li>8-Nov Election Day-classes in session</li>
-            <li>11-Nov Spring 2023 Registration for Sophmores on the Web</li>
-            <li>11-Nov Veterans day-classes in session</li>
-            <li>16-Nov Spring 2023 Registration for First-Years on the Web</li>
-            <li>17-Nov Continuing Registration for Spring 2023 for all students on the Web</li>
-            <li>23-Nov Dining Hall Closes After Dinner</li>
-            <li>24-Nov Thanksgiving Recess-no classes</li>
-            <li>27-Nov Dining Hall Reopens for dinner</li>
-            <li>28-Nov Classes Resume </li>
-          </ul>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-    <!-- 5 -->
-    <div class="accordion-item bg-black text-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingFive">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-white text-center
-        bg-black
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
-        aria-controls="collapseFive">
-        December
-      </button>
-    </h2>
-    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>December</strong>
-        <ul>
-            <li>13-Dec Study/Make-up Days</li>
-            <li>15-Dec Final Exams(grades due to Registrar 48 hours after scheduled final examination period)</li>
-            <li>21-Dec Residence Hall close after final last exam</li>
-            <li>21-Dec Fall Semester Ends after last Examination</li>
-          </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
+        <MudExpansionPanel Text="December">
+            <ol>
+                <li>13-Dec Study/Make-up Days</li>
+                <li>15-Dec Final Exams(grades due to Registrar 48 hours after scheduled final examination period)</li>
+                <li>21-Dec Residence Hall close after final last exam</li>
+                <li>21-Dec Fall Semester Ends after last Examination</li>
+            </ol>
+        </MudExpansionPanel>
+    </MudExpansionPanels>
 
 
 @code
