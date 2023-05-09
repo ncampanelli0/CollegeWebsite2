@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aHbHOE7+CVcAZHB6y/eoixHm1pkwmybtcwnYEL0uwuk=",
+  "Hash": "7D7CLVgb4bRNxl4kgUi6jqALknxmSC7AF6b31CSsc5o=",
   "Source": "CollegeWebsite2",
   "BasePath": "_content/CollegeWebsite2",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\accreditation\\NYSEDLogo.png"
+    },
+    {
+      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\animate.css",
+      "SourceId": "CollegeWebsite2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "BasePath": "_content/CollegeWebsite2",
+      "RelativePath": "css/animate.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\animate.css"
     },
     {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
@@ -1766,6 +1783,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\stylesheet\\datatables.min.css"
+    },
+    {
+      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\MudBlazor.min.css",
+      "SourceId": "CollegeWebsite2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "BasePath": "_content/CollegeWebsite2",
+      "RelativePath": "stylesheet/MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\stylesheet\\MudBlazor.min.css"
     },
     {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\style.css",

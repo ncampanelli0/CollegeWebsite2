@@ -3,16 +3,17 @@
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-    <input type="text" placeholder="email" @bind-value = "email"/>
-    <br /> <br />
-    <input type="password" placeholder="password" @bind-value = "password"/>
-    <button @onclick="login" class = "btncolor">login</button>
 
+
+<MudTextField @bind-Value="email" Style="@theme.textFieldColor" Label="Email" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="password" Style="@theme.textFieldColor" InputType="InputType.Password" Label="password" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="login" class="btncolor" Variant="Variant.Outlined">login</MudButton>
 
 
 @code
 {
     Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
     private string? email { get; set; }
     private string? password { get; set; }
     public bool showPopover = false;

@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\accreditation\\ceph_bachelors_only_red_transparent.png"
     },
     {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
       "PackagePath": "staticwebassets\\css\\mudblazor.css"
     },
@@ -387,6 +391,10 @@
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_desc.png",
       "PackagePath": "staticwebassets\\sort_desc.png"
+    },
+    {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\MudBlazor.min.css",
+      "PackagePath": "staticwebassets\\stylesheet\\MudBlazor.min.css"
     },
     {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\bootstrap.min.css",

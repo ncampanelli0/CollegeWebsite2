@@ -1,14 +1,17 @@
 ﻿@inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 
+
+
     <MudToolBar>
-    <MudButton @onclick="toggleDrawer">Options</MudButton>
+    <MudButton @onclick="toggleDrawer" class="btncolor" Variant="Variant.Outlined">Options</MudButton>
+
     </MudToolBar>
-    
-    <MudDrawerContainer Class="mud-height-full">
-        <MudDrawer @bind-Open="@openStart" Anchor="Anchor.Start" Elevation="0">
-        <MudDrawerHeader>
-                <MudText Typo="Typo.h5">All User Options</MudText>
+
+<MudDrawerContainer Class="mud-height-full drawerColor" @onmouseleave="toggleDrawer">
+    <MudDrawer @bind-Open="@openStart" Class="drawerColorHead" Anchor="Anchor.Start" Elevation="0">
+        <MudDrawerHeader Class="drawerColorHead">
+            <MudText Typo="Typo.h5" Style="color: rgb(165, 7, 197);">Options Menu</MudText>
         </MudDrawerHeader>
        
         @if (!loggedIn)

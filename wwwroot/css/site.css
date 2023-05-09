@@ -68,10 +68,15 @@ font-weight: 100;
     }
 }
 
+.headerAlign
+{
+    text-align: center;
+}
+
 .caraousel 
 {
-    height: 350px;
-    width: 100%
+    height: 100%;
+    width: 100%;
 }
 
 .footerImg 
@@ -124,9 +129,25 @@ tbody td {
 */
 .btncolor 
 {
+    color: gold !important;
     background-color: rgb(7, 126, 190);
     border-radius: 25% !important;
-    border-color: white;
+    border-color: white !important;
+}
+
+.drawerColorHead
+{
+    background-color: black;
+}
+
+.drawerColorText
+{
+    color: gold;
+}
+
+.fieldText
+{
+    color: white; !important
 }
 
 .btncolor:hover 
