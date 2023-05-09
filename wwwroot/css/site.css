@@ -18,6 +18,11 @@ font-weight: 100;
     color: #637cf7;
 }
 
+.panels {
+    color: white;
+    background-color: rgb(7, 126, 190) 
+}
+
 label
 {
     color: white !important;
@@ -142,12 +147,13 @@ th {
     text-align: left !important;
 }
 
-thead th {
+thead {
     background-color: #55608f !important;
 }
 
-tbody tr:hover {
-    background-color: rgba(255,255,255,0.3) !important;
+
+tr:hover {
+    background-color: rgba(255,255,255,0.6) !important;
 }
 
 .tableFooter {
@@ -155,9 +161,14 @@ tbody tr:hover {
     color: white;
 }
 
-tbody td {
+td {
     position: relative !important;
     background-color: rgb(7, 126, 190) !important
+}
+
+td:hover {
+    position: relative !important;
+    background-color: rgb(7, 126, 190, 0.6) !important
 }
 
 .btncolor 
