@@ -5,43 +5,43 @@
 
 <h2>Add class section</h2>
 
-<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" Style="@theme.textFieldColor" Min="1000" Max="9999"></MudNumericField>
-<MudNumericField @bind-Value="buildingID" Label="building id" Variant="Variant.Outlined" Style="@theme.textFieldColor" Min="1" Max="3"></MudNumericField>
-<MudNumericField @bind-Value="maxCapacity" Label="max capacity" Variant="Variant.Outlined" Style="@theme.textFieldColor" Min="5" Max="30"></MudNumericField>
-<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined" Style="@theme.textFieldColor" Min="1" Max="99"></MudNumericField>
-<MudSelect @bind-Value="day" T="string" Label="Day" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("Monday & Wednesday")" />
-    <MudSelectItem Value="@("Tuesday & Thursday")" />
-    <MudSelectItem Value="@("Monday")" />
-    <MudSelectItem Value="@("Tuesday")" />
-    <MudSelectItem Value="@("Wednesday")" />
-    <MudSelectItem Value="@("Thursday")" />
-    <MudSelectItem Value="@("Friday")" />
+<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" id="textFieldColor" Min="1000" Max="9999"></MudNumericField>
+<MudNumericField @bind-Value="buildingID" Label="building id" Variant="Variant.Outlined" id="textFieldColor" Min="1" Max="3"></MudNumericField>
+<MudNumericField @bind-Value="maxCapacity" Label="max capacity" Variant="Variant.Outlined" id="textFieldColor" Min="5" Max="30"></MudNumericField>
+<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined" id="textFieldColor" Min="1" Max="99"></MudNumericField>
+<MudSelect @bind-Value="day" T="string" Label="Day" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Monday & Wednesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Tuesday & Thursday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Monday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Tuesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Wednesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Thursday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Friday")" />
 </MudSelect>
 
-<MudSelect @bind-Value="year" T="int" Label="Year" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@(2023)" />
-    <MudSelectItem Value="@(2024)" />
+<MudSelect @bind-Value="year" T="int" Label="Year" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@(2023)" />
+    <MudSelectItem Class="selectFieldColor" Value="@(2024)" />
 </MudSelect>
 
-<MudSelect @bind-Value="semester" T="string" Label="Semester" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("Spring")" />
-    <MudSelectItem Value="@("Fall")" />
-    <MudSelectItem Value="@("Summer")" />
-    <MudSelectItem Value="@("Winter")" />
+<MudSelect @bind-Value="semester" T="string" Label="Semester" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Spring")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Fall")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Summer")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Winter")" />
 </MudSelect>
 
-<MudTextField @bind-Value="profID" Label="Professor ID" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="profID" Label="Professor ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
 
-<MudSelect @bind-Value="period" T="string" Label="Period" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("Period 1")" />
-    <MudSelectItem Value="@("Period 2")" />
-    <MudSelectItem Value="@("Period 3")" />
-    <MudSelectItem Value="@("Period 4")" />
-    <MudSelectItem Value="@("Period 5")" />
-    <MudSelectItem Value="@("Period 6")" />
-    <MudSelectItem Value="@("Period 7")" />
-    <MudSelectItem Value="@("Period 8")" />
+<MudSelect @bind-Value="period" T="string" Label="Period" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 1")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 2")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 3")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 4")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 5")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 6")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 7")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 8")" />
 </MudSelect>
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>

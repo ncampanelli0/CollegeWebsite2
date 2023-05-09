@@ -10,8 +10,31 @@ font-family: sans-serif;
 font-weight: 100;
 }
 
-input
+#textFieldColor {
+    color: #637cf7;
+}
+
+.textFieldColor {
+    color: #637cf7;
+}
+
+label
 {
+    color: white !important;
+    background-color: black !important;
+}
+
+
+
+
+.selectFieldColor 
+{
+    background-color: black;
+    color: gold;
+}
+
+
+input {
     color: white;
 }
 
@@ -100,7 +123,7 @@ input
     transform: translate(-50%,-50%);
 }
 
-/*
+
 .tableStyle
 {
     width: 1400px;
@@ -127,11 +150,16 @@ tbody tr:hover {
     background-color: rgba(255,255,255,0.3) !important;
 }
 
+.tableFooter {
+    background-color: #55608f;
+    color: white;
+}
 
 tbody td {
     position: relative !important;
+    background-color: rgb(7, 126, 190) !important
 }
-*/
+
 .btncolor 
 {
     color: gold !important;

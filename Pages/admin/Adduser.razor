@@ -5,50 +5,50 @@
 
 <h2>Add user</h2>
 
-<MudSelect @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined" Style="@theme.textFieldColor">
+<MudSelect @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
     @foreach (var x in type)
     {
-        <MudSelectItem Value="@x"></MudSelectItem>
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 
-<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 
-<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudDatePicker>
+<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
 
 <MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departments)
     {
-        <MudSelectItem Value="@x"></MudSelectItem>
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
 
 
-<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
-<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 
 
 <MudSelect @bind-Value="major" T="string" Label="Major" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in majors)
     {
-        <MudSelectItem Value="@x"></MudSelectItem>
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
 <MudSelect @bind-Value="minor" T="string" Label="Minors" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in minors)
     {
-        <MudSelectItem Value="@x"></MudSelectItem>
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
 <MudSelect @bind-Value="partOrFullTime" T="string" Label="Part or Full Time" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in partOrFullTimeChoices)
     {
-        <MudSelectItem Value="@x"></MudSelectItem>
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 

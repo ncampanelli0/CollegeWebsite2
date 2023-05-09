@@ -3,7 +3,7 @@
 @page "/graduate/masterschedule"
 @page "/admin/masterschedule"
 
-<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+<MudDataGrid  Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
         <PropertyColumn Title="Department" Property="x => x.Department" />
         <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
@@ -20,7 +20,7 @@
 
     </Columns>
     <PagerContent>
-        <MudDataGridPager T="Classes" />
+        <MudDataGridPager T="Classes" Class="tableFooter" />
     </PagerContent>
 </MudDataGrid>
 

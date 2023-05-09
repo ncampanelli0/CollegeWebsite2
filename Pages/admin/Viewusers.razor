@@ -5,11 +5,6 @@
 
 <h2>View users</h2>
 
-@if (dataLoaded)
-{
-    <p>test</p>
-}
-
 
     <MudDataGrid Items="@queryAllUser" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
         <Columns>
@@ -29,7 +24,7 @@
             <PropertyColumn Title="User ID" Property="x => x.UserID" />
         </Columns>
         <PagerContent>
-            <MudDataGridPager T="AllUser" />
+        <MudDataGridPager T="AllUser" Class="tableFooter" />
         </PagerContent>
     </MudDataGrid>
 

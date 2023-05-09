@@ -8,9 +8,9 @@
             textFieldColor =
             "color: #637cf7;";
 
-        selectFieldColor =
-        "background-color: black;" +
-        "color: gold;";
+            selectFieldColor =
+            "background-color: black;" +
+            "color: gold;";
         }
     }
 

@@ -268,10 +268,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEluamVjdGFibGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Theme.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXFRoZW1lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Blazoredlocalstoragetest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxCbGF6b3JlZGxvY2Fsc3RvcmFnZXRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
