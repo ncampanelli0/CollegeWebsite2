@@ -12,9 +12,9 @@
     }
 </MudSelect>
 
-<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined"></MudTextField>
-<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
+<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudDatePicker>
 
 <MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departmentChoices)
@@ -22,8 +22,8 @@
         <MudSelectItem Value="@x"></MudSelectItem>
     }
 </MudSelect>
-<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
 
 <MudSelect @bind-Value="major" T="string" Label="Major" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in majorChoices)
@@ -40,8 +40,8 @@
 </MudSelect>
 
 <MudTextField @bind-Value="phoneNumber" Label="Phone Number" InputType="InputType.Telephone" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
-<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 @code 
 {
     Mongo mongo = new Mongo("college-site-2");

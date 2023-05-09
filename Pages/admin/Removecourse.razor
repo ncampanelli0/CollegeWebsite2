@@ -5,8 +5,8 @@
 
 <h2>Remove course</h2>
 
-<MudNumericField @bind-Value="courseID" Label="Max Capacity" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudNumericField @bind-Value="courseID" Label="Max Capacity" Variant="Variant.Outlined" Style="@theme.textFieldColor" Min="1000" Max="9999"></MudNumericField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
 
 @code 

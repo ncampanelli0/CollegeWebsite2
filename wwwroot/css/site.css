@@ -10,6 +10,11 @@ font-family: sans-serif;
 font-weight: 100;
 }
 
+input
+{
+    color: white;
+}
+
 @keyframes buttonScrollOver 
 {
     0% 

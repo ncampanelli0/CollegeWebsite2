@@ -5,9 +5,9 @@
 
 <h2>Add student to class</h2>
 
-<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
 
 

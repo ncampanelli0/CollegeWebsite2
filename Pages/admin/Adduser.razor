@@ -5,18 +5,18 @@
 
 <h2>Add user</h2>
 
-<MudSelect @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined">
+<MudSelect @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined" Style="@theme.textFieldColor">
     @foreach (var x in type)
     {
         <MudSelectItem Value="@x"></MudSelectItem>
     }
 </MudSelect>
 
-<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
 
-<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
 
-<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
+<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudDatePicker>
 
 <MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departments)
@@ -27,8 +27,8 @@
 
 
 
-<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" Style="@theme.textFieldColor"></MudTextField>
 
 
 <MudSelect @bind-Value="major" T="string" Label="Major" AnchorOrigin="Origin.BottomCenter">
@@ -54,7 +54,7 @@
 
 <MudTextField @bind-Value="phoneNumber" InputType="InputType.Telephone" Label="Phone Number" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
 
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
 @code 
 {
