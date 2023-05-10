@@ -1821,35 +1821,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\baddestwheel\\.nuget\\packages\\": {},
-    "C:\\Users\\baddestwheel\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/opeyemiorioke/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\programming files\\asp.net core\\CollegeWebsite2\\CollegeWebsite2.csproj",
+      "projectUniqueName": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/CollegeWebsite2.csproj",
       "projectName": "CollegeWebsite2",
-      "projectPath": "D:\\programming files\\asp.net core\\CollegeWebsite2\\CollegeWebsite2.csproj",
-      "packagesPath": "C:\\Users\\baddestwheel\\.nuget\\packages\\",
-      "outputPath": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\",
+      "projectPath": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/CollegeWebsite2.csproj",
+      "packagesPath": "/Users/opeyemiorioke/.nuget/packages/",
+      "outputPath": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Users\\baddestwheel\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\baddestwheel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\baddestwheel\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/opeyemiorioke/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1920,7 +1909,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

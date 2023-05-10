@@ -40,6 +40,8 @@
 protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
 
         if (accountTypeCheck.Value != "Undergraduate")
         {
@@ -50,13 +52,6 @@ protected override async Task OnInitializedAsync()
     Mongo mongo = new Mongo("college-site-2");
     List<Classes> queryClasses;
     List<TimeWindow> queryTime;
-
-    protected override async Task OnInitializedAsync()
-    {
-        queryClasses = mongo.LoadRecord<Classes>("classes");
-        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
-    }
-
 
     private void submitForm()
     {

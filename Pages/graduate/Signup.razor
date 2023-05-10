@@ -48,16 +48,8 @@
             navigate.NavigateTo("/homepage");
         }
     }
-
-    Mongo mongo = new Mongo("college-site-2");
     List<Classes> queryClasses;
     List<TimeWindow> queryTime;
-
-    protected override async Task OnInitializedAsync()
-    {
-        queryClasses = mongo.LoadRecord<Classes>("classes");
-        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
-    }
 
 private void submitForm()
     {

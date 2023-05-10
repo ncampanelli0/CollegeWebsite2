@@ -30,6 +30,8 @@
     protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        populateTableMajor();
+        populateTableMinor();
 
         if (accountTypeCheck.Value != "Graduate")
         {
@@ -39,12 +41,6 @@
     Mongo mongo = new Mongo("college-site-2");
     List<Major> major = new List<Major> { };
     List<Minor> minor = new List<Minor> { };
-
-    protected override async Task OnInitializedAsync()
-    {
-        populateTableMajor();
-        populateTableMinor();
-    }
 
     public class Major
     {

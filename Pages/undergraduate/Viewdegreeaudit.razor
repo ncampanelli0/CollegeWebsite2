@@ -81,13 +81,10 @@
        
         
     }
-     protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         populateTableMajor();
         populateTableMinor();
-    }
-    protected override async Task OnInitializedAsync()
-    {
         try
         {
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
@@ -186,7 +183,7 @@
         }
     }
         // view major/minor requirements 
-        protected override async Task populateTableMajor()
+        private void populateTableMajor()
     {
         var userMajor = await storage.GetAsync<ObjectId>("major");
         var queryMajor = mongo.LoadRecordById<Majors>("majors", userMajor.Value);
@@ -201,7 +198,7 @@
             major.Add(y);
         }
     }
-       protected override async Task populateTableMinor()
+       private void populateTableMinor()
     {
         var userMinor = await storage.GetAsync<ObjectId>("minor");
         var queryMinor = mongo.LoadRecordById<Minors>("minors", userMinor.Value);

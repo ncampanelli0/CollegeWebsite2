@@ -231,40 +231,6 @@ public class Mongo
 
         return sortedList;
     }
-<<<<<<< Updated upstream
-
-=======
-    public DeleteResult DeleteRecordById<T>(string table, BsonObjectId id)
-    {
-        var collection = db.GetCollection<T>(table);
-        var filter = Builders<T>.Filter.Eq("Id", id);
-
-        var result = collection.DeleteOne(filter);
-
-        return result;
-    }
->>>>>>> Stashed changes
-
-    public DeleteResult DeleteRecordByString<T>(string table, string field, string search)
-    {
-        var collection = db.GetCollection<T>(table);
-        var filter = Builders<T>.Filter.Eq(field, search);
-
-        var result = collection.DeleteOne(filter);
-
-        return result;
-    }
-
-    public DeleteResult DeleteRecordByInt<T>(string table, string field, int search)
-    {
-        var collection = db.GetCollection<T>(table);
-        var filter = Builders<T>.Filter.Eq(field, search);
-
-        var result = collection.DeleteOne(filter);
-
-        return result;
-    }
-
     public TimeWindow GetTimeData(string semester, int year, string period)
     {
         var result = db.GetCollection<TimeWindow>("timeWindow");
