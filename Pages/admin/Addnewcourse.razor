@@ -5,91 +5,91 @@
 
 <h2>Add new course</h2>
 
-<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"Min="1000" Max="9999"></MudNumericField>
+<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" id="textFieldColor" Min="1000" Max="9999"></MudNumericField>
 
-<MudTextField @bind-Value="courseName" Label="course name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="courseName" Label="course name" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
 
-<MudSlider TickMarks="true" TickMarkLabels="@creditlabels" Step="1" Min="1" Max="4" Value="@credits">credits</MudSlider>
+<MudNumericField @bind-Value="credits" Label="credits" Variant="Variant.Outlined" id="textFieldColor" Min="1" Max="4"></MudNumericField>
 
-<MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter" Style="@theme.textFieldColor">
+<MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter" >
     @foreach (var x in departments)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="description" Label="description" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"Lines="4"></MudTextField>
+<MudTextField @bind-Value="description" Label="description" Variant="Variant.Outlined" id="textFieldColor" Lines="4"></MudTextField>
 
 <MudText Align="Align.Center">leave any of these prereqs blank to not assign a prerequiste</MudText>
 
-<MudTextField @bind-Value="prerequisite1" Label="prereq 1" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField> 
-<MudSelect @bind-Value="gradeReq1" Label="grade prereq 1" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite1" Label="prereq 1" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField> 
+<MudSelect @bind-Value="gradeReq1" Label="grade prereq 1" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite2" Label="prereq 2" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq2" Label="grade prereq 2" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite2" Label="prereq 2" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq2" Label="grade prereq 2" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite3" Label="prereq 3" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq3" Label="grade prereq 3" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite3" Label="prereq 3" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq3" Label="grade prereq 3" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite4" Label="prereq 4" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq4" Label="grade prereq 4" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite4" Label="prereq 4" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq4" Label="grade prereq 4" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite5" Label="prereq 5" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq5" Label="grade prereq 5" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite5" Label="prereq 5" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq5" Label="grade prereq 5" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite6" Label="prereq 6" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq6" Label="grade prereq 6" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite6" Label="prereq 6" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq6" Label="grade prereq 6" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite7" Label="prereq 7" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq7" Label="grade prereq 7" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite7" Label="prereq 7" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq7" Label="grade prereq 7" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudTextField @bind-Value="prerequisite8" Label="prereq 8" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudSelect @bind-Value="gradeReq8" Label="grade prereq 8" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudTextField @bind-Value="prerequisite8" Label="prereq 8" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<MudSelect @bind-Value="gradeReq8" Label="grade prereq 8" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 
-<MudSelect @bind-Value="type" Label="Grad or Undergrad" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor">
+<MudSelect @bind-Value="type" Label="Grad or Undergrad" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in gradType)
     {
-        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.textFieldColor">
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
 

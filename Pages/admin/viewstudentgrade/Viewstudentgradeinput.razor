@@ -1,18 +1,19 @@
-﻿@page "/admin/viewuserrecord/input"
+﻿@page "/admin/viewstudentgrade/input"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<h2>View user record </h2>
+<h2>View student grades</h2>
 
 <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
-@code 
+
+@code
 {
     //student id test: SCC1046672
     Mongo mongo = new Mongo("college-site-2");
-    Theme theme = new Theme();
+
     private static string userID { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -32,9 +33,6 @@
         }
     }
 
-
-
-
     private void submitForm()
     {
         try
@@ -52,12 +50,12 @@
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
             if (validForm)
             {
-                if (!(userID.Contains("SCC") || userID.Contains("FCC")))
+                if (!(userID.Contains("SCC")))
                 {
                     sanityCheck = false;
                 }
 
-                if (!(queryAllUserID.AccountType == "Faculty" || queryAllUserID.AccountType == "Undergraduate" || queryAllUserID.AccountType == "Graduate"))
+                if (!(queryAllUserID.AccountType == "Undergraduate" || queryAllUserID.AccountType == "Graduate"))
                 {
                     sanityCheck = false;
                 }
@@ -65,18 +63,16 @@
 
             if (validForm && sanityCheck)
             {
-                navigate.NavigateTo($"/admin/viewuserrecord/output?userID={userID}");
+                navigate.NavigateTo($"/admin/viewstudentgrade/output?userID={userID}");
             }
             else
             {
-                snackbar.Add("User not found", Severity.Error);
+                snackbar.Add("Student not found", Severity.Error);
             }
         }
         catch
         {
-            snackbar.Add("User not found", Severity.Error);
+            snackbar.Add("Student not found", Severity.Error);
         }
     }
-
-
 }
