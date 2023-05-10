@@ -1,36 +1,244 @@
 ﻿@page "/admin/edituser"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Edit user</h2>
 
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="address" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="advisor" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudDatePicker @bind-Date="birthday" Label="Birthday" Variant="Variant.Outlined"></MudDatePicker>
-<MudTextField @bind-Value="department" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
-<MudTextField @bind-Value="accountType" Label="Account Type" Variant="Variant.Outlined"></MudTextField>
+<MudSelect @bind-Value="accountType" T="string" Label="Account Type" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var x in accountTypeChoices)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+    }
+</MudSelect>
 
+<MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
+
+<MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var x in departmentChoices)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+    }
+</MudSelect>
+<MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+
+<MudSelect @bind-Value="major" T="string" Label="Major" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var x in majorChoices)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+    }
+</MudSelect>
+
+<MudSelect @bind-Value="minor" T="string" Label="Minor" AnchorOrigin="Origin.BottomCenter">
+    @foreach (var x in minorChoices)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+    }
+</MudSelect>
+
+<MudTextField @bind-Value="phoneNumber" Label="Phone Number" InputType="InputType.Telephone" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 @code 
 {
-    private string? accountType { get; set; }
-    private string? address { get; set; }
-    private string? advisor { get; set; }
-    private DateTime? birthday { get; set; }
-    private string? department { get; set; }
-    private string email { get; set; }
-    private string? firstName { get; set; }
-    private string? holds { get; set; }
-    private string? lastName { get; set; }
-    private string? major { get; set; }
-    private string? minor { get; set; }
-    private string? partOrFullTime { get; set; }
-    private string? phoneNumber { get; set; }
-    private string? userID { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
+
+    private string[] accountTypeChoices = { "Undergraduate", "Graduate", "Faculty", "Admin" };
+    private string[] partOrFullTimeChoices = { "Part Time", "Full Time" };
+    private List<string> majorChoices = new List<string> { };
+    private List<string> minorChoices = new List<string> { };
+    private List<string> departmentChoices = new List<string> { };
+
+    private static string accountType { get; set; }
+    private static string address { get; set; }
+    private static string advisor { get; set; }
+    private static DateTime birthday { get; set; }
+    private static string department { get; set; }
+    private static string email { get; set; }
+    private static string firstName { get; set; }
+    private static string lastName { get; set; }
+    private static string major { get; set; }
+    private static string minor { get; set; }
+    private static string phoneNumber { get; set; }
+    private static string userID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var queryDepartment = mongo.LoadRecordSortedAsc<Departments>("department", "Department");
+        var queryMajors = mongo.LoadRecordSortedAsc<Majors>("majors", "Major");
+        var queryMinors = mongo.LoadRecordSortedAsc<Minors>("minors", "Minor");
+
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+        foreach (var x in queryDepartment)
+        {
+            departmentChoices.Add(x.Department);
+        }
+
+
+        foreach (var x in queryMajors)
+        {
+            majorChoices.Add(x.Major);
+        }
+
+        minorChoices.Add("None");
+        foreach (var x in queryMinors)
+        {
+            minorChoices.Add(x.Minor);
+        }
+
+
+    }
+
+    private void submitForm()
+    {
+        try
+        {
+            //form validation
+            bool validForm = true;
+        /*
+        if (accountType == null || accountType == "")
+        {
+        validForm = false;
+        }
+        else if (address == null || address == "")
+        {
+        validForm = false;
+        }
+        else if (advisor == null || advisor == "")
+            {
+            validForm = false;
+            }
+            else if (birthday == null)
+        {
+        validForm = false;
+            }
+            else if (department == null || department == "")
+            {
+            validForm = false;
+            }
+        else if (email == null || email == "")
+        {
+        validForm = false;
+            }
+            else if (firstName == null || firstName == "")
+        {
+        validForm = false;
+        }
+        else if (lastName == null || lastName == "")
+        {
+        validForm = false;
+        }
+        else if (major == null || major == "")
+        {
+        validForm = false;
+        }
+        else if (minor == null || minor == "")
+        {
+        validForm = false;
+        }
+        else if (phoneNumber == null || !(phoneNumber.ToString().Length == 10))
+            {
+            validForm = false;
+        }
+            */
+            if (userID == null || userID == "")
+            {
+                validForm = false;
+            }
+
+
+
+            //sanity check (not needed... probably)
+            bool sanityCheck = true;
+
+            if (validForm && sanityCheck)
+            {
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                if (accountType != null && accountType != "")
+                {
+                    queryAllUserID.AccountType = accountType;
+                }
+
+                if (address != null && address != "")
+                {
+                    queryAllUserID.Address = address;
+                }
+
+                if (advisor != null && advisor != "")
+                {
+                    queryAllUserID.Advisor = advisor;
+                }
+
+                if (birthday != null)
+                {
+                    queryAllUserID.Birthday = birthday;
+                }
+
+                if (department != null && department != "")
+                {
+                    queryAllUserID.Department = department;
+                }
+
+                if (email != null && email != "")
+                {
+                    queryAllUserID.Email = email;
+                }
+
+                if (firstName != null && firstName != "")
+                {
+                    queryAllUserID.FirstName = firstName;
+                }
+
+                if (lastName != null && lastName != "")
+                {
+                    queryAllUserID.LastName = lastName;
+                }
+
+                if (major != null && major != "")
+                {
+                    queryAllUserID.Major = major;
+                }
+
+                if (minor != null && minor != "")
+                {
+                    queryAllUserID.Minor = minor;
+                }
+
+                if (phoneNumber != null && phoneNumber.ToString().Length == 10)
+                {
+                    queryAllUserID.PhoneNumber = phoneNumber;
+                }
+
+                mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+                snackbar.Add("User was edited successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("User was not edited successfully", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("User was not edited successfully", Severity.Error);
+        }
+    }
 }

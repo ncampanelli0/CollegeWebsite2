@@ -1,0 +1,46 @@
+﻿@page "/developer/writeidtoadvisers"
+
+<h3>Writeidtoadvisors</h3>
+
+<button @onclick="writeIdsToAdvisors">write id to advisors</button>
+
+@code 
+{
+    Mongo mongo = new Mongo("college-site-2");
+    Random random = new Random();
+
+    private void writeIdsToAdvisors()
+    {
+
+
+        var queryAdvisor = mongo.LoadRecord<Advisor>("advisor");
+
+        Console.WriteLine("running writeIdsToAdvisors");
+
+        string IDIdentifier = "GCC10";
+        int IDNumber = 1;
+
+
+
+        foreach (var x in queryAdvisor)
+        {
+            if (IDNumber <= 9)
+            {
+                x.UserID = $"{IDIdentifier}0000{IDNumber}";
+            }
+            else if (IDNumber >= 10 && IDNumber <= 99)
+            {
+                x.UserID = $"{IDIdentifier}000{IDNumber}";
+            }
+            else if (IDNumber >= 100 && IDNumber <= 999)
+            {
+                x.UserID = $"{IDIdentifier}00{IDNumber}";
+            }
+
+            mongo.UpsertRecord<Advisor>("advisor", x.Id, x);
+            IDNumber += random.Next(1, 6);
+        }
+
+        Console.WriteLine("table updated");
+    }
+}

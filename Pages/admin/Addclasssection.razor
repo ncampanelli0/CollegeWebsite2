@@ -1,57 +1,258 @@
 ﻿@page "/admin/addclasssection"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 <h2>Add class section</h2>
 
-<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" Min="1000" Max="9999"></MudNumericField>
-<MudNumericField @bind-Value="buildingID" Label="building id" Variant="Variant.Outlined" Min="1" Max="3"></MudNumericField>
-<MudNumericField @bind-Value="maxCapacity" Label="max capacity" Variant="Variant.Outlined" Min="5" Max="30"></MudNumericField>
-<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined"></MudNumericField>
-<MudSelect @bind-Value="day" T="string" Label="Day" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("Monday & Wednesday")" />
-    <MudSelectItem Value="@("Tuesday & Thursday")" />
-    <MudSelectItem Value="@("Monday")" />
-    <MudSelectItem Value="@("Tuesday")" />
-    <MudSelectItem Value="@("Wednesday")" />
-    <MudSelectItem Value="@("Thursday")" />
-    <MudSelectItem Value="@("Friday")" />
+<MudNumericField @bind-Value="courseID" Label="course id" Variant="Variant.Outlined" id="textFieldColor" Min="1000" Max="9999"></MudNumericField>
+<MudNumericField @bind-Value="buildingID" Label="building id" Variant="Variant.Outlined" id="textFieldColor" Min="1" Max="3"></MudNumericField>
+<MudNumericField @bind-Value="maxCapacity" Label="max capacity" Variant="Variant.Outlined" id="textFieldColor" Min="5" Max="30"></MudNumericField>
+<MudNumericField @bind-Value="roomID" Label="room id" Variant="Variant.Outlined" id="textFieldColor" Min="1" Max="99"></MudNumericField>
+<MudSelect @bind-Value="day" T="string" Label="Day" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Monday & Wednesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Tuesday & Thursday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Monday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Tuesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Wednesday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Thursday")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Friday")" />
 </MudSelect>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
+<MudSelect @bind-Value="year" T="int" Label="Year" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@(2023)" />
+    <MudSelectItem Class="selectFieldColor" Value="@(2024)" />
+</MudSelect>
+
+<MudSelect @bind-Value="semester" T="string" Label="Semester" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Spring")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Fall")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Summer")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Winter")" />
+</MudSelect>
+
+<MudTextField @bind-Value="profID" Label="Professor ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+
+<MudSelect @bind-Value="period" T="string" Label="Period" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 1")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 2")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 3")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 4")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 5")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 6")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 7")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Period 8")" />
+</MudSelect>
+
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 @code 
 {
-    //must be written in form field:
-    private int? courseID { get; set; }
-    private int? buildingID { get; set; }
-    private string? day { get; set; }
-    private int? maxCapacity { get; set; }
-    private int? roomID { get; set; }
+
+    Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
+
+    //comes from form:
+    private static int courseID { get; set; }
+    private static int buildingID { get; set; }
+    private static string day { get; set; }
+    private static int maxCapacity { get; set; }
+    private static int roomID { get; set; }
+    private static int year { get; set; }
+    private static string semester { get; set; }
+    private static string profID { get; set; }
+    private static string period { get; set; }
 
     //comes from course:
-    private int? CRN { get; set; }
-    private string? courseName { get; set; }
-    private int? credits { get; set; }
-    private string? department { get; set; }
-    private string? description { get; set; }
-    private string[]? enrolled { get; set; }
-    private DateTime? gradeLimit { get; set; }
-    private string[]? minimumRequirement { get; set; }
-    private string? section { get; set; }
-    private string? type { get; set; }
+    private static int CRN { get; set; }
+    private static string courseName { get; set; }
+    private static int credits { get; set; }
+    private static string department { get; set; }
+    private static string description { get; set; }
+    private static string[] enrolled { get; set; }
+    private static DateTime gradeLimit { get; set; }
+    private static string[] minimumRequirement { get; set; }
+    private static string section { get; set; }
+    private static string type { get; set; }
 
     //comes from timeWindow:
-    private DateTime? startDate { get; set; }
-    private DateTime? withdrawLimit { get; set; }
-    private string? semester { get; set; }
-    private DateTime? endDate { get; set; }
-    private DateTime? registerationLimit { get; set; }
+    private static DateTime startDate { get; set; }
+    private static DateTime withdrawLimit { get; set; }
+    private static DateTime endDate { get; set; }
+    private static DateTime registerationLimit { get; set; }
+    private static DateTime GradeLimit { get; set; }
 
     //comes from allUser:
-    private string? profFirstName { get; set; }
-    private string? profLastName { get; set; }
-    private string? professorName { get; set; }
+    private static string profFirstName { get; set; }
+    private static string profLastName { get; set; }
+    private static string professorName { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
 
     private void submitForm()
     {
-        
+        try
+        {
+            //form validation
+            bool validForm = true;
+            if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
+            {
+                validForm = false;
+            }
+            else if (buildingID == null && !(buildingID <= 1 && buildingID >= 3))
+            {
+                validForm = false;
+            }
+            else if (day == null)
+            {
+                validForm = false;
+            }
+            else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
+            {
+                validForm = false;
+            }
+            else if (roomID == null || !(roomID >= 1 && roomID <= 99))
+            {
+                validForm = false;
+            }
+            else if (year == null || !(year <= 2023 && year >= 2024))
+            {
+                validForm = false;
+            }
+            else if (profID == null || !(profID.Contains("FCC")))
+            {
+                validForm = false;
+            }
+
+            //sanity check
+            bool sanityCheck = true;
+            if (validForm)
+            {
+                var queryClass = mongo.LoadRecord<Classes>("classes");
+                var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
+
+                int profTaughtCounter = 0;
+                foreach (var x in queryClass)
+                {
+                    if ($"{x.ProfFirstName} {x.ProfLastName}" == $"{queryProfessor.FirstName} {queryProfessor.LastName}" && (x.StartDate.Year == year && x.Semester == semester))
+                    {
+                        profTaughtCounter++;
+                    }
+
+                    if (profTaughtCounter >= 2 && queryProfessor.PartOrFullTime == "Part Time")
+                    {
+                        sanityCheck = false;
+                        break;
+                    }
+                    else if (profTaughtCounter >= 4 && queryProfessor.PartOrFullTime == "Full Time")
+                    {
+                        sanityCheck = false;
+                        break;
+                    }
+
+
+                }
+
+                if (sanityCheck)
+                {
+                    foreach (var x in queryClass)
+                    {
+                        if (x.Period == period && x.StartDate == startDate && x.BuildingID == buildingID && x.RoomID == roomID && x.Day == day)
+                        {
+                            sanityCheck = false;
+                            break;
+                        }
+
+                    }
+                }
+
+            }
+
+            //write to database
+            if (validForm && sanityCheck)
+            {
+                var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
+                var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
+
+                Classes toWrite = new Classes();
+
+                //from form
+                toWrite.CourseID = courseID;
+                toWrite.BuildingID = buildingID;
+                toWrite.MaxCapacity = maxCapacity;
+                toWrite.RoomID = roomID;
+                toWrite.Day = day;
+
+                //from course
+                toWrite.CourseName = queryCourseID.CourseName;
+                toWrite.Credits = queryCourseID.Credits;
+                toWrite.Department = queryCourseID.Department;
+                toWrite.Description = queryCourseID.Description;
+
+                foreach (var x in queryCourseID.Prerequiste)
+                {
+                    toWrite.Prerequiste.Add(x.Prereq);
+                }
+
+                foreach (var x in queryCourseID.Prerequiste)
+                {
+                    toWrite.MinimumRequirement.Add(x.MinimumRequirements);
+                }
+
+                if (queryCourseID.SectionCounter <= 9)
+                {
+                    toWrite.Section = $"000{queryCourseID.SectionCounter}";
+                }
+                else if (queryCourseID.SectionCounter >= 10 && queryCourseID.SectionCounter <= 99)
+                {
+                    toWrite.Section = $"00{queryCourseID.SectionCounter}";
+                }
+                else if (queryCourseID.SectionCounter >= 100 && queryCourseID.SectionCounter <= 999)
+                {
+                    toWrite.Section = $"0{queryCourseID.SectionCounter}";
+                }
+
+                //from timeWindow
+                toWrite.StartDate = queryTimeWindowTimeData.StartDate;
+                toWrite.WithdrawLimit = queryTimeWindowTimeData.WithdrawLimit;
+                toWrite.EndDate = queryTimeWindowTimeData.EndDate;
+                toWrite.RegistrationLimit = queryTimeWindowTimeData.RegistrationLimit;
+                toWrite.GradeLimit = queryTimeWindowTimeData.GradeLimit;
+
+                //from allUser
+                toWrite.ProfFirstName = queryAllUserID.FirstName;
+                toWrite.ProfLastName = queryAllUserID.LastName;
+                toWrite.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
+
+                mongo.InsertRecord<Classes>("classes", toWrite);
+                snackbar.Add("Class section added successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Class section was not added successfully", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Class section was not added successfully", Severity.Error);
+        }
+
+       
     }
 }

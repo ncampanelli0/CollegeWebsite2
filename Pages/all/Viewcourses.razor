@@ -20,11 +20,9 @@
         <PropertyColumn Title="Prerequiste 7 (grade required)" Property='x => $"{x.Prerequiste[6].Prereq} ({x.Prerequiste[6].MinimumRequirements})"' />
         <PropertyColumn Title="Prerequiste 8 (grade required)" Property='x => $"{x.Prerequiste[7].Prereq} ({x.Prerequiste[7].MinimumRequirements})"' />
 
-
-
     </Columns>
     <PagerContent>
-        <MudDataGridPager T="Course" />
+        <MudDataGridPager T="Course" Class="tableFooter" />
     </PagerContent>
 </MudDataGrid>
 

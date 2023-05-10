@@ -1,18 +1,19 @@
 @page "/login"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
-@inject ISnackbar Snackbar
+@inject ISnackbar snackbar
 
-    <input type="text" placeholder="email" @bind-value = "email"/>
-    <br /> <br />
-    <input type="password" placeholder="password" @bind-value = "password"/>
-    <button @onclick="login" class = "btncolor">login</button>
 
+
+<MudTextField @bind-Value="email" Style="@theme.textFieldColor" Label="Email" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="password" Style="@theme.textFieldColor" InputType="InputType.Password" Label="password" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="login" class="btncolor" Variant="Variant.Outlined">login</MudButton>
 
 
 @code
 {
     Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
     private string? email { get; set; }
     private string? password { get; set; }
     public bool showPopover = false;
@@ -27,7 +28,7 @@
             var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
             if (queryUser.LoginCounter >= 4)
             {
-                Snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
+                snackbar.Add($"you have exceeded the amount of login attempts <br/> this account is locked <br/> contact an admin to unlock the account", Severity.Error);
                 queryUser.LoginCounter++;
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
@@ -46,19 +47,20 @@
                 await storage.SetAsync("major", queryUser.Major);
                 await storage.SetAsync("minor", queryUser.Minor);
                 await storage.SetAsync("department", queryUser.Department);
+                await storage.SetAsync("userID", queryUser.UserID);
                 await storage.SetAsync("loggedIn", true);
                 navigate.NavigateTo("/homepage", true);
             }
             else
             {
-                Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+                snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
                 queryUser.LoginCounter++;
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }
         }
         catch
         {
-            Snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
+            snackbar.Add($"login not correct <br/> or <br/> password not correct", Severity.Error);
             
         }
     }

@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removecourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY291cnNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removeprofessorclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlcHJvZmVzc29yY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -88,8 +92,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZldXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Sendpasswordreset.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cU2VuZHBhc3N3b3JkcmVzZXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Unlockaccount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVW5sb2NrYWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordinput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRpbnB1dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordoutput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRvdXRwdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewusers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld3VzZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Masterschedule.razor]
@@ -110,10 +130,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Viewrequirements.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdyZXF1aXJlbWVudHMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Viewschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdzY2hlZHVsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Adjustlogin.razor]
@@ -268,6 +284,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxMb2dpbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Mailtraptest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNYWlsdHJhcHRlc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Mudblazortest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNdWRibGF6b3J0ZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -278,6 +298,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/SchedulesforProfessors2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTY2hlZHVsZXNmb3JQcm9mZXNzb3JzMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Skeletontest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTa2VsZXRvbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Stackexample.razor]
@@ -294,6 +318,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Testertest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUZXN0ZXJ0ZXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Writeidtoadvisors.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZWlkdG9hZHZpc29ycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Writetodatabase.razor]
