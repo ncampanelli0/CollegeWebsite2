@@ -1,0 +1,81 @@
+@page "/faculty/enrolledinfo"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Students</h2>
+
+<MudDataGrid Items="@enrolledList" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+  
+        
+        <Columns>
+    
+    <PropertyColumn Title="UserID" Property="x => x.UserID" />
+        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+        <PropertyColumn Title="First Name" Property="x => x.FirstName" />      
+    
+    </Columns>
+    
+    <PagerContent>
+        <MudDataGridPager T="Enrolled" />
+    </PagerContent>
+</MudDataGrid>  
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+            [Parameter][SupplyParameterFromQuery] public int targetclass { get; set; }
+    int counter = 0;
+        string studentName;
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+    private List<Classes> classesList = new List<Classes> { };
+    private List<Enrolled> enrolledList = new List<Enrolled> { };
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Faculty")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+
+        try
+        {
+            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryAllClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (x.CRN == targetclass)
+                    {
+                        classesList.Add(x);
+                        enrolledList.Add(y);
+                    }
+                }
+            }
+          
+        }
+        catch
+        {
+            snackbar.Add("data not found", Severity.Error);
+        }
+
+    }
+
+
+        
+
+ 
+}

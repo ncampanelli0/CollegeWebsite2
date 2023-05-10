@@ -1,4 +1,4 @@
-﻿@inject ProtectedLocalStorage storage
+@inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 
 
@@ -163,7 +163,7 @@
                             <li><a class="dropdown-item dropdowncolor" href="/admin/viewusers">view users</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/admin/viewcurrentclasses">view current classes</a></li>
                             <li><a class="dropdown-item dropdowncolor" href="/admin/viewrequirements">view requirements</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/admin/viewschedule">view schedule</a></li>
+                            <li><a class="dropdown-item dropdowncolor" href="/admin/viewuserrecord/input">view user record</a></li>
                         </ul>
                     </div>
 
@@ -188,8 +188,12 @@
                             Action
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/givegrade">give grade</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/takeattendance">take attendance</a></li>
+                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewclasses">classes</a></li>
+                              <li><a class="dropdown-item dropdowncolor" href="/faculty/viewfacultyschedule">view faculty schedule</a></li>
+                              <li><a class="dropdown-item dropdowncolor" href="/faculty/searchstudents">search students</a></li> 
+                               <li><a class="dropdown-item dropdowncolor" href="/faculty/student grade">student grades</a></li> 
+                                <li><a class="dropdown-item dropdowncolor" href="/faculty/degree audit">degree audit</a></li> 
+                                <li><a class="dropdown-item dropdowncolor" href="/faculty/advisee">advisee</a></li> 
                         </ul>
                     </div>
 
@@ -198,11 +202,25 @@
                             View
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewcourses">view courses</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewrequirements">view requirements</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewstudents">view students</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewtaughtclasses">view taught classes</a></li>
-                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewusergrades">view user grades</a></li>
+                            <li><a class="dropdown-item dropdowncolor" href="/faculty/masterschedule">master schedule</a></li>
+                            <li><a class="dropdown-item dropdowncolor" href="/faculty/departments">departments</a></li>
+                            <li><a class="dropdown-item dropdowncolor" href="/faculty/viewmajorsminors">view majors and minors</a></li>
+                             <li><a class="dropdown-item dropdowncolor" href="/faculty/viewcourses">view courses</a></li>
+                        </ul>
+                    </div>
+
+
+                        <div class="btn-group">
+                        <button type="button" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Display
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item dropdowncolor" href="/faculty/studentinfo">student info</a></li>
+                             <li><a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">enrolled info</a></li>
+                              <li><a class="dropdown-item dropdowncolor" href="/faculty/classinfo">class info</a></li>
+                               <li><a class="dropdown-item dropdowncolor" href="/faculty/attendanceinfo">attendance info</a></li>
+                               <li><a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">grades info</a></li>
+                                 <li><a class="dropdown-item dropdowncolor" href="/faculty/test">test</a></li>
                         </ul>
                     </div>
                 }
