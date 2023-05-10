@@ -165,6 +165,10 @@
       "PackagePath": "staticwebassets\\distinction\\usnwrsquare.png"
     },
     {
+      "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon replacement.png",
+      "PackagePath": "staticwebassets\\favicon replacement.png"
+    },
+    {
       "Id": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

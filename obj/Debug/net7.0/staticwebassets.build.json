@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7D7CLVgb4bRNxl4kgUi6jqALknxmSC7AF6b31CSsc5o=",
+  "Hash": "nVXTSLH/k/JqobXFtDx1LBnHcsCSPG6SwytyfDB6cgo=",
   "Source": "CollegeWebsite2",
   "BasePath": "_content/CollegeWebsite2",
   "Mode": "Default",
@@ -763,6 +763,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\distinction\\usnwrsquare.png"
+    },
+    {
+      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon replacement.png",
+      "SourceId": "CollegeWebsite2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "BasePath": "_content/CollegeWebsite2",
+      "RelativePath": "favicon replacement.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon replacement.png"
     },
     {
       "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon.png",
