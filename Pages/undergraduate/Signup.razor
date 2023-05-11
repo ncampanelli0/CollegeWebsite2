@@ -24,16 +24,16 @@
 
     </Columns>
     <PagerContent>
-        <MudDataGridPager T="Classes" />
+        <MudDataGridPager T="Classes" Class="tableFooter" />
     </PagerContent>
 </MudDataGrid>
 
 <h2>Add A Class</h2>
 
-<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
 
 
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor" Color="Color.Success">submit</MudButton>
 
 @code
 {
