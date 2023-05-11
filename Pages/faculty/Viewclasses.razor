@@ -1,0 +1,118 @@
+@page "/faculty/viewclasses"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
+
+<h1>Class</h1>
+<br/><br/>
+<br/><br/>
+ <MudExpansionPanels MultiExpansion="true">
+     @foreach (var item in popList)
+      {
+        <MudExpansionPanel Text=@item.CourseName>
+           <table>
+            <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick = "classinformation" Class = "btncolor">View Class Details</MudButton>
+                </td>
+            </tr>
+            <br/><br/>
+        
+            <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick = "studentsenrolled" Class = "btncolor">View Students</MudButton>
+                </td>
+            </tr>
+
+            <br/><br/>
+        
+            <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick = "grades" Class = "btncolor">View Grades</MudButton>
+                </td>
+            </tr>
+
+              <br/><br/>
+        
+            <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick = "attendance" Class = "btncolor">View Attendance</MudButton>
+                </td>
+            </tr>
+
+
+           </table>
+          
+    </MudExpansionPanel>
+      }
+    
+   
+</MudExpansionPanels>
+
+@code
+{
+      Mongo mongo = new Mongo("college-site-2");
+      //List<Classes> queryClass;
+      private List<popTable2> popList = new List<popTable2> { };
+          popTable2 schedule = new popTable2();
+  
+
+      public class popTable2
+    {
+      
+        public string CourseName{get; set;}
+       
+        public int  CRN{get; set;}
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+     
+      var queryClass = mongo.LoadRecord<Classes>("classes");
+      
+    var firstNameCheck = await storage.GetAsync<string>("firstName");
+        Console.WriteLine(firstNameCheck.Value);
+        var lastNameCheck = await storage.GetAsync<string>("lastName");
+    Console.WriteLine(lastNameCheck.Value);
+    //var semesterCheck = await storage.GetAsync<string>("semester");
+       
+        foreach(var x in queryClass){
+                  
+            if(x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023){
+              schedule = new popTable2{};
+                schedule.CourseName = x.CourseName;
+                schedule.CRN = x.CRN;
+                popList.Add(schedule);
+            }
+                
+        
+        }
+    }
+
+     private void studentsenrolled(){
+
+        navigate.NavigateTo($"/faculty/enrolledinfo?targetclass={schedule.CRN}");
+    }
+
+
+    private void classinformation(){
+
+        navigate.NavigateTo($"/faculty/classinfo?targetclass={schedule.CRN}");
+    }
+
+     private void grades(){
+
+        navigate.NavigateTo($"/faculty/gradesinfo?targetclass={schedule.CRN}");
+    }
+    
+    private void attendance(){
+
+        navigate.NavigateTo($"/faculty/attendanceinfo?targetclass={schedule.CRN}");
+    }
+    
+    
+}
+
+    

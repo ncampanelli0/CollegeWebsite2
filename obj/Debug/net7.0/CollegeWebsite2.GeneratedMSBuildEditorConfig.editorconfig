@@ -144,44 +144,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdyZXF1aXJlbWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Adjustlogin.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBZGp1c3Rsb2dpbi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Attedanceinfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBdHRlZGFuY2VpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Attendance.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBdHRlbmRhbmNlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displayclassinfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Y2xhc3NpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Editattendance.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxFZGl0YXR0ZW5kYW5jZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displaygrades.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Z3JhZGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Givegrade.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxHaXZlZ3JhZGUucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displaystudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5c3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Removeattendance.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxSZW1vdmVhdHRlbmRhbmNlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Enrolledtoclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxFbnJvbGxlZHRvY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Takeattendance.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUYWtlYXR0ZW5kYW5jZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Searchstudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxTZWFyY2hzdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3c3R1ZGVudHMucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Testfaculty.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0ZmFjdWx0eS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewtaughtclasses.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3dGF1Z2h0Y2xhc3Nlcy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewclasses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3Y2xhc3Nlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewusergrades.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3dXNlcmdyYWRlcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewuserschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3dXNlcnNjaGVkdWxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
