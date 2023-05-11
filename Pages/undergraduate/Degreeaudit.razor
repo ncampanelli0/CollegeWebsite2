@@ -1,0 +1,118 @@
+﻿@page "/undergraduate/degreeaudit"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>degree audit</h2>
+
+
+<MudDataGrid Items="@toWriteMajorTable" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+            <PropertyColumn Title="Major" Property="x => x.major" />
+            <PropertyColumn Title="Major Requirements" Property="x => x.majorRequirement" />
+            <PropertyColumn Title="Grade Requirements" Property="x => x.majorGrade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="DegreeAuditMajor" Class="tableFooter" />
+    </PagerContent>
+</MudDataGrid>
+
+<MudDataGrid Items="@toWriteMinorTable" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+    <PropertyColumn Title="Minor" Property="x => x.minor" />
+    <PropertyColumn Title="Minor Requirements" Property="x => x.minorRequirement" />
+    <PropertyColumn Title="Grade Requirements" Property="x => x.minorGrade" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="DegreeAuditMinor" Class="tableFooter" />
+    </PagerContent>
+</MudDataGrid>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    List<DegreeAuditMajor> toWriteMajorTable = new List<DegreeAuditMajor> { };
+    List<DegreeAuditMinor> toWriteMinorTable = new List<DegreeAuditMinor> { };
+
+    private static string majorCheck { get; set; }
+    private static string minorCheck { get; set; }
+    private static string firstNameCheck { get; set; }
+    private static string lastNameCheck { get; set; }
+    private static string userIDCheck { get; set; }
+    private static string majorCheckString { get; set; }
+    private static string minorCheckString { get; set; }
+    private static string firstNameCheckString { get; set; }
+    private static string lastNameCheckString { get; set; }
+    private static string userIDCheckString { get; set; }
+
+    public class DegreeAuditMajor
+    {
+        public string major { get; set; }
+        public string majorRequirement { get; set; }
+        public string majorGrade { get; set; }
+    }
+
+    public class DegreeAuditMinor
+    {
+        public string minor { get; set; }
+        public string minorRequirement { get; set; }
+        public string minorGrade { get; set; }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        var majorCheckRaw = await storage.GetAsync<string>("major");
+        var minorCheckRaw = await storage.GetAsync<string>("minor");
+        var firstNameCheckRaw = await storage.GetAsync<string>("firstName");
+        var lastNameCheckRaw = await storage.GetAsync<string>("lastName");
+        var userIDCheckRaw = await storage.GetAsync<string>("userID");
+        majorCheckString = majorCheckRaw.Value;
+        minorCheckString = minorCheckRaw.Value;
+        firstNameCheckString = firstNameCheckRaw.Value;
+        lastNameCheckString = lastNameCheckRaw.Value;
+        userIDCheckString = userIDCheckRaw.Value;
+        //string majorCheckStringified = ;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var queryMajors = mongo.LoadRecordByString<Majors>("majors", "Majors", majorCheckString);
+            var queryMinors = mongo.LoadRecordByString<Minors>("minors", "Minors", minorCheckString);
+
+            DegreeAuditMajor toWriteMajor = new DegreeAuditMajor();
+            DegreeAuditMinor toWriteMinor = new DegreeAuditMinor();
+            Console.WriteLine($"y");
+            for (int i = 0; i < queryMajors.GradeRequirements.Length; i++)
+            {
+                toWriteMajor.major = queryMajors.Major;
+                toWriteMajor.majorGrade = queryMajors.MajorRequirements[i];
+                toWriteMajor.majorRequirement = queryMajors.GradeRequirements[i];
+
+                toWriteMajorTable.Add(toWriteMajor);
+                Console.WriteLine("x");
+            }
+
+            for (int i = 0; i < queryMinors.GradeRequirements.Length; i++)
+            {
+                toWriteMinor.minor = queryMinors.Minor;
+                toWriteMinor.minorGrade = queryMajors.MinorRequirements[i];
+                toWriteMinor.minorRequirement = queryMinors.GradeRequirements[i];
+
+                toWriteMinorTable.Add(toWriteMinor);
+                Console.WriteLine("x");
+            }
+
+        }
+        
+    }
+
+
+    
+
+
+
+}

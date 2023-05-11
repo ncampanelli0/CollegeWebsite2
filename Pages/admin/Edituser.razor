@@ -39,6 +39,13 @@
     }
 </MudSelect>
 
+<MudSelect @bind-Value="holds" T="string" Label="holds" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Academic Hold")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Financial Hold")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Disciplinary Hold")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("None")" />
+</MudSelect>
+
 <MudTextField @bind-Value="phoneNumber" Label="Phone Number" InputType="InputType.Telephone" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
 <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
@@ -65,6 +72,8 @@
     private static string minor { get; set; }
     private static string phoneNumber { get; set; }
     private static string userID { get; set; }
+    private static string holds { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -227,6 +236,12 @@
                 {
                     queryAllUserID.PhoneNumber = phoneNumber;
                 }
+
+                 if (holds != null && holds != "")
+                {
+                    queryAllUserID.Holds = holds;
+                }
+
 
                 mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
                 snackbar.Add("User was edited successfully", Severity.Success);
