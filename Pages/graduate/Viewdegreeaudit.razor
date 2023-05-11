@@ -1,4 +1,4 @@
-@page "/undergraduate/viewdegreeaudit"
+@page "/graduate/viewdegreeaudit"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
@@ -104,7 +104,7 @@
         {
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-            if (accountTypeCheck.Value != "Undergraduate")
+            if (accountTypeCheck.Value != "Graduate")
             {
                 navigate.NavigateTo("/homepage");
             }

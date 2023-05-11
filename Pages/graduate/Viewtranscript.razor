@@ -75,20 +75,22 @@
         }
 
 
-        try
+      try
         {
             var queryAllClasses = mongo.LoadRecord<Classes>("classes");
 
             foreach (var x in queryAllClasses)
             {
-                foreach (var y in x.Enrolled)
-                {
-                    if (y.UserID == userID)
+                if (x.StartDate.Year == 2023)
+
+                    foreach (var y in x.Enrolled)
                     {
-                        classesList.Add(x);
-                        enrolledList.Add(y);
+                        if (y.UserID == userID)
+                        {
+                            classesList.Add(x);
+                            enrolledList.Add(y);
+                        }
                     }
-                }
             }
                 //insert the function here
                 creditAmount();
