@@ -6,47 +6,45 @@
 
 <h2>Change Major and Minor</h2>
 
-<MudTextField @bind-Value="majorID" Label="major id" Variant="Variant.Outlined"></MudTextField>
-<MudSelect @bind-Value="majorID" T="string" Label="majorID" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("American Studies")" />
-    <MudSelectItem Value="@("Biological Sciences")" />
-    <MudSelectItem Value="@("Chemistry and Physics")" />
-    <MudSelectItem Value="@("Computer Science")" />
-    <MudSelectItem Value="@("Criminology")" />
-    <MudSelectItem Value="@("English")" />
-    <MudSelectItem Value="@("Health and Society")" />
-    <MudSelectItem Value="@("History and Philosophy")" />
-    <MudSelectItem Value="@("Industrial and Labor Relations")" />
-    <MudSelectItem Value="@("Mathematics ")" />
-    <MudSelectItem Value="@("Modern Language")" />
-    <MudSelectItem Value="@("Politics,Economics, and Law")" />
-    <MudSelectItem Value="@("Psychology")" />
-    <MudSelectItem Value="@("Sociology")" />
-    <MudSelectItem Value="@("Visual Arts")" />
+<MudSelect @bind-Value="majorID" T="string" Label="majorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("American Studies")"/>
+    <MudSelectItem Class="selectFieldColor" Value="@("Biological Sciences")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Chemistry and Physics")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Computer Science")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Criminology")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("English")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Health and Society")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("History and Philosophy")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Industrial and Labor Relations")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Mathematics ")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Modern Language")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Politics,Economics, and Law")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Psychology")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Sociology")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Visual Arts")" />
 
 </MudSelect>
 
-<MudTextField @bind-Value="minorID" Label="minor id" Variant="Variant.Outlined"></MudTextField>
-<MudSelect @bind-Value="minorID" T="string" Label="minorID" AnchorOrigin="Origin.BottomCenter">
-    <MudSelectItem Value="@("Chemistry")" />
-    <MudSelectItem Value="@("Computer Information Science")" />
-    <MudSelectItem Value="@("Environmental Studies")" />
-    <MudSelectItem Value="@("Global Studies")" />
-    <MudSelectItem Value="@("Hispanic Culture Studies")" />
-    <MudSelectItem Value="@("Mathematics")" />
-    <MudSelectItem Value="@("Media Design")" />
-    <MudSelectItem Value="@("Media and Communications")" />
-    <MudSelectItem Value="@("Philosophy and Religion")" />
-    <MudSelectItem Value="@("Physics")" />
-    <MudSelectItem Value="@("PreLaw Studies")" />
-    <MudSelectItem Value="@("Prehealth Professions")" />
-    <MudSelectItem Value="@("Public Policy")" />
-    <MudSelectItem Value="@("Spanish")" />
-    <MudSelectItem Value="@("Visual Arts")" />
-    <MudSelectItem Value="@("No Minor")" />
+<MudSelect @bind-Value="minorID" T="string" Label="minorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Chemistry")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Computer Information Science")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Environmental Studies")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Global Studies")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Hispanic Culture Studies")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Mathematics")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Media Design")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Media and Communications")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Philosophy and Religion")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Physics")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("PreLaw Studies")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Prehealth Professions")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Public Policy")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Spanish")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Visual Arts")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("No Minor")" />
    
 </MudSelect>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class="btncolor">submit</MudButton>
 
 @code
 {

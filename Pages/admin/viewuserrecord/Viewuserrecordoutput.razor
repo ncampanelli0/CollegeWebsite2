@@ -9,7 +9,7 @@
 
     @foreach (var x in classesList)
     {
-        <MudExpansionPanel Text=@x.CourseName>
+        <MudExpansionPanel Class="panels" Text=@x.CourseName>
             Building ID: @x.BuildingID <br /> <br />
             Course ID: @x.CourseID <br /> <br />
             Credits: @x.Credits <br /> <br />
@@ -17,17 +17,17 @@
             Day: @x.Day <br /> <br />
             Department: @x.Department <br /> <br />
             Description: @x.Description <br /> <br />
-            EndDate: @x.EndDate.Date <br /> <br />
-            GradeLimit: @x.GradeLimit <br /> <br />
+            EndDate: @x.EndDate.Date.ToString("M/d/yyyy") @x.EndDate.Date.ToString("hh:mm tt") <br /> <br />
+            GradeLimit: @x.GradeLimit.Date.ToString("M/d/yyyy") @x.GradeLimit.Date.ToString("hh:mm tt") <br /> <br />
             Enrolled: @x.Enrolled.Count/@x.MaxCapacity <br /> <br />
             Period: @x.Period <br /> <br />
             Professor: @x.ProfessorName <br /> <br />
             RoomID: @x.RoomID <br /> <br />
             Section: @x.Section <br /> <br />
             Semester: @x.Semester <br /> <br />
-            Start Date: @x.StartDate <br /> <br />
+            Start Date: @x.StartDate.ToString("M/d/yyyy") @x.StartDate.ToString("hh:mm tt") <br /> <br />
             Type: @x.Type <br /> <br />
-            Withdraw Limit: @x.WithdrawLimit <br /> <br />
+            Withdraw Limit: @x.WithdrawLimit.Date.ToString("M/d/yyyy") @x.WithdrawLimit.Date.ToString("hh:mm tt") <br /> <br />
         </MudExpansionPanel>
     }
 

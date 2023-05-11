@@ -1,0 +1,99 @@
+﻿@page "/admin/viewstudentgrade/output"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View student grades: @name</h2>
+
+<MudExpansionPanels MultiExpansion="true">
+    @foreach (var x in finalGradesList)
+    {
+        <MudExpansionPanel Class="panels" Text=@x.courseName>
+            Midterm Grade: @x.midtermGrade <br /> <br />
+            Final Grade: @x.finalGrade <br /> <br />
+            Semester: @x.semester <br /> <br />
+            Start Date: @x.startDate.Date.ToString("M/d/yyyy") @x.startDate.Date.ToString("hh:mm tt") <br /> <br />
+            End Date: @x.endDate.ToString("M/d/yyyy") @x.endDate.ToString("hh:mm tt") <br /> <br />
+            Period: @x.period
+
+        </MudExpansionPanel>
+    }
+</MudExpansionPanels>
+
+@code
+{
+    class AdminViewGrades
+    {
+        public string courseName { get; set; }
+        public string midtermGrade { get; set; }
+        public string finalGrade { get; set; }
+        public string semester { get; set; }
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
+        public string period { get; set; }
+    }
+
+
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static string name { get; set; }
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+
+    List<AdminViewGrades> finalGradesList = new List<AdminViewGrades> { };
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+        try
+        {
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+            name = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
+
+            foreach (var x in queryClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (y.UserID == queryAllUserID.UserID)
+                    {
+                        AdminViewGrades toWrite = new AdminViewGrades();
+
+                        toWrite.courseName = x.CourseName;
+                        toWrite.finalGrade = y.FinalGrade;
+                        toWrite.midtermGrade = y.MidTermGrade;
+                        toWrite.semester = x.Semester;
+                        toWrite.startDate = x.StartDate;
+                        toWrite.endDate = x.EndDate;
+                        toWrite.period = x.Period;
+
+                        finalGradesList.Add(toWrite);
+
+                    }
+                }
+            }
+        }
+        catch
+        {
+
+        }
+    }
+
+    
+
+
+
+}

@@ -1,21 +1,23 @@
-@page "/graduate/viewschedule"
+﻿@page "/graduate/viewschedule"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<h2>Grades for @studentName</h2>
+<h2>Schedule For @studentName</h2>
 
 <MudExpansionPanels MultiExpansion="true">
     <br /> <br />
     <br /> <br />
-    <p>Student ID: @userID &nbsp;&nbsp;&nbsp; Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp; Major:
+    <p>
+        Student ID: @userID &nbsp;&nbsp;&nbsp; Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp; Major:
         @foreach (var item in popList)
         {
             @item.Major
         } &nbsp;&nbsp;&nbsp; Minor: @foreach (var item in popList)
         {
             @item.Minor
-        }</p>
+        }
+    </p>
 
     @foreach (var x in classesList)
     {
@@ -72,7 +74,7 @@
         {
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-            if (accountTypeCheck.Value != "Graduate")
+            if (accountTypeCheck.Value != "Undergraduate")
             {
                 navigate.NavigateTo("/homepage");
             }
@@ -119,9 +121,9 @@
                 }
 
             }
-            }
-//set variable and then display it
-catch
+        }
+        //set variable and then display it
+        catch
         {
             snackbar.Add("data not found", Severity.Error);
         }
@@ -241,7 +243,4 @@ catch
         }
 
     }
-    }
-
-
-
+}

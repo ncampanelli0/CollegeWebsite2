@@ -1,0 +1,60 @@
+﻿@page "/developer/writemissedattendance"
+
+<button @onclick = "writeMissedAttendance">write missed attendance</button>
+<button @onclick="fixMajors">fix majors</button>
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+
+
+    private void writeMissedAttendance()
+    {
+        var queryClass = mongo.LoadRecord<Classes>("classes");
+        Console.WriteLine("running writeMissedAttendance");
+        foreach (var x in queryClass)
+        {
+            foreach (var y in x.Enrolled)
+            {
+                y.MissedAttendance = 32 - y.Attendance;
+                mongo.UpsertRecord<Classes>("classes", x.Id, x);
+            }
+        }
+
+        Console.WriteLine("done updating table");
+
+
+    }
+
+    private void fixMajors()
+    {
+        var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
+        var queryMajor = mongo.LoadRecord<Majors>("majors");
+        Random random = new Random();
+
+        Console.WriteLine("running fixMajors");
+
+        foreach (var x in queryAllUser)
+        {
+            if (x.Major == "Economics" || x.Major == "Politics" || x.Major == "and Law" || x.Major == "Politics,Economics, and Law")
+            {
+                x.Major = "Politics, Economics and Law";
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+            }
+        }
+
+        foreach (var x in queryAllUser)
+        {
+            if (x.Major == null)
+            {
+                x.Major = queryMajor[random.Next(0, queryMajor.Count)].Major;
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+            }
+        }
+
+        Console.WriteLine("table updated");
+    }
+
+}

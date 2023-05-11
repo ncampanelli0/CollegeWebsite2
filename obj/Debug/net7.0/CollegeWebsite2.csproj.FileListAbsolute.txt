@@ -1,131 +1,131 @@
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/appsettings.Development.json
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/appsettings.json
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.staticwebassets.runtime.json
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.exe
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.deps.json
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.runtimeconfig.json
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.pdb
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.AssemblyReference.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.GeneratedMSBuildEditorConfig.editorconfig
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.AssemblyInfoInputs.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.AssemblyInfo.cs
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.CoreCompileInputs.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.MvcApplicationPartsAssemblyInfo.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.RazorAssemblyInfo.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.RazorAssemblyInfo.cs
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.CollegeWebsite2.Microsoft.AspNetCore.StaticWebAssets.props
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.build.CollegeWebsite2.props
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.CollegeWebsite2.props
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.CollegeWebsite2.props
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.pack.json
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.build.json
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.development.json
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/scopedcss/bundle/CollegeWebsite2.styles.css
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/scopedcss/projectbundle/CollegeWebsite2.bundle.scp.css
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.dll
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/refint/CollegeWebsite2.dll
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.pdb
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.genruntimeconfig.cache
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/ref/CollegeWebsite2.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/AWSSDK.Core.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/AWSSDK.SecurityToken.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/DnsClient.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Bson.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Driver.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Driver.Core.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Libmongocrypt.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/SharpCompress.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Snappier.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/System.Drawing.Common.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/System.Security.Permissions.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/System.Windows.Extensions.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/ZstdSharp.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/linux/native/libmongocrypt.so
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/osx/native/libmongocrypt.dylib
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/native/mongocrypt.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.CopyComplete
-D:/programming files/asp.net core/CollegeWebsite2/obj/Debug/net7.0/scopedcss/Pages/undergraduate/AdjustLogin.razor.rz.scp.css
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Blazored.LocalStorage.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Blazored.SessionStorage.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Authorization.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.Forms.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.Web.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Metadata.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/Microsoft.JSInterop.dll
-D:/programming files/asp.net core/CollegeWebsite2/bin/Debug/net7.0/MudBlazor.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/refint/CollegeWebsite2.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.AssemblyReference.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.GeneratedMSBuildEditorConfig.editorconfig
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.AssemblyInfoInputs.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.AssemblyInfo.cs
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.CoreCompileInputs.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.MvcApplicationPartsAssemblyInfo.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.RazorAssemblyInfo.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.RazorAssemblyInfo.cs
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/appsettings.Development.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/appsettings.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.staticwebassets.runtime.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.deps.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.runtimeconfig.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/CollegeWebsite2.pdb
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/AWSSDK.Core.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/AWSSDK.SecurityToken.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Blazored.LocalStorage.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Blazored.SessionStorage.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/DnsClient.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Authorization.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.Forms.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Components.Web.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.AspNetCore.Metadata.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.JSInterop.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Bson.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Driver.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Driver.Core.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/MongoDB.Libmongocrypt.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/MudBlazor.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/SharpCompress.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/Snappier.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/System.Drawing.Common.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/System.Security.Permissions.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/System.Windows.Extensions.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/ZstdSharp.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/linux/native/libmongocrypt.so
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/osx/native/libmongocrypt.dylib
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/native/mongocrypt.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.CollegeWebsite2.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.build.CollegeWebsite2.props
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.CollegeWebsite2.props
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.CollegeWebsite2.props
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.pack.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.build.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/staticwebassets.development.json
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/bundle/CollegeWebsite2.styles.css
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/projectbundle/CollegeWebsite2.bundle.scp.css
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.csproj.CopyComplete
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.pdb
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/CollegeWebsite2.genruntimeconfig.cache
-/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/ref/CollegeWebsite2.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\appsettings.Development.json
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\appsettings.json
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.staticwebassets.runtime.json
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.exe
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.deps.json
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.runtimeconfig.json
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.pdb
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.AssemblyReference.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.GeneratedMSBuildEditorConfig.editorconfig
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.AssemblyInfoInputs.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.AssemblyInfo.cs
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.CoreCompileInputs.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.MvcApplicationPartsAssemblyInfo.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.RazorAssemblyInfo.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.RazorAssemblyInfo.cs
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.CollegeWebsite2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.build.CollegeWebsite2.props
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CollegeWebsite2.props
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.CollegeWebsite2.props
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.pack.json
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.build.json
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.development.json
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\scopedcss\bundle\CollegeWebsite2.styles.css
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\scopedcss\projectbundle\CollegeWebsite2.bundle.scp.css
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.dll
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\refint\CollegeWebsite2.dll
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.pdb
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.genruntimeconfig.cache
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\ref\CollegeWebsite2.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\AWSSDK.Core.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\DnsClient.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Bson.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Driver.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Driver.Core.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\SharpCompress.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Snappier.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\ZstdSharp.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.CopyComplete
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Blazored.LocalStorage.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Blazored.SessionStorage.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.JSInterop.dll
+D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\MudBlazor.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\refint\CollegeWebsite2.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.pdb
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\appsettings.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.staticwebassets.runtime.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.exe
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.deps.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.runtimeconfig.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\CollegeWebsite2.pdb
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\AWSSDK.Core.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Blazored.LocalStorage.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Blazored.SessionStorage.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\DnsClient.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.JSInterop.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Bson.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Driver.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Driver.Core.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\MudBlazor.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\SharpCompress.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\Snappier.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\ZstdSharp.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.AssemblyReference.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.AssemblyInfoInputs.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.AssemblyInfo.cs
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.CoreCompileInputs.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.RazorAssemblyInfo.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.RazorAssemblyInfo.cs
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.CollegeWebsite2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.build.CollegeWebsite2.props
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CollegeWebsite2.props
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.CollegeWebsite2.props
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Pages\undergraduate\AdjustLogin.razor.rz.scp.css
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\bundle\CollegeWebsite2.styles.css
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\projectbundle\CollegeWebsite2.bundle.scp.css
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.CopyComplete
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.genruntimeconfig.cache
+C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\ref\CollegeWebsite2.dll

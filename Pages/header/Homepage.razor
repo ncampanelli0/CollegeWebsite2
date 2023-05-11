@@ -46,109 +46,53 @@
 
         @if (loginStudent)
         {
-            <MudPaper Width="300px">
-                <MudList Clickable="false">
-                    <MudListItem Text="Account Information" InitiallyExpanded="false">
-                        <NestedList>
-                            <MudListItem>
-                                Account Type: @accountType
-                            </MudListItem>
-                            <MudListItem>
-                                Email: @email
-                            </MudListItem>
-                            <MudListItem>
-                                Name: @name
-                            </MudListItem>
-                            <MudListItem>
-                                Address: @address
-                            </MudListItem>
-                            <MudListItem>
-                                Phone Number: @phoneNumber
-                            </MudListItem>
-                            <MudListItem>
-                                Advisor: @advisor
-                            </MudListItem>
-                            <MudListItem>
-                                Major: @major
-                            </MudListItem>
-                            <MudListItem>
-                                Minor: @minor
-                            </MudListItem>
-                            <MudListItem>
-                                Hold Status: @holdStatus
-                            </MudListItem>
-                            <MudListItem>
-                                User ID: @userID
-                            </MudListItem>
-                        </NestedList>
-                    </MudListItem>
-                </MudList>
-            </MudPaper>
+
+            <MudExpansionPanels>
+                <MudExpansionPanel Text="Account Information" Class="panels">
+                Account Type: @accountType <br/>
+                Email: @email <br/>
+                Name: @name <br/>
+                Address: @address <br/>
+                Phone Number: @phoneNumber <br/>
+                Advisor: @advisor <br/>
+                Major: @major <br/>
+                Minor: @minor <br/>
+                Hold Status: @holdStatus <br/>
+                User ID: @userID <br/>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
         }
 
         @if (loginFaculty)
         {
-            <MudPaper Width="300px">
-                <MudList Clickable="true">
-                    <MudListItem Text="Account Information" InitiallyExpanded="false">
-                        <NestedList>
-                            <MudListItem>
-                                Account Type: @accountType
-                            </MudListItem>
-                            <MudListItem>
-                                Email: @email
-                            </MudListItem>
-                            <MudListItem>
-                                Name: @name
-                            </MudListItem>
-                            <MudListItem>
-                                Address: @address
-                            </MudListItem>
-                            <MudListItem>
-                                Phone Number: @phoneNumber
-                            </MudListItem>
-                            <MudListItem>
-                                Department: @department
-                            </MudListItem>
-                            <MudListItem>
-                                User ID: @userID
-                            </MudListItem>
-                        </NestedList>
-                    </MudListItem>
-                </MudList>
-            </MudPaper>
+        <MudExpansionPanels>
+            <MudExpansionPanel Text="Account Information" Class="panels">
+                Account Type: @accountType <br/>
+                Email: @email <br/>
+                Name: @name <br/>
+                Address: @address <br/>
+                Phone Number: @phoneNumber <br/>
+                Department: @department <br/>
+                User ID: @userID <br/>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
         }
         
         @if (loginAdmin)
         {
-            <MudPaper Width="300px">
-                <MudList Clickable="true">
-                    <MudListItem Text="Account Information" InitiallyExpanded="false">
-                        <NestedList>
-                            <MudListItem>
-                                Account Type: @accountType
-                            </MudListItem>
-                            <MudListItem>
-                                Email: @email
-                            </MudListItem>
-                            <MudListItem>
-                                Name: @name
-                            </MudListItem>
-                            <MudListItem>
-                                Address: @address
-                            </MudListItem>
-                            <MudListItem>
-                                Phone Number: @phoneNumber
-                            </MudListItem>
-                            <MudListItem>
-                                User ID: @userID
-                            </MudListItem>
-                        </NestedList>
-                    </MudListItem>
-                </MudList>
-            </MudPaper>
-        }
 
+            <MudExpansionPanels>
+                <MudExpansionPanel Text="Account Information" Class="panels">
+                Account Type: @accountType <br/>
+                Email: @email <br/>
+                Name: @name <br/>
+                Address: @address <br/>
+                Phone Number: @phoneNumber <br/>
+                User ID: @userID <br/>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
+        }
+        <br /><br />
 
     </div>
  

@@ -1,0 +1,25 @@
+﻿@page "/admin/buildings"
+@page "/faculty/buildings"
+@page "/undergraduate/buildings"
+@page "/graduate/buildings"
+@page "/visitor/buildings"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>buildings</h2>
+
+<MudExpansionPanels>
+    <MudExpansionPanel Text="Buildings" Class="panels" IsExpanded="true" Disabled="true">
+        <ol>
+            <li>Clearwater Community Building</li>
+            <li>Clearwater Academic Building</li>
+            <li>Clearwater Research Lab</li>
+        </ol>
+    </MudExpansionPanel>
+</MudExpansionPanels>
+
+@code
+{
+
+}

@@ -1,0 +1,167 @@
+@page "/faculty/gradesinfo"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+
+<h2>Students Grades for @courseTarget - CRN: @targetclass</h2>
+
+<MudDataGrid Items="@enrolledList" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+  
+        
+        <Columns>
+    
+    <PropertyColumn Title="UserID" Property="x => x.UserID" />
+        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+        <PropertyColumn Title="First Name" Property="x => x.FirstName" /> 
+            <PropertyColumn Title="Current Grade" Property="x => x.FinalGrade" />      
+      
+
+    </Columns>
+
+    <PagerContent>
+        <MudDataGridPager T="Enrolled" Class="tableFooter   "/>
+    </PagerContent>
+</MudDataGrid>  
+        <h5>Note: You cannot be able to change the grade after a certain time window.</h5>
+        <br/><br/>
+
+
+        <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudSelect @bind-Value="grade" T="string" Label="Grade" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+            @foreach(var x in gradeChoices){
+                <MudSelectItem class="selectFieldColor" Value="@x"></MudSelectItem>
+            }
+    </MudSelect>
+        <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class = "btncolor">submit</MudButton>
+
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+            [Parameter][SupplyParameterFromQuery] public int targetclass { get; set; }
+
+        string studentName;
+        private static string grade { get; set; }
+        private static string[] gradeChoices = {"A", "B", "C", "D", "F"};
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+    private List<Classes> classesList = new List<Classes> { };
+    private List<Enrolled> enrolledList = new List<Enrolled> { };
+        
+        string courseTarget;
+       
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Faculty")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+
+        try
+        {
+            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryAllClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (x.CRN == targetclass)
+                    {
+                        classesList.Add(x);
+                        enrolledList.Add(y);
+                      
+                    }
+                }
+            }
+
+              getName();
+        }
+        catch
+        {
+            snackbar.Add("data not found", Severity.Error);
+        }
+
+    }
+
+    private void getName(){
+                @foreach (var x in classesList){
+                    if(targetclass == x.CRN){
+                            courseTarget = x.CourseName;
+
+                    }
+                }
+
+        }
+
+
+
+
+
+
+
+
+
+        
+    private void submitForm()
+    {
+        try
+        {
+            //validation check
+            bool validForm = true;
+
+            if (userID == null || userID == "")
+            {
+                validForm = false;
+            }
+
+            //sanity check
+            bool sanityCheck = true;
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            if (validForm)
+            {
+                if (!(userID.Contains("SCC")))
+                {
+                    sanityCheck = false;
+                }
+
+                if (!(queryAllUserID.AccountType == "Undergraduate" || queryAllUserID.AccountType == "Graduate"))
+                {
+                    sanityCheck = false;
+                }
+            }
+
+            if (validForm && sanityCheck)
+            {
+               var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", targetclass);
+                foreach(var x in queryClassesID.Enrolled){
+                    if(userID == x.UserID){
+                        x.FinalGrade = grade;
+                    }
+                }
+                mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                    snackbar.Add("Grade Change Successful",Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("User not found", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("User not found", Severity.Error);
+        }
+    }
+ 
+}
