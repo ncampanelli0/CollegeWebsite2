@@ -54,7 +54,6 @@ D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\CollegeWebsite2.csproj.CopyComplete
-D:\programming files\asp.net core\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Pages\undergraduate\AdjustLogin.razor.rz.scp.css
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Blazored.LocalStorage.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Blazored.SessionStorage.dll
 D:\programming files\asp.net core\CollegeWebsite2\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
