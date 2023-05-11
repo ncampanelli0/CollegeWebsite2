@@ -120,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld3VzZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Buildings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXEJ1aWxkaW5ncy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Masterschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXE1hc3RlcnNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
