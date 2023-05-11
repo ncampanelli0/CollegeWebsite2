@@ -32,11 +32,11 @@
 
         @if (@aboutToggleSwitch)
         {
-            <a class="dropdowncolor" href="/about">About</a>
-            <a class="dropdowncolor" href="/about/accreditationcertification">Accreditations and Certifications</a>
-            <a class="dropdowncolor" href="/about/collegeleadership">College Leadership</a>
-            <a class="dropdowncolor" href="/about/missionvision">Mission and Vision</a>
-            <a class="dropdowncolor" href="/about/rankingdistinctions">Ranking Distinctions</a>
+            <a class="dropdown-item dropdowncolor" href="/about">About</a>
+            <a class="dropdown-item dropdowncolor" href="/about/accreditationcertification">Accreditations and Certifications</a>
+            <a class="dropdown-item dropdowncolor" href="/about/collegeleadership">College Leadership</a>
+            <a class="dropdown-item dropdowncolor" href="/about/missionvision">Mission and Vision</a>
+            <a class="dropdown-item dropdowncolor" href="/about/rankingdistinctions">Ranking Distinctions</a>
         }
 
         <button type="button" @onclick="viewToggle" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,10 +46,11 @@
         {
             @if (accountType == "Visitor" || accountType == "")
             {
-                <a class="dropdowncolor" href="/visitor/masterschedule">master schedule</a>
-                <a class="dropdowncolor" href="/visitor/viewcourses">view courses</a>
-                <a class="dropdowncolor" href="/visitor/viewrequirements">view requirements</a>
-                <a class="dropdowncolor" href="/visitor/timewindow">time windows</a>
+                <a class="dropdown-item dropdowncolor" href="/visitor/masterschedule">master schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/visitor/viewcourses">view courses</a>
+                <a class="dropdown-item dropdowncolor" href="/visitor/viewrequirements">view requirements</a>
+                <a class="dropdown-item dropdowncolor" href="/visitor/timewindow">view time windows</a>
+                <a class="dropdown-item dropdowncolor" href="/visitor/buildings">view buildings</a>
             }
 
             @if (accountType == "Undergraduate")
@@ -60,6 +61,8 @@
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/masterschedule">master schedule</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewrequirements">view requirements</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule/transcript</a>
+                <a class="dropdowncolor" href="/undergraduate/timewindow">view time windows</a>
+                <a class="dropdowncolor" href="/undergraduate/buildings">view buildings</a>
             }
 
             @if (accountType == "Graduate")
@@ -70,6 +73,8 @@
                 <a class="dropdown-item dropdowncolor" href="/graduate/masterschedule">master schedule</a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/viewrequirements">view requirements</a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/viewschedule">view schedule/transcript</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/timewindow">view time windows</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/buildings">view buildings</a>
             }
 
             @if (accountType == "Admin")
@@ -81,7 +86,8 @@
                 <a class="dropdown-item dropdowncolor" href="/admin/viewrequirements">view requirements</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/viewuserrecord/input">view user record</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/viewstudentgrade/input">view student grades</a>
-
+                <a class="dropdown-item dropdowncolor" href="/admin/timewindow">view time windows</a>
+                <a class="dropdown-item dropdowncolor" href="/admin/buildings">view buildings</a>
             }
 
             @if (accountType == "Faculty")
