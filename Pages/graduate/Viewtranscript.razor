@@ -1,4 +1,4 @@
-@page "/undergraduate/viewtranscript"
+@page "/graduate/viewtranscript"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
@@ -8,7 +8,7 @@
 <MudExpansionPanels MultiExpansion="true">
 <br /> <br />
 <br /> <br />
-<p>Student ID: @userID  Credits: @val GPA: @gpa  Major: @foreach (var item in popList){  @item.Major  }  Minor: @foreach (var item in popList){  @item.Minor  }</p>
+<p>Student ID: @userID &nbsp;&nbsp;&nbsp;  Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp;   Major: @foreach (var item in popList){  @item.Major  } &nbsp;&nbsp;&nbsp; Minor: @foreach (var item in popList){  @item.Minor  }</p>
     
     @foreach (var x in classesList)
     { 
@@ -64,7 +64,7 @@
         {
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
-            if (accountTypeCheck.Value != "Undergraduate")
+            if (accountTypeCheck.Value != "Graduate")
             {
                 navigate.NavigateTo("/homepage");
             }
@@ -93,6 +93,7 @@
                 //insert the function here
                 creditAmount();
                 findName();
+
                 gpaCalculator();
                   gpa = totalPoints/hours;
 

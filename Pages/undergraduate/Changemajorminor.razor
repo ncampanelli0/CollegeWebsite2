@@ -50,7 +50,9 @@
 
 @code
 {
- protected override async Task OnInitializedAsync()
+    Mongo mongo = new Mongo("college-site-2");   
+
+    protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
 
@@ -62,8 +64,11 @@
 
     private static string major { get; set; }
     private static string minor { get; set; }
+    private static string userID { get; set; }
+    private static string majorID { get; set; }
+    private static string minorID { get; set; }
 
-    private static void submitForm()
+    private void submitForm()
     {
         try
         {
@@ -80,6 +85,7 @@
         
         if (validForm)
         {
+
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
             queryAllUserID.Major = major;
@@ -93,6 +99,10 @@
         {
             snackbar.Add("Major/Minor not edited successfully", Severity.Error);
         }
+    }
+    catch 
+    {
+            snackbar.Add("data load error", Severity.Error);
     }
 }
 }

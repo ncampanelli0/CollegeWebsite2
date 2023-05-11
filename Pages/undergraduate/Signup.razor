@@ -48,6 +48,8 @@ protected override async Task OnInitializedAsync()
             navigate.NavigateTo("/homepage");
         }
     }
+    private static int CRN { get; set; }
+    private static string userID { get; set; }
 
     Mongo mongo = new Mongo("college-site-2");
     List<Classes> queryClasses;
@@ -64,17 +66,16 @@ protected override async Task OnInitializedAsync()
             {
                 validForm = false;
             }
-            else if ((CRN == null || CRN == ""))
+            else if ((CRN == null || !(CRN >= 1000 && CRN <= 9999)))
             {
                 validForm = false;
             }
-
 
             bool thealmightycheck = true;
             if (thealmightycheck)
             {
                 var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
                 var queryClasses = mongo.LoadRecord<Classes>("classes");
 
                 int enrolledCreditCounter = 0;
@@ -82,7 +83,7 @@ protected override async Task OnInitializedAsync()
                 {
                     foreach (var y in x.Enrolled)
                     {
-                        if (y.UserID == queryStudentID.UserID && (queryCRN.StartDate.Year == x.StartDate.Year && queryCRN.Semester
+                        if (y.UserID == queryStudentID.UserID && (queryClassID.StartDate.Year == x.StartDate.Year && queryClassID.Semester
                         == x.Semester))
                         {
                             enrolledCreditCounter += x.Credits;
@@ -99,7 +100,7 @@ protected override async Task OnInitializedAsync()
                     thealmightycheck = false;
                 }
 
-                foreach (var x in queryCRN.Enrolled)
+                foreach (var x in queryClassID.Enrolled)
                 {
                     if (x.UserID == queryStudentID.UserID)
                     {
@@ -112,10 +113,10 @@ protected override async Task OnInitializedAsync()
             if (validForm && thealmightycheck)
             {
 
-                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
                 var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-                Registered toWrite = new Registered();
+                Enrolled toWrite = new Enrolled();
 
                 toWrite.FirstName = queryUserID.FirstName;
                 toWrite.LastName = queryUserID.LastName;
@@ -125,9 +126,9 @@ protected override async Task OnInitializedAsync()
                 toWrite.MidTermGrade = "none";
                 toWrite.FinalGrade = "none";
 
-                queryCRN.Enrolled.Add(toWrite);
+                queryClassID.Enrolled.Add(toWrite);
 
-                mongo.UpsertRecord<Classes>("classes", queryCRN.Id, queryCRN);
+                mongo.UpsertRecord<Classes>("classes", queryClassID.Id, queryClassID);
                 snackbar.Add("User added to class successfully", Severity.Success);
             }
             else

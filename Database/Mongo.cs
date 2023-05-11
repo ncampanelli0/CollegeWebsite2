@@ -231,6 +231,7 @@ public class Mongo
 
         return sortedList;
     }
+
     public TimeWindow GetTimeData(string semester, int year, string period)
     {
         var result = db.GetCollection<TimeWindow>("timeWindow");

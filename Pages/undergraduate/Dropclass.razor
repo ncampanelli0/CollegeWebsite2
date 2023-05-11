@@ -15,6 +15,7 @@
 
 @code
 {
+   
     protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
@@ -24,7 +25,9 @@
             navigate.NavigateTo("/homepage");
         }
     }
-    private static string CRN { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+    private static int CRN { get; set; }
+    private static string userID { get; set; }
 
     private void submitForm()
     {
@@ -37,7 +40,7 @@
                 validForm = false;
             }
 
-            if (CRN == null)
+            if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
             {
                 validForm = false;
             }
@@ -46,7 +49,7 @@
 
             if (thealmightycheck)
             {
-                var queryCRN = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
 
                 if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
                 {
@@ -57,14 +60,14 @@
 
             if (validForm && thealmightycheck)
             {
-                var queryCRN = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
-                for (int w = 0; w < queryClassesID.Enrolled.Count; w++)
+                for (int w = 0; w < queryClassID.Enrolled.Count; w++)
                 {
-                    if (queryCRN.Enrolled[i].UserID.Contains(userID))
+                    if (queryClassID.Enrolled[w].UserID.Contains(userID))
                     {
-                        queryCRN.Enrolled.RemoveAt(w);
+                        queryClassID.Enrolled.RemoveAt(w);
                         snackbar.Add("User has been removed from class", Severity.Success);
                     }
                     else
@@ -78,7 +81,6 @@
                 snackbar.Add("User has been not removed from class", Severity.Error);
             }
         }
-
         catch
         {
             snackbar.Add("Class was not removed successfully", Severity.Error);

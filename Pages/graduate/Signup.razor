@@ -6,7 +6,8 @@
 
 <h2>Classes</h2>
 
-<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true"
+    FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
         <PropertyColumn Title="Department" Property="x => x.Department" />
         <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
@@ -36,59 +37,108 @@
 
 @code
 {
-    Mongo mongo = new Mongo("college-site-2");
-    private static string userID { get; set; }
-    private static string CRN { get; set; }
-  protected override async Task OnInitializedAsync()
+protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
 
         if (accountTypeCheck.Value != "Graduate")
         {
             navigate.NavigateTo("/homepage");
         }
     }
+    private static int CRN { get; set; }
+    private static string userID { get; set; }
+
+    Mongo mongo = new Mongo("college-site-2");
     List<Classes> queryClasses;
     List<TimeWindow> queryTime;
 
-private void submitForm()
+    private void submitForm()
     {
-        bool validForm = true;
 
-        if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+        try
         {
-            validForm = false;
+            bool validForm = true;
+
+            if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+            {
+                validForm = false;
+            }
+            else if ((CRN == null || !(CRN >= 1000 && CRN <= 9999)))
+            {
+                validForm = false;
+            }
+
+            bool thealmightycheck = true;
+            if (thealmightycheck)
+            {
+                var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+                int enrolledCreditCounter = 0;
+                foreach (var x in queryClasses)
+                {
+                    foreach (var y in x.Enrolled)
+                    {
+                        if (y.UserID == queryStudentID.UserID && (queryClassID.StartDate.Year == x.StartDate.Year && queryClassID.Semester
+                        == x.Semester))
+                        {
+                            enrolledCreditCounter += x.Credits;
+                        }
+                    }
+                }
+
+                if (enrolledCreditCounter > 8 && queryStudentID.PartOrFullTime == "Part Time")
+                {
+                    thealmightycheck = false;
+                }
+                else if (enrolledCreditCounter > 16 && queryStudentID.PartOrFullTime == "Full Time")
+                {
+                    thealmightycheck = false;
+                }
+
+                foreach (var x in queryClassID.Enrolled)
+                {
+                    if (x.UserID == queryStudentID.UserID)
+                    {
+                        thealmightycheck = false;
+                    }
+                }
+
+            }
+
+            if (validForm && thealmightycheck)
+            {
+
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                Enrolled toWrite = new Enrolled();
+
+                toWrite.FirstName = queryUserID.FirstName;
+                toWrite.LastName = queryUserID.LastName;
+                toWrite.UserID = queryUserID.UserID;
+                toWrite.Grades = new List<string> { };
+                toWrite.Attendance = 0;
+                toWrite.MidTermGrade = "none";
+                toWrite.FinalGrade = "none";
+
+                queryClassID.Enrolled.Add(toWrite);
+
+                mongo.UpsertRecord<Classes>("classes", queryClassID.Id, queryClassID);
+                snackbar.Add("User added to class successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("User was not added to class", Severity.Error);
+            }
         }
-        else if (CRN == null || CRN == "")
-        {
-            validForm = false;
-        }
-
-        if (validForm)
-        {
-            var queryClassesID = mongo.LoadRecordByString<Classes>("classes", "CRN", CRN);
-            var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-            Registered toWrite = new Registered();
-
-            toWrite.FirstName = queryUserID.FirstName;
-            toWrite.LastName = queryUserID.LastName;
-            toWrite.UserID = queryUserID.UserID;
-            toWrite.Grades = new List<string> { };
-            toWrite.Attendance = 0;
-            toWrite.MidTermGrade = "none";
-            toWrite.FinalGrade = "none";
-
-            queryClassesID.Enrolled.Add(toWrite);
-
-            mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
-            snackbar.Add("User added to class successfully", Severity.Success);
-        }
-        else
+            catch
         {
             snackbar.Add("User was not added to class", Severity.Error);
         }
-
     }
-    
-}
+    }
