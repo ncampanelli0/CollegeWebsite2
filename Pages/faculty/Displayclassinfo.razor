@@ -9,7 +9,7 @@
  <MudExpansionPanels MultiExpansion="true">
      @foreach (var item in popList)
       {
-        <MudExpansionPanel Text=@item.CourseName>
+        <MudExpansionPanel Text=@item.CourseName Class="panels">
             Credits: @item.Credits <br /> <br />
             CRN: @item.CRN <br /> <br />
            Semester:  Spring @item.startDateTime.Year<br /> <br />

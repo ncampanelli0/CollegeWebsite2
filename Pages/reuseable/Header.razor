@@ -39,6 +39,7 @@
             <a class="dropdown-item dropdowncolor" href="/about/rankingdistinctions">Ranking Distinctions</a>
         }
 
+
         <button type="button" @onclick="viewToggle" class="btncolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             View
         </button>
@@ -92,22 +93,14 @@
 
             @if (accountType == "Faculty")
             {
-
+                <a class="dropdown-item dropdowncolor" href="/faculty/masterschedule">master schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/viewmajorsminors">view majors and minors</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/viewrequirements">view requirements</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/viewfacultyschedule">view faculty schedule</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/viewclasses">view classes</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/searchstudents">search students</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">view enrollement info</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/studentinfo">view student info</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">view grade info</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">view enrollement info</a>
             }
 
         }
 
-        @if (accountType == "Faculty" || accountType == "Undergraduate" || accountType == "Graduate")
+        @if  (accountType == "Faculty" || accountType == "Undergraduate" || accountType == "Graduate")
         {
             <button type="button" @onclick="actionToggle" class="btncolor dropdown-toggle">
                 Action
@@ -116,6 +109,17 @@
         
         @if (actionToggleSwitch)
         {
+
+            @if (accountType == "Faculty")
+            {
+                <a class="dropdown-item dropdowncolor" href="/faculty/viewclasses">classes</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/viewfacultyschedule">view faculty schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/searchstudents">search students</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/student grade">student grades</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/degree audit">degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/advisee">advisee</a>
+            }
+
             @if (accountType == "Undergraduate")
             {
                 <a class="dropdowncolor" href="/undergraduate/signup">add classes</a>
@@ -128,13 +132,6 @@
                 <a class="dropdown-item dropdowncolor" href="/graduate/signup">add classes</a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/changemajorminor">add/drop majors/minors </a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/dropclass">drop class</a>
-            }
-
-            @if (accountType == "Faculty")
-            {
-
-                <a class="dropdown-item dropdowncolor" href="/faculty/givegrade">give grade</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/takeattendance">take attendance</a>
             }
         }
 
@@ -176,6 +173,25 @@
             <a class="dropdown-item dropdowncolor" href="/admin/edituser">edit user</a>
             <a class="dropdown-item dropdowncolor" href="/admin/sendpasswordreset">send password reset</a>
         }
+
+        @if (accountType == "Faculty")
+        {
+            <button type="button" @onclick="displayToggle" class="btncolor dropdown-toggle">
+                Display
+            </button>
+        }
+
+        @if (displayToggleSwitch)
+        {
+            <a class="dropdown-item dropdowncolor" href="/faculty/studentinfo">student info</a>
+            <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">enrolled info</a>
+            <a class="dropdown-item dropdowncolor" href="/faculty/classinfo">class info</a>
+            <a class="dropdown-item dropdowncolor" href="/faculty/attendanceinfo">attendance info</a>
+            <a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">grades info</a>
+        }
+
+
+
     </MudDrawer>
 </MudDrawerContainer>
 
@@ -190,6 +206,7 @@
     private bool actionToggleSwitch = false;
     private bool classesToggleSwitch = false;
     private bool usersToggleSwitch = false;
+    private bool displayToggleSwitch = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -237,11 +254,14 @@
         classesToggleSwitch = !classesToggleSwitch;
     }
 
-        private void usersToggle()
-        {
-            usersToggleSwitch = !usersToggleSwitch;
-        }
+    private void usersToggle()
+    {
+        usersToggleSwitch = !usersToggleSwitch;
+    }
 
-
+    private void displayToggle()
+    {
+        displayToggleSwitch = !displayToggleSwitch;
+    }
 
 }
