@@ -1,0 +1,102 @@
+@page "/faculty/advisee"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+
+<MudDataGrid Items="@enrolledList" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+
+
+           <PropertyColumn Title="UserID" Property="x => x.UserID" />
+        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+        <PropertyColumn Title="First Name" Property="x => x.FirstName" />
+    
+  
+
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Enrolled" />
+    </PagerContent>
+</MudDataGrid>                                                                                                                                          
+
+
+
+
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+      //List<Classes> queryClass;
+      private List<popTable2> popList = new List<popTable2> { };
+          popTable2 schedule = new popTable2();
+  
+       List<Classes> limitedList = new List<Classes>{};
+
+         private List<Classes> classesList = new List<Classes> { };
+    private List<Enrolled> enrolledList = new List<Enrolled> { };
+      public class popTable2
+    {
+      
+        public string CourseName{get; set;}
+       
+        public int  CRN{get; set;}
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+     
+        var queryClass = mongo.LoadRecord<Classes>("classes");
+      
+        var firstNameCheck = await storage.GetAsync<string>("firstName");
+    
+        var lastNameCheck = await storage.GetAsync<string>("lastName");
+  
+          
+
+                int counter = 0;
+
+       
+        foreach(var x in queryClass){
+                  
+            if(x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023){
+              schedule = new popTable2{};
+                schedule.CourseName = x.CourseName;
+                schedule.CRN = x.CRN;
+                popList.Add(schedule);
+
+            }
+        }
+
+
+
+
+
+          foreach (var x in queryClass)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (x.CRN == schedule.CRN)
+                    {
+                        if(counter < 3){
+                             classesList.Add(x);
+                        enrolledList.Add(y);
+                    counter++;
+                        }
+                    }
+                }
+            }
+            
+
+
+
+    }
+
+}
+
+
+
+
