@@ -1,59 +1,144 @@
 @page "/graduate/signup"
-<!doctype html>
 
-  <head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>sign up</title>
-  </head>
+<h2>Classes</h2>
 
-<body>
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true"
+    FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+        <PropertyColumn Title="Section" Property="x => x.Section" />
+        <PropertyColumn Title="Professor Name" Property="x => x.ProfessorName" />
+        <PropertyColumn Title="Start Date/Time" Property="x =>x.StartDate" />
+        <PropertyColumn Title="End Date/Time" Property="x => x.EndDate" />
+        <PropertyColumn Title="Period" Property="x => x.Period" />
+        <PropertyColumn Title="Building ID" Property="x => x.BuildingID" />
+        <PropertyColumn Title="Room ID" Property="x => x.RoomID" />
+        <PropertyColumn Title="Day" Property="x => x.Day" />
+        <PropertyColumn Title="Remaining Capacity" Property="x => x.MaxCapacity - x.Enrolled.Count" />
 
-    <div>
-        <table class = "userTable">
-            <thead>
-                <th>Class ID</th>
-                <th>Class Name</th>
-                <th>Time Slot / Days</th>
-                <th>Prerequiste</th>
-                <th>Minimum Requirements</th>
-                <th>Description</th>
-                <th>Building ID - Room ID</th>
-                <th>Type / Credits</th>
-                <th>Seats Taken / Max Capacity</th>
-                <th>Year / Season</th>
-                <th>Professor</th>
-            </thead>
-            <tbody>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Classes" />
+    </PagerContent>
+</MudDataGrid>
 
-                {% for klasses in klass %}
-                <tr class = "list item">
-                <td>{{ klasses["id"] }}</td>
-                <td>{{ klasses["CourseName"] }}</td>
-                <td>{{ klasses["TimeSlot"] }} / {{ klasses["Day"] }}</td>
-                <td>{{ klasses["Prerequiste"] }}</td>
-                <td>{{ klasses["MinimumRequirement"] }}</td>
-                <td>{{ klasses["Description"] }}</td>
-                <td>{{ klasses["BuildingID"] }} - {{ klasses["RoomID"] }}</td>
-                <td>{{ klasses["Type"] }} / {{ klasses["Credits"] }}</td>
-                <td>{{ klasses["Enrolled"]|length }} / {{ klasses["MaxCapacity"] }}</td>
-                <td>{{ klasses["Year"] }} / {{ klasses["Season"] }}</td>
-                <td>{{ klasses["Professor"]["FirstName"] }} {{ klasses["Professor"]["LastName"] }}</td>
-                </tr>
-                
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
-    <h2>add class</h2>
-    <form method = "Post" action = "{{ url_for('undergraduatesignup') }}">
-    {{ form.csrf_token }}
-    {{ form.courseid.label }}
-    {{ form.courseid }}
-    
-    <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
+<h2>Add A Class</h2>
 
-</body>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="userID" Label="userID" Variant="Variant.Outlined"></MudTextField>
+
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+@code
+{
+protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        queryClasses = mongo.LoadRecord<Classes>("classes");
+        queryTime = mongo.LoadRecord<TimeWindow>("timeWindow");
+
+        if (accountTypeCheck.Value != "Graduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+    private static int CRN { get; set; }
+    private static string userID { get; set; }
+
+    Mongo mongo = new Mongo("college-site-2");
+    List<Classes> queryClasses;
+    List<TimeWindow> queryTime;
+
+    private void submitForm()
+    {
+
+        try
+        {
+            bool validForm = true;
+
+            if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+            {
+                validForm = false;
+            }
+            else if ((CRN == null || !(CRN >= 1000 && CRN <= 9999)))
+            {
+                validForm = false;
+            }
+
+            bool thealmightycheck = true;
+            if (thealmightycheck)
+            {
+                var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+                int enrolledCreditCounter = 0;
+                foreach (var x in queryClasses)
+                {
+                    foreach (var y in x.Enrolled)
+                    {
+                        if (y.UserID == queryStudentID.UserID && (queryClassID.StartDate.Year == x.StartDate.Year && queryClassID.Semester
+                        == x.Semester))
+                        {
+                            enrolledCreditCounter += x.Credits;
+                        }
+                    }
+                }
+
+                if (enrolledCreditCounter > 8 && queryStudentID.PartOrFullTime == "Part Time")
+                {
+                    thealmightycheck = false;
+                }
+                else if (enrolledCreditCounter > 16 && queryStudentID.PartOrFullTime == "Full Time")
+                {
+                    thealmightycheck = false;
+                }
+
+                foreach (var x in queryClassID.Enrolled)
+                {
+                    if (x.UserID == queryStudentID.UserID)
+                    {
+                        thealmightycheck = false;
+                    }
+                }
+
+            }
+
+            if (validForm && thealmightycheck)
+            {
+
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                Enrolled toWrite = new Enrolled();
+
+                toWrite.FirstName = queryUserID.FirstName;
+                toWrite.LastName = queryUserID.LastName;
+                toWrite.UserID = queryUserID.UserID;
+                toWrite.Grades = new List<string> { };
+                toWrite.Attendance = 0;
+                toWrite.MidTermGrade = "none";
+                toWrite.FinalGrade = "none";
+
+                queryClassID.Enrolled.Add(toWrite);
+
+                mongo.UpsertRecord<Classes>("classes", queryClassID.Id, queryClassID);
+                snackbar.Add("User added to class successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("User was not added to class", Severity.Error);
+            }
+        }
+            catch
+        {
+            snackbar.Add("User was not added to class", Severity.Error);
+        }
+    }
+    }

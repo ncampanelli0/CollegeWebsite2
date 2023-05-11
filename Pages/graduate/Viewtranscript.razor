@@ -1,0 +1,209 @@
+@page "/graduate/viewtranscript"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Transcript for @studentName</h2>
+
+<MudExpansionPanels MultiExpansion="true">
+<br /> <br />
+<br /> <br />
+<p>Student ID: @userID &nbsp;&nbsp;&nbsp;  Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp;   Major: @foreach (var item in popList){  @item.Major  } &nbsp;&nbsp;&nbsp; Minor: @foreach (var item in popList){  @item.Minor  }</p>
+    
+    @foreach (var x in classesList)
+    { 
+        
+        <MudExpansionPanel Text=@x.CourseName>
+            Course ID: @x.CourseID <br /> <br />
+            Credits: @x.Credits <br /> <br />
+            Department: @x.Department <br /> <br />
+            Section: @x.Section <br /> <br />
+            Semester: @x.Semester- @x.StartDate.Year <br /> <br />
+            Grade: @x.Enrolled[0].FinalGrade <br /> <br />
+           
+        </MudExpansionPanel>
+    }
+
+</MudExpansionPanels>
+
+@code
+{
+     private static string userID { get; set; }
+    Mongo mongo = new Mongo("college-site-2");
+    int counter = 0;
+        int val = 0;
+
+        int a = 8;
+        
+        int b = 6;
+      
+        int c = 4;
+        int hours = 0;       
+        int totalPoints;
+        int gpa;
+        string standing;
+        string studentName;
+
+    private List<Classes> classesList = new List<Classes> { };
+    private List<Enrolled> enrolledList = new List<Enrolled> { };
+
+    private List<popTable2> popList = new List<popTable2> { };
+
+      public class popTable2
+    {
+      
+        public string Major{get; set;}
+        public string Minor{get; set;}
+       
+        
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Graduate")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+
+        try
+        {
+            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryAllClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (y.UserID == userID)
+                    {
+                        classesList.Add(x);
+                        enrolledList.Add(y);
+                    }
+                }
+            }
+                //insert the function here
+                creditAmount();
+                findName();
+
+                gpaCalculator();
+                  gpa = totalPoints/hours;
+
+                var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
+
+                     foreach (var a in queryAllUser){
+                                if(a.UserID == userID){
+                                   popTable2 majorMinor = new popTable2();
+                                   majorMinor.Major = a.Major;
+                                   majorMinor.Minor = a.Minor;
+                                   popList.Add(majorMinor);
+                                }
+
+                        }
+                //set variable and then display it
+        }
+        catch
+        {
+            snackbar.Add("data not found", Severity.Error);
+        }
+
+    }
+
+//@enrolledList[counter].FinalGrade
+        private void findName(){
+                @foreach (var x in classesList){
+                    if(userID == x.Enrolled[counter].UserID){
+                            studentName = x.Enrolled[counter].FirstName + " " + x.Enrolled[counter].LastName;
+
+                    }
+                }
+
+        }
+
+        //function where calculate the letter grades
+        private void creditAmount(){
+        
+            @foreach (var x in classesList){
+                
+                 if(x.Enrolled[counter].FinalGrade == "A" || x.Enrolled[counter].FinalGrade == "B" ||  x.Enrolled[counter].FinalGrade == "C"){
+                
+                val+= 4;
+
+
+                 }
+                 else{
+                    Console.WriteLine("Skip");
+                 }
+            }
+           
+        }
+
+        private void standingYear(){
+            @foreach (var x in classesList){
+                
+                 if(x.Enrolled[counter].FinalGrade == "A" || x.Enrolled[counter].FinalGrade == "B" ||  x.Enrolled[counter].FinalGrade == "C"){
+                
+                val+= 4;
+
+                 }
+                 else{
+                    Console.WriteLine("Skip");
+                 }
+            }
+
+            if(val <= 30){
+                standing = "Freshman";
+            }
+            else if(val >= 31 && val <= 56){
+                standing = "Sophmore";
+            }
+            else if(val >= 57 && val <= 90){
+                standing = "Junior";
+            }
+            else if(val >= 91){
+                standing = "Senior";
+            }
+            else{
+                standing = "Graduate";
+            }
+            
+        }
+       
+        //calculate gpa
+        private void gpaCalculator(){
+              @foreach (var x in classesList){
+                
+                 if(x.Enrolled[counter].FinalGrade == "A" ){
+                    
+                  
+                    totalPoints += a;
+                    hours += 2;
+                 }
+                     else if(x.Enrolled[counter].FinalGrade == "B"){
+                        
+                    totalPoints += b;
+                    hours += 2;
+                     }
+                      else if(x.Enrolled[counter].FinalGrade == "C"){
+             
+                    totalPoints += c;
+                    hours += 2;
+                     }
+                 else{
+                    Console.WriteLine("Skip");
+                 }
+
+                 
+            }
+          
+        }
+        }
+

@@ -1,65 +1,342 @@
-@page "/graduate/viewdegreeaudit"
-<!doctype html>
-  <head>
+@page "/undergraduate/viewdegreeaudit"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>view degree audit</title>
-  </head>
+<h2>Degree Audit for @studentName</h2>
+<MudExpansionPanels MultiExpansion="true">
+    <br /> <br />
+    <br /> <br />
+    <p>Student ID: @userID &nbsp;&nbsp;&nbsp; Credits: @val &nbsp;&nbsp;&nbsp; GPA: @gpa &nbsp;&nbsp;&nbsp; Major:
+        @foreach (var item in popList)
+        {
+            @item.Major
+        } &nbsp;&nbsp;&nbsp; Minor: @foreach (var item in popList)
+        {
+            @item.Minor
+        }</p>
 
-<body>
+    <h3>Completed Courses</h3>
 
-    <div>
-        <table class = "userTable">
-            <thead>
-            <th>major: {{ session["major"].Major }}</th>
-            <th>completed</th>
-            </thead>
-            <tbody>
+    @foreach (var x in classesList)
+    {
 
-            {% for x in session["major"].MajorRequirements %}
-                <tr class = "list item">
-                <td>{{ x }}</td>
-                {% if majorCompletion == [] %}
-                    <td>not started</td>
-                {% elif majorCompletion != [] %}
-                <td>{{majorCompletion[loop.index0]}}</td>
-                {% endif %}
-                </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
+        <MudExpansionPanel Text=@x.CourseName>
+            Course ID: @x.CourseID <br /> <br />
+            Credits: @x.Credits <br /> <br />
+            Department: @x.Department <br /> <br />
+            Section: @x.Section <br /> <br />
+            Semester: @x.Semester- @x.StartDate.Year <br /> <br />
+            Grade: @x.Enrolled[0].FinalGrade <br /> <br />
 
-    <div>
-        <table class = "userTable">
-            <thead>
-            <th>minor: {{ session["minor"].Minor }}</th>
-            <th> completed </th>
-            </thead>
-            <tbody>
+        </MudExpansionPanel>
+    }
 
-            {% for x in session["minor"].MinorRequirements %}
-                <tr class = "list item">
-                <td>{{ x }}</td>
-                {% if minorCompletion == [] %}
-                    <td>not started</td>
-                {% elif minorCompletion != [] %}
-                <td>{{minorCompletion[loop.index0]}}</td>
-                {% endif %}
-                </tr>
-                
-            {% endfor %}
-        </tbody>
-        </table>
-        <div id = "tablePagination"></div>
-    </div>
+    <h3>Current Courses </h3>
 
+    @foreach (var w in classesList)
+    {
+        <MudExpansionPanel Text=@w.CourseName>
+            Course ID: @w.CourseID <br /> <br />
+            Credits: @w.Credits <br /> <br />
+            Department: @w.Department <br /> <br />
+            Section: @w.Section <br /> <br />
+            Semester: @w.Semester- @w.StartDate.Year <br /> <br />
+        </MudExpansionPanel>
+    }
+
+    <h3>Major/Minor Requirements</h3>
+
+</MudExpansionPanels>
+
+@code
+{
+    private static string userID { get; set; }
+    private static string MajorRequirements { get; set; }
+    private static string GradeRequirements { get; set; }
 
 
 
+    Mongo mongo = new Mongo("college-site-2");
+    int counter = 0;
+    int val = 0;
+
+    int a = 8;
+
+    int b = 6;
+
+    int c = 4;
+    int hours = 0;
+    int totalPoints;
+    int gpa;
+    string standing;
+    string studentName;
+
+    private List<Classes> classesList = new List<Classes> { };
+    private List<Enrolled> enrolledList = new List<Enrolled> { };
+
+
+    private List<poptable3> popList = new List<poptable3> { };
+
+    public class poptable3
+    {
+
+        public string Major { get; set; }
+        public string Minor { get; set; }
+
+    }
+    public class MajorInfo
+    {
+        public string majorName { get; set; }
+        public string[] majorGrade { get; set; }
+        public string[] majorCourses { get; set; }
+    }
+
+    public class MinorInfo
+    {
+        public string minorName { get; set; }
+        public string[] minorGrade { get; set; }
+        public string[] minorCourses { get; set; }
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Undergraduate")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+        // to find all courses taken
+        try
+        {
+            var majorCheck = await storage.GetAsync<string>("major");
+            var minorCheck = await storage.GetAsync<string>("minor");
+            var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+
+            foreach (var x in queryAllClasses)
+            {
+                foreach (var y in x.Enrolled)
+                {
+                    if (y.UserID == userID)
+                    {
+                        classesList.Add(x);
+                        enrolledList.Add(y);
+                    }
+                }
+            }
+            // to find current enrolled courses
+            try
+            {
+                foreach (var w in queryAllClasses)
+                {
+                    if (w.StartDate.Year == 2023)
+
+                        foreach (var y in w.Enrolled)
+                        {
+                            if (y.UserID == userID)
+                            {
+                                classesList.Add(w);
+                                enrolledList.Add(y);
+                            }
+                        }
+                }
+            }
+            catch
+            {
+                snackbar.Add("data not found", Severity.Error);
+            }
+
+
+            var queryMajor = mongo.LoadRecord<Majors>("majors");
+            var queryMinor = mongo.LoadRecord<Minors>("minors");
+
+            try
+            {
+                MajorInfo toAddMajor = new MajorInfo();
+                MinorInfo toAddMinor = new MinorInfo();
+                List<MajorInfo> majorInfoList = new List<MajorInfo> { };
+                List<MinorInfo> minorInfoList = new List<MinorInfo> { };
+                foreach (var z in queryMajor)
+                {
+                    if (majorCheck.Value == z.Major)
+                    {
+                        toAddMajor.majorName = z.Major;
+                        toAddMajor.majorGrade = z.GradeRequirements;
+                        toAddMajor.majorCourses = z.MajorRequirements;
+
+                        majorInfoList.Add(toAddMajor);
+                    }
+                }
+
+                foreach (var z in queryMinor)
+                {
+                    if (minorCheck.Value == z.Minor)
+                    {
+                        toAddMinor.minorName = z.Minor;
+                        toAddMinor.minorGrade = z.GradeRequirements;
+                        toAddMinor.minorCourses = z.MinorRequirements;
+
+                        minorInfoList.Add(toAddMinor);
+                    }
+                }
+            }
+            catch
+            {
+                snackbar.Add("data not found", Severity.Error);
+            }
 
 
 
-</body>
+
+
+
+
+            //insert the function here
+            creditAmount();
+            findName();
+            gpaCalculator();
+            gpa = totalPoints / hours;
+
+            var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
+
+            foreach (var a in queryAllUser)
+            {
+                if (a.UserID == userID)
+                {
+                    poptable3 majorMinor = new poptable3();
+                    majorMinor.Major = a.Major;
+                    majorMinor.Minor = a.Minor;
+                    popList.Add(majorMinor);
+                }
+
+            }
+            //set variable and then display it
+        }
+        catch
+        {
+            snackbar.Add("data not found", Severity.Error);
+        }
+
+    }
+
+    //@enrolledList[counter].FinalGrade
+    private void findName()
+    {
+        @foreach (var x in classesList)
+        {
+            if (userID == x.Enrolled[counter].UserID)
+            {
+                studentName = x.Enrolled[counter].FirstName + " " + x.Enrolled[counter].LastName;
+
+            }
+        }
+
+    }
+
+    //function to calculate the letter grades
+    private void creditAmount()
+    {
+
+        @foreach (var x in classesList)
+        {
+
+            if (x.Enrolled[counter].FinalGrade == "A" || x.Enrolled[counter].FinalGrade == "B" || x.Enrolled[counter].FinalGrade ==
+            "C")
+            {
+
+                val += 4;
+
+
+            }
+            else
+            {
+                Console.WriteLine("Skip");
+            }
+        }
+
+    }
+
+    private void standingYear()
+    {
+        @foreach (var x in classesList)
+        {
+
+            if (x.Enrolled[counter].FinalGrade == "A" || x.Enrolled[counter].FinalGrade == "B" || x.Enrolled[counter].FinalGrade ==
+            "C")
+            {
+
+                val += 4;
+
+            }
+            else
+            {
+                Console.WriteLine("Skip");
+            }
+        }
+
+        if (val <= 30)
+        {
+            standing = "Freshman";
+        }
+        else if (val >= 31 && val <= 56)
+        {
+            standing = "Sophmore";
+        }
+        else if (val >= 57 && val <= 90)
+        {
+            standing = "Junior";
+        }
+        else if (val >= 91)
+        {
+            standing = "Senior";
+        }
+        else
+        {
+            standing = "Graduate";
+        }
+
+    }
+
+    //calculate gpa
+    private void gpaCalculator()
+    {
+        @foreach (var x in classesList)
+        {
+
+            if (x.Enrolled[counter].FinalGrade == "A")
+            {
+
+
+                totalPoints += a;
+                hours += 2;
+            }
+            else if (x.Enrolled[counter].FinalGrade == "B")
+            {
+
+                totalPoints += b;
+                hours += 2;
+            }
+            else if (x.Enrolled[counter].FinalGrade == "C")
+            {
+
+                totalPoints += c;
+                hours += 2;
+            }
+            else
+            {
+                Console.WriteLine("Skip");
+            }
+
+
+        }
+
+    }
+}

@@ -1,23 +1,77 @@
 @page "/undergraduate/adjustlogin"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>adjust login</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-<body>
-<h2>adjust password</h2>
-<form method = "Post" action = "{{ url_for('adminadjustlogin') }}">
-      {{ form.csrf_token }}
-      {{ form.password }}
-      {{ form.password.label }}
-      <br>
-      {{ form.passwordconfirm }}
-      {{ form.passwordconfirm.label }}
-      
-      <br>
-      <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
-</body>
+<h2>Adjust User Login</h2>
+
+<MudTextField @bind-Value="email" Label="email" Variant="Variant.Outlined"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+
+
+@code {
+
+    Mongo mongo = new Mongo("college-site-2");
+
+    bool validForm = true;
+
+    private static string email { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+        private string createPassword()
+    {
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var stringChars = new char[8];
+        var random = new Random();
+
+        for (int i = 0; i < 8; i++)
+        {
+            stringChars.Append(chars[random.Next(chars.Length)]);
+        }
+
+        return stringChars.ToString();
+    }
+    private void submitForm()
+    {
+        try
+        {
+            if (email == null || email == "")
+            {
+                validForm = false;
+            }
+
+            bool thealmightycheck = true;
+
+            if (validForm && thealmightycheck)
+            {
+                Mailtrap mail = new Mailtrap();
+                var queryAllUser = mongo.LoadRecordByString<AllUser>("allUser", "Email", email);
+                string newestPassword = createPassword();
+
+                queryAllUser.Password = newestPassword;
+                mongo.UpsertRecord<AllUser>("allUser", queryAllUser.Id, queryAllUser);
+                mail.sendMail("Student@clearwater.edu", email, "Password has been reset", $"new password is: {newestPassword}");
+                snackbar.Add("Password reset was sent", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Password reset was not able to be sent", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Password reset was not able to be sent", Severity.Error);
+        }
+    }
+}
+

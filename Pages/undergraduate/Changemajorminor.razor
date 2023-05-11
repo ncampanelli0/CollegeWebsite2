@@ -1,31 +1,108 @@
 @page "/undergraduate/changemajorminor"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>change major and minor</title>
-  </head>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-<body>
+<h2>Change Major and Minor</h2>
 
-    <form method = "Post" action = "{{ url_for('undergraduatechangeMajorMinor') }}">
-    <h2>Change Major</h2>
-    {{form1.csrf_token }}
-    {{form1.major.label}}
-    {{form1.major}}
-    <input type = "submit" id = "form1" name = "form1" value = "submit">
-    </form>
+<MudTextField @bind-Value="majorID" Label="major id" Variant="Variant.Outlined"></MudTextField>
+<MudSelect @bind-Value="majorID" T="string" Label="majorID" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Value="@("American Studies")" />
+    <MudSelectItem Value="@("Biological Sciences")" />
+    <MudSelectItem Value="@("Chemistry and Physics")" />
+    <MudSelectItem Value="@("Computer Science")" />
+    <MudSelectItem Value="@("Criminology")" />
+    <MudSelectItem Value="@("English")" />
+    <MudSelectItem Value="@("Health and Society")" />
+    <MudSelectItem Value="@("History and Philosophy")" />
+    <MudSelectItem Value="@("Industrial and Labor Relations")" />
+    <MudSelectItem Value="@("Mathematics ")" />
+    <MudSelectItem Value="@("Modern Language")" />
+    <MudSelectItem Value="@("Politics,Economics, and Law")" />
+    <MudSelectItem Value="@("Psychology")" />
+    <MudSelectItem Value="@("Sociology")" />
+    <MudSelectItem Value="@("Visual Arts")" />
 
+</MudSelect>
 
-    <form method = "Post" action = "{{ url_for('undergraduatechangeMajorMinor') }}">
-    <h2>Change Minor</h2>
-    {{form2.csrf_token}}
-    {{form2.minor.label}}
-    {{form2.minor}}
+<MudTextField @bind-Value="minorID" Label="minor id" Variant="Variant.Outlined"></MudTextField>
+<MudSelect @bind-Value="minorID" T="string" Label="minorID" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Value="@("Chemistry")" />
+    <MudSelectItem Value="@("Computer Information Science")" />
+    <MudSelectItem Value="@("Environmental Studies")" />
+    <MudSelectItem Value="@("Global Studies")" />
+    <MudSelectItem Value="@("Hispanic Culture Studies")" />
+    <MudSelectItem Value="@("Mathematics")" />
+    <MudSelectItem Value="@("Media Design")" />
+    <MudSelectItem Value="@("Media and Communications")" />
+    <MudSelectItem Value="@("Philosophy and Religion")" />
+    <MudSelectItem Value="@("Physics")" />
+    <MudSelectItem Value="@("PreLaw Studies")" />
+    <MudSelectItem Value="@("Prehealth Professions")" />
+    <MudSelectItem Value="@("Public Policy")" />
+    <MudSelectItem Value="@("Spanish")" />
+    <MudSelectItem Value="@("Visual Arts")" />
+    <MudSelectItem Value="@("No Minor")" />
+   
+</MudSelect>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
 
-    <input type = "submit" id = "form2" name = "form2" value = "submit">
-    </form>
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");   
 
-  
-</body>
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+        }
+
+    private static string major { get; set; }
+    private static string minor { get; set; }
+    private static string userID { get; set; }
+    private static string majorID { get; set; }
+    private static string minorID { get; set; }
+
+    private void submitForm()
+    {
+        try
+        {
+        bool validForm = true;
+
+        if (major == null || major == "")
+        {
+            validForm = false;
+        }
+        else if (minor == null || minor == "")
+        {
+            validForm = false;
+        }
+        
+        if (validForm)
+        {
+
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+            queryAllUserID.Major = major;
+            queryAllUserID.Minor = minor;
+
+            mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+            snackbar.Add("Major/Minor was edited successfully", Severity.Success);
+            
+        }
+        else
+        {
+            snackbar.Add("Major/Minor not edited successfully", Severity.Error);
+        }
+    }
+    catch 
+    {
+            snackbar.Add("data load error", Severity.Error);
+    }
+}
+}

@@ -1,22 +1,89 @@
 @page "/graduate/dropclass"
-<!doctype html>
-  <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>drop class</title>
-  </head>
 
-<body>
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
-  <h2>drop from class</h2>
-    <form method = "Post" action = "{{ url_for('undergraduatedropclass') }}">
-    {{ form.csrf_token }}
-    {{ form.courseid.label }}
-    {{ form.courseid }}
+<h2>Drop A Class</h2>
 
-    <input type = "submit" id = "form" name = "form" value = "submit">
-    </form>
+<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined"></MudTextField>
 
-  
-</body>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success">submit</MudButton>
+<MudTextField @bind-Value="userID" Label="userID" Variant="Variant.Outlined"></MudTextField>
+
+
+@code
+{
+   
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        if (accountTypeCheck.Value != "Graduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+    Mongo mongo = new Mongo("college-site-2");
+    private static int CRN { get; set; }
+    private static string userID { get; set; }
+
+    private void submitForm()
+    {
+        try
+        {
+            bool validForm = true;
+
+            if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+            {
+                validForm = false;
+            }
+
+            if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
+            {
+                validForm = false;
+            }
+
+            bool thealmightycheck = true;
+
+            if (thealmightycheck)
+            {
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+
+                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+                {
+                    thealmightycheck = false;
+                }
+            }
+
+            if (validForm && thealmightycheck)
+            {
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                for (int w = 0; w < queryClassID.Enrolled.Count; w++)
+                {
+                    if (queryClassID.Enrolled[w].UserID.Contains(userID))
+                    {
+                        queryClassID.Enrolled.RemoveAt(w);
+                        snackbar.Add("User has been removed from class", Severity.Success);
+                    }
+                    else
+                    {
+                        snackbar.Add("User cannot be not found", Severity.Warning);
+                    }
+                }
+            }
+            else
+            {
+                snackbar.Add("User has been not removed from class", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Class was not removed successfully", Severity.Error);
+        }
+    }
+
+}
