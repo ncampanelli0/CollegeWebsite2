@@ -20,17 +20,17 @@
     </Columns>
 
     <PagerContent>
-        <MudDataGridPager T="Enrolled" />
+        <MudDataGridPager T="Enrolled" Class="tableFooter   "/>
     </PagerContent>
 </MudDataGrid>  
         <h5>Note: You cannot be able to change the grade after a certain time window.</h5>
         <br/><br/>
 
 
-        <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-        <MudSelect @bind-Value="grade" T="string" Label="Grade" AnchorOrigin="Origin.BottomCenter">
+        <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudSelect @bind-Value="grade" T="string" Label="Grade" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
             @foreach(var x in gradeChoices){
-                <MudSelectItem Value="@x"></MudSelectItem>
+                <MudSelectItem class="selectFieldColor" Value="@x"></MudSelectItem>
             }
     </MudSelect>
         <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class = "btncolor">submit</MudButton>

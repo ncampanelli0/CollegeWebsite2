@@ -21,15 +21,15 @@
     </Columns>
 
     <PagerContent>
-        <MudDataGridPager T="Enrolled" />
+        <MudDataGridPager T="Enrolled" Class="tableFooter" />
     </PagerContent>
 </MudDataGrid>  
 
 <h5> Apply the new Attendance for specific user</h5>
         <br/><br/>
-        <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined"></MudTextField>
-        <MudNumericField @bind-Value="attendance" Label="Attendance" Variant="Variant.Outlined" Min="0" Max="32"></MudNumericField>
-        <MudNumericField @bind-Value="missattendance" Label="Miss Attendance" Variant="Variant.Outlined" Min="0" Max="32"></MudNumericField>
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudNumericField @bind-Value="attendance" Label="Attendance" Variant="Variant.Outlined" id="textFieldColor" Min="0" Max="32"></MudNumericField>
+<MudNumericField @bind-Value="missattendance" Label="Miss Attendance" Variant="Variant.Outlined" id="textFieldColor" Min="0" Max="32"></MudNumericField>
         <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class = "btncolor">submit</MudButton>
 
 
