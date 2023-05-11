@@ -50,6 +50,7 @@
 
 @code
 {
+ Mongo mongo = new Mongo("college-site-2");
  protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
@@ -66,7 +67,7 @@
     private static string userID { get; set; }
     private static string minor { get; set; }
 
-    private static void submitForm()
+    private void submitForm()
     {
         bool validForm = true;
 

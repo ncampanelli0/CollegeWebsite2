@@ -28,7 +28,7 @@
 
 @code
 {
-     private static string userID { get; set; }
+    private static string userID { get; set; }
     Mongo mongo = new Mongo("college-site-2");
     int counter = 0;
         int val = 0;
@@ -78,6 +78,7 @@
         try
         {
             var queryAllClasses = mongo.LoadRecord<Classes>("classes");
+            var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
 
             foreach (var x in queryAllClasses)
             {
