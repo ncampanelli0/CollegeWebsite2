@@ -57,25 +57,28 @@
             @if (accountType == "Undergraduate")
             {
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcurrentclasses">view current classes </a>
-                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewdegreeaudit">view degree audit </a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/masterschedule">master schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/buildings">buildings</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewdegreeaudit">view degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewtranscript">view transcript</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewrequirements">view requirements</a>
-                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule/transcript</a>
-                <a class="dropdowncolor" href="/undergraduate/timewindow">view time windows</a>
-                <a class="dropdowncolor" href="/undergraduate/buildings">view buildings</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/timewindow">time window</a>
+                
             }
 
             @if (accountType == "Graduate")
             {
                 <a class="dropdown-item dropdowncolor" href="/graduate/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewcurrentclasses">view current classes </a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewdegreeaudit">view degree audit </a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/masterschedule">master schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/buildings">buildings</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/viewdegreeaudit">view degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/viewtranscript">view transcript</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/viewschedule">view schedule</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/viewcourses">view courses</a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/viewrequirements">view requirements</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewschedule">view schedule/transcript</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/timewindow">view time windows</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/buildings">view buildings</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/timewindow">time window</a>
             }
 
             @if (accountType == "Admin")
@@ -122,16 +125,19 @@
 
             @if (accountType == "Undergraduate")
             {
-                <a class="dropdowncolor" href="/undergraduate/signup">add classes</a>
-                <a class="dropdowncolor" href="/undergraduate/changemajorminor">add/drop majors/minors </a>
-                <a class="dropdowncolor" href="/undergraduate/dropclass">drop class</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/signup">add classes</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/changemajorminor">edit majors/minors </a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/dropclass">drop class</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/adjustlogin">adjust login</a>
+
             }
 
             @if (accountType == "Graduate")
             {
                 <a class="dropdown-item dropdowncolor" href="/graduate/signup">add classes</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/changemajorminor">add/drop majors/minors </a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/changemajorminor">edit majors/minors </a>
                 <a class="dropdown-item dropdowncolor" href="/graduate/dropclass">drop class</a>
+                <a class="dropdown-item dropdowncolor" href="/graduate/adjustlogin">adjust login</a>
             }
         }
 
