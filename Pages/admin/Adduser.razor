@@ -212,7 +212,7 @@
                     }
                 }
 
-                int userIDValue = 1000;
+                int userIDValue = 10000;
                 string userIDIdentifier = "";
 
                 if (accountType == "Admin")
@@ -229,9 +229,9 @@
                 }
                 Console.WriteLine("3");
 
-                //i think this section is right -Nick
+
                 bool userIDCheck = true;
-                generatedUserID = $"{userIDIdentifier}{userIDValue}";
+                generatedUserID = $"{userIDIdentifier}10{userIDValue}";
 
                 while (userIDCheck)
                 {
@@ -247,7 +247,8 @@
                     }
                     Console.WriteLine("5");
                     userIDValue++;
-                    generatedUserID = $"{userIDIdentifier}{userIDValue}";
+                    generatedUserID = $"{userIDIdentifier}10{userIDValue}";
+                    
                     Console.WriteLine("6");
                 }
 
@@ -269,6 +270,7 @@
                     toWrite.Department = department;
                     toWrite.Email = email;
                     toWrite.FirstName = firstName;
+                    toWrite.Holds = "None";
                     toWrite.LastName = lastName;
                     toWrite.Major = major;
                     toWrite.Minor = minor;
@@ -290,7 +292,29 @@
                     toWrite.Department = department;
                     toWrite.Email = email;
                     toWrite.FirstName = firstName;
+                    
                     toWrite.LastName = lastName;
+                    toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.PhoneNumber = phoneNumber;
+                    toWrite.UserID = generatedUserID;
+
+                    mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    snackbar.Add("User added successfully", Severity.Success);
+                }
+                else if (accountType == "Admin")
+                {
+                    AllUser toWrite = new AllUser();
+
+                    toWrite.AccountType = accountType;
+                    toWrite.Address = address;
+                    toWrite.Advisor = advisor;
+                    toWrite.Birthday = birthday;
+                    toWrite.Department = department;
+                    toWrite.Email = email;
+                    toWrite.FirstName = firstName;
+                    toWrite.LastName = lastName;
+                    toWrite.Major = major;
+                    toWrite.Minor = minor;
                     toWrite.PartOrFullTime = partOrFullTime;
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
