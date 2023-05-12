@@ -92,6 +92,16 @@
                     }
                 }
 
+                if (queryClassesID.RegistrationLimit.ToLocalTime() < DateTime.Now.ToLocalTime())
+                {
+                    sanityCheck = false;
+                }
+
+                if ((queryClassesID.MaxCapacity - queryClassesID.Enrolled.Count) <= 0)
+                {
+                    sanityCheck = false;
+                }
+
             }
 
 

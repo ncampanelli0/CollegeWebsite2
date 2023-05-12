@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkdXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQ2hhbmdlaG9sZHN0YXR1cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Editclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdGNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

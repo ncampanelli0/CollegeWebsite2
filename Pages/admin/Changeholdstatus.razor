@@ -1,0 +1,93 @@
+﻿@page "/admin/changeholdstatus"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<MudSelect @bind-Value="holds" T="string" Label="Hold" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+    <MudSelectItem Class="selectFieldColor" Value="@("Academic")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Financial")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("Disciplinary")" />
+    <MudSelectItem Class="selectFieldColor" Value="@("None")" />
+</MudSelect>
+
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    private static string userID { get; set; }
+    private static string holds { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var queryDepartment = mongo.LoadRecordSortedAsc<Departments>("department", "Department");
+        var queryMajors = mongo.LoadRecordSortedAsc<Majors>("majors", "Major");
+        var queryMinors = mongo.LoadRecordSortedAsc<Minors>("minors", "Minor");
+
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+    private void submitForm()
+    {
+        try
+        {
+            //form validation
+            bool validForm = true;
+
+            if (userID == null || userID == "")
+            {
+                validForm = false;
+            }
+
+
+
+
+            //sanity check (not needed... probably)
+            bool sanityCheck = true;
+            if (validForm)
+            {
+                if (!userID.Contains("SCC"))
+                {
+                    sanityCheck = false;
+                }
+            }
+            
+
+                if (validForm && sanityCheck)
+                {
+                    var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                    if (holds != null && holds != "")
+                    {
+                        queryAllUserID.Holds = holds;
+                    }
+
+                    mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
+                    snackbar.Add("User was edited successfully", Severity.Success);
+                }
+                else
+                {
+                    snackbar.Add("User was not edited successfully", Severity.Error);
+                }
+            }
+            catch
+            {
+                snackbar.Add("User was not edited successfully", Severity.Error);
+            }
+        }
+}

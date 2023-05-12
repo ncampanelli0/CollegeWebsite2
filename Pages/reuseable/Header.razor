@@ -11,7 +11,7 @@
 <MudDrawerContainer Class="mud-height-full drawerColor" @onmouseleave="toggleDrawer">
     <MudDrawer @bind-Open="@openStart" Class="drawerColorHead" Anchor="Anchor.Start" Elevation="0">
         <MudDrawerHeader Class="drawerColorHead">
-            <MudText Typo="Typo.h5" Style="color: rgb(165, 7, 197);">Options Menu</MudText>
+            <MudText Style="color: rgb(165, 7, 197); font-size: 30px">Options Menu</MudText>
         </MudDrawerHeader>
        
         @if (!loggedIn)
@@ -155,7 +155,6 @@
                 <a class="dropdown-item dropdowncolor" href="/admin/addclasssection">add class</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/addnewcourse">add course</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/removeclass">remove class</a>
-                <a class="dropdown-item dropdowncolor" href="/admin/removeuser">remove user</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/addprofessorclass">add professor</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/adduserclass">add user to class</a>
                 <a class="dropdown-item dropdowncolor" href="/admin/removeprofessorclass">remove professor from class</a>
@@ -178,6 +177,8 @@
             <a class="dropdown-item dropdowncolor" href="/admin/adduser">add user</a>
             <a class="dropdown-item dropdowncolor" href="/admin/edituser">edit user</a>
             <a class="dropdown-item dropdowncolor" href="/admin/sendpasswordreset">send password reset</a>
+            <a class="dropdown-item dropdowncolor" href="/admin/changeholdstatus">edit user hold status</a>
+            <a class="dropdown-item dropdowncolor" href="/admin/removeuser">remove user</a>
         }
 
         @if (accountType == "Faculty")

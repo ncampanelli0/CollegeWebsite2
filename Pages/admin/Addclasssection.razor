@@ -106,46 +106,52 @@
 
     private void submitForm()
     {
-        try
-        {
             //form validation
             bool validForm = true;
             if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
             {
                 validForm = false;
+                Console.WriteLine("validator 1");
             }
             else if (buildingID == null && !(buildingID <= 1 && buildingID >= 3))
             {
                 validForm = false;
+                Console.WriteLine("validator 2");
             }
             else if (day == null)
             {
                 validForm = false;
+                Console.WriteLine("validator 3");
             }
             else if (maxCapacity == null || !(maxCapacity >= 5 && maxCapacity <= 30))
             {
                 validForm = false;
+                Console.WriteLine("validator 4");
             }
             else if (roomID == null || !(roomID >= 1 && roomID <= 99))
             {
                 validForm = false;
+                Console.WriteLine("validator 5");
             }
-            else if (year == null || !(year <= 2023 && year >= 2024))
+            else if (year == null || !(year >= 2023 && year <= 2024))
             {
                 validForm = false;
+                Console.WriteLine("validator 6");
             }
             else if (profID == null || !(profID.Contains("FCC")))
             {
                 validForm = false;
+                Console.WriteLine("validator 7");
             }
-
+            Console.WriteLine("1");
             //sanity check
             bool sanityCheck = true;
             if (validForm)
             {
+                Console.WriteLine("2");
                 var queryClass = mongo.LoadRecord<Classes>("classes");
                 var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
-
+                Console.WriteLine("3");
                 int profTaughtCounter = 0;
                 foreach (var x in queryClass)
                 {
@@ -164,21 +170,24 @@
                         sanityCheck = false;
                         break;
                     }
-
+                    Console.WriteLine("4");
 
                 }
 
                 if (sanityCheck)
                 {
+                    Console.WriteLine("5");
                     foreach (var x in queryClass)
                     {
                         if (x.Period == period && x.StartDate == startDate && x.BuildingID == buildingID && x.RoomID == roomID && x.Day == day)
                         {
                             sanityCheck = false;
                             break;
+                            Console.WriteLine("6");
                         }
 
                     }
+                    Console.WriteLine("7");
                 }
 
             }
@@ -186,35 +195,48 @@
             //write to database
             if (validForm && sanityCheck)
             {
-                var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
-                var queryTimeWindowTimeData = mongo.GetTimeData(semester, year, period);
+                Console.WriteLine("inside1");
+                var queryCourseID = mongo.LoadRecordByInt<Course>("course", "CourseID", courseID);
+                Console.WriteLine("inside2");
+                var queryTimeWindowTimeData = mongo.GetTimeData(semester, period);
+                Console.WriteLine("inside3");
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", profID);
-
+                Console.WriteLine("inside4");
                 Classes toWrite = new Classes();
 
                 //from form
+                Console.WriteLine("inside5");
                 toWrite.CourseID = courseID;
                 toWrite.BuildingID = buildingID;
                 toWrite.MaxCapacity = maxCapacity;
                 toWrite.RoomID = roomID;
                 toWrite.Day = day;
-
+                Console.WriteLine("inside6");
                 //from course
                 toWrite.CourseName = queryCourseID.CourseName;
                 toWrite.Credits = queryCourseID.Credits;
                 toWrite.Department = queryCourseID.Department;
                 toWrite.Description = queryCourseID.Description;
+                Console.WriteLine("inside7");
 
-                foreach (var x in queryCourseID.Prerequiste)
+                /*
+                if (queryCourseID.Prerequiste.Count >= 1)
                 {
-                    toWrite.Prerequiste.Add(x.Prereq);
+                    Console.WriteLine("inside72");
+                    foreach (var x in queryCourseID.Prerequiste)
+                    {
+                        toWrite.Prerequiste.Add(x.Prereq);
+                        Console.WriteLine("inside8");
+                    }
                 }
+                Console.WriteLine("inside9");
 
                 foreach (var x in queryCourseID.Prerequiste)
                 {
                     toWrite.MinimumRequirement.Add(x.MinimumRequirements);
+                    Console.WriteLine("inside9");
                 }
-
+                */
                 if (queryCourseID.SectionCounter <= 9)
                 {
                     toWrite.Section = $"000{queryCourseID.SectionCounter}";
@@ -247,11 +269,7 @@
             {
                 snackbar.Add("Class section was not added successfully", Severity.Error);
             }
-        }
-        catch
-        {
-            snackbar.Add("Class section was not added successfully", Severity.Error);
-        }
+
 
        
     }

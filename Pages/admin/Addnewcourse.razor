@@ -23,70 +23,119 @@
 <MudTextField @bind-Value="description" Label="description" Variant="Variant.Outlined" id="textFieldColor" Lines="4"></MudTextField>
 
 <MudText Align="Align.Center">leave any of these prereqs blank to not assign a prerequiste</MudText>
-
-<MudTextField @bind-Value="prerequisite1" Label="prereq 1" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField> 
+<br />
+<MudGrid>
+<MudTextField @bind-Value="prerequisite1" Label="prereq 1" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+    <p>-----</p>
 <MudSelect @bind-Value="gradeReq1" Label="grade prereq 1" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite2" Label="prereq 2" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq2" Label="grade prereq 2" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite3" Label="prereq 3" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq3" Label="grade prereq 3" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite4" Label="prereq 4" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq4" Label="grade prereq 4" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite5" Label="prereq 5" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq5" Label="grade prereq 5" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite6" Label="prereq 6" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq6" Label="grade prereq 6" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite7" Label="prereq 7" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq7" Label="grade prereq 7" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
 
+
+<br />
+<br />
+
+<MudGrid>
 <MudTextField @bind-Value="prerequisite8" Label="prereq 8" Variant="Variant.Outlined" id="textFieldColor" ></MudTextField>
+<p>-----</p>
 <MudSelect @bind-Value="gradeReq8" Label="grade prereq 8" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in grades)
     {
         <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
     }
 </MudSelect>
+</MudGrid>
+
+<br />
 
 <MudSelect @bind-Value="type" Label="Grad or Undergrad" Variant="Variant.Outlined" id="textFieldColor" >
     @foreach (var x in gradType)
@@ -165,36 +214,42 @@
 
     private void submitForm()
     {
-        try
+        //try
         {
             bool validForm = true;
             var queryClasses = mongo.LoadRecord<Classes>("classes");
-            var queryCourseID = mongo.LoadRecordByString<Course>("course", "CourseID", courseID.ToString());
 
+            Console.WriteLine("sanity");
             //form validation
             if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
             {
                 validForm = false;
+                Console.WriteLine("sanity1");
             }
             else if (courseName == null || courseName == "")
             {
                 validForm = false;
+                Console.WriteLine("sanity2");
             }
             else if (credits == null || !(credits >= 1 && credits <= 4))
             {
                 validForm = false;
+                Console.WriteLine("sanity3");
             }
             else if (department == null || department == "")
             {
                 validForm = false;
+                Console.WriteLine("sanity4");
             }
-            else if (description == null || !(description == ""))
+            else if (description == null || description == "")
             {
                 validForm = false;
+                Console.WriteLine(description);
             }
             else if (type == null || type == "")
             {
                 validForm = false;
+                Console.WriteLine("sanity6");
             }
 
 
@@ -202,6 +257,7 @@
             bool sanityCheck = true;
             if (validForm)
             {
+                Console.WriteLine("sanity");
                 var queryCourse = mongo.LoadRecord<Course>("course");
 
                 foreach (var x in queryCourse)
@@ -216,6 +272,7 @@
 
             if (validForm && sanityCheck)
             {
+                Console.WriteLine("inside");
                 Course toWrite = new Course();
                 List<Prerequiste> prereq = new List<Prerequiste> { };
 
@@ -224,91 +281,123 @@
                 toWrite.Credits = credits;
                 toWrite.Department = department;
                 toWrite.Description = description;
+                Console.WriteLine("inside1");
 
-                if (prerequisite1 != null && prerequisite1 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
+                Prerequiste nullObject = new Prerequiste();
 
-                    prereqToAdd.Prereq = prerequisite1;
-                    prereqToAdd.MinimumRequirements = gradeReq1;
 
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
 
-                if (prerequisite2 != null && prerequisite2 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite2;
-                    prereqToAdd.MinimumRequirements = gradeReq2;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite3 != null && prerequisite3 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite3;
-                    prereqToAdd.MinimumRequirements = gradeReq3;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite4 != null && prerequisite4 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite4;
-                    prereqToAdd.MinimumRequirements = gradeReq4;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite5 != null && prerequisite5 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite5;
-                    prereqToAdd.MinimumRequirements = gradeReq5;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite6 != null && prerequisite6 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite6;
-                    prereqToAdd.MinimumRequirements = gradeReq6;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite7 != null && prerequisite7 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite7;
-                    prereqToAdd.MinimumRequirements = gradeReq7;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
-
-                if (prerequisite8 != null && prerequisite8 != "")
-                {
-                    Prerequiste prereqToAdd = new Prerequiste();
-
-                    prereqToAdd.Prereq = prerequisite8;
-                    prereqToAdd.MinimumRequirements = gradeReq8;
-
-                    toWrite.Prerequiste.Add(prereqToAdd);
-                }
+                Console.WriteLine("inside2");
 
                 toWrite.SectionCounter = 0;
                 toWrite.Type = type;
                 toWrite.CourseID = courseID;
 
+                Console.WriteLine("inside3");
+                int prereqcounter = 0;
+                if (prerequisite1 != "" || prerequisite1 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                    Console.WriteLine("prereq1");
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite2 != "" || prerequisite2 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                    Console.WriteLine("prereq2");
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite3 != "" || prerequisite3 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite4 != "" || prerequisite4 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite5 != "" || prerequisite5 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite6 != "" || prerequisite6 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite7 != "" || prerequisite7 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if (prerequisite8 != "" || prerequisite8 != null)
+                {
+                    Prerequiste prereqToWrite = new Prerequiste();
+                    prereqToWrite.MinimumRequirements = prerequisite1;
+                    prereqToWrite.Prereq = gradeReq1;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                for (int i = 0; i < prereqcounter; i++)
+                {
+                    toWrite.Prerequiste.Add(nullObject);
+                }
 
                 mongo.InsertRecord<Course>("course", toWrite);
 
@@ -318,10 +407,6 @@
             {
                 snackbar.Add("Course was not added successfully", Severity.Error);
             }
-        }
-        catch
-        {
-            snackbar.Add("Course was not added successfully", Severity.Error);
         }
     }
 }

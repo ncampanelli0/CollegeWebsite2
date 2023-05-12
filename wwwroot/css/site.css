@@ -18,9 +18,50 @@ font-weight: 100;
     color: #637cf7;
 }
 
+#pickerYears {
+    background-color: black; !important
+}
+
+.mud-picker-calendar-header {
+    background-color: rgb(7, 126, 190) !important;
+}
+
+.mud-picker-calendar {
+    background-color: rgb(7, 126, 190);
+}
+
+.mud-paper {
+    background-color: rgb(7, 126, 190) !important;
+}
+
+.mud-input
+{
+    color: white !important;
+}
+
+.mud-button-text.mud-button-text-primary
+{
+    color: white !important;
+}
+
+.mud-button-root mud-icon-button mud-ripple mud-ripple-icon mud-picker-calendar-day mud-day {
+    color: white !important;
+}
+
+.mud-picker-month mud-button-root {
+    background-color: rgb(7, 126, 190) !important;
+    color: black !important;
+}
+
+
+h5, h6 {
+    background-color: rgb(7, 126, 190) !important;
+    color: black !important;
+}
+
 .panels {
     color: white;
-    background-color: rgb(7, 126, 190) 
+    background-color: rgb(7, 126, 190);
 }
 
 label
@@ -30,7 +71,10 @@ label
 }
 
 
+.collegelogo
+{
 
+}
 
 .selectFieldColor 
 {
@@ -343,7 +387,7 @@ kbd
     position: relative;
 }
 
-.content h6 
+.content kbd
 {
     color: #fff;
     font-size: 6em;
@@ -351,13 +395,13 @@ kbd
     transform: translate(-50%, -50%);
 }
 
-        .content h6:nth-child(1) 
+        .content kbd:nth-child(1) 
         {
             color: transparent;
             -webkit-text-stroke: 3px #ffffff;
         }
 
-        .content h6:nth-child(2) 
+        .content kbd:nth-child(2) 
         {
             color: #08b3e7;
             animation: animate 4s ease-in-out infinite;

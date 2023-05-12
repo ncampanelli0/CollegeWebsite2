@@ -1,8 +1,8 @@
 ﻿@page "/developer/writemissedattendance"
 
-<button @onclick = "writeMissedAttendance">write missed attendance</button>
-<button @onclick="fixMajors">fix majors</button>
-
+<MudButton @onclick = "writeMissedAttendance">write missed attendance</MudButton>
+<MudButton @onclick="fixMajors">fix majors</MudButton>
+<MudButton @onclick="setNullMinorsToNone">set null minors to None for students</MudButton>
 
 @code
 {
@@ -54,6 +54,24 @@
             }
         }
 
+        Console.WriteLine("table updated");
+    }
+
+    private void setNullMinorsToNone()
+    {
+        var queryUsers = mongo.LoadRecord<AllUser>("allUser");
+
+        Console.WriteLine("running setNullMinorsToNone");
+
+        foreach (var x in queryUsers)
+        {
+            if ((x.AccountType == "Graduate" || x.AccountType == "Undergraduate") && x.Minor == null)
+            {
+                x.Minor = "None";
+
+                mongo.UpsertRecord<AllUser>("allUser", x.Id, x);
+            }
+        }
         Console.WriteLine("table updated");
     }
 

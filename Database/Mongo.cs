@@ -232,11 +232,11 @@ public class Mongo
         return sortedList;
     }
 
-    public TimeWindow GetTimeData(string semester, int year, string period)
+    public TimeWindow GetTimeData(string semester, string period)
     {
         var result = db.GetCollection<TimeWindow>("timeWindow");
 
-        var filter = Builders<TimeWindow>.Filter.Eq(x => x.StartDate.Year, year) & Builders<TimeWindow>.Filter.Eq(x => x.Semester, semester) & Builders<TimeWindow>.Filter.Eq(x => x.Period, period);
+        var filter = Builders<TimeWindow>.Filter.Eq(x => x.Semester, semester) & Builders<TimeWindow>.Filter.Eq(x => x.Period, period);
 
         return result.Find(filter).FirstOrDefault();
     }
