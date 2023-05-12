@@ -364,6 +364,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxEZWdyZWVhdWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/degreeaudit2/DegreeAudit2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlQXVkaXQyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/degreeaudit2/Degreeaudit22.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlYXVkaXQyMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Dropclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxEcm9wY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

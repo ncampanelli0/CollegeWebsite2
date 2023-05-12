@@ -1,0 +1,39 @@
+﻿@page "/undergraduate/degreeaudit2"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>degree audit 2</h2>
+
+@code
+{
+    private static string majorCheck { get; set; }
+    private static string minorCheck { get; set; }
+    private static string firstNameCheck { get; set; }
+    private static string lastNameCheck { get; set; }
+    private static string userIDCheck { get; set; }
+    private static string majorCheckString { get; set; }
+    private static string minorCheckString { get; set; }
+    private static string firstNameCheckString { get; set; }
+    private static string lastNameCheckString { get; set; }
+    private static string userIDCheckString { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+        var majorCheckRaw = await storage.GetAsync<string>("major");
+        var minorCheckRaw = await storage.GetAsync<string>("minor");
+        var firstNameCheckRaw = await storage.GetAsync<string>("firstName");
+        var lastNameCheckRaw = await storage.GetAsync<string>("lastName");
+        var userIDCheckRaw = await storage.GetAsync<string>("userID");
+        majorCheckString = majorCheckRaw.Value;
+        minorCheckString = minorCheckRaw.Value;
+        //firstNameCheckString = firstNameCheckRaw.Value;
+        //lastNameCheckString = lastNameCheckRaw.Value;
+        userIDCheckString = userIDCheckRaw.Value;
+        await Task.Delay(5000);
+        navigate.NavigateTo($"/undergraduate/degreeaudit22?major={majorCheckString}&minor={minorCheckString}&userID={userIDCheckString}");
+    }
+}

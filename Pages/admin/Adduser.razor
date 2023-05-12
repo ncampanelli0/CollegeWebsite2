@@ -18,41 +18,41 @@
 
 <MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
 
-<MudSelect @bind-Value="department" T="string" Label="Department" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="department" T="string" Label="Department" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departments)
     {
-        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
 
-
+<MudTextField @bind-Value="email" Label="Email" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
 <MudTextField @bind-Value="firstName" Label="First Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 <MudTextField @bind-Value="lastName" Label="Last Name" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 
 
-<MudSelect @bind-Value="major" T="string" Label="Major" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="major" T="string" Label="Major" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in majors)
     {
         <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
-<MudSelect @bind-Value="minor" T="string" Label="Minors" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="minor" T="string" Label="Minors" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in minors)
     {
         <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
     }
 </MudSelect>
 
-<MudSelect @bind-Value="partOrFullTime" T="string" Label="Part or Full Time" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="partOrFullTime" T="string" Label="Part or Full Time" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in partOrFullTimeChoices)
     {
-        <MudSelectItem Style="@theme.selectFieldColor"  Value="@x"></MudSelectItem Style="@theme.selectFieldColor" >
+        <MudSelectItem Style="@theme.selectFieldColor" id="textFieldColor" Value="@x"></MudSelectItem">
     }
 </MudSelect>
 
-<MudTextField @bind-Value="phoneNumber" InputType="InputType.Telephone" Label="Phone Number" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
+<MudTextField @bind-Value="phoneNumber" InputType="InputType.Telephone" Label="Phone Number" id="textFieldColor" Mask="@(new PatternMask("000-000-0000"))" MaxLength="10"></MudTextField>
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
@@ -75,6 +75,7 @@
     private static string advisor { get; set; }
     private static DateTime birthday { get; set; }
     private static string department { get; set; }
+    private static string email{ get; set; }
     private static string firstName { get; set; }
     private static string lastName { get; set; }
     private static string major { get; set; }
@@ -135,46 +136,57 @@
             if (accountType == null || accountType == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
             else if (address == null || address == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
             else if (advisor == null || advisor == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
             else if (birthday == null)
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
-            else if (department == null || department == "")
+            else if ((department == null || department == "") && (accountType == "Undergraduate" || accountType == "Graduate"))
             {
                 validForm = false;
+                Console.WriteLine("1");
+            }
+            else if (email == null || email == "")
+            {
+                validForm = false;
+                Console.WriteLine("1");
             }
             else if (firstName == null || firstName == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
             else if (lastName == null || lastName == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
-            else if (major == null || major == "")
+            else if (major == null || major == "" && (accountType == "Admin" || accountType == "Faculty"))
             {
                 validForm = false;
-            }
-            else if (minor == null || minor == "")
-            {
-                validForm = false;
+                Console.WriteLine("1");
             }
             else if (partOrFullTime == null || partOrFullTime == "")
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
-            else if (phoneNumber == null || !(phoneNumber.ToString().Length == 10))
+            else if (phoneNumber == null || !(phoneNumber.ToString().Length == 12))
             {
                 validForm = false;
+                Console.WriteLine("1");
             }
 
             //sanity check
@@ -183,35 +195,20 @@
             string generatedUserID = "";
             if (validForm)
             {
+                Console.WriteLine("validform");
                 var queryAllUser = mongo.LoadRecord<AllUser>("allUser");
-
-                //i think this while foreach loop is right -Nick
-
-                bool emailCheckBool = true;
-                bool foreachLoop = true;
-                int emailCheckNumber = 0;
-                while (emailCheckBool)
-                {
-                    foreach (var x in queryAllUser)
-                    {
-                        foreachLoop = false;
-                        if (x.Email == checkEmail)
-                        {
-                            emailCheckNumber++;
-                            checkEmail = $"{firstName[0]}{lastName}{emailCheckNumber}@clearwater.edu";
-                            emailCheckBool = false;
-                            break;
-
-                        }
-
-                    }
-                }
 
                 foreach (var x in queryAllUser)
                 {
                     if (x.PhoneNumber == phoneNumber)
                     {
                         sanityCheck = false;
+                        Console.WriteLine("2");
+                    }
+                    else if (x.Email == email)
+                    {
+                        sanityCheck = false;
+                        Console.WriteLine("2");
                     }
                 }
 
@@ -230,7 +227,7 @@
                 {
                     userIDIdentifier = "SCC";
                 }
-
+                Console.WriteLine("3");
 
                 //i think this section is right -Nick
                 bool userIDCheck = true;
@@ -244,10 +241,14 @@
                         {
                             userIDCheck = false;
                             break;
+                            Console.WriteLine("4");
                         }
+
                     }
+                    Console.WriteLine("5");
                     userIDValue++;
                     generatedUserID = $"{userIDIdentifier}{userIDValue}";
+                    Console.WriteLine("6");
                 }
 
 
@@ -255,24 +256,49 @@
 
             if (validForm && sanityCheck)
             {
-                AllUser toWrite = new AllUser();
+                Console.WriteLine("7");
 
-                toWrite.AccountType = accountType;
-                toWrite.Address = address;
-                toWrite.Advisor = advisor;
-                toWrite.Birthday = birthday;
-                toWrite.Department = department;
-                toWrite.FirstName = firstName;
-                toWrite.LastName = lastName;
-                toWrite.Major = major;
-                toWrite.Minor = minor;
-                toWrite.PartOrFullTime = partOrFullTime;
-                toWrite.PhoneNumber = phoneNumber;
-                toWrite.Email = checkEmail;
-                toWrite.UserID = generatedUserID;
+                if (accountType == "Undergraduate" || accountType == "Graduate")
+                {
+                    AllUser toWrite = new AllUser();
 
-                mongo.InsertRecord<AllUser>("allUser", toWrite);
-                snackbar.Add("User added successfully", Severity.Success);
+                    toWrite.AccountType = accountType;
+                    toWrite.Address = address;
+                    toWrite.Advisor = advisor;
+                    toWrite.Birthday = birthday;
+                    toWrite.Department = department;
+                    toWrite.Email = email;
+                    toWrite.FirstName = firstName;
+                    toWrite.LastName = lastName;
+                    toWrite.Major = major;
+                    toWrite.Minor = minor;
+                    toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.PhoneNumber = phoneNumber;
+                    toWrite.UserID = generatedUserID;
+
+                    mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    snackbar.Add("User added successfully", Severity.Success);
+                }
+                else if (accountType == "Faculty")
+                {
+                    AllUser toWrite = new AllUser();
+
+                    toWrite.AccountType = accountType;
+                    toWrite.Address = address;
+                    toWrite.Advisor = advisor;
+                    toWrite.Birthday = birthday;
+                    toWrite.Department = department;
+                    toWrite.Email = email;
+                    toWrite.FirstName = firstName;
+                    toWrite.LastName = lastName;
+                    toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.PhoneNumber = phoneNumber;
+                    toWrite.UserID = generatedUserID;
+
+                    mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    snackbar.Add("User added successfully", Severity.Success);
+                }
+
 
             }
             else

@@ -1,5 +1,4 @@
-﻿@page "/undergraduate/degreeaudit"
-@inject ProtectedLocalStorage storage
+﻿@inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
@@ -14,17 +13,6 @@
     </Columns>
     <PagerContent>
         <MudDataGridPager T="DegreeAuditMajor" Class="tableFooter" />
-    </PagerContent>
-</MudDataGrid>
-
-<MudDataGrid Items="@toWriteMinorTable" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
-    <Columns>
-    <PropertyColumn Title="Minor" Property="x => x.minor" />
-    <PropertyColumn Title="Minor Requirements" Property="x => x.minorRequirement" />
-    <PropertyColumn Title="Grade Requirements" Property="x => x.minorGrade" />
-    </Columns>
-    <PagerContent>
-        <MudDataGridPager T="DegreeAuditMinor" Class="tableFooter" />
     </PagerContent>
 </MudDataGrid>
 
@@ -73,45 +61,45 @@
         firstNameCheckString = firstNameCheckRaw.Value;
         lastNameCheckString = lastNameCheckRaw.Value;
         userIDCheckString = userIDCheckRaw.Value;
-        //string majorCheckStringified = ;
     }
 
     protected override void OnAfterRender(bool firstRender)
     {
         if (firstRender)
         {
-            var queryMajors = mongo.LoadRecordByString<Majors>("majors", "Majors", majorCheckString);
-            var queryMinors = mongo.LoadRecordByString<Minors>("minors", "Minors", minorCheckString);
+            var queryMajors = mongo.LoadRecordByString<Majors>("majors", "Major", majorCheckString);
+            var queryMinors = mongo.LoadRecordByString<Minors>("minors", "Minor", minorCheckString);
 
-            DegreeAuditMajor toWriteMajor = new DegreeAuditMajor();
-            DegreeAuditMinor toWriteMinor = new DegreeAuditMinor();
-            Console.WriteLine($"y");
+            
+            
+            Console.WriteLine($"a");
             for (int i = 0; i < queryMajors.GradeRequirements.Length; i++)
             {
+                DegreeAuditMajor toWriteMajor = new DegreeAuditMajor();
                 toWriteMajor.major = queryMajors.Major;
                 toWriteMajor.majorGrade = queryMajors.MajorRequirements[i];
                 toWriteMajor.majorRequirement = queryMajors.GradeRequirements[i];
 
                 toWriteMajorTable.Add(toWriteMajor);
-                Console.WriteLine("x");
             }
 
             for (int i = 0; i < queryMinors.GradeRequirements.Length; i++)
             {
+                DegreeAuditMinor toWriteMinor = new DegreeAuditMinor();
                 toWriteMinor.minor = queryMinors.Minor;
-                toWriteMinor.minorGrade = queryMajors.MinorRequirements[i];
+                toWriteMinor.minorGrade = queryMinors.MinorRequirements[i];
                 toWriteMinor.minorRequirement = queryMinors.GradeRequirements[i];
 
                 toWriteMinorTable.Add(toWriteMinor);
-                Console.WriteLine("x");
+                //Console.WriteLine($"{toWriteMinorTable[i].minorRequirement}");
             }
 
         }
-        
+
     }
 
 
-    
+
 
 
 
