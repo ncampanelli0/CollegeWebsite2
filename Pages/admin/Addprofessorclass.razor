@@ -63,7 +63,15 @@
                 {
                     sanityCheck = false;
                 }
+
+                if (queryClass.StartDate.ToLocalTime() < DateTime.Now.ToLocalTime())
+                {
+                    sanityCheck = false;
+                }
             }
+
+            
+
 
             if (validForm && sanityCheck)
             {

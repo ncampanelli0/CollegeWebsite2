@@ -54,12 +54,6 @@ namespace CollegeWebsite2.Database
         [BsonElement("Department")]
         public string? Department { get; set; } = null;
 
-        [BsonElement("Transcript")]
-        public List<Transcript> Transcript { get; set; }
-
-        [BsonElement("Schedule")]
-        public List<Schedule> Schedule { get; set; }
-
         [BsonElement("UserID")]
         public string UserID { get; set; }
     }

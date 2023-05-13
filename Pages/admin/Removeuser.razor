@@ -54,13 +54,16 @@
 
             if (validForm && sanityCheck)
             {
+                snackbar.Add("Processing, this may take a while, please wait", Severity.Info);
                 var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
                 var queryClasses = mongo.LoadRecord<Classes>("classes");
 
                 foreach (var x in queryClasses)
                 {
+                    snackbar.Add("Processing, this may take a while, please wait", Severity.Info);
                     foreach (var y in x.Enrolled)
                     {
+                        
                         if (y.UserID == userID)
                         {
                             y.UserID = "Removed User";

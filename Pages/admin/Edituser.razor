@@ -14,7 +14,7 @@
 
 <MudTextField @bind-Value="address" Label="Address" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 <MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
-<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
+<MudDatePicker @bind-Date="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
 
 <MudSelect @bind-Value="department" T="string" Label="Department" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departmentChoices)
@@ -56,7 +56,7 @@
     private static string accountType { get; set; }
     private static string address { get; set; }
     private static string advisor { get; set; }
-    private static DateTime birthday { get; set; }
+    private static DateTime? birthday { get; set; }
     private static string department { get; set; }
     private static string email { get; set; }
     private static string firstName { get; set; }
@@ -146,7 +146,7 @@
 
                 if (birthday != null)
                 {
-                    queryAllUserID.Birthday = birthday;
+                    queryAllUserID.Birthday = (DateTime) birthday;
                 }
 
                 if (department != null && department != "")

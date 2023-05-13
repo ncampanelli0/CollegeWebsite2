@@ -454,7 +454,7 @@
                                 StartDate = x.StartDate,
                                 StudentData = studentData
                             };
-                    queryUser.Transcript.Add(transcriptToAdd);
+                    //queryUser.Transcript.Add(transcriptToAdd);
                     mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
                 }
             }
@@ -474,7 +474,7 @@
                             StartDate = x.StartDate,
                         };
 
-                queryUser.Schedule.Add(ScheduleToAdd);
+                //queryUser.Schedule.Add(ScheduleToAdd);
 
                 mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
             }

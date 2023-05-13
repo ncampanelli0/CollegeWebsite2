@@ -16,7 +16,7 @@
 
 <MudTextField @bind-Value="advisor" Label="Advisor ID" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudTextField>
 
-<MudDatePicker @bind-Value="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
+<MudDatePicker @bind-Date="birthday" Label="Birthday" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor"></MudDatePicker>
 
 <MudSelect @bind-Value="department" T="string" Label="Department" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in departments)
@@ -73,7 +73,7 @@
     private static string accountType { get; set; }
     private static string address { get; set; }
     private static string advisor { get; set; }
-    private static DateTime birthday { get; set; }
+    private static DateTime? birthday { get; set; }
     private static string department { get; set; }
     private static string email{ get; set; }
     private static string firstName { get; set; }
@@ -128,7 +128,7 @@
 
     private void submitForm()
     {
-        try
+        //try
         {
             bool validForm = true;
 
@@ -188,6 +188,10 @@
                 validForm = false;
                 Console.WriteLine("1");
             }
+            else if (birthday == null)
+            {
+                validForm = false;
+            }
 
             //sanity check
             bool sanityCheck = true;
@@ -211,6 +215,13 @@
                         Console.WriteLine("2");
                     }
                 }
+
+                int age = DateTime.Today.Year - birthday.Value.Year;
+                if (age < 18)
+                {
+                    sanityCheck = false;
+                }
+
 
                 int userIDValue = 10000;
                 string userIDIdentifier = "";
@@ -248,7 +259,7 @@
                     Console.WriteLine("5");
                     userIDValue++;
                     generatedUserID = $"{userIDIdentifier}10{userIDValue}";
-                    
+
                     Console.WriteLine("6");
                 }
 
@@ -258,15 +269,15 @@
             if (validForm && sanityCheck)
             {
                 Console.WriteLine("7");
-
+                var queryAdvisor = mongo.LoadRecordByString<Advisor>("advisor", "UserID", advisor);
                 if (accountType == "Undergraduate" || accountType == "Graduate")
                 {
-                    AllUser toWrite = new AllUser();
 
+                    AllUser toWrite = new AllUser();
                     toWrite.AccountType = accountType;
                     toWrite.Address = address;
-                    toWrite.Advisor = advisor;
-                    toWrite.Birthday = birthday;
+                    toWrite.Advisor = $"{queryAdvisor.FirstName} {queryAdvisor.LastName}";
+                    toWrite.Birthday = (DateTime) birthday;
                     toWrite.Department = department;
                     toWrite.Email = email;
                     toWrite.FirstName = firstName;
@@ -275,6 +286,7 @@
                     toWrite.Major = major;
                     toWrite.Minor = minor;
                     toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.Password = genPassword();
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
@@ -287,14 +299,15 @@
 
                     toWrite.AccountType = accountType;
                     toWrite.Address = address;
-                    toWrite.Advisor = advisor;
-                    toWrite.Birthday = birthday;
+                    toWrite.Advisor = null;
+                    toWrite.Birthday = (DateTime) birthday;
                     toWrite.Department = department;
                     toWrite.Email = email;
                     toWrite.FirstName = firstName;
-                    
+
                     toWrite.LastName = lastName;
                     toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.Password = genPassword();
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
@@ -307,8 +320,8 @@
 
                     toWrite.AccountType = accountType;
                     toWrite.Address = address;
-                    toWrite.Advisor = advisor;
-                    toWrite.Birthday = birthday;
+                    toWrite.Advisor = null;
+                    toWrite.Birthday = (DateTime) birthday;
                     toWrite.Department = department;
                     toWrite.Email = email;
                     toWrite.FirstName = firstName;
@@ -316,6 +329,7 @@
                     toWrite.Major = major;
                     toWrite.Minor = minor;
                     toWrite.PartOrFullTime = partOrFullTime;
+                    toWrite.Password = genPassword();
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
@@ -330,9 +344,22 @@
                 snackbar.Add("User was not added successfully", Severity.Error);
             }
         }
-        catch
+        
+    }
+
+    private string genPassword()
+    {
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        string stringChars = "";
+        var random = new Random();
+
+        for (int i = 0; i < 8; i++)
         {
-            snackbar.Add("User was not added successfully", Severity.Error);
+            stringChars += (chars[random.Next(chars.Length)]);
+
+            Console.WriteLine(stringChars);
         }
+
+        return stringChars.ToString();
     }
 }

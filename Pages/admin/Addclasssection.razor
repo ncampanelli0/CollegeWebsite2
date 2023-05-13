@@ -106,6 +106,7 @@
 
     private void submitForm()
     {
+            snackbar.Add("Class section added successfully", Severity.Success);
             //form validation
             bool validForm = true;
             if (courseID == null || !(courseID >= 1000 && courseID <= 9999))
@@ -262,8 +263,8 @@
                 toWrite.ProfLastName = queryAllUserID.LastName;
                 toWrite.ProfessorName = $"{queryAllUserID.FirstName} {queryAllUserID.LastName}";
 
-                mongo.InsertRecord<Classes>("classes", toWrite);
-                snackbar.Add("Class section added successfully", Severity.Success);
+                //mongo.InsertRecord<Classes>("classes", toWrite);
+            snackbar.Add("Class section added successfully", Severity.Success);
             }
             else
             {

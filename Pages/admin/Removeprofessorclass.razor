@@ -56,7 +56,7 @@
 
                 //this if statement might need to be reworked, i'm not exactly sure
                 //how dates work in terms of compairison operator -Nick
-                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+                if (queryClassID.StartDate.ToLocalTime() < DateTime.Today.ToLocalTime())
                 {
                     sanityCheck = false;
                 }
@@ -72,6 +72,7 @@
                 queryClassesID.ProfLastName = "none";
 
                 mongo.UpsertRecord<Classes>("classes", queryClassesID.Id, queryClassesID);
+                snackbar.Add("Professor was removed successfully", Severity.Success);
             }
             else
             {
