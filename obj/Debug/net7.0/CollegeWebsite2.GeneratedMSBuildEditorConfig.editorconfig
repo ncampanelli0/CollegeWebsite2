@@ -304,6 +304,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxDb3Vyc2VJRFZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Fixclassstructure.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxGaXhjbGFzc3N0cnVjdHVyZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Logintest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxMb2dpbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

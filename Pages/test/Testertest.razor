@@ -102,8 +102,8 @@
 
             for (int i = 0; i < nullList.Count; i++)
             {
-                x.Prerequiste.Add("none");
-                x.MinimumRequirement.Add("none");
+                //x.Prerequiste.Add("none");
+                //x.MinimumRequirement.Add("none");
             }
             
             mongo.UpsertRecord<Classes>("classes", x.Id, x);
