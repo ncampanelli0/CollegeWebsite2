@@ -60,6 +60,7 @@
 {
     Mongo mongo = new Mongo("college-site-2");
     Theme theme = new Theme();
+    Mailtrap mail = new Mailtrap();
 
     private List<string> departments = new List<string> { };
     private List<string> advisors = new List<string> { };
@@ -128,7 +129,7 @@
 
     private void submitForm()
     {
-        //try
+        try
         {
             bool validForm = true;
 
@@ -270,6 +271,7 @@
             {
                 Console.WriteLine("7");
                 var queryAdvisor = mongo.LoadRecordByString<Advisor>("advisor", "UserID", advisor);
+                string genedPass = genPassword();
                 if (accountType == "Undergraduate" || accountType == "Graduate")
                 {
 
@@ -286,11 +288,12 @@
                     toWrite.Major = major;
                     toWrite.Minor = minor;
                     toWrite.PartOrFullTime = partOrFullTime;
-                    toWrite.Password = genPassword();
+                    toWrite.Password = genedPass;
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
                     mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    mail.sendMail("Admin@clearwater.edu", email, "New Account Created", $"your account has been created use the following to login: {email} {genedPass}");
                     snackbar.Add("User added successfully", Severity.Success);
                 }
                 else if (accountType == "Faculty")
@@ -307,12 +310,15 @@
 
                     toWrite.LastName = lastName;
                     toWrite.PartOrFullTime = partOrFullTime;
-                    toWrite.Password = genPassword();
+                    toWrite.Password = genedPass;
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
                     mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    mail.sendMail("Admin@clearwater.edu", email, "New Account Created", $"your account has been created use the following to login: {email} {genedPass}");
                     snackbar.Add("User added successfully", Severity.Success);
+
+
                 }
                 else if (accountType == "Admin")
                 {
@@ -329,11 +335,12 @@
                     toWrite.Major = major;
                     toWrite.Minor = minor;
                     toWrite.PartOrFullTime = partOrFullTime;
-                    toWrite.Password = genPassword();
+                    toWrite.Password = genedPass;
                     toWrite.PhoneNumber = phoneNumber;
                     toWrite.UserID = generatedUserID;
 
                     mongo.InsertRecord<AllUser>("allUser", toWrite);
+                    mail.sendMail("Admin@clearwater.edu", email, "New Account Created", $"your account has been created use the following to login: {email} {genedPass}");
                     snackbar.Add("User added successfully", Severity.Success);
                 }
 
@@ -344,7 +351,11 @@
                 snackbar.Add("User was not added successfully", Severity.Error);
             }
         }
-        
+        catch
+        {
+            snackbar.Add("User was not added successfully", Severity.Error);
+        }
+
     }
 
     private string genPassword()

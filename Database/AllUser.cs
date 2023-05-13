@@ -59,73 +59,7 @@ namespace CollegeWebsite2.Database
     }
 
 
-    public class Transcript
-    {
-        [BsonElement("CourseName")]
-        public string CourseName { get; set; }
-
-        [BsonElement("Credits")]
-        public int Credits { get; set; }
-
-        [BsonElement("CRN")]
-        public int CRN { get; set; }
-
-        [BsonElement("Semester")]
-        public string Semester { get; set; }
-
-        [BsonElement("Building")]
-        public int Building { get; set; }
-
-        [BsonElement("RoomID")]
-        public int RoomID { get; set; }
-
-        [BsonElement("StartDate")]
-        public DateTime StartDate { get; set; }
-
-        [BsonElement("EndDate")]
-        public DateTime EndDate { get; set; }
-
-        [BsonElement("CourseID")]
-        public int CourseID { get; set; }
-
-        [BsonElement("StudentData")]
-        public StudentData? StudentData { get; set; }
-
-    }
-
-    public class Schedule
-    {
-        [BsonElement("CourseName")]
-        public string CourseName { get; set; }
-
-        [BsonElement("Credits")]
-        public int Credits { get; set; }
-
-        [BsonElement("CRN")]
-        public int CRN { get; set; }
-
-        [BsonElement("Semester")]
-        public string Semester { get; set; }
-
-        [BsonElement("Building")]
-        public int Building { get; set; }
-
-        [BsonElement("RoomID")]
-        public int RoomID { get; set; }
-
-        [BsonElement("StartDate")]
-        public DateTime StartDate { get; set; }
-
-        [BsonElement("EndDate")]
-        public DateTime EndDate { get; set; }
-
-        [BsonElement("CourseID")]
-        public int CourseID { get; set; }
-
-
-        [BsonElement("StudentData")]
-        public StudentData? StudentData { get; set; }
-    }
+    
 
     public class StudentData
     {
