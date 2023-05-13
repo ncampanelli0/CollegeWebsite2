@@ -50,9 +50,6 @@ namespace CollegeWebsite2.Database
         [BsonElement("Department")]
         public String? Department { get; set; } = null;
 
-        [BsonElement("Time ID")]
-        public ObjectId TimeID { get; set; }
-
         [BsonElement("Semester")]
         public string Semester { get; set; }
 

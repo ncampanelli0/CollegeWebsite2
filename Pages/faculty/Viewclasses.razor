@@ -2,6 +2,8 @@
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar Snackbar
+@inject IJSRuntime js
+
 
 <h1>Class</h1>
 <br/><br/>
@@ -9,107 +11,106 @@
  <MudExpansionPanels MultiExpansion="true">
      @foreach (var item in popList)
       {
-        <MudExpansionPanel Text=@item.CourseName>
-           <table>
-            <tr>
-                <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "classinformation" Class = "btncolor">View Class Details</MudButton>
-                </td>
-            </tr>
-            <br/><br/>
         
-            <tr>
-                <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "studentsenrolled" Class = "btncolor">View Students</MudButton>
-                </td>
-            </tr>
+        <MudExpansionPanel Text=@item.CourseName>
+
+            <MudButton Variant="Variant.Outlined" @onclick="@(x => classinformation(counter-1))" Class="btncolor" data-counter="@counter">View Class Details</MudButton>
+
+            
+            <br/><br/>
+
+            <MudButton Variant="Variant.Outlined" @onclick="@(x => studentsenrolled(counter-1))" Class="btncolor" data-counter="@counter">View Students</MudButton>
 
             <br/><br/>
-        
-            <tr>
-                <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "grades" Class = "btncolor">View Grades</MudButton>
-                </td>
-            </tr>
+
+            <MudButton Variant="Variant.Outlined" @onclick="@(x => grades(counter-1))" Class="btncolor" data-counter="@counter">View Grades</MudButton>
 
               <br/><br/>
-        
-            <tr>
-                <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "attendance" Class = "btncolor">View Attendance</MudButton>
-                </td>
-            </tr>
 
 
-           </table>
+            <MudButton Variant="Variant.Outlined" @onclick="(x => attendance(counter-1))" Class="btncolor" data-counter="@counter">View Attendance</MudButton>
           
     </MudExpansionPanel>
-      }
-    
+    counter++;
+    }
    
 </MudExpansionPanels>
 
+
 @code
 {
-      Mongo mongo = new Mongo("college-site-2");
-      //List<Classes> queryClass;
-      private List<popTable2> popList = new List<popTable2> { };
-          popTable2 schedule = new popTable2();
-  
 
-      public class popTable2
+    Mongo mongo = new Mongo("college-site-2");
+    //List<Classes> queryClass;
+    private List<popTable2> popList = new List<popTable2> { };
+    popTable2 schedule = new popTable2();
+
+    private ElementReference element;
+
+    int counter = 0;
+
+    public class popTable2
     {
-      
-        public string CourseName{get; set;}
-       
-        public int  CRN{get; set;}
+        public string CourseName {get; set;}
+        public int CRN {get; set;}
     }
 
 
 
     protected override async Task OnInitializedAsync()
     {
-     
-      var queryClass = mongo.LoadRecord<Classes>("classes");
-      
-    var firstNameCheck = await storage.GetAsync<string>("firstName");
+
+        var queryClass = mongo.LoadRecord<Classes>("classes");
+
+        var firstNameCheck = await storage.GetAsync<string>("firstName");
         Console.WriteLine(firstNameCheck.Value);
         var lastNameCheck = await storage.GetAsync<string>("lastName");
-    Console.WriteLine(lastNameCheck.Value);
-    //var semesterCheck = await storage.GetAsync<string>("semester");
-       
-        foreach(var x in queryClass){
-                  
-            if(x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023){
-              schedule = new popTable2{};
+        Console.WriteLine(lastNameCheck.Value);
+        //var semesterCheck = await storage.GetAsync<string>("semester");
+
+        foreach (var x in queryClass)
+        {
+
+            if (x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023)
+            {
+                schedule = new popTable2 { };
                 schedule.CourseName = x.CourseName;
                 schedule.CRN = x.CRN;
                 popList.Add(schedule);
             }
-                
-        
+
+
         }
+        Console.WriteLine($"{popList.Count}");
     }
 
-     private void studentsenrolled(){
+    private string studentsenrolled(int link)
+    {
 
-        navigate.NavigateTo($"/faculty/enrolledinfo?targetclass={schedule.CRN}");
+        js.InvokeVoidAsync("getAttribute", "data-counter");
+
+        navigate.NavigateTo($"/faculty/enrolledinfo?targetclass={popList[counter].CRN}");
+
+        return "success";
     }
 
 
-    private void classinformation(){
+    private string classinformation(int link)
+    {
 
-        navigate.NavigateTo($"/faculty/classinfo?targetclass={schedule.CRN}");
+        navigate.NavigateTo($"/faculty/classinfo?targetclass={popList[counter].CRN}");
+        return "success";
     }
 
-     private void grades(){
-
-        navigate.NavigateTo($"/faculty/gradesinfo?targetclass={schedule.CRN}");
+     private string grades(int link){
+        navigate.NavigateTo($"/faculty/gradesinfo?targetclass={popList[counter].CRN}");
+        return "success";
     }
     
-    private void attendance(){
-
-        navigate.NavigateTo($"/faculty/attendanceinfo?targetclass={schedule.CRN}");
+    private string attendance(int link){
+        
+        navigate.NavigateTo($"/faculty/attendanceinfo?targetclass={popList[counter].CRN}");
+        return "success";
     }
     
     

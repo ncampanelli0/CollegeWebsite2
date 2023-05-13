@@ -127,8 +127,8 @@
         foreach (var update in query)
         {
             rando = random.Next(0, 48);
-            update.TimeID = (ObjectId)query2[rando].Id;
-            Console.WriteLine($"{update.TimeID}");
+            //update.TimeID = (ObjectId)query2[rando].Id;
+            //Console.WriteLine($"{update.TimeID}");
             mongo.UpsertRecord<Classes>("classes", update.Id, update);
 
         }
@@ -200,8 +200,9 @@
         Console.WriteLine("running moveTimeWindowToClasses()");
         foreach (var classes in queryClasses)
         {
-            var queryTimeWindow = mongo.LoadRecordById<TimeWindow>("timeWindow", classes.TimeID);
+            //var queryTimeWindow = mongo.LoadRecordById<TimeWindow>("timeWindow", classes.TimeID);
 
+            /*
             classes.Semester = queryTimeWindow.Semester;
             classes.Period = queryTimeWindow.Period;
             classes.StartDate = queryTimeWindow.StartDate;
@@ -209,7 +210,7 @@
             classes.GradeLimit = queryTimeWindow.GradeLimit;
             classes.RegistrationLimit = queryTimeWindow.RegistrationLimit;
             classes.WithdrawLimit = queryTimeWindow.WithdrawLimit;
-
+            */
             mongo.UpsertRecord<Classes>("classes", classes.Id, classes);
         }
         Console.WriteLine("done updating table");
