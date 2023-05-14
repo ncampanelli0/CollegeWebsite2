@@ -1,0 +1,34 @@
+﻿@page "/undergraduate/changemajorminor"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Change Major Minor</h2>
+
+@code 
+{
+    string userID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+            var userIDCheck = await storage.GetAsync<string>("userID");
+
+            if (accountTypeCheck.Value != "Undergraduate")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+
+            userID = userIDCheck.Value;
+            Task.Delay(5000);
+            navigate.NavigateTo($"/undergraduate/changemajorminor2?userID={userID}");
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+}

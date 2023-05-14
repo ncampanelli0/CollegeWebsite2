@@ -1,12 +1,11 @@
-@page "/undergraduate/changemajorminor"
-
+@page "/undergraduate/changemajorminor2"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
 <h2>Change Major and Minor</h2>
 
-<MudSelect @bind-Value="majorID" T="string" Label="majorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="major" T="string" Label="majorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     <MudSelectItem Class="selectFieldColor" Value="@("American Studies")" />
     <MudSelectItem Class="selectFieldColor" Value="@("Biological Sciences")" />
     <MudSelectItem Class="selectFieldColor" Value="@("Chemistry and Physics")" />
@@ -25,7 +24,7 @@
 
 </MudSelect>
 
-<MudSelect @bind-Value="minorID" T="string" Label="minorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
+<MudSelect @bind-Value="minor" T="string" Label="minorID" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     <MudSelectItem Class="selectFieldColor" Value="@("Chemistry")" />
     <MudSelectItem Class="selectFieldColor" Value="@("Computer Information Science")" />
     <MudSelectItem Class="selectFieldColor" Value="@("Environmental Studies")" />
@@ -44,7 +43,7 @@
     <MudSelectItem Class="selectFieldColor" Value="@("No Minor")" />
    
 </MudSelect>
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class="btncolor">submit</MudButton>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Class="btncolor">submit</MudButton>
 
 @code
 {
@@ -62,13 +61,11 @@
 
     private static string major { get; set; }
     private static string minor { get; set; }
-    private static string userID { get; set; }
-    private static string majorID { get; set; }
-    private static string minorID { get; set; }
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
 
     private void submitForm()
     {
-        try
+        //try
         {
         bool validForm = true;
 
@@ -91,16 +88,13 @@
 
             mongo.UpsertRecord<AllUser>("allUser", queryAllUserID.Id, queryAllUserID);
             snackbar.Add("Major/Minor was edited successfully", Severity.Success);
+            snackbar.Add("Logout and log back in to apply changes", Severity.Info);
             
         }
         else
         {
             snackbar.Add("Major/Minor not edited successfully", Severity.Error);
         }
-    }
-    catch 
-    {
-            snackbar.Add("data load error", Severity.Error);
     }
 }
 }

@@ -1,4 +1,7 @@
-@page "/undergraduate/dropclass"
+@page "/undergraduate/dropclass2"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
 
 
 @inject ProtectedLocalStorage storage
@@ -7,7 +10,7 @@
 
 <h2>Drop A Class</h2>
 
-<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudNumericField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" id="textFieldColor" Min="10000" Max="99999"></MudNumericField>
 
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class="btncolor">submit</MudButton>
 
@@ -15,7 +18,11 @@
 
 @code
 {
-   
+    Mongo mongo = new Mongo("college-site-2");
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+    private static int CRN { get; set; }
+
+
     protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
@@ -25,9 +32,6 @@
             navigate.NavigateTo("/homepage");
         }
     }
-    Mongo mongo = new Mongo("college-site-2");
-    private static int CRN { get; set; }
-    private static string userID { get; set; }
 
     private void submitForm()
     {
@@ -40,7 +44,7 @@
                 validForm = false;
             }
 
-            if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
+            if (CRN == null || !(CRN >= 10000 && CRN <= 99999))
             {
                 validForm = false;
             }
@@ -51,7 +55,7 @@
             {
                 var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
 
-                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
+                if (queryClassID.RegistrationLimit.ToLocalTime() < DateTime.Today.ToLocalTime())
                 {
                     thealmightycheck = false;
                 }
@@ -68,11 +72,12 @@
                     if (queryClassID.Enrolled[w].UserID.Contains(userID))
                     {
                         queryClassID.Enrolled.RemoveAt(w);
+                        mongo.UpsertRecord<Classes>("classes", queryClassID.Id, queryClassID);
                         snackbar.Add("User has been removed from class", Severity.Success);
                     }
                     else
                     {
-                        snackbar.Add("User cannot be not found", Severity.Warning);
+                        snackbar.Add("User cannot be not found", Severity.Error);
                     }
                 }
             }
