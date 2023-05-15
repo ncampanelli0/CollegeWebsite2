@@ -1,4 +1,4 @@
-﻿@page "/undergraduate/viewtranscript"
+﻿@page "/undergraduate/viewdegreeaudit"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
@@ -21,7 +21,7 @@
         var userIDCheck = await storage.GetAsync<string>("userID");
         string userIDString = userIDCheck.Value;
 
-        navigate.NavigateTo($"/undergraduate/viewtranscript2?userID={userIDString}");
+        navigate.NavigateTo($"/undergraduate/viewdegreeaudit2?targetclass={userIDString}");
     }
 
 
