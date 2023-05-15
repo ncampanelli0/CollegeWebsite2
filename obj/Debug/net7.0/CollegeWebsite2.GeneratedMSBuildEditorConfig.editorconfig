@@ -412,12 +412,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3ZGVncmVlYXVkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3c2NoZWR1bGUucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/viewschedule/Viewschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVx2aWV3c2NoZWR1bGVcVmlld3NjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewtranscript.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3dHJhbnNjcmlwdC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/viewschedule/Viewschedule2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVx2aWV3c2NoZWR1bGVcVmlld3NjaGVkdWxlMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/viewtranscript/Viewtranscript.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVx2aWV3dHJhbnNjcmlwdFxWaWV3dHJhbnNjcmlwdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/viewtranscript/Viewtranscript2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVx2aWV3dHJhbnNjcmlwdFxWaWV3dHJhbnNjcmlwdDIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Shared/SurveyPrompt.razor]

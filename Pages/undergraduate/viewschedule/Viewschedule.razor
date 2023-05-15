@@ -1,0 +1,30 @@
+﻿@page "/undergraduate/viewschedule"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Viewschedule</h2>
+
+
+
+@code
+{
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/undergraduate/signup2");
+        }
+
+
+        var userIDCheck = await storage.GetAsync<string>("userID");
+        string userIDString = userIDCheck.Value;
+
+        navigate.NavigateTo($"/undergraduate/viewschedule2?userID={userIDString}");
+    }
+
+
+}

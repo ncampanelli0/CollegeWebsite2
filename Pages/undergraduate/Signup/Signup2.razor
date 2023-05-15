@@ -15,6 +15,7 @@
         <PropertyColumn Title="Professor Name" Property="x => x.ProfessorName" />
         <PropertyColumn Title="Start Date/Time" Property="x =>x.StartDate" />
         <PropertyColumn Title="End Date/Time" Property="x => x.EndDate" />
+        <PropertyColumn Title="Regisisteration Limit" Property="x =>x.RegistrationLimit" />
         <PropertyColumn Title="Period" Property="x => x.Period" />
         <PropertyColumn Title="Building ID" Property="x => x.BuildingID" />
         <PropertyColumn Title="Room ID" Property="x => x.RoomID" />
@@ -42,7 +43,7 @@
     protected override async Task OnInitializedAsync()
     {
         queryClasses= mongo.LoadRecord<Classes>("classes");
-        var querySortedClasses = mongo.LoadRecordByInt<Classes>("Classes", "CRN", CRN);
+
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
         accountTypeString = accountTypeCheck.Value;
     }
@@ -86,7 +87,7 @@
     private void submitForm()
     {
         // form validator 
-       bool validForm = true;
+        bool validForm = true;
 
         if ((userID == null || userID == "") && !(userID.Contains("SCC")))
         {
@@ -113,6 +114,7 @@
                     if (y.UserID == queryStudentID.UserID && (queryClassesID.StartDate.Year == x.StartDate.Year && queryClassesID.Semester == x.Semester))
                     {
                         enrolledCreditCounter += x.Credits;
+                        Console.WriteLine($"credit counter: {enrolledCreditCounter}");
                     }
                 }
             }
