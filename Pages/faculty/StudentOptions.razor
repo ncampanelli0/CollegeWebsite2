@@ -49,11 +49,15 @@
     }
 
 
-    private void testDegree(string d){
-            navigate.NavigateTo($"/faculty/testdegree?targetclass={d}");
+    private int testDegree(string d)
+    {
+        navigate.NavigateTo($"/faculty/viewdegreeaudit?targetclass={d}");
+        return 1;
     }
 
-    private void testTranscript(string s){
-            navigate.NavigateTo($"/faculty/testtranscript?targetclass={s}");
+    private int testTranscript(string s)
+    {
+        navigate.NavigateTo($"/faculty/testtranscript?targetclass={s}");
+        return 1;
     }
 }

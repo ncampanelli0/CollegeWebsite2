@@ -1,91 +1,23 @@
 @page "/graduate/dropclass"
-
-
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<h2>Drop A Class</h2>
-
-<MudTextField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
-
-<MudButton @onclick="submitForm" Variant="Variant.Outlined" Color="Color.Success" Class="btncolor">submit</MudButton>
+<h2>Drop class</h2>
 
 
-@code
+
+@code 
 {
-   
     protected override async Task OnInitializedAsync()
     {
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
-
+        var userID = await storage.GetAsync<string>("userID");
         if (accountTypeCheck.Value != "Graduate")
         {
             navigate.NavigateTo("/homepage");
         }
+        string userIDString = userID.Value;
+        navigate.NavigateTo($"/undergraduate/dropclass2?userID={userIDString}");
     }
-    Mongo mongo = new Mongo("college-site-2");
-    private static int CRN { get; set; }
-    private static string userID { get; set; }
-
-    private void submitForm()
-    {
-        try
-        {
-            bool validForm = true;
-
-            if ((userID == null || userID == "") && !(userID.Contains("SCC")))
-            {
-                validForm = false;
-                snackbar.Add("UserID error", Severity.Error);
-            }
-
-            if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
-            {
-                validForm = false;
-                snackbar.Add("CRN error", Severity.Error);
-            }
-
-            bool thealmightycheck = true;
-
-            if (thealmightycheck)
-            {
-                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
-
-                if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
-                {
-                    thealmightycheck = false;
-                    snackbar.Add("Time window error", Severity.Error);
-                }
-            }
-
-            if (validForm && thealmightycheck)
-            {
-                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
-                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
-
-                for (int w = 0; w < queryClassID.Enrolled.Count; w++)
-                {
-                    if (queryClassID.Enrolled[w].UserID.Contains(userID))
-                    {
-                        queryClassID.Enrolled.RemoveAt(w);
-                        snackbar.Add("User has been removed from class", Severity.Success);
-                    }
-                    else
-                    {
-                        snackbar.Add("User cannot be not found", Severity.Warning);
-                    }
-                }
-            }
-            else
-            {
-                snackbar.Add("User has been not removed from class", Severity.Error);
-            }
-        }
-        catch
-        {
-            snackbar.Add("Class was not removed successfully", Severity.Error);
-        }
-    }
-
 }
