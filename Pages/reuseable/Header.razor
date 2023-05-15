@@ -58,12 +58,11 @@
             {
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcurrentclasses">view current classes </a>
-          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcurrentgrade">view current grade</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/timewindow">view time window </a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewrequirements">view requirements</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewdegreeaudit">view degree audit </a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/masterschedule">view master schedule</a>
-          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule</a>
+          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule/current grades</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewtranscript">view transcript</a>
                 
             }
@@ -179,24 +178,6 @@
             <a class="dropdown-item dropdowncolor" href="/admin/sendpasswordreset">send password reset</a>
             <a class="dropdown-item dropdowncolor" href="/admin/changeholdstatus">edit user hold status</a>
             <a class="dropdown-item dropdowncolor" href="/admin/removeuser">remove user</a>
-        }
-
-        @if (accountType == "Faculty")
-        {
-            <button type="button" @onclick="displayToggle" class="btncolor dropdown-toggle">
-                Display
-            </button>
-        }
-
-        @if (displayToggleSwitch)
-        {
-              <a class="dropdown-item dropdowncolor" href="/faculty/classinfo">class info</a>
-                 <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">enrolled info</a>
-                     <a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">grades info</a>
-                     <a class="dropdown-item dropdowncolor" href="/faculty/attendanceinfo">attendance info</a>
-                       <a class="dropdown-item dropdowncolor" href="/faculty/testoptions">student options</a>
-            <a class="dropdown-item dropdowncolor" href= "/faculty/testdegree">degree audit</a>
-             <a class="dropdown-item dropdowncolor" href= "/faculty/testtranscript">transcript</a>
         }
 
 

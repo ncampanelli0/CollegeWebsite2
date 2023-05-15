@@ -46,6 +46,7 @@
             if (userID == null || userID == "")
             {
                 validForm = false;
+                snackbar.Add("UserID error", Severity.Error);
             }
 
             //sanity check
@@ -56,11 +57,13 @@
                 if (!(userID.Contains("SCC") || userID.Contains("FCC")))
                 {
                     sanityCheck = false;
+                    snackbar.Add(" SCC or FCC error", Severity.Error);
                 }
 
                 if (!(queryAllUserID.AccountType == "Faculty" || queryAllUserID.AccountType == "Undergraduate" || queryAllUserID.AccountType == "Graduate"))
                 {
                     sanityCheck = false;
+                    snackbar.Add("Account Type error", Severity.Error);
                 }
             }
 
