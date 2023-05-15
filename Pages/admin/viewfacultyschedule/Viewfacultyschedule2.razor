@@ -1,23 +1,22 @@
-@page "/faculty/viewfacultyschedule"
+@page "/admin/viewfacultyschedule2"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
-@inject ISnackbar Snackbar
+@inject ISnackbar snackbar
 
-<h1>Schedule</h1>
-<br/><br/>
-<br/><br/>
+<h2>View faculty schedule</h2>
+
  <MudExpansionPanels MultiExpansion="true">
      @foreach (var item in popList)
       {
         <MudExpansionPanel Text=@item.CourseName>
             Credits: @item.Credits <br /> <br />
             CRN: @item.CRN <br /> <br />
-           Semester:  Spring @item.startDateTime.Year<br /> <br />
+            Semester:  Spring @item.startDateTime.Year<br /> <br />
             Building: @item.BuildingID <br /> <br />
-           Room:  @item.RoomID <br /> <br />
-           Time: @item.startDateTime.ToString("hh:mm tt") - @item.endDateTime.ToString("hh:mm tt")<br /> <br />
+            Room:  @item.RoomID <br /> <br />
+            Time: @item.startDateTime.ToString("hh:mm tt") - @item.endDateTime.ToString("hh:mm tt")<br /> <br />
             Day: @item.Day <br /> <br />
-    </MudExpansionPanel>
+        </MudExpansionPanel>
       }
     
    
@@ -25,9 +24,9 @@
 
 @code
 {
-      Mongo mongo = new Mongo("college-site-2");
-      //List<Classes> queryClass;
-      private List<popTable2> popList = new List<popTable2> { };
+    Mongo mongo = new Mongo("college-site-2");
+
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
 
     public class popTable2
     {
@@ -44,22 +43,17 @@
         
     }
 
-
+    private List<popTable2> popList = new List<popTable2> { };
 
     protected override async Task OnInitializedAsync()
     {
-      Console.WriteLine("0");
       var queryClass = mongo.LoadRecord<Classes>("classes");
-            Console.WriteLine("0");
-    var firstNameCheck = await storage.GetAsync<string>("firstName");
-        Console.WriteLine(firstNameCheck.Value);
-        var lastNameCheck = await storage.GetAsync<string>("lastName");
-    Console.WriteLine(lastNameCheck.Value);
-    //var semesterCheck = await storage.GetAsync<string>("semester");
-       
-        foreach(var x in queryClass){
-                  Console.WriteLine("0");
-            if(x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023 && x.Semester == "Spring"){
+      var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+        foreach(var x in queryClass)
+        {
+            if(x.ProfFirstName == queryProfessor.FirstName && x.ProfLastName == queryProfessor.LastName && x.StartDate.Year == 2023 && x.Semester == "Spring")
+            {
                 popTable2 schedule = new popTable2();
                 schedule.CourseName = x.CourseName;
                 schedule.Credits = x.Credits;
@@ -71,11 +65,8 @@
                 schedule.startDateTime = x.StartDate;
                 schedule.endDateTime = x.EndDate;
                 popList.Add(schedule);
-            }
-                
-          // && x.Semester == "Spring"
+            }  
         }
     }
-    
-    
+
 }

@@ -1,0 +1,194 @@
+@page "/undergraduate/signup"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Signup for Classes</h2>
+
+<MudDataGrid Items="@queryClasses" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true"
+    FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+        <PropertyColumn Title="Department" Property="x => x.Department" />
+        <PropertyColumn Title="Course Name" Property="x => x.CourseName" />
+        <PropertyColumn Title="CRN" Property="x => x.CRN" />
+        <PropertyColumn Title="Section" Property="x => x.Section" />
+        <PropertyColumn Title="Professor Name" Property="x => x.ProfessorName" />
+        <PropertyColumn Title="Start Date/Time" Property="x =>x.StartDate" />
+        <PropertyColumn Title="End Date/Time" Property="x => x.EndDate" />
+        <PropertyColumn Title="Period" Property="x => x.Period" />
+        <PropertyColumn Title="Building ID" Property="x => x.BuildingID" />
+        <PropertyColumn Title="Room ID" Property="x => x.RoomID" />
+        <PropertyColumn Title="Day" Property="x => x.Day" />
+        <PropertyColumn Title="Remaining Capacity" Property="x => x.MaxCapacity - x.Enrolled.Count" />
+
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Classes" Class="tableFooter" />
+    </PagerContent>
+</MudDataGrid>
+
+<MudNumericField @bind-Value="CRN" Label="CRN" Variant="Variant.Text" Min="10000" Max="99999"></MudNumericField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    private static int CRN { get; set; }
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+    List<Classes> queryClasses;
+    List<popTable> pop = new List<popTable> { };
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+            populateTable(); 
+
+            if (accountTypeCheck.Value != "Undergraduate")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+    public class popTable
+    {
+        public string department { get; set; }
+        public string courseName { get; set; }
+        public int CRN { get; set; }
+        public string section { get; set; }
+        public string professorName{ get; set; }
+        public DateTime startDateTime{ get; set; }
+        public DateTime endDateTime { get; set; }
+        public string period { get; set; }
+        public int? buildingID { get; set; }
+        public int? roomID { get; set; }
+        public string day { get; set; }
+        public int remainingCapacity { get; set; }
+    }
+
+    private void populateTable()
+    {
+        foreach (var x in queryClasses)
+        {
+            if (x.StartDate.Year == 2023)
+            {
+                pop.Add(new popTable
+                    {
+                        department = x.Department,
+                        courseName = x.CourseName,
+                        CRN = x.CRN,
+                        section = x.Section,
+                        professorName = x.ProfessorName,
+                        startDateTime = x.StartDate,
+                        endDateTime = x.EndDate,
+                        period = x.Period,
+                        buildingID = x.BuildingID,
+                        roomID = x.RoomID,
+                        day = x.Day,
+                        remainingCapacity = x.MaxCapacity - x.Enrolled.Count
+                });
+            }
+        }
+    }
+
+    private void submitForm()
+    {
+        // form validator 
+       bool validForm = true;
+
+        if ((userID == null || userID == "") && !(userID.Contains("SCC")))
+            {
+                validForm = false;
+            }
+            else if ((CRN == null || !(CRN >= 10000 && CRN <= 99999)))
+            {
+                validForm = false;
+            }
+
+           bool sanityCheck = true;
+
+            if (validForm)
+            {
+                var queryStudentID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                var queryClassesID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryClasses = mongo.LoadRecord<Classes>("classes");
+
+                int enrolledCreditCounter = 0;
+                foreach (var x in queryClasses)
+                {
+                    foreach (var y in x.Enrolled)
+                    {
+                        if (y.UserID == queryStudentID.UserID && (queryClassesID.StartDate.Year == x.StartDate.Year && queryClassesID.Semester == x.Semester))
+                        {
+                            enrolledCreditCounter += x.Credits;
+                        }
+                    }
+                }
+
+                if (enrolledCreditCounter > 8 && queryStudentID.PartOrFullTime == "Part Time")
+                {
+                    sanityCheck = false;
+                }
+                else if (enrolledCreditCounter > 16 && queryStudentID.PartOrFullTime == "Full Time")
+                {
+                    sanityCheck = false;
+                }
+
+                foreach (var x in queryClassesID.Enrolled)
+                {
+                    if (x.UserID == queryStudentID.UserID)
+                    {
+                        sanityCheck = false;
+                    }
+                }
+
+                if (queryClassesID.RegistrationLimit.ToLocalTime() < DateTime.Now.ToLocalTime())
+                {
+                    sanityCheck = false;
+                }
+
+                if ((queryClassesID.MaxCapacity - queryClassesID.Enrolled.Count) <= 0)
+                {
+                    sanityCheck = false;
+                }
+
+                if (queryStudentID.Holds != "None")
+                {
+                    sanityCheck = false;
+                }
+
+            }
+
+            if (validForm && sanityCheck)
+            {
+                var queryClassID = mongo.LoadRecordByInt<Classes>("classes", "CRN", CRN);
+                var queryUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                Enrolled toWrite = new Enrolled();
+
+                toWrite.FirstName = queryUserID.FirstName;
+                toWrite.LastName = queryUserID.LastName;
+                toWrite.UserID = queryUserID.UserID;
+                toWrite.Grades = new List<string> { };
+                toWrite.Attendance = 0;
+                toWrite.MidTermGrade = "none";
+                toWrite.FinalGrade = "none";
+
+                queryClassID.Enrolled.Add(toWrite);
+
+                mongo.UpsertRecord<Classes>("classes", queryClassID.Id, queryClassID);
+                snackbar.Add("User added to class successfully", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("User was not added to class", Severity.Error);
+
+}
+}
+}
+

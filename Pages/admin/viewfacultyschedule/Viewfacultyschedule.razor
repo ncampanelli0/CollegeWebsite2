@@ -1,0 +1,79 @@
+@page "/admin/viewfacultyschedule"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View faculty schedule</h2>
+
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
+
+
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    private static string userID { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Admin")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+
+    }
+        private void submitForm()
+        {
+            try
+            {
+                Task.Delay(3500);
+                //form validation
+                bool validForm = true;
+
+                if (userID == null || userID == "")
+                {
+                    validForm = false;
+                }
+
+                //sanity check
+                bool sanityCheck = true;
+                var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+                if (validForm)
+                {
+                    if (!(userID.Contains("FCC")))
+                    {
+                        sanityCheck = false;
+                    }
+
+                    if (!(queryAllUserID.AccountType == "Faculty"))
+                    {
+                        sanityCheck = false;
+                    }
+                }
+
+                if (validForm && sanityCheck)
+                {
+                    navigate.NavigateTo($"/admin/viewfacultyschedule2?userID={userID}");
+                }
+                else
+                {
+                    snackbar.Add("Faculty not found", Severity.Error);
+                }
+            }
+            catch
+            {
+                snackbar.Add("Faculty not found", Severity.Error);
+            }
+            
+        }
+
+}

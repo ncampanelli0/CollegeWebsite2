@@ -1,0 +1,371 @@
+@page "/admin/changecourseprereqs"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Change course prereqs</h2>
+<p>If a row is left blank, it will not be added as a course prereq</p>
+<MudNumericField @bind-Value="CRN" Label="CRN" Variant="Variant.Outlined" id="textFieldColor" Style="@theme.textFieldColor" Min="10000" Max="99999"></MudNumerictField>
+<MudGrid>
+<MudNumericField @bind-Value="prerequisite1" Label="prereq 1" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor" ></MudNumericField>
+    <p>-----</p>
+<MudSelect @bind-Value="gradeReq1" Label="grade prereq 1" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite2" Label="prereq 2" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq2" Label="grade prereq 2" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite3" Label="prereq 3" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq3" Label="grade prereq 3" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite4" Label="prereq 4" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq4" Label="grade prereq 4" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite5" Label="prereq 5" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq5" Label="grade prereq 5" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite6" Label="prereq 6" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq6" Label="grade prereq 6" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+<br />
+<br />
+
+<MudGrid>
+    <MudNumericField @bind-Value="prerequisite7" Label="prereq 7" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq7" Label="grade prereq 7" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+
+<br />
+<br />
+
+<MudGrid>                        
+    <MudNumericField @bind-Value="prerequisite8" Label="prereq 8" Variant="Variant.Outlined" Min="0" Max="9999" id="textFieldColor"></MudNumericField>
+<p>-----</p>
+<MudSelect @bind-Value="gradeReq8" Label="grade prereq 8" Variant="Variant.Outlined" id="textFieldColor" >
+    @foreach (var x in grades)
+    {
+        <MudSelectItem Style="@theme.selectFieldColor" Value="@x"></MudSelectItem >
+    }
+</MudSelect>
+</MudGrid>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+    Theme theme = new Theme();
+
+    private string[] grades = { "A", "B", "C", "D", "F" };
+
+    private static int CRN { get; set; }
+    private static int prerequisite1 { get; set; }
+    private static int prerequisite2 { get; set; }
+    private static int prerequisite3 { get; set; }
+    private static int prerequisite4 { get; set; }
+    private static int prerequisite5 { get; set; }
+    private static int prerequisite6 { get; set; }
+    private static int prerequisite7 { get; set; }
+    private static int prerequisite8 { get; set; }
+    private static string gradeReq1 { get; set; }
+    private static string gradeReq2 { get; set; }
+    private static string gradeReq3 { get; set; }
+    private static string gradeReq4 { get; set; }
+    private static string gradeReq5 { get; set; }
+    private static string gradeReq6 { get; set; }
+    private static string gradeReq7 { get; set; }
+    private static string gradeReq8 { get; set; }
+
+    private void submitForm()
+    {
+        try
+        {
+            //form validation not needed
+            bool validForm = true;
+            
+            //sanity check not needed
+            bool sanityCheck = true;
+
+
+            if (validForm && sanityCheck)
+            {
+                var queryCourse = mongo.LoadRecordByInt<Course>("course", "CRN", CRN);
+                List<Prerequiste> prereqList = new List<Prerequiste> {  };
+                Prerequiste nullCourse = new Prerequiste();
+
+                nullCourse.Prereq = "none";
+                nullCourse.MinimumRequirements = "none";
+
+                if ((prerequisite1 != 0 && prerequisite1 != null) && (gradeReq1 != "" && gradeReq1 != null))
+                {
+                    var queryPrereq1 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite1);
+
+                    prereqList.Add(queryPrereq1);
+                }
+
+                if ((prerequisite2 != 0 && prerequisite2 != null) && (gradeReq2 != "" && gradeReq2 != null))
+                {
+                    var queryPrereq2 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite2);
+
+                    prereqList.Add(queryPrereq2);
+                }
+
+                if ((prerequisite3 != 0 && prerequisite3 != null) && (gradeReq3 != "" && gradeReq3 != null))
+                {
+                    var queryPrereq3 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite3);
+
+                    prereqList.Add(queryPrereq3);
+                }
+
+                if ((prerequisite4 != 0 && prerequisite4 != null) && (gradeReq4 != "" && gradeReq4 != null))
+                {
+                    var queryPrereq4 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite4);
+
+                    prereqList.Add(queryPrereq4);
+                }
+
+                if ((prerequisite5 != 0 && prerequisite5 != null) && (gradeReq5 != "" && gradeReq5 != null))
+                {
+                    var queryPrereq5 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite5);
+
+                    prereqList.Add(queryPrereq5);
+                }
+
+                if ((prerequisite6 != 0 && prerequisite6 != null) && (gradeReq6 != "" && gradeReq6 != null))
+                {
+                    var queryPrereq6 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite6);
+
+                    prereqList.Add(queryPrereq6);
+                }
+
+                if ((prerequisite7 != 0 && prerequisite7 != null) && (gradeReq7 != "" && gradeReq7 != null))
+                {
+                    var queryPrereq7 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite7);
+
+                    prereqList.Add(queryPrereq7);
+                }
+
+                if ((prerequisite8 != 0 && prerequisite8 != null) && (gradeReq8 != "" && gradeReq8 != null))
+                {
+                    var queryPrereq8 = mongo.LoadRecordByInt<Course>("course", "CRN", prerequisite8);
+
+                    prereqList.Add(queryPrereq8);
+                }
+
+            for (int i = 0; i < (8 - prereqList.Count; i++))
+            {
+                    prereqList.Add(nullCourse);
+            }
+
+                queryCourse.Prerequiste = prereqList;
+
+                mongo.UpsertRecord<Course>("course", queryCourse.Id, queryCourse);
+
+                snackbar.Add("Course prereqs was succesfully edited", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Course prereqs was not succesfully edited", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Course prereqs was not succesfully edited", Severity.Error);
+        }
+    }
+    
+
+    /*
+    int prereqcounter = 0;
+                Prerequiste prereqToWrite = new Prerequiste();
+                if ((prerequisite1 >= 1000 && prerequisite1 <= 9999) && prerequisite1 != null && (gradeReq1 != "" || gradeReq1 != null))
+                {
+
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite1);
+                    prereqToWrite.MinimumRequirements = gradeReq1;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                    Console.WriteLine("prereq1");
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite2 >= 1000 && prerequisite2 <= 9999) && prerequisite2 != null && (gradeReq2 != "" || gradeReq2 != null))
+                {
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite2);
+
+                    prereqToWrite.MinimumRequirements = gradeReq2;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                    Console.WriteLine("prereq2");
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite3 >= 1000 && prerequisite3 <= 9999) && prerequisite3 != null && (gradeReq3 != "" || gradeReq3 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite3);
+
+                    prereqToWrite.MinimumRequirements = gradeReq3;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite4 >= 1000 && prerequisite4 <= 9999) && prerequisite4 != null && (gradeReq4 != "" || gradeReq4 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite4);
+
+                    prereqToWrite.MinimumRequirements = gradeReq4;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite5 >= 1000 && prerequisite5 <= 9999) && prerequisite5 != null && (gradeReq5 != "" || gradeReq5 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite5);
+
+                    prereqToWrite.MinimumRequirements = gradeReq5;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite6 >= 1000 && prerequisite6 <= 9999) & prerequisite6 != null && (gradeReq6 != "" || gradeReq6 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite6);
+
+                    prereqToWrite.MinimumRequirements = gradeReq6;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite7 >= 1000 && prerequisite7 <= 9999) & prerequisite7 != null && (gradeReq7 != "" || gradeReq7 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite7);
+
+                    prereqToWrite.MinimumRequirements = gradeReq7;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+
+                if ((prerequisite8 >= 1000 && prerequisite8 <= 9999) && prerequisite8 != null && (gradeReq8 != "" || gradeReq8 != null))
+                {
+
+                    var queryPrereq = mongo.LoadRecordByInt<Course>("course", "CourseID", prerequisite8);
+
+                    prereqToWrite.MinimumRequirements = gradeReq8;
+                    prereqToWrite.Prereq = queryPrereq.CourseName;
+                    toWrite.Prerequiste.Add(prereqToWrite);
+                }
+                else
+                {
+                    prereqcounter++;
+                }
+    
+
+             for (int i = 0; i < prereqcounter; i++)
+                {
+                    toWrite.Prerequiste.Add(nullObject);
+                }
+
+    
+    */
+
+
+}
