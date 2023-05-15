@@ -1,0 +1,23 @@
+﻿@page "/undergraduate/dropclass"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Drop class</h2>
+
+
+
+@code 
+{
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        var userID = await storage.GetAsync<string>("userID");
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+        string userIDString = userID.Value;
+        navigate.NavigateTo($"/undergraduate/dropclass2?userID={userIDString}");
+    }
+}

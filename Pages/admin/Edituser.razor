@@ -4,7 +4,7 @@
 @inject ISnackbar snackbar
 
 <h2>Edit user</h2>
-
+<p>any blank fields will remain unedited, only change what needs to be changed</p>
 <MudSelect @bind-Value="accountType" T="string" Label="Account Type" id="textFieldColor" AnchorOrigin="Origin.BottomCenter">
     @foreach (var x in accountTypeChoices)
     {

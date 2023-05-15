@@ -4,6 +4,7 @@
 @page "/graduate/timewindow"
 @page "/admin/timewindow"
 
+<h2>Time Window Table</h2>
 <MudDataGrid Items="@queryTime" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
         <PropertyColumn Title="Semester" Property="x => x.Semester + x.StartDate.Year" />

@@ -37,10 +37,10 @@ namespace CollegeWebsite2.Database
     {
 
         [BsonElement("Prereq")]
-        public string? Prereq { get; set; } = null;
+        public string Prereq { get; set; }
 
         [BsonElement("MinimumRequirements")]
-        public string? MinimumRequirements { get; set; }
+        public string MinimumRequirements { get; set; }
     }
 
 

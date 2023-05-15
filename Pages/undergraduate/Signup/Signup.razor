@@ -1,0 +1,28 @@
+@page "/undergraduate/signup"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Signup for Classes</h2>
+
+@code
+{
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+            if (accountTypeCheck.Value != "Undergraduate")
+            {
+                navigate.NavigateTo("/undergraduate/signup2");
+            }
+
+            
+            var userIDCheck = await storage.GetAsync<string>("userID");
+            string userIDString = userIDCheck.Value;
+
+        navigate.NavigateTo($"/undergraduate/signup2?userID={userIDString}");
+    }
+
+
+}

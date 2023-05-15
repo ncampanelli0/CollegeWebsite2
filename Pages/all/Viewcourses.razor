@@ -4,7 +4,7 @@
 @page "/admin/viewcourses"
 @page "/faculty/viewcourses"
 
-
+<h2>View Courses</h2>
 <MudDataGrid Items="@queryCourse" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
         <PropertyColumn Title="Department" Property="x => x.Department" />

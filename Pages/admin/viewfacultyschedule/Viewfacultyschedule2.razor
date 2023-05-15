@@ -1,0 +1,72 @@
+@page "/admin/viewfacultyschedule2"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View faculty schedule</h2>
+
+ <MudExpansionPanels MultiExpansion="true">
+     @foreach (var item in popList)
+      {
+        <MudExpansionPanel Text=@item.CourseName>
+            Credits: @item.Credits <br /> <br />
+            CRN: @item.CRN <br /> <br />
+            Semester:  Spring @item.startDateTime.Year<br /> <br />
+            Building: @item.BuildingID <br /> <br />
+            Room:  @item.RoomID <br /> <br />
+            Time: @item.startDateTime.ToString("hh:mm tt") - @item.endDateTime.ToString("hh:mm tt")<br /> <br />
+            Day: @item.Day <br /> <br />
+        </MudExpansionPanel>
+      }
+    
+   
+</MudExpansionPanels>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+
+    public class popTable2
+    {
+        public string CourseName{get; set;}
+        public int? Credits { get; set; }
+        public int? CRN { get; set; }
+        public string Semester { get; set; }
+        public int? BuildingID { get; set; }
+
+        public int? RoomID { get; set; }
+        public DateTime startDateTime{ get; set; }
+        public DateTime endDateTime { get; set; }
+        public string Day { get; set; }
+        
+    }
+
+    private List<popTable2> popList = new List<popTable2> { };
+
+    protected override async Task OnInitializedAsync()
+    {
+      var queryClass = mongo.LoadRecord<Classes>("classes");
+      var queryProfessor = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+        foreach(var x in queryClass)
+        {
+            if(x.ProfFirstName == queryProfessor.FirstName && x.ProfLastName == queryProfessor.LastName && x.StartDate.Year == 2023 && x.Semester == "Spring")
+            {
+                popTable2 schedule = new popTable2();
+                schedule.CourseName = x.CourseName;
+                schedule.Credits = x.Credits;
+                schedule.CRN = x.CRN;
+                schedule.Semester = x.Semester;
+                schedule.BuildingID = x.BuildingID;
+                schedule.RoomID = x.RoomID;
+                schedule.Day = x.Day;
+                schedule.startDateTime = x.StartDate;
+                schedule.endDateTime = x.EndDate;
+                popList.Add(schedule);
+            }  
+        }
+    }
+
+}

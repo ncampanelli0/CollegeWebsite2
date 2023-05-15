@@ -1,0 +1,54 @@
+﻿@page "/developer/fixclassstructure"
+
+<h2>Fix class structure</h2>
+
+<MudButton @onclick="fixClassStructure">fix class structure</MudButton>
+
+
+@code 
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+    private void fixClassStructure()
+    {
+        var queryClasses = mongo.LoadRecord<Classes>("classes");
+        var queryCourse = mongo.LoadRecord<Course>("course");
+
+        Console.WriteLine("running fixclassstructure");
+
+        /*
+        foreach (var x in queryClasses)
+            {
+            foreach (var y in queryCourse)
+                {
+                Console.WriteLine($"{x.CourseName} {y.CourseName}");
+                if (x.CourseName == y.CourseName)
+                    {
+                    foreach (var z in )
+                        Console.WriteLine($"{y.Prerequiste.Count} {y.Prerequiste.}");
+                    x.Prerequiste2 = y.Prerequiste;
+
+            }
+        }
+        }
+        */
+
+        for (int i = 0; i < queryClasses.Count; i++)
+        {
+            for (int x = 0; x < queryCourse.Count; x++)
+            {
+                for (int y = 0; y < queryCourse[x].Prerequiste.Count; y++)
+                {
+                    if (queryClasses[i].CourseName == queryCourse[x].CourseName)
+                    {
+                        //queryClasses[i].Prerequiste2.Add(queryCourse[x].Prerequiste[y]);
+                    }
+                }
+            }
+            mongo.UpsertRecord<Classes>("classes", queryClasses[i].Id, queryClasses[i]);
+        }
+
+
+        Console.WriteLine("table updated");
+    }
+}

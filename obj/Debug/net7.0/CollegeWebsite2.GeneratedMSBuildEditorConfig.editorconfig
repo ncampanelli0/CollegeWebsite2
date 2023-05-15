@@ -9,433 +9,457 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CollegeWebsite2
 build_property.RootNamespace = CollegeWebsite2
-build_property.ProjectDir = C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\
+build_property.ProjectDir = c:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2
+build_property.MSBuildProjectDirectory = c:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/App.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Accreditationcertification.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Accreditationcertification.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQWNjcmVkaXRhdGlvbmNlcnRpZmljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Collegeleadership.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Collegeleadership.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQ29sbGVnZWxlYWRlcnNoaXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Contact.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Contact.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQ29udGFjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Missionvision.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Missionvision.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcTWlzc2lvbnZpc2lvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Rankingdistinctions.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/about/Rankingdistinctions.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcUmFua2luZ2Rpc3RpbmN0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addclasssection.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addclasssection.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkY2xhc3NzZWN0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addnewcourse.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addnewcourse.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkbmV3Y291cnNlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addprofessorclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Addprofessorclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkcHJvZmVzc29yY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduser.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkdXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduserclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduserclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkdXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQ2hhbmdlaG9sZHN0YXR1cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Editclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Editclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdGNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Edituser.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Edituser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdHVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removecourse.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removecourse.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY291cnNlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeprofessorclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeprofessorclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlcHJvZmVzc29yY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuser.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZldXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuserclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuserclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZldXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Sendpasswordreset.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Sendpasswordreset.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cU2VuZHBhc3N3b3JkcmVzZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Unlockaccount.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Unlockaccount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVW5sb2NrYWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeinput.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld2ZhY3VsdHlzY2hlZHVsZVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld2ZhY3VsdHlzY2hlZHVsZVxWaWV3ZmFjdWx0eXNjaGVkdWxlMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeinput.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3N0dWRlbnRncmFkZVxWaWV3c3R1ZGVudGdyYWRlaW5wdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeoutput.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeoutput.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3N0dWRlbnRncmFkZVxWaWV3c3R1ZGVudGdyYWRlb3V0cHV0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordinput.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordinput.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRpbnB1dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordoutput.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordoutput.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRvdXRwdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Viewusers.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/admin/Viewusers.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld3VzZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Buildings.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Buildings.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXEJ1aWxkaW5ncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Masterschedule.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Forgotpassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXEZvcmdvdHBhc3N3b3JkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Masterschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXE1hc3RlcnNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Timewindow.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Timewindow.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFRpbWV3aW5kb3cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcourses.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcourses.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdjb3Vyc2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcurrentclasses.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcurrentclasses.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdjdXJyZW50Y2xhc3Nlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewrequirements.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/all/Viewrequirements.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdyZXF1aXJlbWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Attedanceinfo.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Attedanceinfo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBdHRlZGFuY2VpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displayclassinfo.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displayclassinfo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Y2xhc3NpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displaygrades.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displaygrades.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Z3JhZGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/DisplaystudentTranscript.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/DisplaystudentTranscript.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5c3R1ZGVudFRyYW5zY3JpcHQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Enrolledtoclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Enrolledtoclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxFbnJvbGxlZHRvY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/FacDegreeAudit.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/FacDegreeAudit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxGYWNEZWdyZWVBdWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Searchstudent.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Searchstudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxTZWFyY2hzdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestDegree.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestDegree.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0RGVncmVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestSearchStudent.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestSearchStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0U2VhcmNoU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestStudenOptions.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestStudenOptions.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0U3R1ZGVuT3B0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestTranscript.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/TestTranscript.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0VHJhbnNjcmlwdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/ToAdvise.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/ToAdvise.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUb0FkdmlzZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewclasses.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewclasses.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3Y2xhc3Nlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3c3R1ZGVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcQWRqdXN0bG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Changemajorminor.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Changemajorminor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcQ2hhbmdlbWFqb3JtaW5vci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Dropclass.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Dropclass.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcRHJvcGNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Signup.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Signup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcU2lnbnVwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewdegreeaudit.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewdegreeaudit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld2RlZ3JlZWF1ZGl0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewschedule.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld3NjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewtranscript.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewtranscript.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld3RyYW5zY3JpcHQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/About.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/About.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXEFib3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Homepage.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Homepage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXEhvbWVwYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Login.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Logout.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/header/Logout.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXExvZ291dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Abbykinleyside.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Abbykinleyside.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEFiYnlraW5sZXlzaWRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Belleleftridge.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Belleleftridge.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEJlbGxlbGVmdHJpZGdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Bensoncurneen.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Bensoncurneen.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEJlbnNvbmN1cm5lZW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Casiepanons.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Casiepanons.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXENhc2llcGFub25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Elliotstrickland.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Elliotstrickland.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEVsbGlvdHN0cmlja2xhbmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Jeniathridge.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Jeniathridge.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEplbmlhdGhyaWRnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Kalaleban.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Kalaleban.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEthbGFsZWJhbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Maresalevings.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Maresalevings.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcmVzYWxldmluZ3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Marveleborne.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Marveleborne.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcnZlbGVib3JuZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Marvenlamyman.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Marvenlamyman.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcnZlbmxhbXltYW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Michwhitfield.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Michwhitfield.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1pY2h3aGl0ZmllbGQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Paulypitrasso.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Paulypitrasso.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXFBhdWx5cGl0cmFzc28ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Sadieaspinal.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/people/Sadieaspinal.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXFNhZGllYXNwaW5hbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Footer.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Footer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEZvb3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Header.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Header.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEhlYWRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Injectables.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Injectables.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEluamVjdGFibGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Blazoredlocalstoragetest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Blazoredlocalstoragetest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxCbGF6b3JlZGxvY2Fsc3RvcmFnZXRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/CourseIDView.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/CourseIDView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxDb3Vyc2VJRFZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Logintest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Fixclassstructure.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxGaXhjbGFzc3N0cnVjdHVyZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Logintest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxMb2dpbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Mailtraptest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Mailtraptest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNYWlsdHJhcHRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Mudblazortest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Mudblazortest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNdWRibGF6b3J0ZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Revisedstackexample.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Revisedstackexample.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxSZXZpc2Vkc3RhY2tleGFtcGxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Skeletontest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Skeletontest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTa2VsZXRvbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Stackexample.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Stackexample.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTdGFja2V4YW1wbGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Tabletest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Tabletest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUYWJsZXRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Test.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Test.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Testertest.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Testertest.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUZXN0ZXJ0ZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writeidtoadvisors.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writeidtoadvisors.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZWlkdG9hZHZpc29ycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writemissedattendance.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writemissedattendance.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZW1pc3NlZGF0dGVuZGFuY2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writetodatabase.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/test/Writetodatabase.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZXRvZGF0YWJhc2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Adjustlogin.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxBZGp1c3Rsb2dpbi5yYXpvcg==
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/changemajorminor/ChangeMajorMinor1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxjaGFuZ2VtYWpvcm1pbm9yXENoYW5nZU1ham9yTWlub3IxLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Changemajorminor.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxDaGFuZ2VtYWpvcm1pbm9yLnJhem9y
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/changemajorminor/Changemajorminor2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxjaGFuZ2VtYWpvcm1pbm9yXENoYW5nZW1ham9ybWlub3IyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Degreeaudit.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Degreeaudit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxEZWdyZWVhdWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/DegreeAudit2.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/DegreeAudit2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlQXVkaXQyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/Degreeaudit22.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/Degreeaudit22.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlYXVkaXQyMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Dropclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxEcm9wY2xhc3MucmF6b3I=
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkcm9wY2xhc3NcRHJvcGNsYXNzMS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Signup.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXAucmF6b3I=
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkcm9wY2xhc3NcRHJvcGNsYXNzMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/StudentDegree.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Signup/Signup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXBcU2lnbnVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Signup/Signup2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXBcU2lnbnVwMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/StudentDegree.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTdHVkZW50RGVncmVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/StudentDegreeLoad.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/StudentDegreeLoad.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTdHVkZW50RGVncmVlTG9hZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewcurrentgrade.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewcurrentgrade.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3Y3VycmVudGdyYWRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewdegreeaudit.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewdegreeaudit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3ZGVncmVlYXVkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewschedule.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3c2NoZWR1bGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewtranscript.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewtranscript.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3dHJhbnNjcmlwdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/SurveyPrompt.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/_Imports.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/MainLayout.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ptyckker9l
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/NavMenu.razor]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-rxu3js4h9c
 
-[C:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/_Host.cshtml]
+[c:/Users/volkn/OneDrive/Documents/GitHub/CollegeWebsite2/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
