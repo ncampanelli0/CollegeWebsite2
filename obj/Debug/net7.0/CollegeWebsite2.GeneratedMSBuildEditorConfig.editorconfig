@@ -60,10 +60,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkdXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Changecourseprereqs.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQ2hhbmdlY291cnNlcHJlcmVxcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQ2hhbmdlaG9sZHN0YXR1cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -370,14 +366,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Writetodatabase.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Xcml0ZXRvZGF0YWJhc2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/adjustlogin/Adjustlogin.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9hZGp1c3Rsb2dpbi9BZGp1c3Rsb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/adjustlogin/Adjustlogin2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9hZGp1c3Rsb2dpbi9BZGp1c3Rsb2dpbjIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/changemajorminor/ChangeMajorMinor1.razor]

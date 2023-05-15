@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nVXTSLH/k/JqobXFtDx1LBnHcsCSPG6SwytyfDB6cgo=",
+  "Hash": "TEtcF5pbpzGsk0tUNuKg/UQuPCvQek5e0oa5V7jKxNw=",
   "Source": "CollegeWebsite2",
   "BasePath": "_content/CollegeWebsite2",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "CollegeWebsite2\\wwwroot",
+      "Name": "CollegeWebsite2/wwwroot",
       "Source": "CollegeWebsite2",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\MudBlazor.min.css",
+      "Identity": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/MudBlazor.min.css",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\",
+      "ContentRoot": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\MudBlazor.min.css"
+      "OriginalItemSpec": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/MudBlazor.min.css"
     },
     {
-      "Identity": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\MudBlazor.min.js",
+      "Identity": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/MudBlazor.min.js",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\",
+      "ContentRoot": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.js",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\baddestwheel\\.nuget\\packages\\mudblazor\\6.2.0\\staticwebassets\\MudBlazor.min.js"
+      "OriginalItemSpec": "/Users/opeyemiorioke/.nuget/packages/mudblazor/6.2.0/staticwebassets/MudBlazor.min.js"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\bundle\\CollegeWebsite2.styles.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/bundle/CollegeWebsite2.styles.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/bundle/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "CollegeWebsite2.styles.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\bundle\\CollegeWebsite2.styles.css"
+      "OriginalItemSpec": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/bundle/CollegeWebsite2.styles.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CollegeWebsite2.bundle.scp.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/projectbundle/CollegeWebsite2.bundle.scp.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/projectbundle/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "CollegeWebsite2.bundle.scp.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\programming files\\asp.net core\\CollegeWebsite2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CollegeWebsite2.bundle.scp.css"
+      "OriginalItemSpec": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/obj/Debug/net7.0/scopedcss/projectbundle/CollegeWebsite2.bundle.scp.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\accreditation\\aaqep_blues_small.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/accreditation/aaqep_blues_small.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "accreditation/aaqep_blues_small.jpg",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\accreditation\\aaqep_blues_small.jpg"
+      "OriginalItemSpec": "wwwroot/accreditation/aaqep_blues_small.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\accreditation\\ACS_Logo.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/accreditation/ACS_Logo.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "accreditation/ACS_Logo.jpg",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\accreditation\\ACS_Logo.jpg"
+      "OriginalItemSpec": "wwwroot/accreditation/ACS_Logo.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\accreditation\\ceph_bachelors_only_red_transparent.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/accreditation/ceph_bachelors_only_red_transparent.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "accreditation/ceph_bachelors_only_red_transparent.png",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\accreditation\\ceph_bachelors_only_red_transparent.png"
+      "OriginalItemSpec": "wwwroot/accreditation/ceph_bachelors_only_red_transparent.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\accreditation\\MSCHE.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/accreditation/MSCHE.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "accreditation/MSCHE.png",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\accreditation\\MSCHE.png"
+      "OriginalItemSpec": "wwwroot/accreditation/MSCHE.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\accreditation\\NYSEDLogo.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/accreditation/NYSEDLogo.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "accreditation/NYSEDLogo.png",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\accreditation\\NYSEDLogo.png"
+      "OriginalItemSpec": "wwwroot/accreditation/NYSEDLogo.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\animate.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/animate.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/animate.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\animate.css"
+      "OriginalItemSpec": "wwwroot/css/animate.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\mudblazor.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/mudblazor.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/mudblazor.css",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\mudblazor.css"
+      "OriginalItemSpec": "wwwroot/css/mudblazor.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/FONT-LICENSE",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/ICON-LICENSE",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/open-iconic/README.md",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
+      "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\css\\site.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/css/site.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Abby Kinleyside.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Abby Kinleyside.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Abby Kinleyside.png",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Abby Kinleyside.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Abby Kinleyside.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Belle Leftridge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Belle Leftridge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Belle Leftridge.png",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Belle Leftridge.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Belle Leftridge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Benson Curneen.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Benson Curneen.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Benson Curneen.png",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Benson Curneen.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Benson Curneen.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Casie Panons.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Casie Panons.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Casie Panons.png",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Casie Panons.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Casie Panons.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Elliot Strickland.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Elliot Strickland.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Elliot Strickland.png",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Elliot Strickland.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Elliot Strickland.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Jenni Athridge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Jenni Athridge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Jenni Athridge.png",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Jenni Athridge.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Jenni Athridge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Kala Leban.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Kala Leban.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Kala Leban.png",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Kala Leban.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Kala Leban.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Maresa Levings.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Maresa Levings.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Maresa Levings.png",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Maresa Levings.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Maresa Levings.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Marve Leborne.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Marve Leborne.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Marve Leborne.png",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Marve Leborne.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Marve Leborne.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Marven Lamyman.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Marven Lamyman.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Marven Lamyman.png",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Marven Lamyman.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Marven Lamyman.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Mich Whitfield.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Mich Whitfield.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Mich Whitfield.png",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Mich Whitfield.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Mich Whitfield.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Pauly Pitrasso.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Pauly Pitrasso.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Pauly Pitrasso.png",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Pauly Pitrasso.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Pauly Pitrasso.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\departmenthead\\Sadie Aspinal.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/departmenthead/Sadie Aspinal.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "departmenthead/Sadie Aspinal.png",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\departmenthead\\Sadie Aspinal.png"
+      "OriginalItemSpec": "wwwroot/departmenthead/Sadie Aspinal.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\3rdway.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/3rdway.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/3rdway.jpg",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\3rdway.jpg"
+      "OriginalItemSpec": "wwwroot/distinction/3rdway.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\BB-Journal.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/BB-Journal.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/BB-Journal.gif",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\BB-Journal.gif"
+      "OriginalItemSpec": "wwwroot/distinction/BB-Journal.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\heed_logo2021_small.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/heed_logo2021_small.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/heed_logo2021_small.jpg",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\heed_logo2021_small.jpg"
+      "OriginalItemSpec": "wwwroot/distinction/heed_logo2021_small.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\On-Acctg-Value.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/On-Acctg-Value.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/On-Acctg-Value.jpg",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\On-Acctg-Value.jpg"
+      "OriginalItemSpec": "wwwroot/distinction/On-Acctg-Value.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\presidents-honor-roll-banner.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/presidents-honor-roll-banner.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/presidents-honor-roll-banner.jpg",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\presidents-honor-roll-banner.jpg"
+      "OriginalItemSpec": "wwwroot/distinction/presidents-honor-roll-banner.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\Study_Recognized_School_Badge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/Study_Recognized_School_Badge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/Study_Recognized_School_Badge.png",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\Study_Recognized_School_Badge.png"
+      "OriginalItemSpec": "wwwroot/distinction/Study_Recognized_School_Badge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\TreeCampus2019-web.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/TreeCampus2019-web.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/TreeCampus2019-web.gif",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\TreeCampus2019-web.gif"
+      "OriginalItemSpec": "wwwroot/distinction/TreeCampus2019-web.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\UNAI.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/UNAI.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/UNAI.gif",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\UNAI.gif"
+      "OriginalItemSpec": "wwwroot/distinction/UNAI.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\USAT-CF-diversity-ethnic18.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/USAT-CF-diversity-ethnic18.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/USAT-CF-diversity-ethnic18.png",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\USAT-CF-diversity-ethnic18.png"
+      "OriginalItemSpec": "wwwroot/distinction/USAT-CF-diversity-ethnic18.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\distinction\\usnwrsquare.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/distinction/usnwrsquare.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "distinction/usnwrsquare.png",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\distinction\\usnwrsquare.png"
+      "OriginalItemSpec": "wwwroot/distinction/usnwrsquare.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon replacement.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/favicon replacement.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "favicon replacement.png",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon replacement.png"
+      "OriginalItemSpec": "wwwroot/favicon replacement.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\favicon.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/favicon.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -796,13 +796,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
+      "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\collegelogo.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/collegelogo.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/collegelogo.png",
       "AssetKind": "All",
@@ -813,13 +813,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\collegelogo.png"
+      "OriginalItemSpec": "wwwroot/homepageimage/collegelogo.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\homepage1.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/homepage1.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/homepage1.jpg",
       "AssetKind": "All",
@@ -830,13 +830,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\homepage1.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/homepage1.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\homepage2.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/homepage2.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/homepage2.jpg",
       "AssetKind": "All",
@@ -847,13 +847,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\homepage2.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/homepage2.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\homepage3.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/homepage3.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/homepage3.jpg",
       "AssetKind": "All",
@@ -864,13 +864,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\homepage3.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/homepage3.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\homepageimage2.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/homepageimage2.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/homepageimage2.jpg",
       "AssetKind": "All",
@@ -881,13 +881,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\homepageimage2.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/homepageimage2.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\homepageimage3.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/homepageimage3.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/homepageimage3.jpg",
       "AssetKind": "All",
@@ -898,13 +898,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\homepageimage3.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/homepageimage3.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\homepageimage\\hompageimage1.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/homepageimage/hompageimage1.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "homepageimage/hompageimage1.jpg",
       "AssetKind": "All",
@@ -915,13 +915,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\homepageimage\\hompageimage1.jpg"
+      "OriginalItemSpec": "wwwroot/homepageimage/hompageimage1.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\aaqep_blues_small.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/accreditation/aaqep_blues_small.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/accreditation/aaqep_blues_small.jpg",
       "AssetKind": "All",
@@ -932,13 +932,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\accreditation\\aaqep_blues_small.jpg"
+      "OriginalItemSpec": "wwwroot/image/accreditation/aaqep_blues_small.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\ACS_Logo.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/accreditation/ACS_Logo.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/accreditation/ACS_Logo.jpg",
       "AssetKind": "All",
@@ -949,13 +949,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\accreditation\\ACS_Logo.jpg"
+      "OriginalItemSpec": "wwwroot/image/accreditation/ACS_Logo.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\ceph_bachelors_only_red_transparent.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/accreditation/ceph_bachelors_only_red_transparent.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/accreditation/ceph_bachelors_only_red_transparent.png",
       "AssetKind": "All",
@@ -966,13 +966,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\accreditation\\ceph_bachelors_only_red_transparent.png"
+      "OriginalItemSpec": "wwwroot/image/accreditation/ceph_bachelors_only_red_transparent.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\MSCHE.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/accreditation/MSCHE.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/accreditation/MSCHE.png",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\accreditation\\MSCHE.png"
+      "OriginalItemSpec": "wwwroot/image/accreditation/MSCHE.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\accreditation\\NYSEDLogo.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/accreditation/NYSEDLogo.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/accreditation/NYSEDLogo.png",
       "AssetKind": "All",
@@ -1000,13 +1000,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\accreditation\\NYSEDLogo.png"
+      "OriginalItemSpec": "wwwroot/image/accreditation/NYSEDLogo.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Abby Kinleyside.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Abby Kinleyside.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Abby Kinleyside.png",
       "AssetKind": "All",
@@ -1017,13 +1017,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Abby Kinleyside.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Abby Kinleyside.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Belle Leftridge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Belle Leftridge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Belle Leftridge.png",
       "AssetKind": "All",
@@ -1034,13 +1034,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Belle Leftridge.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Belle Leftridge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Benson Curneen.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Benson Curneen.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Benson Curneen.png",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Benson Curneen.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Benson Curneen.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Casie Panons.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Casie Panons.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Casie Panons.png",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Casie Panons.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Casie Panons.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Elliot Strickland.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Elliot Strickland.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Elliot Strickland.png",
       "AssetKind": "All",
@@ -1085,13 +1085,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Elliot Strickland.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Elliot Strickland.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Jenni Athridge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Jenni Athridge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Jenni Athridge.png",
       "AssetKind": "All",
@@ -1102,13 +1102,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Jenni Athridge.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Jenni Athridge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Kala Leban.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Kala Leban.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Kala Leban.png",
       "AssetKind": "All",
@@ -1119,13 +1119,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Kala Leban.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Kala Leban.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Maresa Levings.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Maresa Levings.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Maresa Levings.png",
       "AssetKind": "All",
@@ -1136,13 +1136,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Maresa Levings.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Maresa Levings.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Marve Leborne.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Marve Leborne.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Marve Leborne.png",
       "AssetKind": "All",
@@ -1153,13 +1153,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Marve Leborne.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Marve Leborne.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Marven Lamyman.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Marven Lamyman.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Marven Lamyman.png",
       "AssetKind": "All",
@@ -1170,13 +1170,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Marven Lamyman.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Marven Lamyman.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Mich Whitfield.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Mich Whitfield.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Mich Whitfield.png",
       "AssetKind": "All",
@@ -1187,13 +1187,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Mich Whitfield.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Mich Whitfield.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Pauly Pitrasso.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Pauly Pitrasso.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Pauly Pitrasso.png",
       "AssetKind": "All",
@@ -1204,13 +1204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Pauly Pitrasso.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Pauly Pitrasso.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\departmenthead\\Sadie Aspinal.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/departmenthead/Sadie Aspinal.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/departmenthead/Sadie Aspinal.png",
       "AssetKind": "All",
@@ -1221,13 +1221,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\departmenthead\\Sadie Aspinal.png"
+      "OriginalItemSpec": "wwwroot/image/departmenthead/Sadie Aspinal.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\3rdway.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/3rdway.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/3rdway.jpg",
       "AssetKind": "All",
@@ -1238,13 +1238,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\3rdway.jpg"
+      "OriginalItemSpec": "wwwroot/image/distinction/3rdway.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\BB-Journal.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/BB-Journal.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/BB-Journal.gif",
       "AssetKind": "All",
@@ -1255,13 +1255,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\BB-Journal.gif"
+      "OriginalItemSpec": "wwwroot/image/distinction/BB-Journal.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\heed_logo2021_small.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/heed_logo2021_small.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/heed_logo2021_small.jpg",
       "AssetKind": "All",
@@ -1272,13 +1272,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\heed_logo2021_small.jpg"
+      "OriginalItemSpec": "wwwroot/image/distinction/heed_logo2021_small.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\On-Acctg-Value.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/On-Acctg-Value.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/On-Acctg-Value.jpg",
       "AssetKind": "All",
@@ -1289,13 +1289,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\On-Acctg-Value.jpg"
+      "OriginalItemSpec": "wwwroot/image/distinction/On-Acctg-Value.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\presidents-honor-roll-banner.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/presidents-honor-roll-banner.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/presidents-honor-roll-banner.jpg",
       "AssetKind": "All",
@@ -1306,13 +1306,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\presidents-honor-roll-banner.jpg"
+      "OriginalItemSpec": "wwwroot/image/distinction/presidents-honor-roll-banner.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\Study_Recognized_School_Badge.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/Study_Recognized_School_Badge.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/Study_Recognized_School_Badge.png",
       "AssetKind": "All",
@@ -1323,13 +1323,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\Study_Recognized_School_Badge.png"
+      "OriginalItemSpec": "wwwroot/image/distinction/Study_Recognized_School_Badge.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\TreeCampus2019-web.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/TreeCampus2019-web.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/TreeCampus2019-web.gif",
       "AssetKind": "All",
@@ -1340,13 +1340,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\TreeCampus2019-web.gif"
+      "OriginalItemSpec": "wwwroot/image/distinction/TreeCampus2019-web.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\UNAI.gif",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/UNAI.gif",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/UNAI.gif",
       "AssetKind": "All",
@@ -1357,13 +1357,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\UNAI.gif"
+      "OriginalItemSpec": "wwwroot/image/distinction/UNAI.gif"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\USAT-CF-diversity-ethnic18.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/USAT-CF-diversity-ethnic18.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/USAT-CF-diversity-ethnic18.png",
       "AssetKind": "All",
@@ -1374,13 +1374,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\USAT-CF-diversity-ethnic18.png"
+      "OriginalItemSpec": "wwwroot/image/distinction/USAT-CF-diversity-ethnic18.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\distinction\\usnwrsquare.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/distinction/usnwrsquare.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/distinction/usnwrsquare.png",
       "AssetKind": "All",
@@ -1391,13 +1391,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\distinction\\usnwrsquare.png"
+      "OriginalItemSpec": "wwwroot/image/distinction/usnwrsquare.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\collegelogo.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/collegelogo.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/collegelogo.png",
       "AssetKind": "All",
@@ -1408,13 +1408,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\collegelogo.png"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/collegelogo.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage1.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/homepage1.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/homepage1.jpg",
       "AssetKind": "All",
@@ -1425,13 +1425,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\homepage1.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/homepage1.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage2.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/homepage2.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/homepage2.jpg",
       "AssetKind": "All",
@@ -1442,13 +1442,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\homepage2.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/homepage2.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepage3.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/homepage3.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/homepage3.jpg",
       "AssetKind": "All",
@@ -1459,13 +1459,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\homepage3.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/homepage3.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepageimage2.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/homepageimage2.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/homepageimage2.jpg",
       "AssetKind": "All",
@@ -1476,13 +1476,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\homepageimage2.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/homepageimage2.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\homepageimage3.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/homepageimage3.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/homepageimage3.jpg",
       "AssetKind": "All",
@@ -1493,13 +1493,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\homepageimage3.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/homepageimage3.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\homepageimage\\hompageimage1.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/homepageimage/hompageimage1.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/homepageimage/hompageimage1.jpg",
       "AssetKind": "All",
@@ -1510,13 +1510,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\homepageimage\\hompageimage1.jpg"
+      "OriginalItemSpec": "wwwroot/image/homepageimage/hompageimage1.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\placeholder.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/placeholder.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/placeholder.jpg",
       "AssetKind": "All",
@@ -1527,13 +1527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\placeholder.jpg"
+      "OriginalItemSpec": "wwwroot/image/placeholder.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\salmon.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/salmon.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/salmon.png",
       "AssetKind": "All",
@@ -1544,13 +1544,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\salmon.png"
+      "OriginalItemSpec": "wwwroot/image/salmon.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_asc.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/sort_asc.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/sort_asc.png",
       "AssetKind": "All",
@@ -1561,13 +1561,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\sort_asc.png"
+      "OriginalItemSpec": "wwwroot/image/sort_asc.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_both.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/sort_both.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/sort_both.png",
       "AssetKind": "All",
@@ -1578,13 +1578,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\sort_both.png"
+      "OriginalItemSpec": "wwwroot/image/sort_both.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\image\\sort_desc.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/image/sort_desc.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "image/sort_desc.png",
       "AssetKind": "All",
@@ -1595,13 +1595,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\sort_desc.png"
+      "OriginalItemSpec": "wwwroot/image/sort_desc.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\jquery.js",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/import/jquery.js",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "import/jquery.js",
       "AssetKind": "All",
@@ -1612,13 +1612,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\import\\jquery.js"
+      "OriginalItemSpec": "wwwroot/import/jquery.js"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\import\\popper.min.js",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/import/popper.min.js",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "import/popper.min.js",
       "AssetKind": "All",
@@ -1629,13 +1629,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\import\\popper.min.js"
+      "OriginalItemSpec": "wwwroot/import/popper.min.js"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\placeholder.jpg",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/placeholder.jpg",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "placeholder.jpg",
       "AssetKind": "All",
@@ -1646,13 +1646,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\placeholder.jpg"
+      "OriginalItemSpec": "wwwroot/placeholder.jpg"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\salmon.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/salmon.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "salmon.png",
       "AssetKind": "All",
@@ -1663,13 +1663,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\salmon.png"
+      "OriginalItemSpec": "wwwroot/salmon.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\script\\shared.js",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/script/shared.js",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "script/shared.js",
       "AssetKind": "All",
@@ -1680,13 +1680,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\script\\shared.js"
+      "OriginalItemSpec": "wwwroot/script/shared.js"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\script\\table.js",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/script/table.js",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "script/table.js",
       "AssetKind": "All",
@@ -1697,13 +1697,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\script\\table.js"
+      "OriginalItemSpec": "wwwroot/script/table.js"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_asc.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/sort_asc.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "sort_asc.png",
       "AssetKind": "All",
@@ -1714,13 +1714,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sort_asc.png"
+      "OriginalItemSpec": "wwwroot/sort_asc.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_both.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/sort_both.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "sort_both.png",
       "AssetKind": "All",
@@ -1731,13 +1731,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sort_both.png"
+      "OriginalItemSpec": "wwwroot/sort_both.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\sort_desc.png",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/sort_desc.png",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "sort_desc.png",
       "AssetKind": "All",
@@ -1748,13 +1748,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sort_desc.png"
+      "OriginalItemSpec": "wwwroot/sort_desc.png"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\bootstrap.min.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/bootstrap.min.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/bootstrap.min.css",
       "AssetKind": "All",
@@ -1765,13 +1765,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\bootstrap.min.css"
+      "OriginalItemSpec": "wwwroot/stylesheet/bootstrap.min.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\bootstrap.min.css.map",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/bootstrap.min.css.map",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1782,13 +1782,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\bootstrap.min.css.map"
+      "OriginalItemSpec": "wwwroot/stylesheet/bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\datatables.min.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/datatables.min.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/datatables.min.css",
       "AssetKind": "All",
@@ -1799,13 +1799,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\datatables.min.css"
+      "OriginalItemSpec": "wwwroot/stylesheet/datatables.min.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\MudBlazor.min.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/MudBlazor.min.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/MudBlazor.min.css",
       "AssetKind": "All",
@@ -1816,13 +1816,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\MudBlazor.min.css"
+      "OriginalItemSpec": "wwwroot/stylesheet/MudBlazor.min.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\style.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/style.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/style.css",
       "AssetKind": "All",
@@ -1833,13 +1833,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\style.css"
+      "OriginalItemSpec": "wwwroot/stylesheet/style.css"
     },
     {
-      "Identity": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\stylesheet\\teststyle.css",
+      "Identity": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/stylesheet/teststyle.css",
       "SourceId": "CollegeWebsite2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\programming files\\asp.net core\\CollegeWebsite2\\wwwroot\\",
+      "ContentRoot": "/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/wwwroot/",
       "BasePath": "_content/CollegeWebsite2",
       "RelativePath": "stylesheet/teststyle.css",
       "AssetKind": "All",
@@ -1850,7 +1850,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\stylesheet\\teststyle.css"
+      "OriginalItemSpec": "wwwroot/stylesheet/teststyle.css"
     }
   ]
 }

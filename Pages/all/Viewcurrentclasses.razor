@@ -4,6 +4,8 @@
 @page "/admin/viewcurrentclasses"
 @page "/visitor/viewcurrentclasses"
 
+<h2>View Current Classes Offered </h2>
+
 <MudDataGrid Items="@pop" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
     <Columns>
         <PropertyColumn Title="Department" Property="x => x.department" />

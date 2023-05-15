@@ -241,7 +241,7 @@
     }
     
 
-    /*
+    
     int prereqcounter = 0;
                 Prerequiste prereqToWrite = new Prerequiste();
                 if ((prerequisite1 >= 1000 && prerequisite1 <= 9999) && prerequisite1 != null && (gradeReq1 != "" || gradeReq1 != null))
@@ -365,7 +365,7 @@
                 }
 
     
-    */
+    
 
 
 }

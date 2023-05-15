@@ -1,4 +1,4 @@
-@page "/undergraduate/signup2"
+@page "/undergraduate/signup"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
@@ -11,18 +11,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
             if (accountTypeCheck.Value != "Undergraduate")
             {
-                navigate.NavigateTo("/homepage");
+                navigate.NavigateTo("/undergraduate/signup2");
             }
-        }
-        catch
-        {
-            navigate.NavigateTo("/homepage");
-        }
 
             
             var userIDCheck = await storage.GetAsync<string>("userID");
@@ -30,5 +23,6 @@
 
         navigate.NavigateTo($"/undergraduate/signup2?userID={userIDString}");
     }
+
 
 }
