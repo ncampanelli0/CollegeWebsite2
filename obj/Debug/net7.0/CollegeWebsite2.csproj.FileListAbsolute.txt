@@ -121,7 +121,6 @@ C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\static
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Pages\undergraduate\AdjustLogin.razor.rz.scp.css
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\volkn\OneDrive\Documents\GitHub\CollegeWebsite2\obj\Debug\net7.0\scopedcss\bundle\CollegeWebsite2.styles.css

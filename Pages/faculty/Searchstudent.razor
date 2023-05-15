@@ -13,7 +13,8 @@
     Mongo mongo = new Mongo("college-site-2");
 
     private static string userID { get; set; }
-
+       private static string firstName { get; set; }
+       private static string lastName { get; set; }
     protected override async Task OnInitializedAsync()
     {
           var queryStudents = mongo.LoadRecord<AllUser>("allUser");
@@ -51,6 +52,7 @@
             //sanity check
             bool sanityCheck = true;
             var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+               
             if (validForm)
             {
                 if (!(userID.Contains("SCC") || userID.Contains("FCC")))
@@ -66,7 +68,7 @@
 
             if (validForm && sanityCheck)
             {
-                navigate.NavigateTo($"/faculty/studentinfo?userID={userID}");
+                navigate.NavigateTo($"/faculty/studenttranscript?targetClass={userID}");
             }
             else
             {

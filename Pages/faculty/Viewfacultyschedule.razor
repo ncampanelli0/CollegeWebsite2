@@ -49,9 +49,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-      Console.WriteLine("0");
+    
       var queryClass = mongo.LoadRecord<Classes>("classes");
-            Console.WriteLine("0");
+           
     var firstNameCheck = await storage.GetAsync<string>("firstName");
         Console.WriteLine(firstNameCheck.Value);
         var lastNameCheck = await storage.GetAsync<string>("lastName");
@@ -59,7 +59,7 @@
     //var semesterCheck = await storage.GetAsync<string>("semester");
        
         foreach(var x in queryClass){
-                  Console.WriteLine("0");
+                
             if(x.ProfFirstName == firstNameCheck.Value && x.ProfLastName == lastNameCheck.Value && x.StartDate.Year == 2023){
                 popTable2 schedule = new popTable2();
                 schedule.CourseName = x.CourseName;

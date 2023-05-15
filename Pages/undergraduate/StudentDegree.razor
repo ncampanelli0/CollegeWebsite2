@@ -1,0 +1,57 @@
+@page "/undergraduate/studentdegree"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+
+   
+
+
+<MudExpansionPanels  MultiExpansion="true">
+
+
+   @foreach (var x in classesList)
+    { 
+      
+        <MudExpansionPanel Text=@x.CourseName IsExpanded="true">
+            Course ID: @x.CourseID <br /> <br />
+            Credits: @x.Credits <br /> <br />
+              Grade: @x.Enrolled[0].FinalGrade <br /> <br />
+            Semester Completed: @x.Semester- @x.StartDate.Year <br /> <br />
+         
+        
+           
+        </MudExpansionPanel >
+
+    }
+
+    </MudExpansionPanels>
+
+        <br/> <br/>
+
+        
+
+
+@code
+{
+      Mongo mongo = new Mongo("college-site-2");
+
+     [Parameter][SupplyParameterFromQuery] public string targetClass{ get; set; }
+         private List<Majors> majorsList = new List<Majors> { }; //added
+                private List<Majors> newList = new List<Majors> { }; 
+
+
+                      private List<Classes> classesList = new List<Classes> { }; //added
+    private List<Enrolled> enrolledList = new List<Enrolled> { }; //added
+
+           protected override async Task OnInitializedAsync()
+    {
+
+  
+                    var idCheck = await storage.GetAsync<string>("userID");
+                           Console.WriteLine(idCheck.Value);
+                    var queryMajor = mongo.LoadRecord<Majors>("majors");
+ 
+    
+}
+}

@@ -3,6 +3,7 @@
 @inject NavigationManager navigate
 @inject ISnackbar Snackbar
 
+
 <h1>Class</h1>
 <br/><br/>
 <br/><br/>
@@ -13,14 +14,14 @@
            <table>
             <tr>
                 <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "classinformation" Class = "btncolor">View Class Details</MudButton>
+                    <MudButton Variant="Variant.Outlined" @onclick =  "@(x => classinformation(item.CRN))"  Class = "btncolor"> View Class Details</MudButton>
                 </td>
             </tr>
             <br/><br/>
         
             <tr>
                 <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "studentsenrolled" Class = "btncolor">View Students</MudButton>
+                    <MudButton Variant="Variant.Outlined" @onclick = "@(x => studentsenrolled(item.CRN))" Class = "btncolor">View Students</MudButton>
                 </td>
             </tr>
 
@@ -28,7 +29,7 @@
         
             <tr>
                 <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "grades" Class = "btncolor">View Grades</MudButton>
+                    <MudButton Variant="Variant.Outlined" @onclick = "@(x => grades(item.CRN))" Class = "btncolor">View Grades</MudButton>
                 </td>
             </tr>
 
@@ -36,7 +37,7 @@
         
             <tr>
                 <td>
-                    <MudButton Variant="Variant.Outlined" @onclick = "attendance" Class = "btncolor">View Attendance</MudButton>
+                    <MudButton Variant="Variant.Outlined" @onclick = "@(x => attendance(item.CRN))" Class = "btncolor">View Attendance</MudButton>
                 </td>
             </tr>
 
@@ -85,34 +86,34 @@
                 schedule.CourseName = x.CourseName;
                 schedule.CRN = x.CRN;
                 popList.Add(schedule);
+                
             }
                 
         
         }
     }
 
-     private void studentsenrolled(){
+  private void classinformation(int c){
 
-        navigate.NavigateTo($"/faculty/enrolledinfo?targetclass={schedule.CRN}");
+        navigate.NavigateTo($"/faculty/classinfo?targetclass={c}");
+    }
+
+     private void studentsenrolled(int b){
+
+        navigate.NavigateTo($"/faculty/enrolledinfo?targetclass={b}");
     }
 
 
-    private void classinformation(){
 
-        navigate.NavigateTo($"/faculty/classinfo?targetclass={schedule.CRN}");
-    }
+     private void grades(int a){
 
-     private void grades(){
-
-        navigate.NavigateTo($"/faculty/gradesinfo?targetclass={schedule.CRN}");
+        navigate.NavigateTo($"/faculty/gradesinfo?targetclass={a}");
     }
     
-    private void attendance(){
+    private void attendance(int d){
 
-        navigate.NavigateTo($"/faculty/attendanceinfo?targetclass={schedule.CRN}");
+        navigate.NavigateTo($"/faculty/attendanceinfo?targetclass={d}");
     }
     
     
 }
-
-    

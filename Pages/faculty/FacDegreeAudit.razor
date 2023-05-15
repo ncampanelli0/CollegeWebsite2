@@ -1,0 +1,84 @@
+@page "/faculty/degreeaudit"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View user record</h2>
+
+<MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" Class="btncolor" Color="Color.Success">submit</MudButton>
+
+@code 
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static string userID { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+          var queryStudents = mongo.LoadRecord<AllUser>("allUser");
+            
+        try
+        {
+            var accountTypeCheck = await storage.GetAsync<string>("accountType");
+
+            if (accountTypeCheck.Value != "Faculty")
+            {
+                navigate.NavigateTo("/homepage");
+            }
+        }
+        catch
+        {
+            navigate.NavigateTo("/homepage");
+        }
+    }
+
+
+
+
+    private void submitForm()
+    {
+        try
+        {
+            //validation check
+            bool validForm = true;
+
+            if (userID == null || userID == "")
+            {
+                validForm = false;
+            }
+
+            //sanity check
+            bool sanityCheck = true;
+            var queryAllUserID = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+            if (validForm)
+            {
+                if (!(userID.Contains("SCC") || userID.Contains("FCC")))
+                {
+                    sanityCheck = false;
+                }
+
+                if (!(queryAllUserID.AccountType == "Faculty" || queryAllUserID.AccountType == "Undergraduate" || queryAllUserID.AccountType == "Graduate"))
+                {
+                    sanityCheck = false;
+                }
+            }
+
+            if (validForm && sanityCheck)
+            {
+                navigate.NavigateTo($"/faculty/studentinfo?userID={userID}");
+            }
+            else
+            {
+                snackbar.Add("User not found", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("User not found", Severity.Error);
+        }
+    }
+
+
+}
+

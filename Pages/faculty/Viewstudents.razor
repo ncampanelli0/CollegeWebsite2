@@ -1,13 +1,33 @@
 @page "/faculty/viewstudents"
 
+<MudDataGrid Items="@queryStudent" MultiSelection="true" SortMode="SortMode.Multiple" Filterable="true" FilterCaseSensitivity="DataGridFilterCaseSensitivity.CaseInsensitive">
+    <Columns>
+    <PropertyColumn Title="UserID" Property="x => x.UserID" />
+        <PropertyColumn Title="Last Name" Property="x => x.LastName" />
+        <PropertyColumn Title="First Name" Property="x => x.FirstName" />
+        <PropertyColumn Title="Major" Property="x => x.Major" />
+        <PropertyColumn Title="AccountType" Property="x => x.AccountType" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="AllUser" />
+    </PagerContent>
 
+</MudDataGrid>  
 
 
 @code
 {
+   
+     Mongo mongo = new Mongo("college-site-2");
+    List<AllUser> queryStudent;
+    List<Classes> queryCredits;
 
+    protected override async Task OnInitializedAsync()
+    {
+        queryStudent = mongo.LoadRecord<AllUser>("allUser");
+           queryCredits = mongo.LoadRecord<Classes>("classes");
 
-
-
+        }   
+           
+   
 }
-

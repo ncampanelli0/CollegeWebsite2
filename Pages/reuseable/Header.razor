@@ -59,13 +59,13 @@
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/masterschedule">master schedule</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/buildings">buildings</a>
-                <a class="dropdown-item dropdowncolor" href="/undergraduate/viewdegreeaudit">view degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/undergraduate/studentdegree">view degree audit</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewtranscript">view transcript</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/viewrequirements">view requirements</a>
                 <a class="dropdown-item dropdowncolor" href="/undergraduate/timewindow">time window</a>
-                
+                  <a class="dropdown-item dropdowncolor" href="/undergraduate/loaddegree">degree confirm</a>
             }
 
             @if (accountType == "Graduate")
@@ -118,9 +118,10 @@
                 <a class="dropdown-item dropdowncolor" href="/faculty/viewclasses">classes</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/viewfacultyschedule">view faculty schedule</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/searchstudents">search students</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/student grade">student grades</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/degree audit">degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/studentgrade">student grades</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/advisee">advisee</a>
+                 <a class="dropdown-item dropdowncolor" href="/faculty/test"> test</a>
+                 
             }
 
             @if (accountType == "Undergraduate")
@@ -190,11 +191,16 @@
 
         @if (displayToggleSwitch)
         {
-            <a class="dropdown-item dropdowncolor" href="/faculty/studentinfo">student info</a>
+            <a class="dropdown-item dropdowncolor" href="/faculty/studenttranscript">student transcript</a>
             <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">enrolled info</a>
             <a class="dropdown-item dropdowncolor" href="/faculty/classinfo">class info</a>
             <a class="dropdown-item dropdowncolor" href="/faculty/attendanceinfo">attendance info</a>
             <a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">grades info</a>
+              <a class="dropdown-item dropdowncolor" href="/faculty/testdegree">degree test</a>
+                            <a class="dropdown-item dropdowncolor" href="/faculty/testtranscript">transcript test</a>
+               <a class="dropdown-item dropdowncolor" href="/faculty/testoptions"> test options</a>
+             
+            
         }
 
 
