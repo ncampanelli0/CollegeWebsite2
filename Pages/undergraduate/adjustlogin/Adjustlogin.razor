@@ -1,4 +1,4 @@
-@page "/undergraduate/adjustlogin2"
+@page "/undergraduate/adjustlogin"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
@@ -17,6 +17,6 @@
             navigate.NavigateTo("/homepage");
         }
         string userIDString = userID.Value;
-        navigate.NavigateTo($"/undergraduate/dropclass2?userID={userIDString}");
+        navigate.NavigateTo($"/undergraduate/adjustlogin2?userID={userIDString}");
     }
 }

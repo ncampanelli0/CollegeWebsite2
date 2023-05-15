@@ -72,10 +72,12 @@
         if (major == null || major == "")
         {
             validForm = false;
+            snackbar.Add("major error", Severity.Error);
         }
         else if (minor == null || minor == "")
         {
             validForm = false;
+            snackbar.Add("minor error", Severity.Error);
         }
         
         if (validForm)

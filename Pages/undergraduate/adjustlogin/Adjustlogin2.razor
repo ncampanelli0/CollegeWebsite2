@@ -6,7 +6,8 @@
 <h2>Adjust login</h2>
 <p>password length must be at least 8 long</p>
 
-<MudTextField @bind-Value="password" Label="New Password" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudTextField @bind-Value="password" Label="New Password" InputType="InputType.Password" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
 
 @code
 {
@@ -29,6 +30,7 @@
             if (password.Length < 8)
             {
                 validForm = false;
+                snackbar.Add("password length error", Severity.Error);
             }
 
 

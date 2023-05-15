@@ -37,11 +37,13 @@
             if ((userID == null || userID == "") && !(userID.Contains("SCC")))
             {
                 validForm = false;
+                snackbar.Add("UserID error", Severity.Error);
             }
 
             if (CRN == null || !(CRN >= 1000 && CRN <= 9999))
             {
                 validForm = false;
+                snackbar.Add("CRN error", Severity.Error);
             }
 
             bool thealmightycheck = true;
@@ -53,6 +55,7 @@
                 if (queryClassID.StartDate.ToLocalTime() > DateTime.Today.ToLocalTime())
                 {
                     thealmightycheck = false;
+                    snackbar.Add("Time window error", Severity.Error);
                 }
             }
 

@@ -65,10 +65,12 @@ protected override async Task OnInitializedAsync()
             if ((userID == null || userID == "") && !(userID.Contains("SCC")))
             {
                 validForm = false;
+                snackbar.Add("UserID error", Severity.Error);
             }
             else if ((CRN == null || !(CRN >= 1000 && CRN <= 9999)))
             {
                 validForm = false;
+                snackbar.Add("CRN error", Severity.Error);
             }
 
             bool thealmightycheck = true;
@@ -94,10 +96,12 @@ protected override async Task OnInitializedAsync()
                 if (enrolledCreditCounter > 8 && queryStudentID.PartOrFullTime == "Part Time")
                 {
                     thealmightycheck = false;
+                    snackbar.Add("Part Time error", Severity.Error);
                 }
                 else if (enrolledCreditCounter > 16 && queryStudentID.PartOrFullTime == "Full Time")
                 {
                     thealmightycheck = false;
+                    snackbar.Add("Full Time error", Severity.Error);
                 }
 
                 foreach (var x in queryClassID.Enrolled)
@@ -105,6 +109,7 @@ protected override async Task OnInitializedAsync()
                     if (x.UserID == queryStudentID.UserID)
                     {
                         thealmightycheck = false;
+                        snackbar.Add("StudentID error", Severity.Error);
                     }
                 }
 
