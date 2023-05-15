@@ -42,42 +42,32 @@
     protected override async Task OnInitializedAsync()
     {
         queryClasses= mongo.LoadRecord<Classes>("classes");
-        querySortedClasses = mongo.LoadRecordByInt<Classes>("Classes","")
+        var querySortedClasses = mongo.LoadRecordByInt<Classes>("Classes", "CRN", CRN);
         var accountTypeCheck = await storage.GetAsync<string>("accountType");
         accountTypeString = accountTypeCheck.Value;
     }
 
     protected override void OnAfterRender(bool firstRender)
     {
-        if(firstRender){
-         if (accountTypeString != "Undergraduate")
+
+        if (firstRender)
+        {
+            if (accountTypeString != "Undergraduate")
             {
                 navigate.NavigateTo("/homepage");
             }
-    
-     foreach (var x in queryClasses)
-     {
-        if (x.StartDate.Year == 2023)
-        {
-           classes butter = new classes(); 
-           butter.startDateTime = queryClasses.StartDate; 
-           butter.endDateTime = queryClasses.EndDate; 
-           butter.department = queryClasses.Department; 
-           butter.courseName = queryClasses.CourseName; 
-           butter.CRN = queryClasses.CRN; 
-           butter.section = queryClasses.Section; 
-           butter.professorName = queryClasses.ProfessorName; 
-           butter.period = queryClasses.Period; 
-           butter.buildingID = queryClasses.BuildingID; 
-           butter.roomID = queryClasses.RoomID; 
-           butter.day = queryClasses.Day; 
-           pop.Add(butter);
-        }
-        
-     }
+
+            foreach (var x in queryClasses)
+            {
+                if (x.StartDate.Year == 2023)
+                {
+                    pop.Add(x);
+                }
+
+            }
         }
     }
-        
+
     public class oneOfAKind
     {
         public string department { get; set; }

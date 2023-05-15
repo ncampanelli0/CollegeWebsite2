@@ -9,433 +9,433 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CollegeWebsite2
 build_property.RootNamespace = CollegeWebsite2
-build_property.ProjectDir = /Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/
+build_property.ProjectDir = D:\programming files\asp.net core\CollegeWebsite2\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2
+build_property.MSBuildProjectDirectory = D:\programming files\asp.net core\CollegeWebsite2
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/App.razor]
+[D:/programming files/asp.net core/CollegeWebsite2/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/about/Accreditationcertification.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWJvdXQvQWNjcmVkaXRhdGlvbmNlcnRpZmljYXRpb24ucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/about/Accreditationcertification.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQWNjcmVkaXRhdGlvbmNlcnRpZmljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/about/Collegeleadership.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWJvdXQvQ29sbGVnZWxlYWRlcnNoaXAucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/about/Collegeleadership.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQ29sbGVnZWxlYWRlcnNoaXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/about/Contact.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWJvdXQvQ29udGFjdC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/about/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcQ29udGFjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/about/Missionvision.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWJvdXQvTWlzc2lvbnZpc2lvbi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/about/Missionvision.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcTWlzc2lvbnZpc2lvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/about/Rankingdistinctions.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWJvdXQvUmFua2luZ2Rpc3RpbmN0aW9ucy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/about/Rankingdistinctions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJvdXRcUmFua2luZ2Rpc3RpbmN0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Addclasssection.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkY2xhc3NzZWN0aW9uLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Addclasssection.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkY2xhc3NzZWN0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Addnewcourse.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkbmV3Y291cnNlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Addnewcourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkbmV3Y291cnNlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Addprofessorclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkcHJvZmVzc29yY2xhc3MucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Addprofessorclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkcHJvZmVzc29yY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduser.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkdXNlci5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Adduser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkdXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Adduserclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQWRkdXNlcmNsYXNzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Adduserclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQWRkdXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vQ2hhbmdlaG9sZHN0YXR1cy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Changeholdstatus.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cQ2hhbmdlaG9sZHN0YXR1cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Editclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vRWRpdGNsYXNzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Editclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdGNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Edituser.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vRWRpdHVzZXIucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Edituser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cRWRpdHVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vUmVtb3ZlY2xhc3MucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removeclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Removecourse.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vUmVtb3ZlY291cnNlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removecourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlY291cnNlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeprofessorclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vUmVtb3ZlcHJvZmVzc29yY2xhc3MucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removeprofessorclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZlcHJvZmVzc29yY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuser.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vUmVtb3ZldXNlci5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removeuser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZldXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Removeuserclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vUmVtb3ZldXNlcmNsYXNzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Removeuserclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cUmVtb3ZldXNlcmNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Sendpasswordreset.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vU2VuZHBhc3N3b3JkcmVzZXQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Sendpasswordreset.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cU2VuZHBhc3N3b3JkcmVzZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Unlockaccount.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vVW5sb2NrYWNjb3VudC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Unlockaccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVW5sb2NrYWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld2ZhY3VsdHlzY2hlZHVsZS9WaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld2ZhY3VsdHlzY2hlZHVsZVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld2ZhY3VsdHlzY2hlZHVsZS9WaWV3ZmFjdWx0eXNjaGVkdWxlMi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewfacultyschedule/Viewfacultyschedule2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld2ZhY3VsdHlzY2hlZHVsZVxWaWV3ZmFjdWx0eXNjaGVkdWxlMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeinput.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld3N0dWRlbnRncmFkZS9WaWV3c3R1ZGVudGdyYWRlaW5wdXQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeinput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3N0dWRlbnRncmFkZVxWaWV3c3R1ZGVudGdyYWRlaW5wdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeoutput.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld3N0dWRlbnRncmFkZS9WaWV3c3R1ZGVudGdyYWRlb3V0cHV0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewstudentgrade/Viewstudentgradeoutput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3N0dWRlbnRncmFkZVxWaWV3c3R1ZGVudGdyYWRlb3V0cHV0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordinput.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld3VzZXJyZWNvcmQvVmlld3VzZXJyZWNvcmRpbnB1dC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordinput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRpbnB1dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordoutput.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vdmlld3VzZXJyZWNvcmQvVmlld3VzZXJyZWNvcmRvdXRwdXQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/viewuserrecord/Viewuserrecordoutput.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cdmlld3VzZXJyZWNvcmRcVmlld3VzZXJyZWNvcmRvdXRwdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/admin/Viewusers.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWRtaW4vVmlld3VzZXJzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/admin/Viewusers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5cVmlld3VzZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Buildings.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL0J1aWxkaW5ncy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Buildings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXEJ1aWxkaW5ncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Forgotpassword.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL0ZvcmdvdHBhc3N3b3JkLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Forgotpassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXEZvcmdvdHBhc3N3b3JkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Masterschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL01hc3RlcnNjaGVkdWxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Masterschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXE1hc3RlcnNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Timewindow.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL1RpbWV3aW5kb3cucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Timewindow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFRpbWV3aW5kb3cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcourses.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL1ZpZXdjb3Vyc2VzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Viewcourses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdjb3Vyc2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Viewcurrentclasses.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL1ZpZXdjdXJyZW50Y2xhc3Nlcy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Viewcurrentclasses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdjdXJyZW50Y2xhc3Nlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/all/Viewrequirements.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYWxsL1ZpZXdyZXF1aXJlbWVudHMucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/all/Viewrequirements.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWxsXFZpZXdyZXF1aXJlbWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Attedanceinfo.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9BdHRlZGFuY2VpbmZvLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Attedanceinfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxBdHRlZGFuY2VpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displayclassinfo.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9EaXNwbGF5Y2xhc3NpbmZvLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displayclassinfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Y2xhc3NpbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displaygrades.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9EaXNwbGF5Z3JhZGVzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displaygrades.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5Z3JhZGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Displaystudent.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9EaXNwbGF5c3R1ZGVudC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Displaystudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxEaXNwbGF5c3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Enrolledtoclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9FbnJvbGxlZHRvY2xhc3MucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Enrolledtoclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxFbnJvbGxlZHRvY2xhc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Searchstudent.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9TZWFyY2hzdHVkZW50LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Searchstudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxTZWFyY2hzdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Testfaculty.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9UZXN0ZmFjdWx0eS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Testfaculty.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0ZmFjdWx0eS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/ToAdvise.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9Ub0FkdmlzZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/ToAdvise.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUb0FkdmlzZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewclasses.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9WaWV3Y2xhc3Nlcy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewclasses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3Y2xhc3Nlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9WaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmFjdWx0eS9WaWV3c3R1ZGVudHMucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3c3R1ZGVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvQWRqdXN0bG9naW4ucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcQWRqdXN0bG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Changemajorminor.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvQ2hhbmdlbWFqb3JtaW5vci5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Changemajorminor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcQ2hhbmdlbWFqb3JtaW5vci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Dropclass.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvRHJvcGNsYXNzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Dropclass.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcRHJvcGNsYXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Signup.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvU2lnbnVwLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Signup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcU2lnbnVwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewdegreeaudit.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvVmlld2RlZ3JlZWF1ZGl0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Viewdegreeaudit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld2RlZ3JlZWF1ZGl0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvVmlld3NjaGVkdWxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Viewschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld3NjaGVkdWxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/graduate/Viewtranscript.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZ3JhZHVhdGUvVmlld3RyYW5zY3JpcHQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Viewtranscript.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ3JhZHVhdGVcVmlld3RyYW5zY3JpcHQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/header/About.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvaGVhZGVyL0Fib3V0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/header/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXEFib3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/header/Homepage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvaGVhZGVyL0hvbWVwYWdlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/header/Homepage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXEhvbWVwYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/header/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvaGVhZGVyL0xvZ2luLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/header/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/header/Logout.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvaGVhZGVyL0xvZ291dC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/header/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaGVhZGVyXExvZ291dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Abbykinleyside.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0FiYnlraW5sZXlzaWRlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Abbykinleyside.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEFiYnlraW5sZXlzaWRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Belleleftridge.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0JlbGxlbGVmdHJpZGdlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Belleleftridge.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEJlbGxlbGVmdHJpZGdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Bensoncurneen.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0JlbnNvbmN1cm5lZW4ucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Bensoncurneen.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEJlbnNvbmN1cm5lZW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Casiepanons.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0Nhc2llcGFub25zLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Casiepanons.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXENhc2llcGFub25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Elliotstrickland.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0VsbGlvdHN0cmlja2xhbmQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Elliotstrickland.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEVsbGlvdHN0cmlja2xhbmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Jeniathridge.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0plbmlhdGhyaWRnZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Jeniathridge.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEplbmlhdGhyaWRnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Kalaleban.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL0thbGFsZWJhbi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Kalaleban.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXEthbGFsZWJhbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Maresalevings.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL01hcmVzYWxldmluZ3MucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Maresalevings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcmVzYWxldmluZ3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Marveleborne.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL01hcnZlbGVib3JuZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Marveleborne.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcnZlbGVib3JuZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Marvenlamyman.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL01hcnZlbmxhbXltYW4ucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Marvenlamyman.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1hcnZlbmxhbXltYW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Michwhitfield.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL01pY2h3aGl0ZmllbGQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Michwhitfield.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXE1pY2h3aGl0ZmllbGQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Paulypitrasso.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL1BhdWx5cGl0cmFzc28ucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Paulypitrasso.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXFBhdWx5cGl0cmFzc28ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/people/Sadieaspinal.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcGVvcGxlL1NhZGllYXNwaW5hbC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/people/Sadieaspinal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccGVvcGxlXFNhZGllYXNwaW5hbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Footer.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcmV1c2VhYmxlL0Zvb3Rlci5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEZvb3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Header.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcmV1c2VhYmxlL0hlYWRlci5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEhlYWRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/reuseable/Injectables.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvcmV1c2VhYmxlL0luamVjdGFibGVzLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/reuseable/Injectables.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmV1c2VhYmxlXEluamVjdGFibGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Blazoredlocalstoragetest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9CbGF6b3JlZGxvY2Fsc3RvcmFnZXRlc3QucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Blazoredlocalstoragetest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxCbGF6b3JlZGxvY2Fsc3RvcmFnZXRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/CourseIDView.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Db3Vyc2VJRFZpZXcucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/CourseIDView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxDb3Vyc2VJRFZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Fixclassstructure.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9GaXhjbGFzc3N0cnVjdHVyZS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Fixclassstructure.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxGaXhjbGFzc3N0cnVjdHVyZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Logintest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Mb2dpbnRlc3QucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Logintest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxMb2dpbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Mailtraptest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9NYWlsdHJhcHRlc3QucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Mailtraptest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNYWlsdHJhcHRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Mudblazortest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9NdWRibGF6b3J0ZXN0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Mudblazortest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxNdWRibGF6b3J0ZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Revisedstackexample.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9SZXZpc2Vkc3RhY2tleGFtcGxlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Revisedstackexample.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxSZXZpc2Vkc3RhY2tleGFtcGxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Skeletontest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Ta2VsZXRvbnRlc3QucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Skeletontest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTa2VsZXRvbnRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Stackexample.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9TdGFja2V4YW1wbGUucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Stackexample.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxTdGFja2V4YW1wbGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Tabletest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9UYWJsZXRlc3QucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Tabletest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUYWJsZXRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Test.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9UZXN0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Test.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Testertest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9UZXN0ZXJ0ZXN0LnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Testertest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxUZXN0ZXJ0ZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Writeidtoadvisors.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Xcml0ZWlkdG9hZHZpc29ycy5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Writeidtoadvisors.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZWlkdG9hZHZpc29ycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Writemissedattendance.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Xcml0ZW1pc3NlZGF0dGVuZGFuY2UucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Writemissedattendance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZW1pc3NlZGF0dGVuZGFuY2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/test/Writetodatabase.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdGVzdC9Xcml0ZXRvZGF0YWJhc2UucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/test/Writetodatabase.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdGVzdFxXcml0ZXRvZGF0YWJhc2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/changemajorminor/ChangeMajorMinor1.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9jaGFuZ2VtYWpvcm1pbm9yL0NoYW5nZU1ham9yTWlub3IxLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/changemajorminor/ChangeMajorMinor1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxjaGFuZ2VtYWpvcm1pbm9yXENoYW5nZU1ham9yTWlub3IxLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/changemajorminor/Changemajorminor2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9jaGFuZ2VtYWpvcm1pbm9yL0NoYW5nZW1ham9ybWlub3IyLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/changemajorminor/Changemajorminor2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxjaGFuZ2VtYWpvcm1pbm9yXENoYW5nZW1ham9ybWlub3IyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Degreeaudit.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9EZWdyZWVhdWRpdC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Degreeaudit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxEZWdyZWVhdWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/DegreeAudit2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9kZWdyZWVhdWRpdDIvRGVncmVlQXVkaXQyLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/degreeaudit2/DegreeAudit2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlQXVkaXQyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/degreeaudit2/Degreeaudit22.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9kZWdyZWVhdWRpdDIvRGVncmVlYXVkaXQyMi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/degreeaudit2/Degreeaudit22.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkZWdyZWVhdWRpdDJcRGVncmVlYXVkaXQyMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass1.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9kcm9wY2xhc3MvRHJvcGNsYXNzMS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkcm9wY2xhc3NcRHJvcGNsYXNzMS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9kcm9wY2xhc3MvRHJvcGNsYXNzMi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/dropclass/Dropclass2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxkcm9wY2xhc3NcRHJvcGNsYXNzMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Signup/Signup.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9TaWdudXAvU2lnbnVwLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Signup/Signup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXBcU2lnbnVwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Signup/Signup2.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9TaWdudXAvU2lnbnVwMi5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Signup/Signup2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxTaWdudXBcU2lnbnVwMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewcurrentgrade.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9WaWV3Y3VycmVudGdyYWRlLnJhem9y
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewcurrentgrade.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3Y3VycmVudGdyYWRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewdegreeaudit.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9WaWV3ZGVncmVlYXVkaXQucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewdegreeaudit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3ZGVncmVlYXVkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewschedule.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9WaWV3c2NoZWR1bGUucmF6b3I=
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewschedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3c2NoZWR1bGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/undergraduate/Viewtranscript.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvdW5kZXJncmFkdWF0ZS9WaWV3dHJhbnNjcmlwdC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/undergraduate/Viewtranscript.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdW5kZXJncmFkdWF0ZVxWaWV3dHJhbnNjcmlwdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/_Imports.razor]
+[D:/programming files/asp.net core/CollegeWebsite2/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-s58sjohkiw
+[D:/programming files/asp.net core/CollegeWebsite2/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ptyckker9l
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-k363b0gn3v
+[D:/programming files/asp.net core/CollegeWebsite2/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-rxu3js4h9c
 
-[/Users/opeyemiorioke/Documents/GitHub/CollegeWebsite2/Pages/_Host.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
