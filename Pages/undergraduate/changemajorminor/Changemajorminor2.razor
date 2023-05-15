@@ -65,7 +65,7 @@
 
     private void submitForm()
     {
-        //try
+        try
         {
         bool validForm = true;
 
@@ -94,6 +94,10 @@
             
         }
         else
+        {
+            snackbar.Add("Major/Minor not edited successfully", Severity.Error);
+        }
+        catch
         {
             snackbar.Add("Major/Minor not edited successfully", Severity.Error);
         }

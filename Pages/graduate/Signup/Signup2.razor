@@ -86,7 +86,9 @@
 
     private void submitForm()
     {
-        // form validator 
+        try
+        {
+            // form validator 
         bool validForm = true;
 
         if ((userID == null || userID == "") && !(userID.Contains("SCC")))
@@ -177,6 +179,11 @@
         {
             snackbar.Add("User was not added to class", Severity.Error);
 
+        }
+        }
+        catch
+        {
+            snackbar.Add("User was not added to class", Severity.Error);
         }
     }
 
