@@ -14,7 +14,7 @@
             var accountTypeCheck = await storage.GetAsync<string>("accountType");
             if (accountTypeCheck.Value != "Graduate")
             {
-                navigate.NavigateTo("/graduate/homepage");
+                navigate.NavigateTo("/homepage");
             }
 
             
