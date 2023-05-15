@@ -1,9 +1,9 @@
-@page "/faculty/searchstudents"
+@page "/faculty/searchstudent"
 @inject ProtectedLocalStorage storage
 @inject NavigationManager navigate
 @inject ISnackbar snackbar
 
-<h2>View user record</h2>
+<h2>Student Search</h2>
 
 <MudTextField @bind-Value="userID" Label="User ID" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
 <MudButton @onclick="submitForm" Variant="Variant.Outlined" Class="btncolor" Color="Color.Success">submit</MudButton>
@@ -66,7 +66,7 @@
 
             if (validForm && sanityCheck)
             {
-                navigate.NavigateTo($"/faculty/studentinfo?userID={userID}");
+                navigate.NavigateTo($"/faculty/testoptions?targetClass={userID}");
             }
             else
             {

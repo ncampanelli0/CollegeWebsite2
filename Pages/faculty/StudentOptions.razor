@@ -1,0 +1,59 @@
+@page "/faculty/testoptions"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+
+
+ <MudExpansionPanels MultiExpansion="true">
+    
+        <MudExpansionPanel Text="Student Options">
+            <table>
+
+                    <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick =  "@(x => testDegree(targetClass))"  Class = "btncolor"> View Degree Audit</MudButton>
+                </td>
+            </tr>
+            <br/><br/>
+            </table>
+            
+             <table>
+
+                    <tr>
+                <td>
+                    <MudButton Variant="Variant.Outlined" @onclick =  "@(x => testTranscript(targetClass))"  Class = "btncolor"> View Transcript</MudButton>
+                </td>
+            </tr>
+            <br/><br/>
+            </table>
+
+                </MudExpansionPanel>
+      
+    
+   
+</MudExpansionPanels>
+
+
+
+
+@code
+{
+        Mongo mongo = new Mongo("college-site-2");
+        [Parameter][SupplyParameterFromQuery] public string targetClass{ get; set; }
+     protected override async Task OnInitializedAsync()
+    {
+         var queryClass = mongo.LoadRecord<Classes>("classes");
+
+                
+    }
+
+
+    private void testDegree(string d){
+            navigate.NavigateTo($"/faculty/testdegree?targetclass={d}");
+    }
+
+    private void testTranscript(string s){
+            navigate.NavigateTo($"/faculty/testtranscript?targetclass={s}");
+    }
+}

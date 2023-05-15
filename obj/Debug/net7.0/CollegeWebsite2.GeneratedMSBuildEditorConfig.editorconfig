@@ -180,8 +180,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxTZWFyY2hzdHVkZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Testfaculty.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0ZmFjdWx0eS5yYXpvcg==
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/StudentOptions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxTdHVkZW50T3B0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/TestDegree.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxUZXN0RGVncmVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/TestTranscript.razor]
@@ -198,10 +202,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewfacultyschedule.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3ZmFjdWx0eXNjaGVkdWxlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/programming files/asp.net core/CollegeWebsite2/Pages/faculty/Viewstudents.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZmFjdWx0eVxWaWV3c3R1ZGVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programming files/asp.net core/CollegeWebsite2/Pages/graduate/Adjustlogin.razor]
