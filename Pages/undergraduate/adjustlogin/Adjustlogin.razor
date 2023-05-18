@@ -1,0 +1,22 @@
+@page "/undergraduate/adjustlogin"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Adjust login</h2>
+<p>password length must be at least 8 long</p>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        var userID = await storage.GetAsync<string>("userID");
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/homepage");
+        }
+        string userIDString = userID.Value;
+        navigate.NavigateTo($"/undergraduate/adjustlogin2?userID={userIDString}");
+    }
+}

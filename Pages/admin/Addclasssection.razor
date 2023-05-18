@@ -106,6 +106,8 @@
 
     private void submitForm()
     {
+        try
+        {
             snackbar.Add("Class section added successfully", Severity.Success);
             //form validation
             bool validForm = true;
@@ -270,7 +272,11 @@
             {
                 snackbar.Add("Class section was not added successfully", Severity.Error);
             }
-
+        }
+        catch
+        {
+          snackbar.Add("Class section was not added successfully", Severity.Error);
+        }
 
        
     }

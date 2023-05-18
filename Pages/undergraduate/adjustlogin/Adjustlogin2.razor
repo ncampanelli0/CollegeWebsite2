@@ -1,0 +1,57 @@
+@page "/undergraduate/adjustlogin2"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>Adjust login</h2>
+<p>password length must be at least 8 long</p>
+
+<MudTextField @bind-Value="password" Label="New Password" InputType="InputType.Password" Variant="Variant.Outlined" id="textFieldColor"></MudTextField>
+<MudButton @onclick="submitForm" Variant="Variant.Outlined" class="btncolor">submit</MudButton>
+
+@code
+{
+    Mongo mongo = new Mongo("college-site-2");
+
+    private static string password { get; set; }
+    [Parameter][SupplyParameterFromQuery] public string userID { get; set; }
+   
+
+    private void submitForm()
+    {
+        try
+        {
+            //form validation not needed
+            bool validForm = true;
+
+            //sanity check not needed
+            bool sanityCheck = true;
+
+            if (password.Length < 8)
+            {
+                validForm = false;
+                snackbar.Add("password length error", Severity.Error);
+            }
+
+
+            if (validForm && sanityCheck)
+            {
+                var queryUser = mongo.LoadRecordByString<AllUser>("allUser", "UserID", userID);
+
+                queryUser.Password = password;
+                mongo.UpsertRecord<AllUser>("allUser", queryUser.Id, queryUser);
+                snackbar.Add("Password has been updated", Severity.Success);
+            }
+            else
+            {
+                snackbar.Add("Password has not been updated", Severity.Error);
+            }
+        }
+        catch
+        {
+            snackbar.Add("Password has not been updated", Severity.Error);
+        }
+    }
+
+}
+

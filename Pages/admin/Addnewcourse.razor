@@ -86,7 +86,7 @@
 
     private void submitForm()
     {
-        //try
+        try
         {
             bool validForm = true;
             var queryClasses = mongo.LoadRecord<Classes>("classes");
@@ -177,5 +177,10 @@
                 snackbar.Add("Course was not added successfully", Severity.Error);
             }
         }
+        catch
+        {
+          snackbar.Add("Course was not added successfully", Severity.Error);
+        }
+        }
     }
-}
+

@@ -57,28 +57,25 @@
             @if (accountType == "Undergraduate")
             {
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcourses">view courses</a>
-          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcurrentclasses">view current classes </a>
-          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewcurrentgrade">view current grade</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/timewindow">view time window </a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewrequirements">view requirements</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewdegreeaudit">view degree audit </a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/masterschedule">view master schedule</a>
-          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule</a>
+          <a class="dropdown-item dropdowncolor" href="/undergraduate/viewschedule">view schedule/current grades</a>
           <a class="dropdown-item dropdowncolor" href="/undergraduate/viewtranscript">view transcript</a>
+
                 
             }
 
             @if (accountType == "Graduate")
             {
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/masterschedule">master schedule</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/buildings">buildings</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewdegreeaudit">view degree audit</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewtranscript">view transcript</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewschedule">view schedule</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewcourses">view courses</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/viewrequirements">view requirements</a>
-                <a class="dropdown-item dropdowncolor" href="/graduate/timewindow">time window</a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/viewcourses">view courses</a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/timewindow">view time window </a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/viewrequirements">view requirements</a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/viewdegreeaudit">view degree audit </a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/masterschedule">view master schedule</a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/viewschedule">view schedule/current grades</a>
+          <a class="dropdown-item dropdowncolor" href="/graduate/viewtranscript">view transcript</a>
             }
 
             @if (accountType == "Admin")
@@ -117,9 +114,9 @@
             {
                 <a class="dropdown-item dropdowncolor" href="/faculty/viewclasses">classes</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/viewfacultyschedule">view faculty schedule</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/searchstudents">search students</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/student grade">student grades</a>
-                <a class="dropdown-item dropdowncolor" href="/faculty/degree audit">degree audit</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/searchstudent">search student</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/viewstudentgrade">student grades</a>
+                <a class="dropdown-item dropdowncolor" href="/faculty/searchstudent">degree audit</a>
                 <a class="dropdown-item dropdowncolor" href="/faculty/advisee">advisee</a>
             }
 
@@ -179,22 +176,6 @@
             <a class="dropdown-item dropdowncolor" href="/admin/sendpasswordreset">send password reset</a>
             <a class="dropdown-item dropdowncolor" href="/admin/changeholdstatus">edit user hold status</a>
             <a class="dropdown-item dropdowncolor" href="/admin/removeuser">remove user</a>
-        }
-
-        @if (accountType == "Faculty")
-        {
-            <button type="button" @onclick="displayToggle" class="btncolor dropdown-toggle">
-                Display
-            </button>
-        }
-
-        @if (displayToggleSwitch)
-        {
-            <a class="dropdown-item dropdowncolor" href="/faculty/studentinfo">student info</a>
-            <a class="dropdown-item dropdowncolor" href="/faculty/enrolledinfo">enrolled info</a>
-            <a class="dropdown-item dropdowncolor" href="/faculty/classinfo">class info</a>
-            <a class="dropdown-item dropdowncolor" href="/faculty/attendanceinfo">attendance info</a>
-            <a class="dropdown-item dropdowncolor" href="/faculty/gradesinfo">grades info</a>
         }
 
 

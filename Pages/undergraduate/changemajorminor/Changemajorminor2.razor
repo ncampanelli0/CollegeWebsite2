@@ -65,17 +65,19 @@
 
     private void submitForm()
     {
-        //try
+        try
         {
         bool validForm = true;
 
         if (major == null || major == "")
         {
             validForm = false;
+            snackbar.Add("major error", Severity.Error);
         }
         else if (minor == null || minor == "")
         {
             validForm = false;
+            snackbar.Add("minor error", Severity.Error);
         }
         
         if (validForm)
@@ -92,6 +94,10 @@
             
         }
         else
+        {
+            snackbar.Add("Major/Minor not edited successfully", Severity.Error);
+        }
+        catch
         {
             snackbar.Add("Major/Minor not edited successfully", Severity.Error);
         }

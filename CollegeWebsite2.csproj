@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\undergraduate\adjustlogin\Adjustlogin.razor" />
+    <Content Remove="Pages\undergraduate\adjustlogin\Adjustlogin2.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Pages\people\Checklist.txt" />
   </ItemGroup>
 
@@ -29,6 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\undergraduate\adjustlogin\Adjustlogin.razor" />
+    <None Include="Pages\undergraduate\adjustlogin\Adjustlogin2.razor" />
     <None Include="wwwroot\import\jquery.js" />
     <None Include="wwwroot\import\popper.min.js" />
     <None Include="wwwroot\script\shared.js" />

@@ -1,0 +1,28 @@
+﻿@page "/undergraduate/viewdegreeaudit"
+@inject ProtectedLocalStorage storage
+@inject NavigationManager navigate
+@inject ISnackbar snackbar
+
+<h2>View transcript</h2>
+
+@code
+{
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accountTypeCheck = await storage.GetAsync<string>("accountType");
+        if (accountTypeCheck.Value != "Undergraduate")
+        {
+            navigate.NavigateTo("/undergraduate/homepage");
+        }
+
+
+        var userIDCheck = await storage.GetAsync<string>("userID");
+        string userIDString = userIDCheck.Value;
+
+        navigate.NavigateTo($"/undergraduate/viewdegreeaudit2?targetclass={userIDString}");
+    }
+
+
+}
